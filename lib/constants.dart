@@ -9,3 +9,4 @@ const Color kBlackColor = Color(0xFF302F34);
 const Color kPreparingColor = Color(0xFFCEEBFF);
 const Color kDeliveredColor = Color(0xFFD2FFB7);
 const Color kOnTheWayColor = Color(0xFF526077);
+const kMontserrat = 'Montserrat';

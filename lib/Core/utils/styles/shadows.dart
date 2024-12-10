@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Shadows {
+abstract class Shadows {
   static const BoxShadow dropShadow = BoxShadow(
     offset: Offset(4, 4),
     blurRadius: 15,

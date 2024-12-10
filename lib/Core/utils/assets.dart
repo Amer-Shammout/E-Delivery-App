@@ -1,5 +1,5 @@
 // ignore_for_file: prefer_single_quotes
-class Assets {
+abstract class Assets {
   Assets._();
 
   /// Assets for iconsAbout
