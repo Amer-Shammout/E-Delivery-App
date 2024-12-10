@@ -62,8 +62,8 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
-    - assets/icons/outline
-    - assets/icons/solid
+    - assets/icons/outline/
+    - assets/icons/solid/
     - assets/lottie/
 
   # An image asset can refer to one or more resolution-specific "variants", see

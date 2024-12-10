@@ -6,6 +6,11 @@ abstract class Shadows {
     blurRadius: 15,
     color: Color.fromARGB(26, 0, 0, 0),
   );
+  static const BoxShadow ctaDropShadow = BoxShadow(
+    offset: Offset(6, 8),
+    blurRadius: 15,
+    color: Color.fromARGB(39, 0, 0, 0),
+  );
   static const BoxShadow innerShadow = BoxShadow(
     offset: Offset(0, 0),
     blurRadius: 10,
