@@ -1,6 +1,4 @@
-import 'package:e_delivery_app/Core/utils/assets.dart';
-import 'package:e_delivery_app/Core/utils/widgets/c_t_a_button.dart';
-import 'package:e_delivery_app/Registeration%20Form/registeration_form.dart';
+import 'package:e_delivery_app/Registeration%20View/Registeration%20Form/registeration_form.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 

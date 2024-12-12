@@ -1,6 +1,26 @@
 // ignore_for_file: prefer_single_quotes
-abstract class Assets {
+class Assets {
   Assets._();
+  
+  /// Assets for fontsMontserratBlack
+  /// assets/fonts/Montserrat-Black.ttf
+  static const String fontsMontserratBlack = "assets/fonts/Montserrat-Black.ttf";
+
+  /// Assets for fontsMontserratBold
+  /// assets/fonts/Montserrat-Bold.ttf
+  static const String fontsMontserratBold = "assets/fonts/Montserrat-Bold.ttf";
+
+  /// Assets for fontsMontserratMedium
+  /// assets/fonts/Montserrat-Medium.ttf
+  static const String fontsMontserratMedium = "assets/fonts/Montserrat-Medium.ttf";
+
+  /// Assets for fontsMontserratRegular
+  /// assets/fonts/Montserrat-Regular.ttf
+  static const String fontsMontserratRegular = "assets/fonts/Montserrat-Regular.ttf";
+
+  /// Assets for fontsMontserratSemiBold
+  /// assets/fonts/Montserrat-SemiBold.ttf
+  static const String fontsMontserratSemiBold = "assets/fonts/Montserrat-SemiBold.ttf";
 
   /// Assets for iconsAbout
   /// assets/icons/about.svg
@@ -145,41 +165,49 @@ abstract class Assets {
   /// Assets for iconsUser
   /// assets/icons/user.svg
   static const String iconsUser = "assets/icons/user.svg";
-  
+
   /// Assets for imagesBoxes
-  /// assets/images/boxes.png
-  static const String imagesBoxes = "assets/images/boxes.png";
+  /// assets/Images/boxes.png
+  static const String imagesBoxes = "assets/Images/boxes.png";
 
   /// Assets for imagesCarouselProductTest
-  /// assets/images/carousel_product_test.png
-  static const String imagesCarouselProductTest = "assets/images/carousel_product_test.png";
+  /// assets/Images/carousel_product_test.png
+  static const String imagesCarouselProductTest = "assets/Images/carousel_product_test.png";
+
+  /// Assets for imagesFlag
+  /// assets/Images/flag.jpg
+  static const String imagesFlag = "assets/Images/flag.jpg";
 
   /// Assets for imagesHomeCard
-  /// assets/images/home_card.svg
-  static const String imagesHomeCard = "assets/images/home_card.svg";
+  /// assets/Images/home_card.svg
+  static const String imagesHomeCard = "assets/Images/home_card.svg";
 
   /// Assets for imagesIphoneTest
-  /// assets/images/iphone_test.png
-  static const String imagesIphoneTest = "assets/images/iphone_test.png";
+  /// assets/Images/iphone_test.png
+  static const String imagesIphoneTest = "assets/Images/iphone_test.png";
 
   /// Assets for imagesLetsGetStartedTruck
-  /// assets/images/lets_get_started_truck.jpg
-  static const String imagesLetsGetStartedTruck = "assets/images/lets_get_started_truck.jpg";
+  /// assets/Images/lets_get_started_truck.jpg
+  static const String imagesLetsGetStartedTruck = "assets/Images/lets_get_started_truck.jpg";
 
   /// Assets for imagesMagnifier
-  /// assets/images/magnifier.png
-  static const String imagesMagnifier = "assets/images/magnifier.png";
+  /// assets/Images/magnifier.png
+  static const String imagesMagnifier = "assets/Images/magnifier.png";
+
+  /// Assets for imagesPattern
+  /// assets/Images/Pattern.svg
+  static const String imagesPattern = "assets/Images/Pattern.svg";
 
   /// Assets for imagesSmatelLogoTest
-  /// assets/images/smatel_logo_test.png
-  static const String imagesSmatelLogoTest = "assets/images/smatel_logo_test.png";
+  /// assets/Images/smatel_logo_test.png
+  static const String imagesSmatelLogoTest = "assets/Images/smatel_logo_test.png";
 
   /// Assets for imagesTruck
-  /// assets/images/truck.png
-  static const String imagesTruck = "assets/images/truck.png";
-  
+  /// assets/Images/truck.png
+  static const String imagesTruck = "assets/Images/truck.png";
+
   /// Assets for lottieLoading
-  /// assets/lottie/loading.json
-  static const String lottieLoading = "assets/lottie/loading.json";
+  /// assets/Lottie/loading.json
+  static const String lottieLoading = "assets/Lottie/loading.json";
 }
 

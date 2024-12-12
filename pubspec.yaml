@@ -97,7 +97,7 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
 flutter_assets:
-  assets_path: assets/lottie/
+  assets_path: assets/
   output_path: lib//Core/utils/
   filename: assets.dart
   field_prefix: null
