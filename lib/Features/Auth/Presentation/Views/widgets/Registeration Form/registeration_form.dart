@@ -2,7 +2,7 @@ import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
 import 'package:e_delivery_app/Core/utils/widgets/c_t_a_button.dart';
 import 'package:e_delivery_app/Core/utils/widgets/custom_text_form_field.dart';
-import 'package:e_delivery_app/Features/Auth/Presentation/Registeration%20View/Registeration%20Form/registeration_text_field_prefix.dart';
+import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/Registeration%20Form/registeration_text_field_prefix.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 

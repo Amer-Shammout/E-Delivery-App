@@ -1,8 +1,7 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
 import 'package:e_delivery_app/Core/utils/widgets/custom_background_container.dart';
-import 'package:e_delivery_app/Core/utils/widgets/custom_dash.dart';
-import 'package:e_delivery_app/Features/Auth/Presentation/Registeration%20View/Registeration%20Form/registeration_form.dart';
+import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/Registeration%20Form/registeration_form.dart';
+import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/custom_title.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -44,31 +43,6 @@ class RegisterationView extends StatelessWidget {
               )),
         ]),
       ),
-    );
-  }
-}
-
-class CustomTitle extends StatelessWidget {
-  const CustomTitle({
-    super.key,
-    required this.title,
-  });
-
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          title,
-          style: FontStyles.fontsBlack48(context).copyWith(
-            color: kPrimaryColor,
-          ),
-        ),
-        const CustomDash(),
-      ],
     );
   }
 }
