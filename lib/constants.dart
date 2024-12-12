@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const int kSpacing = 4;
+const double kSpacing = 4;
 const Color kPrimaryColor = Color(0xFF526077);
 const Color kSecondaryColor = Color(0xFFF6F7F9);
 const Color kTeranyColor = Color(0xFFF65C51);
