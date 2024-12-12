@@ -1,3 +1,6 @@
+import 'package:e_delivery_app/Core/utils/assets.dart';
+import 'package:e_delivery_app/Core/utils/widgets/c_t_a_button.dart';
+import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,6 +12,19 @@ class EDelivery extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: Scaffold());
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: kHorizontalPadding),
+          child: Center(
+            child: CTAButton(
+                onPressed: () {},
+                title: 'REGISTER',
+                icon: Assets.iconsButtonsArrow),
+          ),
+        ),
+      ),
+    );
   }
 }
