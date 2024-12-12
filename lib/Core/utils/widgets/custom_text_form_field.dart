@@ -34,7 +34,7 @@ class CustomTextFormField extends StatelessWidget {
         counterText: '',
         prefixIcon: prefix,
         filled: true,
-        fillColor: const Color(0xffF6F7F9),
+        fillColor: kSecondaryColor,
         contentPadding: const EdgeInsets.all(24),
         hintText: hint,
         hintStyle: FontStyles.fontsMedium16(context).copyWith(

@@ -1,4 +1,5 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
+import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
 import 'package:e_delivery_app/Core/utils/widgets/custom_background_container.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/Registeration%20Form/registeration_form.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/custom_title.dart';
@@ -13,21 +14,24 @@ class RegisterationView extends StatelessWidget {
     return Scaffold(
       body: CustomBackgroundContainer(
         child: Stack(children: [
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: kHorizontalPadding),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Spacer(),
+                const Spacer(),
                 Align(
                   alignment: Alignment.center,
                   child: CustomTitle(
                     title: 'WELCOME',
+                    style: FontStyles.fontsBlack48(context).copyWith(
+                      color: kPrimaryColor,
+                    ),
                   ),
                 ),
-                Spacer(),
-                RegisterationForm(),
-                Spacer(
+                const Spacer(),
+                const RegisterationForm(),
+                const Spacer(
                   flex: 3,
                 ),
               ],
