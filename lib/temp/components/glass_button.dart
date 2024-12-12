@@ -42,7 +42,7 @@ class GlassButton extends StatelessWidget {
             ),
             borderRadius: BorderRadius.circular(24),
             boxShadow: const [
-              Shadows.glassDropShadow,
+              // Shadows.glassDropShadow,
             ],
           ),
           child: ElevatedButton(

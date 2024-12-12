@@ -42,7 +42,7 @@ class CustomTextFormField extends StatelessWidget {
         ),
         focusedErrorBorder: buildBorder(kTeranyColor),
         enabledBorder: buildBorder(Colors.transparent),
-        focusedBorder: buildBorder(kPrimaryColor),
+        focusedBorder: buildBorder(kBlackColor),
         errorBorder: buildBorder(
           kTeranyColor,
         ),

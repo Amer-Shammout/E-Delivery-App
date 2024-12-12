@@ -248,7 +248,7 @@ abstract class FontStyles {
   static TextStyle fontsBlack48(context) {
     return TextStyle(
       color: kBlackColor,
-      fontSize: getResponsiveFontSize(context, baseFontSize: 24),
+      fontSize: getResponsiveFontSize(context, baseFontSize: 48),
       fontFamily: kMontserrat,
       fontWeight: FontWeight.w900,
     );

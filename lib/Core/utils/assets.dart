@@ -195,8 +195,8 @@ class Assets {
   static const String imagesMagnifier = "assets/Images/magnifier.png";
 
   /// Assets for imagesPattern
-  /// assets/Images/Pattern.svg
-  static const String imagesPattern = "assets/Images/Pattern.svg";
+  /// assets/Images/Pattern.png
+  static const String imagesPattern = "assets/Images/Pattern.png";
 
   /// Assets for imagesSmatelLogoTest
   /// assets/Images/smatel_logo_test.png
