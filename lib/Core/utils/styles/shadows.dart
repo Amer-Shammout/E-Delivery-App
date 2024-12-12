@@ -12,15 +12,10 @@ abstract class Shadows {
     blurRadius: 15,
     color: Color.fromARGB(39, 0, 0, 0),
   );
-  static const List<BoxShadow> innerShadow = [
-    BoxShadow(
-      color: Color.fromARGB(51, 0, 0, 0),
-    ),
-    BoxShadow(
-      offset: Offset(0, 0),
-      blurRadius: 10,
-      color: kWhiteColor,
-      spreadRadius: -12,
-    ),
-  ];
+  static const BoxShadow innerShadow = BoxShadow(
+    offset: Offset(0, 0),
+    blurRadius: 10,
+    color: Color.fromARGB(51, 0, 0, 0),
+    spreadRadius: -1,
+  );
 }

@@ -1,3 +1,4 @@
+import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
 import 'package:e_delivery_app/Core/utils/styles/shadows.dart';
 import 'package:e_delivery_app/constants.dart';
@@ -8,9 +9,9 @@ class CTAButton extends StatelessWidget {
   const CTAButton(
       {super.key,
       required this.onPressed,
-      this.fillColor = kPrimaryColor,
       required this.title,
-      required this.icon,
+      this.icon = Assets.iconsButtonsArrow,
+      this.fillColor = kPrimaryColor,
       this.strokeColor = kPrimaryColor,
       this.contentColor = kWhiteColor});
   final void Function() onPressed;
@@ -28,8 +29,9 @@ class CTAButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          padding: const EdgeInsets.symmetric(vertical: 20),
+          padding: const EdgeInsets.symmetric(vertical: 5 * kSpacing),
           backgroundColor: fillColor,
+          elevation: 0,
           shape: RoundedRectangleBorder(
             side: BorderSide(color: strokeColor),
             borderRadius: BorderRadius.circular(12),
@@ -49,6 +51,7 @@ class CTAButton extends StatelessWidget {
             SvgPicture.asset(
               icon,
               height: 16,
+              width: 16,
               colorFilter: ColorFilter.mode(contentColor, BlendMode.srcATop),
             )
           ],

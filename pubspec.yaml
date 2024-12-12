@@ -28,19 +28,20 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  lottie:
-  cached_network_image:
-  fancy_shimmer_image:
-  dartz:
-  equatable:
-  flutter_svg:
-  go_router:
+  cached_network_image: null
   cupertino_icons: ^1.0.8
+  dartz: null
   dio: ^5.7.0
+  equatable: null
+  fancy_shimmer_image: null
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.6
+  flutter_svg: null
   get_it: ^8.0.0
+  go_router: null
+  gradient_borders: ^1.0.1
+  lottie: null
   shimmer: ^3.0.0
 
 dev_dependencies:
