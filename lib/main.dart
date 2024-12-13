@@ -1,4 +1,4 @@
-import 'package:e_delivery_app/Features/Auth/Presentation/Views/registeration_view.dart';
+import 'package:e_delivery_app/Core/utils/widgets/App%20Bar/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,9 +10,11 @@ class EDelivery extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(body: RegisterationView()),
+      home: Scaffold(
+        body: CustomAppBar(),
+      ),
     );
   }
 }

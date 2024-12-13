@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class ProfileAvatar extends StatelessWidget {
   const ProfileAvatar(
       {super.key,
-      this.radius = 64,
+      this.radius = 32,
       required this.userImage,
       this.borderWidth = 2});
   final double radius;
@@ -15,7 +15,7 @@ class ProfileAvatar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(360),
+        shape: BoxShape.circle,
         border: Border.all(width: borderWidth, color: kWhiteColor),
         boxShadow: const [Shadows.iconDropShadow],
       ),
