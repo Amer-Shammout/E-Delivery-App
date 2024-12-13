@@ -21,9 +21,10 @@ abstract class Shadows {
     blurRadius: 15,
     color: Color.fromARGB(39, 0, 0, 0),
   );
-  static const Shadow innerShadow = Shadow(
+  static const Shadow innerShadow = BoxShadow(
     offset: Offset(0, 0),
     blurRadius: 10,
     color: Color.fromARGB(51, 0, 0, 0),
+    
   );
 }

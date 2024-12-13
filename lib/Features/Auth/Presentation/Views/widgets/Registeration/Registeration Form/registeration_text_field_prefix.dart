@@ -1,3 +1,4 @@
+import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
@@ -16,9 +17,9 @@ class RegisterationTextFieldPrefix extends StatelessWidget {
         child: Row(
           children: [
             Image.asset(
-              'assets/Images/flag.jpg',
+              Assets.imagesFreeFlag,
               width: 24,
-              height: 15,
+              height: 30,
             ),
             const SizedBox(
               width: kSpacing*2,
