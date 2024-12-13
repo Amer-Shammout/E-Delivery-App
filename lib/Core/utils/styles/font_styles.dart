@@ -298,6 +298,7 @@ abstract class FontStyles {
       fontWeight: FontWeight.w600,
     );
   }
+
   static TextStyle fontsSemiBold16(context) {
     return TextStyle(
       color: kPrimaryColor,
@@ -314,7 +315,6 @@ double getResponsiveFontSize(
 }) {
   double scaleFactor = getScaleFactor(context);
   double responsiveFontSize = scaleFactor * baseFontSize;
-
   double lowerLimit = baseFontSize * .8;
   double upperLimit = baseFontSize * 1.2;
 

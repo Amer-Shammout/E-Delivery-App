@@ -8,11 +8,14 @@ class CustomTitle extends StatelessWidget {
     required this.title,
     required this.style,
     this.dashColor = kPrimaryColor,
+    this.width = 75,
+    this.height = 10,
   });
 
   final String title;
   final TextStyle style;
   final Color dashColor;
+  final double width, height;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -20,6 +23,8 @@ class CustomTitle extends StatelessWidget {
       children: [
         Text(title, style: style),
         CustomDash(
+          width: width,
+          height: height,
           color: dashColor,
         ),
       ],

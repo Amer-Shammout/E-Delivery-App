@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 
 class CustomDash extends StatelessWidget {
   const CustomDash(
-      {super.key, this.width = 75, this.height = 10, required this.color});
+      {super.key,
+      required this.width,
+      required this.height,
+      required this.color});
 
   final double width, height;
   final Color color;
