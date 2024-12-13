@@ -25,6 +25,5 @@ abstract class Shadows {
     offset: Offset(0, 0),
     blurRadius: 10,
     color: Color.fromARGB(51, 0, 0, 0),
-    
   );
 }
