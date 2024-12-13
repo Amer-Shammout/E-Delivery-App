@@ -24,7 +24,9 @@ class LetsGetStartedView extends StatelessWidget {
                 center: Alignment.topLeft),
           ),
           child: const Scaffold(
-              backgroundColor: Colors.transparent, body: LetsGetStartedBody()),
+            backgroundColor: Colors.transparent,
+            body: LetsGetStartedBody(),
+          ),
         ),
       ),
     );
