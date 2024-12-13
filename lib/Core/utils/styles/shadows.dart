@@ -7,9 +7,9 @@ abstract class Shadows {
     color: Color.fromARGB(26, 0, 0, 0),
   );
   static const BoxShadow iconDropShadow = BoxShadow(
-    offset: Offset(3, 6),
-    blurRadius: 15,
-    color: Color.fromARGB(39, 0, 0, 0),
+    offset: Offset(2, 4),
+    blurRadius: 5,
+    color: Color.fromARGB(26, 0, 0, 0),
   );
   static const BoxShadow glassDropShadow = BoxShadow(
     offset: Offset(0, 8),
