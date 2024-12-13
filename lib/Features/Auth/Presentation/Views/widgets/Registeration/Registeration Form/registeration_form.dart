@@ -71,7 +71,7 @@ class _RegisterationFormState extends State<RegisterationForm> {
                 setState(() {});
               }
             },
-            title: 'Register',
+            title: 'REGISTER',
             icon: Assets.iconsButtonsArrow,
           ),
         ],

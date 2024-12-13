@@ -298,6 +298,14 @@ abstract class FontStyles {
       fontWeight: FontWeight.w600,
     );
   }
+  static TextStyle fontsSemiBold16(context) {
+    return TextStyle(
+      color: kPrimaryColor,
+      fontSize: getResponsiveFontSize(context, baseFontSize: 16),
+      fontFamily: kMontserrat,
+      fontWeight: FontWeight.w600,
+    );
+  }
 }
 
 double getResponsiveFontSize(
