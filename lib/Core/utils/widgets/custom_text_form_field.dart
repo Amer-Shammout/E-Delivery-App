@@ -13,7 +13,8 @@ class CustomTextFormField extends StatelessWidget {
       this.prefix,
       @required this.validator,
       this.maxLength,
-      this.suffixIcon});
+      this.suffixIcon,
+      this.contentPadding = 24});
 
   final String hint;
   final int? maxLength;
@@ -23,13 +24,13 @@ class CustomTextFormField extends StatelessWidget {
   final Widget? prefix;
   final String? Function(String?)? validator;
   final Widget? suffixIcon;
-
+  final double contentPadding;
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         Container(
-          padding: const EdgeInsets.all(24),
+          padding: EdgeInsets.all(contentPadding),
           width: MediaQuery.sizeOf(context).width,
           decoration: BoxDecoration(
             boxShadow: Shadows.innerShadow,
@@ -52,7 +53,7 @@ class CustomTextFormField extends StatelessWidget {
             prefixIcon: prefix,
             filled: true,
             fillColor: Colors.transparent,
-            contentPadding: const EdgeInsets.all(24),
+            contentPadding: EdgeInsets.all(contentPadding),
             hintText: hint,
             hintStyle: FontStyles.fontsMedium16(context).copyWith(
               color: kBlackColor.withOpacity(.4),
