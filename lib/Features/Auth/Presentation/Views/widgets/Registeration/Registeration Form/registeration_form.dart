@@ -88,7 +88,7 @@ String? validatePhoneNumber(String? phoneNumber) {
   }
 
   if (!regExp.hasMatch(phoneNumber)) {
-    return 'الرجاء إدخال رقم موبايل صحيح. يجب أن يبدأ ب +9639 ويتبعه 8 أرقام.';
+    return 'please enter a valid phone number';
   }
 
   return null;
