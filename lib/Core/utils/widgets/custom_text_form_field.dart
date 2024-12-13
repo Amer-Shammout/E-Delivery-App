@@ -34,6 +34,8 @@ class CustomTextFormField extends StatelessWidget {
         keyboardType: textInputType,
         validator: validator,
         style: FontStyles.fontsMedium16(context).copyWith(color: kBlackColor),
+        cursorColor: kPrimaryColor,
+        cursorErrorColor: kTeranyColor,
         decoration: InputDecoration(
           counterText: '',
           prefixIcon: prefix,
@@ -46,7 +48,7 @@ class CustomTextFormField extends StatelessWidget {
           ),
           focusedErrorBorder: buildBorder(kTeranyColor),
           enabledBorder: buildBorder(Colors.transparent),
-          focusedBorder: buildBorder(kBlackColor),
+          focusedBorder: buildBorder(kPrimaryColor),
           errorBorder: buildBorder(
             kTeranyColor,
           ),
