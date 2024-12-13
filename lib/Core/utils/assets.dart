@@ -167,44 +167,48 @@ class Assets {
   static const String iconsUser = "assets/icons/user.svg";
 
   /// Assets for imagesBoxes
-  /// assets/Images/boxes.png
-  static const String imagesBoxes = "assets/Images/boxes.png";
+  /// assets/images/boxes.png
+  static const String imagesBoxes = "assets/images/boxes.png";
 
   /// Assets for imagesCarouselProductTest
-  /// assets/Images/carousel_product_test.png
-  static const String imagesCarouselProductTest = "assets/Images/carousel_product_test.png";
+  /// assets/images/carousel_product_test.png
+  static const String imagesCarouselProductTest = "assets/images/carousel_product_test.png";
 
   /// Assets for imagesFlag
-  /// assets/Images/flag.jpg
-  static const String imagesFlag = "assets/Images/flag.jpg";
+  /// assets/images/flag.jpg
+  static const String imagesFlag = "assets/images/flag.jpg";
+
+  /// Assets for imagesFreeFlag
+  /// assets/images/free_flag.png
+  static const String imagesFreeFlag = "assets/images/free_flag.png";
 
   /// Assets for imagesHomeCard
-  /// assets/Images/home_card.svg
-  static const String imagesHomeCard = "assets/Images/home_card.svg";
+  /// assets/images/home_card.svg
+  static const String imagesHomeCard = "assets/images/home_card.svg";
 
   /// Assets for imagesIphoneTest
-  /// assets/Images/iphone_test.png
-  static const String imagesIphoneTest = "assets/Images/iphone_test.png";
+  /// assets/images/iphone_test.png
+  static const String imagesIphoneTest = "assets/images/iphone_test.png";
 
   /// Assets for imagesLetsGetStartedTruck
-  /// assets/Images/lets_get_started_truck.jpg
-  static const String imagesLetsGetStartedTruck = "assets/Images/lets_get_started_truck.jpg";
+  /// assets/images/lets_get_started_truck.jpg
+  static const String imagesLetsGetStartedTruck = "assets/images/lets_get_started_truck.jpg";
 
   /// Assets for imagesMagnifier
-  /// assets/Images/magnifier.png
-  static const String imagesMagnifier = "assets/Images/magnifier.png";
+  /// assets/images/magnifier.png
+  static const String imagesMagnifier = "assets/images/magnifier.png";
 
   /// Assets for imagesPattern
-  /// assets/Images/Pattern.png
-  static const String imagesPattern = "assets/Images/Pattern.png";
+  /// assets/images/Pattern.png
+  static const String imagesPattern = "assets/images/Pattern.png";
 
   /// Assets for imagesSmatelLogoTest
-  /// assets/Images/smatel_logo_test.png
-  static const String imagesSmatelLogoTest = "assets/Images/smatel_logo_test.png";
+  /// assets/images/smatel_logo_test.png
+  static const String imagesSmatelLogoTest = "assets/images/smatel_logo_test.png";
 
   /// Assets for imagesTruck
-  /// assets/Images/truck.png
-  static const String imagesTruck = "assets/Images/truck.png";
+  /// assets/images/truck.png
+  static const String imagesTruck = "assets/images/truck.png";
 
   /// Assets for lottieLoading
   /// assets/Lottie/loading.json

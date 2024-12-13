@@ -11,37 +11,47 @@ class RegisterationView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CustomBackgroundContainer(
-        child: Stack(children: [
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Spacer(),
-                Align(
-                  alignment: Alignment.center,
-                  child: CustomTitle(
-                    title: 'WELCOME',
+      body: SizedBox(
+        child: ListView(
+          children: [
+            CustomBackgroundContainer(
+              child: Stack(children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: kHorizontalPadding),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: MediaQuery.sizeOf(context).height * .12,
+                      ),
+                      const Align(
+                        alignment: Alignment.center,
+                        child:  CustomTitle(
+                          title: 'WELCOME',
+                        ),
+                      ),
+                      SizedBox(
+                        height: MediaQuery.sizeOf(context).height * .12,
+                      ),
+                      const RegisterationForm(),
+                      SizedBox(
+                        height: MediaQuery.sizeOf(context).height * .36,
+                      ),
+                    ],
                   ),
                 ),
-                Spacer(),
-                RegisterationForm(),
-                Spacer(
-                  flex: 3,
-                ),
-              ],
+                Positioned(
+                    left: -5,
+                    bottom: -5,
+                    child: Image.asset(
+                      width: MediaQuery.sizeOf(context).width - 50,
+                      fit: BoxFit.scaleDown,
+                      Assets.imagesBoxes,
+                    )),
+              ]),
             ),
-          ),
-          Positioned(
-              left: -5,
-              bottom: -5,
-              child: Image.asset(
-                width: MediaQuery.sizeOf(context).width - 90,
-                fit: BoxFit.scaleDown,
-                Assets.imagesBoxes,
-              )),
-        ]),
+          ],
+        ),
       ),
     );
   }
