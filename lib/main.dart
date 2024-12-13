@@ -1,4 +1,4 @@
-import 'package:e_delivery_app/temp/examples/custom_icon_examples.dart';
+import 'package:e_delivery_app/temp/examples/profile_avatar_examples.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,9 +12,7 @@ class EDelivery extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: CustomIconExamples(),
-      ),
+      home: Scaffold(body: ProfileAvatarExamples()),
     );
   }
 }
