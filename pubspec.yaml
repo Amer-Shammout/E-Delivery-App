@@ -37,6 +37,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.6
+  flutter_inner_shadow: ^0.0.1
   flutter_svg: null
   get_it: ^8.0.0
   go_router: null

@@ -1,12 +1,8 @@
-import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 
 class CustomDash extends StatelessWidget {
   const CustomDash(
-      {super.key,
-      this.width = 75,
-      this.height = 10,
-      this.color = kPrimaryColor});
+      {super.key, this.width = 75, this.height = 10, required this.color});
 
   final double width, height;
   final Color color;
