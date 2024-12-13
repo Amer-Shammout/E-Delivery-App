@@ -26,6 +26,7 @@ class VerificationTextFieldSquare extends StatelessWidget {
             width: 54,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),
+              boxShadow: Shadows.innerShadow,
             ),
           ),
           TextFormField(
