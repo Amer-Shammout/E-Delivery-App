@@ -14,7 +14,6 @@ class StatusAppBar extends StatelessWidget {
       children: [
         const ProfileAvatar(
           userImage: Assets.imagesProfile,
-          radius: 32,
         ),
         const SizedBox(
           width: 2 * kSpacing,

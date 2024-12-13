@@ -8,7 +8,7 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
+      padding: EdgeInsets.all(kHorizontalPadding),
       child: Column(
         children: [
           StatusAppBar(),
