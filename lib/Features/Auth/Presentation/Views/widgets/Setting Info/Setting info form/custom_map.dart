@@ -1,6 +1,6 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
-import 'package:e_delivery_app/Core/utils/widgets/custom_container.dart';
-import 'package:e_delivery_app/Core/utils/widgets/custom_icon.dart';
+import 'package:e_delivery_app/Core/widgets/custom_container.dart';
+import 'package:e_delivery_app/Core/widgets/custom_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_svg/svg.dart';

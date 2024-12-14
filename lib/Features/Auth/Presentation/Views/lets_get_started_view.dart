@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:e_delivery_app/Core/utils/assets.dart';
-import 'package:e_delivery_app/Core/utils/widgets/custom_background_container.dart';
+import 'package:e_delivery_app/Core/widgets/custom_background_container.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/lets%20get%20started/lets_get_started_body.dart';
 import 'package:flutter/material.dart';
 

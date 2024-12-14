@@ -1,5 +1,5 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
-import 'package:e_delivery_app/Core/utils/widgets/c_t_a_button.dart';
+import 'package:e_delivery_app/Core/widgets/c_t_a_button.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 
