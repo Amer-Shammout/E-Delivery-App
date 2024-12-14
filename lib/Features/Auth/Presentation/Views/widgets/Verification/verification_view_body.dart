@@ -11,10 +11,10 @@ class VerificationViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        CustomBackgroundContainer(
-          child: Stack(
+    return CustomBackgroundContainer(
+      child: ListView(
+        children: [
+          Stack(
             children: [
               Padding(
                 padding:
@@ -65,8 +65,8 @@ class VerificationViewBody extends StatelessWidget {
               ),
             ],
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

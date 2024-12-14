@@ -33,7 +33,11 @@ class LetsGetStartedBody extends StatelessWidget {
             ),
           ),
           const Spacer(),
-          const GlassButton(),
+          GlassButton(
+            onPressed: () {
+              
+            },
+          ),
           const SizedBox(
             height: 64,
           ),

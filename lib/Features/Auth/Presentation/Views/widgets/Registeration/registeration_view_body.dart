@@ -13,10 +13,10 @@ class RegisterationViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        CustomBackgroundContainer(
-          child: Stack(
+    return CustomBackgroundContainer(
+      child: ListView(
+        children: [
+          Stack(
             children: [
               Padding(
                 padding:
@@ -67,8 +67,8 @@ class RegisterationViewBody extends StatelessWidget {
               ),
             ],
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

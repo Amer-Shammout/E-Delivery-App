@@ -8,7 +8,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 
 class GlassButton extends StatelessWidget {
-  const GlassButton({super.key});
+  const GlassButton({super.key, required this.onPressed});
+
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +47,7 @@ class GlassButton extends StatelessWidget {
             ],
           ),
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: onPressed,
             style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(vertical: 5 * kSpacing),
                 backgroundColor: Colors.transparent,
