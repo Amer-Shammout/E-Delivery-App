@@ -31,7 +31,7 @@ class _SettingInfoFormState extends State<SettingInfoForm> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          CustomImagePicker(),
+          const CustomImagePicker(),
           const SizedBox(
             height: kSpacing * 8,
           ),
@@ -39,7 +39,7 @@ class _SettingInfoFormState extends State<SettingInfoForm> {
             hint: 'Full Name',
             validator: (value) {
               if (value == '') {
-                return '';
+                return 'field is required!';
               }
               return null;
             },

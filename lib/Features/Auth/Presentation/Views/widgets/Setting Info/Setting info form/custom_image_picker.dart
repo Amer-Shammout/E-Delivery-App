@@ -31,7 +31,7 @@ class _CustomImagePickerState extends State<CustomImagePicker> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           ProfileAvatar(
-            radius: 60,
+            radius: 50,
             borderWidth: 4,
             userImage: _image?.path ?? Assets.imagesUser,
           ),
