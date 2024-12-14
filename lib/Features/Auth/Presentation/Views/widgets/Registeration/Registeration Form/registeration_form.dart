@@ -1,3 +1,4 @@
+import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
 import 'package:e_delivery_app/Core/widgets/c_t_a_button.dart';
@@ -5,6 +6,7 @@ import 'package:e_delivery_app/Core/widgets/custom_text_form_field.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/Registeration/Registeration%20Form/registeration_text_field_prefix.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class RegisterationForm extends StatefulWidget {
   const RegisterationForm({super.key});
@@ -66,6 +68,9 @@ class _RegisterationFormState extends State<RegisterationForm> {
           CTAButton(
             onPressed: () {
               if (_formKey.currentState!.validate()) {
+                GoRouter.of(context).push(
+                  AppRouter.kVerificationView,
+                );
               } else {
                 _isAutoValidate = AutovalidateMode.always;
                 setState(() {});

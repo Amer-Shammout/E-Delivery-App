@@ -1,3 +1,4 @@
+import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
 import 'package:e_delivery_app/Core/widgets/c_t_a_button.dart';
@@ -6,6 +7,7 @@ import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/Verifica
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/Verification/Verification%20Form/verification_text_field.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class VerificationForm extends StatefulWidget {
   const VerificationForm({super.key});
@@ -71,6 +73,9 @@ class _VerificationFormState extends State<VerificationForm> {
           CTAButton(
             onPressed: () {
               if (_formKey.currentState!.validate()) {
+                GoRouter.of(context).push(
+                  AppRouter.kSettingInfoView,
+                );
               } else {
                 _isAutoValidate = AutovalidateMode.always;
                 setState(() {});
