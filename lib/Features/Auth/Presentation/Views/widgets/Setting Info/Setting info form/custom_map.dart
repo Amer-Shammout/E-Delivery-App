@@ -1,0 +1,98 @@
+import 'package:e_delivery_app/Core/utils/assets.dart';
+import 'package:e_delivery_app/Core/utils/widgets/custom_container.dart';
+import 'package:e_delivery_app/Core/utils/widgets/custom_icon.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_map/flutter_map.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:latlong2/latlong.dart';
+import 'package:location/location.dart';
+
+class CustomMap extends StatefulWidget {
+  const CustomMap({super.key});
+
+  @override
+  State<CustomMap> createState() => _CustomMapState();
+}
+
+class _CustomMapState extends State<CustomMap> {
+  final MapController _mapController = MapController();
+  LocationData? currentLocation;
+  Marker? marker;
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomContainer(
+      child: Stack(
+        children: [
+          SizedBox(
+            height: 178,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(16),
+              child: FlutterMap(
+                mapController: _mapController,
+                options: const MapOptions(
+                  initialCenter: LatLng(33.510414, 36.278336),
+                  initialZoom: 15.0,
+                  // onTap: (tapPosition, point) => _addDestinationMarker(point),
+                ),
+                children: [
+                  TileLayer(
+                    urlTemplate:
+                        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                  ),
+                  MarkerLayer(
+                    markers: marker == null ? [] : [marker!],
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Positioned(
+            right: 8,
+            bottom: 8,
+            child: CustomIcon(
+              icon: Assets.iconsGps,
+              onPressed: () async {
+                await _getCurrentLocation();
+                if (currentLocation != null) {
+                  _mapController.move(
+                    LatLng(currentLocation!.latitude!,
+                        currentLocation!.longitude!),
+                    15.0,
+                  );
+                }
+              },
+              iconSize: 24,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Future<void> _getCurrentLocation() async {
+    var location = Location();
+
+    try {
+      var userLocation = await location.getLocation();
+      setState(() {
+        currentLocation = userLocation;
+        marker = Marker(
+          width: 80.0,
+          height: 80.0,
+          point: LatLng(userLocation.latitude!, userLocation.longitude!),
+          child: Center(
+            child: SvgPicture.asset(
+              Assets.iconsMapPoint,
+              color: Colors.red,
+              width: 24,
+              height: 24,
+            ),
+          ),
+        );
+      });
+    } on Exception {
+      currentLocation = null;
+    }
+  }
+}

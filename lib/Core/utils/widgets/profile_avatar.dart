@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/shadows.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
@@ -6,7 +9,7 @@ class ProfileAvatar extends StatelessWidget {
   const ProfileAvatar(
       {super.key,
       this.radius = 32,
-      required this.userImage,
+      this.userImage = Assets.imagesUser,
       this.borderWidth = 2});
   final double radius;
   final double borderWidth;
@@ -20,10 +23,26 @@ class ProfileAvatar extends StatelessWidget {
         boxShadow: const [Shadows.iconDropShadow],
       ),
       child: CircleAvatar(
+        backgroundColor: Colors.white,
+        backgroundImage: userImage == Assets.imagesUser
+            ? null
+            : FileImage(
+                File(
+                  userImage,
+                ),
+              ),
         radius: radius,
-        backgroundImage: AssetImage(
-          userImage,
-        ),
+        child: userImage == Assets.imagesUser
+            ? Padding(
+                padding:
+                    EdgeInsets.all(userImage == Assets.imagesUser ? 24 : 0),
+                child: ClipOval(
+                  child: Image.asset(
+                    userImage,
+                  ),
+                ),
+              )
+            : null,
       ),
     );
   }

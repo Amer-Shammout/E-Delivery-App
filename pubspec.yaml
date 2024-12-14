@@ -38,11 +38,15 @@ dependencies:
     sdk: flutter
   flutter_bloc: ^8.1.6
   flutter_inner_shadow: ^0.0.1
+  flutter_map: ^7.0.2
   flutter_svg: null
   flutter_timer_countdown: ^1.0.7
   get_it: ^8.0.0
   go_router: null
   gradient_borders: ^1.0.1
+  image_picker: ^1.1.2
+  latlong2: ^0.9.1
+  location: ^7.0.1
   lottie: null
   shimmer: ^3.0.0
 

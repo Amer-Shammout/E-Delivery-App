@@ -1,4 +1,5 @@
 import 'package:e_delivery_app/Core/utils/widgets/Custom%20Product/custom_product.dart';
+import 'package:e_delivery_app/Features/Auth/Presentation/Views/setting_info_view.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -14,11 +15,7 @@ class EDelivery extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(scaffoldBackgroundColor: kWhiteColor),
       debugShowCheckedModeBanner: false,
-      home: const Scaffold(
-        body: Center(
-          child: CustomProduct(),
-        ),
-      ),
+      home: SettingInfoView(),
     );
   }
 }
