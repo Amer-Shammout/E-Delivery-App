@@ -38,7 +38,7 @@ class CustomTextButtonWithIcon extends StatelessWidget {
     this.icon = Assets.iconsUpload,
     required this.style,
     this.size = 24,
-    this.color = kPreparingColor,
+    this.color = kPrimaryColor,
   });
 
   final VoidCallback onPressed;
