@@ -1,3 +1,4 @@
+import 'package:e_delivery_app/Core/utils/functions/validation.dart';
 import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
 import 'package:e_delivery_app/Core/utils/styles/shadows.dart';
 import 'package:e_delivery_app/constants.dart';
@@ -24,12 +25,7 @@ class VerificationTextFieldSquare extends StatelessWidget {
         boxShadow: Shadows.innerShadow,
       ),
       child: TextFormField(
-        validator: (value) {
-          if (value == '') {
-            return '';
-          }
-          return null;
-        },
+        validator: Validation.validateFieldIfEmpty,
         onSaved: onSaved,
         onChanged: onChanged,
         style: FontStyles.fontsMedium32(context),

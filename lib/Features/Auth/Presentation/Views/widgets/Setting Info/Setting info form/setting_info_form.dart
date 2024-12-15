@@ -1,4 +1,5 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
+import 'package:e_delivery_app/Core/utils/functions/validation.dart';
 import 'package:e_delivery_app/Core/widgets/c_t_a_button.dart';
 import 'package:e_delivery_app/Core/widgets/custom_text_form_field.dart';
 import 'package:e_delivery_app/Core/widgets/Setting%20Info/custom_image_picker.dart';
@@ -37,12 +38,7 @@ class _SettingInfoFormState extends State<SettingInfoForm> {
           ),
           CustomTextFormField(
             hint: 'Full Name',
-            validator: (value) {
-              if (value == '') {
-                return 'field is required!';
-              }
-              return null;
-            },
+            validator: Validation.validateFieldIfEmpty,
             contentPadding: 16,
             maxLines: 1,
           ),
@@ -68,4 +64,6 @@ class _SettingInfoFormState extends State<SettingInfoForm> {
       ),
     );
   }
+
+  
 }

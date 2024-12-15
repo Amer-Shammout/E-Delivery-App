@@ -59,9 +59,7 @@ class _RegisterationFormState extends State<RegisterationForm> {
             onChanged: (inputPhoneNumber) {
               phoneNumber = inputPhoneNumber;
             },
-            validator: (phoneNumber) {
-              return Validation.validatePhoneNumber(phoneNumber);
-            },
+            validator: Validation.validatePhoneNumber,
           ),
           const SizedBox(
             height: kSpacing * 6,
@@ -85,5 +83,3 @@ class _RegisterationFormState extends State<RegisterationForm> {
     );
   }
 }
-
-
