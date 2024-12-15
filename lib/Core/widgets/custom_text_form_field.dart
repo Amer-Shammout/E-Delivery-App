@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField(
       {super.key,
-      required this.hint,
+      this.hint,
       this.onChanged,
       this.maxLines,
       this.textInputType = TextInputType.text,
@@ -14,17 +14,26 @@ class CustomTextFormField extends StatelessWidget {
       @required this.validator,
       this.maxLength,
       this.suffixIcon,
-      this.contentPadding = 24});
+      this.contentPadding = 24,
+      this.initialValue,
+      this.isEnabled = true,
+      this.onSaved,
+      this.onTap});
 
-  final String hint;
+  final String? hint;
   final int? maxLength;
   final Function(String)? onChanged;
+  final void Function(String?)? onSaved;
   final int? maxLines;
   final TextInputType textInputType;
   final Widget? prefix;
   final String? Function(String?)? validator;
   final Widget? suffixIcon;
   final double contentPadding;
+  final String? initialValue;
+  final bool isEnabled;
+  final VoidCallback? onTap;
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -42,6 +51,10 @@ class CustomTextFormField extends StatelessWidget {
           ),
         ),
         TextFormField(
+          onTap: onTap,
+          onSaved: onSaved,
+          enabled: isEnabled,
+          initialValue: initialValue,
           maxLength: maxLength,
           keyboardType: textInputType,
           validator: validator,
@@ -51,6 +64,7 @@ class CustomTextFormField extends StatelessWidget {
           decoration: InputDecoration(
             counterText: '',
             prefixIcon: prefix,
+            suffixIcon: suffixIcon,
             filled: true,
             fillColor: Colors.transparent,
             contentPadding: EdgeInsets.all(contentPadding),
@@ -64,6 +78,7 @@ class CustomTextFormField extends StatelessWidget {
             errorBorder: buildBorder(
               kTeranyColor,
             ),
+            disabledBorder: buildBorder(Colors.transparent),
           ),
         ),
       ],

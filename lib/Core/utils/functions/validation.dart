@@ -12,4 +12,11 @@ abstract class Validation {
 
     return null;
   }
+
+  static String? validateFieldIfEmpty(value) {
+    if (value == '') {
+      return 'field is required!';
+    }
+    return null;
+  }
 }
