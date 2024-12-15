@@ -1,5 +1,6 @@
 import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
+import 'package:e_delivery_app/Core/utils/functions/validation.dart';
 import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
 import 'package:e_delivery_app/Core/widgets/c_t_a_button.dart';
 import 'package:e_delivery_app/Core/widgets/custom_text_form_field.dart';
@@ -59,7 +60,7 @@ class _RegisterationFormState extends State<RegisterationForm> {
               phoneNumber = inputPhoneNumber;
             },
             validator: (phoneNumber) {
-              return validatePhoneNumber(phoneNumber);
+              return Validation.validatePhoneNumber(phoneNumber);
             },
           ),
           const SizedBox(
@@ -85,16 +86,4 @@ class _RegisterationFormState extends State<RegisterationForm> {
   }
 }
 
-String? validatePhoneNumber(String? phoneNumber) {
-  final RegExp regExp = RegExp(r'^\9[0-9]{8}$');
 
-  if (phoneNumber == null || phoneNumber == '') {
-    return 'field is required';
-  }
-
-  if (!regExp.hasMatch(phoneNumber)) {
-    return 'please enter a valid phone number';
-  }
-
-  return null;
-}

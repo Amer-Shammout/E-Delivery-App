@@ -1,8 +1,8 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/widgets/c_t_a_button.dart';
 import 'package:e_delivery_app/Core/widgets/custom_text_form_field.dart';
-import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/Setting%20Info/Setting%20info%20form/custom_image_picker.dart';
-import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/Setting%20Info/Setting%20info%20form/custom_map.dart';
+import 'package:e_delivery_app/Core/widgets/Setting%20Info/custom_image_picker.dart';
+import 'package:e_delivery_app/Core/widgets/Setting%20Info/custom_map.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 

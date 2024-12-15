@@ -1,6 +1,6 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
-import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/custom_title.dart';
+import 'package:e_delivery_app/Core/widgets/custom_title.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 
