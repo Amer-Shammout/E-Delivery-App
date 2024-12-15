@@ -1,3 +1,4 @@
+import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/registeration_view.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/setting_info_view.dart';
 import 'package:e_delivery_app/constants.dart';
@@ -12,10 +13,12 @@ class EDelivery extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(scaffoldBackgroundColor: kWhiteColor),
-      debugShowCheckedModeBanner: false,
-      home: RegisterationView(),
-    );
+    return MaterialApp.router(
+        routerConfig: AppRouter.router,
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          scaffoldBackgroundColor: kWhiteColor,
+        ),
+      );
   }
 }
