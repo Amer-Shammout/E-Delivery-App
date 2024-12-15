@@ -1,5 +1,6 @@
+import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
-import 'package:e_delivery_app/Core/widgets/Custom%20Product/add_button.dart';
+import 'package:e_delivery_app/Core/widgets/custom_text_button.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -29,7 +30,14 @@ class ProductPrice extends StatelessWidget {
             ),
           ],
         ),
-        const AddButton(),
+        CustomTextButtonWithIcon(
+          onPressed: () {},
+          title: 'Add',
+          style: FontStyles.fontsMedium12(context),
+          color: kTeranyColor,
+          size: 16,
+          icon: Assets.iconsPlus,
+        ),
       ],
     );
   }

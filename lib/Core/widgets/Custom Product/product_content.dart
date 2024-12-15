@@ -27,9 +27,6 @@ class ProductContent extends StatelessWidget {
             color: kBlackColor,
           ),
         ),
-        const SizedBox(
-          height: kSpacing,
-        ),
         CustomTitle(
           width: 20,
           height: 2,
