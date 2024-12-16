@@ -14,6 +14,7 @@ class OffersPageViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.all(kSpacing,),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(
           16,

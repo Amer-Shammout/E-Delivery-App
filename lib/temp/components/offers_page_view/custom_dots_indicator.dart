@@ -28,6 +28,10 @@ class CustomDotsIndicator extends StatelessWidget {
         activeSize: const Size(16, 4),
         size: const Size(4, 4),
         shape: const CircleBorder(),
+        spacing: const EdgeInsets.only(
+          right: 4,
+          bottom: 8,
+        ),
       ),
       dotsCount: 3,
     );

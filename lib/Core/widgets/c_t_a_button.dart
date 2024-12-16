@@ -13,7 +13,12 @@ class CTAButton extends StatelessWidget {
       this.icon = Assets.iconsButtonsArrow,
       this.fillColor = kPrimaryColor,
       this.strokeColor = kPrimaryColor,
-      this.contentColor = kWhiteColor,  this.radius=12,  this.fontSize=20,  this.iconSize = 16,  this.padding=const EdgeInsets.symmetric(vertical: 5 * kSpacing),  this.spacing = kSpacing*2.5});
+      this.contentColor = kWhiteColor,
+      this.radius = 12,
+      this.fontSize = 20,
+      this.iconSize = 16,
+      this.padding = const EdgeInsets.symmetric(vertical: 5 * kSpacing),
+      this.spacing = kSpacing * 2.5});
   final void Function() onPressed;
   final Color fillColor;
   final Color strokeColor;
@@ -47,10 +52,12 @@ class CTAButton extends StatelessWidget {
           children: [
             Text(
               title,
-              style: FontStyles.fontsSemiBold20(context)
-                  .copyWith(color: contentColor,fontSize: fontSize,),
+              style: FontStyles.fontsSemiBold20(context).copyWith(
+                color: contentColor,
+                fontSize: fontSize,
+              ),
             ),
-             SizedBox(
+            SizedBox(
               width: spacing,
             ),
             SvgPicture.asset(

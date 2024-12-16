@@ -1,9 +1,3 @@
-import 'package:e_delivery_app/Core/utils/app_router.dart';
-import 'package:e_delivery_app/Core/widgets/Custom%20Product/custom_product.dart';
-import 'package:e_delivery_app/Core/widgets/products_grid_view.dart';
-import 'package:e_delivery_app/Features/Auth/Presentation/Views/registeration_view.dart';
-import 'package:e_delivery_app/Features/Auth/Presentation/Views/setting_info_view.dart';
-import 'package:e_delivery_app/Features/Profile/Presentation/Views/profile_view.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/temp/components/offers_page_view/offers_page_view.dart';
 import 'package:flutter/material.dart';
@@ -22,8 +16,13 @@ class EDelivery extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: kWhiteColor,
       ),
-      home: Scaffold(
-        body: ProductsGridView(),
+      home: const Scaffold(
+        body: Padding(
+          padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
+          child: Center(
+            child: OffersPageView(),
+          ),
+        ),
       ),
     );
   }
