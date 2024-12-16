@@ -32,6 +32,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   dartz: null
   dio: ^5.7.0
+  dots_indicator: ^3.0.0
   equatable: null
   fancy_shimmer_image: null
   flutter:
