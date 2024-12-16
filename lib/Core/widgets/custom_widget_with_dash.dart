@@ -10,16 +10,18 @@ class CustomWidgetWithDash extends StatelessWidget {
     this.height = 10,
     required this.widget,
     this.spacing = 0,
+    this.crossAxisAlignment = CrossAxisAlignment.start,
   });
 
   final Color dashColor;
   final double width, height;
   final Widget widget;
   final double spacing;
+  final CrossAxisAlignment crossAxisAlignment;
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: crossAxisAlignment,
       children: [
         widget,
         SizedBox(

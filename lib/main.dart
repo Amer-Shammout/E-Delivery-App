@@ -1,5 +1,6 @@
 import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/widgets/Custom%20Product/custom_product.dart';
+import 'package:e_delivery_app/Core/widgets/Nav%20Bar/custom_nav_bar.dart';
 import 'package:e_delivery_app/Core/widgets/custom_background_container.dart';
 import 'package:e_delivery_app/Core/widgets/products_grid_view.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/registeration_view.dart';
@@ -23,7 +24,10 @@ class EDelivery extends StatelessWidget {
         scaffoldBackgroundColor: kWhiteColor,
       ),
       home: const CustomBackgroundContainer(
-        child: ProfileView(),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [CustomNavBar()],
+        ),
       ),
     );
   }

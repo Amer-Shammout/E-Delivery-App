@@ -18,13 +18,13 @@ class _CategoriesListViewState extends State<CategoriesListView> {
       padding: EdgeInsets.zero,
       itemCount: 10,
       scrollDirection: Axis.horizontal,
-      itemBuilder: (context, index) => GestureDetector(
-        onTap: () {
-          currentIndex = index;
-          setState(() {});
-        },
-        child: Padding(
-          padding: formatPadding(index),
+      itemBuilder: (context, index) => Padding(
+        padding: formatPadding(index),
+        child: GestureDetector(
+          onTap: () {
+            currentIndex = index;
+            setState(() {});
+          },
           child: CustomWidgetWithDash(
             dashColor: formatColor(index, currentIndex),
             height: 4,
