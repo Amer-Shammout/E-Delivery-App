@@ -1,92 +1,124 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/widgets/custom_widget_with_dash.dart';
+import 'package:e_delivery_app/Features/Home/Presentation/Views/home_view_body.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class CustomNavBar extends StatefulWidget {
-  const CustomNavBar({super.key});
+class NavigationBarPages extends StatefulWidget {
+  const NavigationBarPages({
+    super.key,
+  });
 
   @override
-  State<CustomNavBar> createState() => _CustomNavBarState();
+  State<NavigationBarPages> createState() => _NavigationBarPages();
 }
 
-class _CustomNavBarState extends State<CustomNavBar> {
-  int currentIndex = 0;
+class _NavigationBarPages extends State<NavigationBarPages> {
+  int index = 0;
+  late List<Widget> pages;
+  late PageController _pageController;
 
-  final List<String> activeIcons = [
-    Assets.iconsSolidHomeBold,
-    Assets.iconsSolidShops,
-    Assets.iconsSolidOrdersBold,
-    Assets.iconsSolidHeartBold,
-    Assets.iconsSolidSettingsBold
-  ];
-  final List<String> inActiveIcons = [
-    Assets.iconsOutlineHomeOutline,
-    Assets.iconsOutlineShopsOutline,
-    Assets.iconsOutlineOrdersOutline,
-    Assets.iconsOutlineHeartOutline,
-    Assets.iconsOutlineSettingOutline
-  ];
+  _onPageChanged(int i) {
+    setState(() {
+      index = i;
+    });
+  }
+
+  _onItemTapped(int i) {
+    _pageController.jumpToPage(i);
+  }
+
+  @override
+  void initState() {
+    _pageController = PageController();
+    pages = [
+      const HomeViewBody(),
+    ];
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: kSecondaryColor,
-      padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
-      child: SizedBox(
-        height: 56,
-        child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemCount: 5,
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          itemBuilder: (context, index) => Padding(
-            padding: formatPadding(index, context),
-            child: GestureDetector(
-              onTap: () {
-                currentIndex = index;
-                setState(() {});
-              },
-              child: CustomWidgetWithDash(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                width: 26,
-                height: 4,
-                spacing: 8,
-                dashColor:
-                    currentIndex == index ? kPrimaryColor : Colors.transparent,
-                widget: SvgPicture.asset(
-                  width: 32,
-                  height: 32,
-                  formatIcon(index, currentIndex),
-                  colorFilter: ColorFilter.mode(
-                      formatIconColor(index, currentIndex), BlendMode.srcATop),
-                ),
-              ),
+    return Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
+        fixedColor: kPrimaryColor,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        selectedLabelStyle: const TextStyle(fontSize: 0),
+        unselectedLabelStyle: const TextStyle(fontSize: 0),
+        backgroundColor: kSecondaryColor,
+        type: BottomNavigationBarType.fixed,
+        currentIndex: 0,
+        onTap: _onItemTapped,
+        items: [
+          navIcon(
+              icon: Assets.iconsOutlineHomeOutline,
+              activatedIcon: Assets.iconsSolidHomeBold),
+          navIcon(
+              icon: Assets.iconsOutlineShopsOutline,
+              activatedIcon: Assets.iconsSolidShops),
+          navIcon(
+              icon: Assets.iconsOutlineOrdersOutline,
+              activatedIcon: Assets.iconsSolidOrdersBold),
+          navIcon(
+              icon: Assets.iconsOutlineHeartOutline,
+              activatedIcon: Assets.iconsSolidHeartBold),
+          navIcon(
+              icon: Assets.iconsOutlineSettingOutline,
+              activatedIcon: Assets.iconsSolidSettingsBold),
+        ],
+      ),
+      body: PageView(
+        children: pages,
+        controller: _pageController,
+        onPageChanged: _onPageChanged,
+      ),
+    );
+  }
+
+  BottomNavigationBarItem navIcon(
+      {required String icon, required String activatedIcon}) {
+    return BottomNavigationBarItem(
+      label: '',
+      icon: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 16),
+        child: CustomWidgetWithDash(
+          spacing: 8,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          dashColor: Colors.transparent,
+          width: 24,
+          height: 4,
+          widget: SvgPicture.asset(
+            width: 32,
+            height: 32,
+            icon,
+            colorFilter: ColorFilter.mode(
+              kPrimaryColor.withOpacity(0.6),
+              BlendMode.srcATop,
+            ),
+          ),
+        ),
+      ),
+      activeIcon: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 16),
+        child: CustomWidgetWithDash(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          dashColor: kPrimaryColor,
+          width: 24,
+          height: 4,
+          spacing: 8,
+          widget: SvgPicture.asset(
+            width: 32,
+            height: 32,
+            activatedIcon,
+            colorFilter: const ColorFilter.mode(
+              kPrimaryColor,
+              BlendMode.srcATop,
             ),
           ),
         ),
       ),
     );
-  }
-
-  EdgeInsets formatPadding(int index, BuildContext context) {
-    return index != 0 || index != 4
-        ? EdgeInsets.symmetric(
-            horizontal: MediaQuery.sizeOf(context).width * 0.06)
-        : EdgeInsets.zero;
-  }
-
-  String formatIcon(int index, int currentIndex) {
-    if (currentIndex == index) {
-      return activeIcons[index];
-    }
-    return inActiveIcons[index];
-  }
-
-  Color formatIconColor(int index, int currentIndex) {
-    if (currentIndex == index) {
-      return kPrimaryColor;
-    }
-    return kPrimaryColor.withOpacity(0.6);
   }
 }

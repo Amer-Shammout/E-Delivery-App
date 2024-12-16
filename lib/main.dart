@@ -23,12 +23,7 @@ class EDelivery extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: kWhiteColor,
       ),
-      home: const CustomBackgroundContainer(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [CustomNavBar()],
-        ),
-      ),
+      home: const CustomBackgroundContainer(child: NavigationBarPages()),
     );
   }
 }
