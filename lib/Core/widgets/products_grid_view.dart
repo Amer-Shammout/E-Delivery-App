@@ -9,11 +9,11 @@ class ProductsGridView extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.builder(
       padding: const EdgeInsets.symmetric(
-          horizontal: kHorizontalPadding, vertical: 24),
+          horizontal: kHorizontalPadding, vertical: 56),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           mainAxisSpacing: 16,
-          childAspectRatio: 0.8,
+          childAspectRatio: 0.75,
           crossAxisSpacing: 16),
       itemBuilder: (BuildContext context, int index) => const CustomProduct(),
     );
