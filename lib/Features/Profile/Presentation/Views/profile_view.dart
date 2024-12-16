@@ -10,6 +10,7 @@ class ProfileView extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomBackgroundContainer(
       child: Scaffold(
+        backgroundColor: Colors.transparent,
         appBar: ProfileAppBar(),
         body: ProfileViewBody(),
       ),

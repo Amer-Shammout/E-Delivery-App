@@ -11,6 +11,7 @@ class LetsGetStartedView extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomBackgroundContainer(
       image: Assets.imagesLetsGetStartedTruck,
+      color: Colors.transparent,
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),
         child: Container(

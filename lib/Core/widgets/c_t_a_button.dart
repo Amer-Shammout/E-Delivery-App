@@ -13,13 +13,18 @@ class CTAButton extends StatelessWidget {
       this.icon = Assets.iconsButtonsArrow,
       this.fillColor = kPrimaryColor,
       this.strokeColor = kPrimaryColor,
-      this.contentColor = kWhiteColor});
+      this.contentColor = kWhiteColor,  this.radius=12,  this.fontSize=20,  this.iconSize = 16,  this.padding=const EdgeInsets.symmetric(vertical: 5 * kSpacing),  this.spacing = kSpacing*2.5});
   final void Function() onPressed;
   final Color fillColor;
   final Color strokeColor;
   final Color contentColor;
   final String title;
   final String icon;
+  final double radius;
+  final double fontSize;
+  final double iconSize;
+  final double spacing;
+  final EdgeInsets padding;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -29,12 +34,12 @@ class CTAButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          padding: const EdgeInsets.symmetric(vertical: 5 * kSpacing),
+          padding: padding,
           backgroundColor: fillColor,
           elevation: 0,
           shape: RoundedRectangleBorder(
             side: BorderSide(color: strokeColor),
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(radius),
           ),
         ),
         child: Row(
@@ -43,15 +48,15 @@ class CTAButton extends StatelessWidget {
             Text(
               title,
               style: FontStyles.fontsSemiBold20(context)
-                  .copyWith(color: contentColor),
+                  .copyWith(color: contentColor,fontSize: fontSize,),
             ),
-            const SizedBox(
-              width: 2.5 * kSpacing,
+             SizedBox(
+              width: spacing,
             ),
             SvgPicture.asset(
               icon,
-              height: 16,
-              width: 16,
+              height: iconSize,
+              width: iconSize,
               colorFilter: ColorFilter.mode(contentColor, BlendMode.srcATop),
             )
           ],

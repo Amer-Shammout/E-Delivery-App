@@ -26,6 +26,7 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
         children: [
           Expanded(
             child: ListView(
+              physics: const BouncingScrollPhysics(),
               children: [
                 Column(
                   children: [
@@ -36,14 +37,18 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
                     CustomTextFormField(
                       initialValue: 'Amer Shammout',
                       validator: Validation.validateFieldIfEmpty,
-                      contentPadding: 24,
+                      contentPadding: 16,
                       maxLines: 1,
                       suffixIcon: FittedBox(
                         fit: BoxFit.scaleDown,
                         child: SvgPicture.asset(
                           Assets.iconsEdit,
-                          width: 24,
-                          height: 24,
+                          width: 16,
+                          height: 16,
+                          colorFilter: const ColorFilter.mode(
+                            kBlackColor,
+                            BlendMode.srcATop,
+                          ),
                         ),
                       ),
                     ),
@@ -55,8 +60,12 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
                         fit: BoxFit.scaleDown,
                         child: SvgPicture.asset(
                           Assets.iconsEdit,
-                          width: 24,
-                          height: 24,
+                          width: 16,
+                          height: 16,
+                          colorFilter: const ColorFilter.mode(
+                            kBlackColor,
+                            BlendMode.srcATop,
+                          ),
                         ),
                       ),
                       maxLength: 9,
@@ -64,6 +73,7 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
                       textInputType: TextInputType.number,
                       prefix: const RegisterationTextFieldPrefix(),
                       validator: Validation.validatePhoneNumber,
+                      contentPadding: 16,
                     ),
                     const SizedBox(
                       height: kSpacing * 4,
