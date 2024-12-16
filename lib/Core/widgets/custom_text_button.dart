@@ -53,6 +53,7 @@ class CustomTextButtonWithIcon extends StatelessWidget {
       iconAlignment: IconAlignment.end,
       onPressed: onPressed,
       style: TextButton.styleFrom(
+          minimumSize: const Size(5, 5),
           padding: EdgeInsets.zero,
           elevation: 0,
           overlayColor: Colors.transparent),

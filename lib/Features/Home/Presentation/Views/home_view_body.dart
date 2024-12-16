@@ -1,4 +1,6 @@
 import 'package:e_delivery_app/Core/widgets/App%20Bar/custom_app_bar.dart';
+import 'package:e_delivery_app/Core/widgets/categories_list_view.dart';
+import 'package:e_delivery_app/Core/widgets/products_grid_view.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/temp/components/offers_page_view/offers_page_view.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +22,15 @@ class HomeViewBody extends StatelessWidget {
                   child: OffersPageView(),
                 ),
               ),
+              SliverToBoxAdapter(
+                child: SizedBox(
+                  height: kSpacing * 8,
+                ),
+              ),
+              SliverToBoxAdapter(
+                child: CategoriesListView(),
+              ),
+              SliverFillRemaining(child: Expanded(child: ProductsGridView())),
             ],
           ),
         )

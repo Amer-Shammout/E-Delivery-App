@@ -8,12 +8,14 @@ class ProductsGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
+      itemCount: 20,
+      physics: const NeverScrollableScrollPhysics(),
       padding: const EdgeInsets.symmetric(
-          horizontal: kHorizontalPadding, vertical: 56),
+          horizontal: kHorizontalPadding, vertical: 16),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           mainAxisSpacing: 16,
-          childAspectRatio: 0.75,
+          childAspectRatio: 0.7,
           crossAxisSpacing: 16),
       itemBuilder: (BuildContext context, int index) => const CustomProduct(),
     );

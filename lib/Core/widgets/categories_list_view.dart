@@ -14,23 +14,26 @@ class _CategoriesListViewState extends State<CategoriesListView> {
   int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      padding: EdgeInsets.zero,
-      itemCount: 10,
-      scrollDirection: Axis.horizontal,
-      itemBuilder: (context, index) => Padding(
-        padding: formatPadding(index),
-        child: GestureDetector(
-          onTap: () {
-            currentIndex = index;
-            setState(() {});
-          },
-          child: CustomWidgetWithDash(
-            dashColor: formatColor(index, currentIndex),
-            height: 4,
-            width: 40,
-            widget:
-                Text('Mobiles', style: formatTextStyle(index, currentIndex)),
+    return SizedBox(
+      height: 32,
+      child: ListView.builder(
+        padding: EdgeInsets.zero,
+        itemCount: 10,
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index) => Padding(
+          padding: formatPadding(index),
+          child: GestureDetector(
+            onTap: () {
+              currentIndex = index;
+              setState(() {});
+            },
+            child: CustomWidgetWithDash(
+              dashColor: formatColor(index, currentIndex),
+              height: 4,
+              width: 40,
+              widget:
+                  Text('Mobiles', style: formatTextStyle(index, currentIndex)),
+            ),
           ),
         ),
       ),
