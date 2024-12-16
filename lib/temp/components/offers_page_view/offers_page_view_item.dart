@@ -14,7 +14,9 @@ class OffersPageViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(kSpacing,),
+      margin: const EdgeInsets.all(
+        kSpacing,
+      ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(
           16,
@@ -57,17 +59,17 @@ class OffersPageViewItem extends StatelessWidget {
                 ),
                 const Spacer(),
                 CTAButton(
+                  enableShadow: false,
+                  style: FontStyles.fontsSemiBold10(context),
                   onPressed: () {},
                   title: 'Shop Now',
                   icon: Assets.iconsButtonsArrow,
-                  radius: 4,
+                  radius: 6,
+                  iconSize: 6,
                   fontSize: 10,
-                  iconSize: 8,
                   spacing: kSpacing,
                   padding: const EdgeInsets.symmetric(
-                    vertical: kSpacing,
-                    horizontal: kSpacing * 2,
-                  ),
+                      horizontal: kSpacing, vertical: kSpacing),
                 )
               ],
             ),

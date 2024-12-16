@@ -1,6 +1,7 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/widgets/custom_container.dart';
 import 'package:e_delivery_app/Core/widgets/custom_icon.dart';
+import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_svg/svg.dart';
@@ -84,7 +85,8 @@ class _CustomMapState extends State<CustomMap> {
           child: Center(
             child: SvgPicture.asset(
               Assets.iconsMapPoint,
-              color: Colors.red,
+              colorFilter:
+                  const ColorFilter.mode(kTeranyColor, BlendMode.srcATop),
               width: 24,
               height: 24,
             ),

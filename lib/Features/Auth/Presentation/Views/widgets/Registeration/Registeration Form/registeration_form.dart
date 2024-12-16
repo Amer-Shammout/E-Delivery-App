@@ -65,6 +65,7 @@ class _RegisterationFormState extends State<RegisterationForm> {
             height: kSpacing * 6,
           ),
           CTAButton(
+            style: FontStyles.fontsSemiBold20(context),
             onPressed: () {
               if (_formKey.currentState!.validate()) {
                 GoRouter.of(context).push(

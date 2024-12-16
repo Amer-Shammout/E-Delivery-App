@@ -1,5 +1,6 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/functions/validation.dart';
+import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
 import 'package:e_delivery_app/Core/widgets/c_t_a_button.dart';
 import 'package:e_delivery_app/Core/widgets/custom_text_form_field.dart';
 import 'package:e_delivery_app/Core/widgets/Setting%20Info/custom_image_picker.dart';
@@ -36,7 +37,7 @@ class _SettingInfoFormState extends State<SettingInfoForm> {
           const SizedBox(
             height: kSpacing * 8,
           ),
-          CustomTextFormField(
+          const CustomTextFormField(
             hint: 'Full Name',
             validator: Validation.validateFieldIfEmpty,
             contentPadding: 16,
@@ -50,6 +51,7 @@ class _SettingInfoFormState extends State<SettingInfoForm> {
             height: kSpacing * 6,
           ),
           CTAButton(
+            style: FontStyles.fontsSemiBold20(context),
             onPressed: () {
               if (_formKey.currentState!.validate()) {
               } else {
@@ -64,6 +66,4 @@ class _SettingInfoFormState extends State<SettingInfoForm> {
       ),
     );
   }
-
-  
 }

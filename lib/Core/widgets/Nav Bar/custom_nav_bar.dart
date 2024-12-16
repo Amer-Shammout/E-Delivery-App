@@ -5,16 +5,16 @@ import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class NavigationBarPages extends StatefulWidget {
-  const NavigationBarPages({
+class CustomNavBar extends StatefulWidget {
+  const CustomNavBar({
     super.key,
   });
 
   @override
-  State<NavigationBarPages> createState() => _NavigationBarPages();
+  State<CustomNavBar> createState() => _NavigationBarPages();
 }
 
-class _NavigationBarPages extends State<NavigationBarPages> {
+class _NavigationBarPages extends State<CustomNavBar> {
   int index = 0;
   late List<Widget> pages;
   late PageController _pageController;
@@ -70,9 +70,9 @@ class _NavigationBarPages extends State<NavigationBarPages> {
         ],
       ),
       body: PageView(
-        children: pages,
         controller: _pageController,
         onPageChanged: _onPageChanged,
+        children: pages,
       ),
     );
   }

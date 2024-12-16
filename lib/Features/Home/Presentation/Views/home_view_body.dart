@@ -1,4 +1,6 @@
 import 'package:e_delivery_app/Core/widgets/App%20Bar/custom_app_bar.dart';
+import 'package:e_delivery_app/constants.dart';
+import 'package:e_delivery_app/temp/components/offers_page_view/offers_page_view.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -9,8 +11,17 @@ class HomeViewBody extends StatelessWidget {
     return const Column(
       children: [
         CustomAppBar(),
-        CustomScrollView(
-          slivers: [],
+        Expanded(
+          child: CustomScrollView(
+            slivers: [
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
+                  child: OffersPageView(),
+                ),
+              ),
+            ],
+          ),
         )
       ],
     );

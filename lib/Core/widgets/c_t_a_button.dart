@@ -1,5 +1,4 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
 import 'package:e_delivery_app/Core/utils/styles/shadows.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +17,9 @@ class CTAButton extends StatelessWidget {
       this.fontSize = 20,
       this.iconSize = 16,
       this.padding = const EdgeInsets.symmetric(vertical: 5 * kSpacing),
-      this.spacing = kSpacing * 2.5});
+      this.spacing = kSpacing * 2.5,
+      required this.style,
+      this.enableShadow = true});
   final void Function() onPressed;
   final Color fillColor;
   final Color strokeColor;
@@ -30,15 +31,21 @@ class CTAButton extends StatelessWidget {
   final double iconSize;
   final double spacing;
   final EdgeInsets padding;
+  final TextStyle style;
+  final bool enableShadow;
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(boxShadow: [
-        Shadows.ctaDropShadow,
-      ]),
+      decoration: BoxDecoration(
+          boxShadow: enableShadow
+              ? [
+                  Shadows.ctaDropShadow,
+                ]
+              : null),
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
+          minimumSize: const Size(10, 10),
           padding: padding,
           backgroundColor: fillColor,
           elevation: 0,
@@ -52,7 +59,7 @@ class CTAButton extends StatelessWidget {
           children: [
             Text(
               title,
-              style: FontStyles.fontsSemiBold20(context).copyWith(
+              style: style.copyWith(
                 color: contentColor,
                 fontSize: fontSize,
               ),

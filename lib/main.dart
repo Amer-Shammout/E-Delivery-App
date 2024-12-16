@@ -1,5 +1,5 @@
+import 'package:e_delivery_app/Core/widgets/Nav%20Bar/custom_nav_bar.dart';
 import 'package:e_delivery_app/constants.dart';
-import 'package:e_delivery_app/temp/components/offers_page_view/offers_page_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,12 +16,7 @@ class EDelivery extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: kWhiteColor,
       ),
-      home: const CustomBackgroundContainer(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [CustomNavBar()],
-        ),
-      ),
+      home: const CustomNavBar(),
     );
   }
 }

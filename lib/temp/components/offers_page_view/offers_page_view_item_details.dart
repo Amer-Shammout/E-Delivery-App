@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 
 class OffersPageViewItemDetails extends StatelessWidget {
   const OffersPageViewItemDetails({
-    super.key, required this.offerDiscount,
+    super.key,
+    required this.offerDiscount,
   });
 
   final double offerDiscount;
@@ -32,9 +33,9 @@ class OffersPageViewItemDetails extends StatelessWidget {
             color: kTeranyColor,
           ),
           child: Text(
-            '${offerDiscount}%',
-            style: FontStyles.fontsBlack22(context)
-                .copyWith(color: kWhiteColor),
+            '$offerDiscount%',
+            style:
+                FontStyles.fontsBlack20(context).copyWith(color: kWhiteColor),
           ),
         ),
       ],
