@@ -1,6 +1,6 @@
 import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
-import 'package:e_delivery_app/Core/widgets/custom_title.dart';
+import 'package:e_delivery_app/Core/widgets/custom_widget_with_dash.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/temp/components/glass_button.dart';
 import 'package:flutter/material.dart';
@@ -25,14 +25,13 @@ class LetsGetStartedBody extends StatelessWidget {
               color: kWhiteColor.withOpacity(0.4),
             ),
           ),
-          CustomTitle(
-            dashColor: kWhiteColor,
-            title: 'Make Your Life Easier',
-            style: FontStyles.fontsBlack48(context).copyWith(
-              color: kWhiteColor,
-              fontSize: 70,
-              height: 0,
+          CustomWidgetWithDash(
+            widget: Text(
+              'Make Your Life Easier',
+              style: FontStyles.fontsBlack48(context)
+                  .copyWith(color: kWhiteColor, fontSize: 70),
             ),
+            dashColor: kWhiteColor,
           ),
           const Spacer(),
           GlassButton(

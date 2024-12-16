@@ -2,7 +2,7 @@ import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_background_container.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/Registeration/Registeration%20Form/registeration_form.dart';
-import 'package:e_delivery_app/Core/widgets/custom_title.dart';
+import 'package:e_delivery_app/Core/widgets/custom_widget_with_dash.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -29,10 +29,12 @@ class RegisterationViewBody extends StatelessWidget {
                     ),
                     Align(
                       alignment: Alignment.center,
-                      child: CustomTitle(
-                        title: 'WELCOME',
-                        style: FontStyles.fontsBlack48(context)
-                            .copyWith(color: kPrimaryColor),
+                      child: CustomWidgetWithDash(
+                        widget: Text(
+                          'WELCOME',
+                          style: FontStyles.fontsBlack48(context)
+                              .copyWith(color: kPrimaryColor),
+                        ),
                       ),
                     ),
                     SizedBox(

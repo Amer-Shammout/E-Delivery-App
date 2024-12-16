@@ -2,26 +2,29 @@ import 'package:e_delivery_app/Core/widgets/custom_dash.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 
-class CustomTitle extends StatelessWidget {
-  const CustomTitle({
+class CustomWidgetWithDash extends StatelessWidget {
+  const CustomWidgetWithDash({
     super.key,
-    required this.title,
-    required this.style,
     this.dashColor = kPrimaryColor,
     this.width = 75,
     this.height = 10,
+    required this.widget,
+    this.spacing = 0,
   });
 
-  final String title;
-  final TextStyle style;
   final Color dashColor;
   final double width, height;
+  final Widget widget;
+  final double spacing;
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(title, style: style),
+        widget,
+        SizedBox(
+          height: spacing,
+        ),
         CustomDash(
           width: width,
           height: height,

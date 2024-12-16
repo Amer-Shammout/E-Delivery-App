@@ -1,5 +1,5 @@
 import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
-import 'package:e_delivery_app/Core/widgets/custom_title.dart';
+import 'package:e_delivery_app/Core/widgets/custom_widget_with_dash.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -27,11 +27,14 @@ class ProductContent extends StatelessWidget {
             color: kBlackColor,
           ),
         ),
-        CustomTitle(
+        CustomWidgetWithDash(
+          widget: Text(
+            'Mobiles',
+            style:
+                FontStyles.fontsBold10(context).copyWith(color: kPrimaryColor),
+          ),
           width: 20,
           height: 2,
-          title: 'Phones',
-          style: FontStyles.fontsBold10(context).copyWith(color: kPrimaryColor),
         ),
       ],
     );
