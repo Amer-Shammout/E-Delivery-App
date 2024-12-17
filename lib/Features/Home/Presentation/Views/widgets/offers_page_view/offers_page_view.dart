@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:e_delivery_app/Core/widgets/custom_container.dart';
 import 'package:e_delivery_app/constants.dart';
-import 'package:e_delivery_app/temp/components/offers_page_view/custom_dots_indicator.dart';
-import 'package:e_delivery_app/temp/components/offers_page_view/offers_page_view_item.dart';
+import 'package:e_delivery_app/Features/Home/Presentation/Views/widgets/offers_page_view/custom_dots_indicator.dart';
+import 'package:e_delivery_app/Features/Home/Presentation/Views/widgets/offers_page_view/offers_page_view_item.dart';
 import 'package:flutter/material.dart';
 
 class OffersPageView extends StatefulWidget {

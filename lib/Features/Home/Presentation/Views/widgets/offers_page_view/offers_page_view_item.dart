@@ -1,9 +1,10 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
 import 'package:e_delivery_app/Core/widgets/c_t_a_button.dart';
+import 'package:e_delivery_app/Core/widgets/custom_card_pattern.dart';
 import 'package:e_delivery_app/constants.dart';
-import 'package:e_delivery_app/temp/components/offers_page_view/offers_page_view_item_details.dart';
-import 'package:e_delivery_app/temp/components/offers_page_view/offers_page_view_item_image.dart';
+import 'package:e_delivery_app/Features/Home/Presentation/Views/widgets/offers_page_view/offers_page_view_item_details.dart';
+import 'package:e_delivery_app/Features/Home/Presentation/Views/widgets/offers_page_view/offers_page_view_item_image.dart';
 import 'package:flutter/material.dart';
 
 class OffersPageViewItem extends StatelessWidget {
@@ -13,22 +14,9 @@ class OffersPageViewItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.all(
-        kSpacing,
-      ),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(
-          16,
-        ),
-        color: cardColor,
-        image: const DecorationImage(
-          image: AssetImage(
-            Assets.imagesCardBackground,
-          ),
-          fit: BoxFit.cover,
-        ),
-      ),
+    return CustomCardPattern(
+      margin: kSpacing,
+      cardColor: const Color(0xff295BA7),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
