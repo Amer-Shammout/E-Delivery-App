@@ -25,8 +25,8 @@ class OrderDetailsTable extends StatelessWidget {
         dataRowMinHeight: 8,
         dataRowMaxHeight: 24,
         dividerThickness: 0,
-        horizontalMargin: 0,
         headingRowHeight: 32,
+        horizontalMargin: 4,
         columns: [
           orderDetailsTableDataColumn('Product', context),
           orderDetailsTableDataColumn('Quantity', context),
@@ -48,7 +48,9 @@ DataColumn orderDetailsTableDataColumn(String title, context) {
     label: Text(
       textAlign: TextAlign.center,
       title,
-      style: FontStyles.fontsSemiBold12(context).copyWith(color: kBlackColor,),
+      style: FontStyles.fontsSemiBold12(context).copyWith(
+        color: kBlackColor,
+      ),
     ),
   );
 }
@@ -61,7 +63,8 @@ DataRow orderDetailsTableDataRow(context) {
         Text(
           textAlign: TextAlign.center,
           'Iphone 15',
-          style: FontStyles.fontsRegular10(context).copyWith(color: kBlackColor),
+          style:
+              FontStyles.fontsRegular10(context).copyWith(color: kBlackColor),
         ),
       ),
       DataCell(
@@ -69,7 +72,8 @@ DataRow orderDetailsTableDataRow(context) {
           child: Text(
             textAlign: TextAlign.center,
             '1x',
-          style: FontStyles.fontsRegular10(context).copyWith(color: kBlackColor),
+            style: FontStyles.fontsRegular10(context)
+                .copyWith(color: kBlackColor),
           ),
         ),
       ),
@@ -78,7 +82,8 @@ DataRow orderDetailsTableDataRow(context) {
           child: Text(
             textAlign: TextAlign.center,
             '2M',
-          style: FontStyles.fontsRegular10(context).copyWith(color: kBlackColor),
+            style: FontStyles.fontsRegular10(context)
+                .copyWith(color: kBlackColor),
           ),
         ),
       ),

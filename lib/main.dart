@@ -1,3 +1,7 @@
+import 'package:e_delivery_app/Core/utils/assets.dart';
+import 'package:e_delivery_app/Features/Orders/Presentation/Views/orders_view_body.dart';
+import 'package:e_delivery_app/Features/Orders/Presentation/Views/widgets/Orders%20Card/orders_card.dart';
+import 'package:e_delivery_app/Features/Orders/Presentation/Views/widgets/filter_drop_down_button.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/temp/components/offers_page_view/offers_page_view.dart';
 import 'package:flutter/material.dart';
@@ -16,13 +20,8 @@ class EDelivery extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: kWhiteColor,
       ),
-      home: const Scaffold(
-        body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
-          child: Center(
-            child: OffersPageView(),
-          ),
-        ),
+      home:  Scaffold(
+        body: OrdersViewBody(),
       ),
     );
   }
