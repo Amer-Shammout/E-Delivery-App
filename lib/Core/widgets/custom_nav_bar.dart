@@ -2,6 +2,7 @@ import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/widgets/custom_widget_with_dash.dart';
 import 'package:e_delivery_app/Core/widgets/system_status_app_bar.dart';
 import 'package:e_delivery_app/Features/Home/Presentation/Views/home_view_body.dart';
+import 'package:e_delivery_app/Features/Orders/Presentation/Views/orders_view_body.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -35,6 +36,7 @@ class _NavigationBarPages extends State<AppWithNavBar> {
     _pageController = PageController();
     pages = [
       const HomeViewBody(),
+      const OrdersViewBody(),
     ];
     super.initState();
   }
@@ -51,7 +53,7 @@ class _NavigationBarPages extends State<AppWithNavBar> {
         unselectedLabelStyle: const TextStyle(fontSize: 0),
         backgroundColor: kSecondaryColor,
         type: BottomNavigationBarType.fixed,
-        currentIndex: 0,
+        currentIndex: index,
         onTap: _onItemTapped,
         items: [
           navIcon(
@@ -71,6 +73,7 @@ class _NavigationBarPages extends State<AppWithNavBar> {
               activatedIcon: Assets.iconsSolidSettingsBold),
         ],
       ),
+
       body: PageView(
         controller: _pageController,
         onPageChanged: _onPageChanged,
