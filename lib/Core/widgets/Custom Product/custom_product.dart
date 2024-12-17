@@ -17,7 +17,7 @@ class CustomProduct extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
           image: const DecorationImage(
-            fit: BoxFit.cover,
+            fit: BoxFit.fill,
             image: AssetImage(
               Assets.imagesHomeCard,
             ),

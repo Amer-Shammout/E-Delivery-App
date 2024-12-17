@@ -10,41 +10,44 @@ class StatusAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        const ProfileAvatar(
-          padding: 16,
-        ),
-        const SizedBox(
-          width: 2 * kSpacing,
-        ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Welcome',
-              style: FontStyles.fontsRegular10(context).copyWith(
-                color: kBlackColor.withOpacity(0.4),
+    return Padding(
+      padding: const EdgeInsets.only(left: 16, right: 16, top: 16),
+      child: Row(
+        children: [
+          const ProfileAvatar(
+            padding: 16,
+          ),
+          const SizedBox(
+            width: 2 * kSpacing,
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Welcome',
+                style: FontStyles.fontsRegular10(context).copyWith(
+                  color: kBlackColor.withOpacity(0.4),
+                ),
               ),
-            ),
-            const SizedBox(
-              height: 0.5 * kSpacing,
-            ),
-            Text(
-              'Ahmad Mohsen',
-              style: FontStyles.fontsSemiBold14(context).copyWith(
-                color: kBlackColor,
+              const SizedBox(
+                height: 0.5 * kSpacing,
               ),
-            ),
-          ],
-        ),
-        const Spacer(),
-        const CustomIcon(icon: Assets.iconsCart),
-        const SizedBox(
-          width: 4 * kSpacing,
-        ),
-        const CustomIcon(icon: Assets.iconsNotification),
-      ],
+              Text(
+                'Ahmad Mohsen',
+                style: FontStyles.fontsSemiBold14(context).copyWith(
+                  color: kBlackColor,
+                ),
+              ),
+            ],
+          ),
+          const Spacer(),
+          const CustomIcon(icon: Assets.iconsCart),
+          const SizedBox(
+            width: 4 * kSpacing,
+          ),
+          const CustomIcon(icon: Assets.iconsNotification),
+        ],
+      ),
     );
   }
 }

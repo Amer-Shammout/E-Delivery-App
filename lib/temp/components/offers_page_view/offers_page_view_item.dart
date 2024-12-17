@@ -69,7 +69,7 @@ class OffersPageViewItem extends StatelessWidget {
                   fontSize: 10,
                   spacing: kSpacing,
                   padding: const EdgeInsets.symmetric(
-                      horizontal: kSpacing, vertical: kSpacing),
+                      horizontal: 2 * kSpacing, vertical: kSpacing),
                 )
               ],
             ),

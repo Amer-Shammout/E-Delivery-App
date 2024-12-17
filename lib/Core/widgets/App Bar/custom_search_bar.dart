@@ -10,30 +10,34 @@ class CustomSearchBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(
-          // ignore: missing_required_param
-          child: CustomTextFormField(
-            contentPadding: 16,
-            hint: 'Search...',
-            prefix: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: SvgPicture.asset(
-                Assets.iconsSearch,
-                width: 24,
-                height: 24,
-                colorFilter:
-                    const ColorFilter.mode(kBlackColor, BlendMode.srcATop),
+    return Container(
+      padding: const EdgeInsets.all(16),
+      color: kWhiteColor,
+      child: Row(
+        children: [
+          Expanded(
+            // ignore: missing_required_param
+            child: CustomTextFormField(
+              contentPadding: 16,
+              hint: 'Search...',
+              prefix: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: SvgPicture.asset(
+                  Assets.iconsSearch,
+                  width: 24,
+                  height: 24,
+                  colorFilter:
+                      const ColorFilter.mode(kBlackColor, BlendMode.srcATop),
+                ),
               ),
             ),
           ),
-        ),
-        const SizedBox(
-          width: 2 * kSpacing,
-        ),
-        const FilterButton(),
-      ],
+          const SizedBox(
+            width: 2 * kSpacing,
+          ),
+          const FilterButton(),
+        ],
+      ),
     );
   }
 }

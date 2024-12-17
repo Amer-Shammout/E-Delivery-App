@@ -1,6 +1,5 @@
-import 'package:e_delivery_app/Features/Orders/Presentation/Views/orders_view_body.dart';
+import 'package:e_delivery_app/Core/widgets/custom_nav_bar.dart';
 import 'package:e_delivery_app/constants.dart';
-import 'package:e_delivery_app/temp/components/offers_page_view/offers_page_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,13 +16,7 @@ class EDelivery extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: kWhiteColor,
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: kWhiteColor,
-          surfaceTintColor: Colors.transparent,
-          elevation: 0,
-          toolbarHeight: 0,
-        ),
+      home:  Scaffold(appBar: AppBar(backgroundColor: kWhiteColor,surfaceTintColor: Colors.transparent,elevation: 0,toolbarHeight: 0,),
         body: OrdersViewBody(),
       ),
     );

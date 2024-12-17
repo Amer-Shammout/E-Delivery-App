@@ -1,4 +1,5 @@
-import 'package:e_delivery_app/Core/widgets/App%20Bar/custom_app_bar.dart';
+import 'package:e_delivery_app/Core/widgets/App%20Bar/custom_search_bar.dart';
+import 'package:e_delivery_app/Core/widgets/App%20Bar/status_app_bar.dart';
 import 'package:e_delivery_app/Core/widgets/categories_list_view.dart';
 import 'package:e_delivery_app/Core/widgets/products_grid_view.dart';
 import 'package:e_delivery_app/constants.dart';
@@ -10,35 +11,27 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const CustomAppBar(),
-        Expanded(
-          child: CustomScrollView(
-            slivers: [
-              const SliverToBoxAdapter(
-                child: OffersPageView(),
-              ),
-              PinnedHeaderSliver(
-                child: Column(
-                  children: [
-                    Container(
-                      color: kWhiteColor,
-                      height: 4,
-                    ),
-                    const CategoriesListView(),
-                  ],
-                ),
-              ),
-              const ProductsGridView(),
-              const SliverToBoxAdapter(
-                child: SizedBox(
-                  height: kSpacing * 4,
-                ),
-              ),
-            ],
+    return const CustomScrollView(
+      physics: BouncingScrollPhysics(),
+      slivers: [
+        SliverToBoxAdapter(
+          child: StatusAppBar(),
+        ),
+        PinnedHeaderSliver(
+          child: CustomSearchBar(),
+        ),
+        SliverToBoxAdapter(
+          child: OffersPageView(),
+        ),
+        PinnedHeaderSliver(
+          child: CategoriesListView(),
+        ),
+        ProductsGridView(),
+        SliverToBoxAdapter(
+          child: SizedBox(
+            height: kSpacing * 4,
           ),
-        )
+        ),
       ],
     );
   }

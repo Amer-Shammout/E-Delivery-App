@@ -15,10 +15,11 @@ class _CategoriesListViewState extends State<CategoriesListView> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(top: 16, bottom: 8),
+      padding: const EdgeInsets.symmetric(vertical: 16),
       color: kWhiteColor,
-      height: 49,
+      height: 57,
       child: ListView.builder(
+        physics: const BouncingScrollPhysics(),
         padding: EdgeInsets.zero,
         itemCount: 10,
         scrollDirection: Axis.horizontal,
