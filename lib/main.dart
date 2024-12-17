@@ -1,4 +1,6 @@
+import 'package:e_delivery_app/Features/Orders/Presentation/Views/orders_view_body.dart';
 import 'package:e_delivery_app/constants.dart';
+import 'package:e_delivery_app/temp/components/offers_page_view/offers_page_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,17 +13,13 @@ class EDelivery extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         scaffoldBackgroundColor: kWhiteColor,
       ),
-      home: const Scaffold(
-        body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
-          child: Center(
-            child: OffersPageView(),
-          ),
-        ),
+      home:  Scaffold(appBar: AppBar(backgroundColor: kWhiteColor,surfaceTintColor: Colors.transparent,elevation: 0,toolbarHeight: 0,),
+        body: OrdersViewBody(),
       ),
     );
   }
