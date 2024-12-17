@@ -1,20 +1,21 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/widgets/custom_widget_with_dash.dart';
+import 'package:e_delivery_app/Core/widgets/system_status_app_bar.dart';
 import 'package:e_delivery_app/Features/Home/Presentation/Views/home_view_body.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class CustomNavBar extends StatefulWidget {
-  const CustomNavBar({
+class AppWithNavBar extends StatefulWidget {
+  const AppWithNavBar({
     super.key,
   });
 
   @override
-  State<CustomNavBar> createState() => _NavigationBarPages();
+  State<AppWithNavBar> createState() => _NavigationBarPages();
 }
 
-class _NavigationBarPages extends State<CustomNavBar> {
+class _NavigationBarPages extends State<AppWithNavBar> {
   int index = 0;
   late List<Widget> pages;
   late PageController _pageController;
@@ -41,6 +42,7 @@ class _NavigationBarPages extends State<CustomNavBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const SystemStatusAppBar(),
       bottomNavigationBar: BottomNavigationBar(
         fixedColor: kPrimaryColor,
         showSelectedLabels: false,

@@ -11,30 +11,28 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
-      child: CustomScrollView(
-        physics: BouncingScrollPhysics(),
-        slivers: [
-          SliverToBoxAdapter(
-            child: StatusAppBar(),
+    return const CustomScrollView(
+      physics: BouncingScrollPhysics(),
+      slivers: [
+        SliverToBoxAdapter(
+          child: StatusAppBar(),
+        ),
+        PinnedHeaderSliver(
+          child: CustomSearchBar(),
+        ),
+        SliverToBoxAdapter(
+          child: OffersPageView(),
+        ),
+        PinnedHeaderSliver(
+          child: CategoriesListView(),
+        ),
+        ProductsGridView(),
+        SliverToBoxAdapter(
+          child: SizedBox(
+            height: kSpacing * 4,
           ),
-          PinnedHeaderSliver(
-            child: CustomSearchBar(),
-          ),
-          SliverToBoxAdapter(
-            child: OffersPageView(),
-          ),
-          PinnedHeaderSliver(
-            child: CategoriesListView(),
-          ),
-          ProductsGridView(),
-          SliverToBoxAdapter(
-            child: SizedBox(
-              height: kSpacing * 4,
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
