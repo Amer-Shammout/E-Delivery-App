@@ -21,11 +21,7 @@ class _VerificationFormState extends State<VerificationForm> {
   AutovalidateMode _isAutoValidate = AutovalidateMode.disabled;
   bool isEnd = false;
 
-  @override
-  void dispose() {
-    _formKey.currentState!.dispose();
-    super.dispose();
-  }
+ 
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +70,7 @@ class _VerificationFormState extends State<VerificationForm> {
             style: FontStyles.fontsSemiBold20(context),
             onPressed: () {
               if (_formKey.currentState!.validate()) {
-                GoRouter.of(context).push(
+                GoRouter.of(context).pushReplacement(
                   AppRouter.kSettingInfoView,
                 );
               } else {

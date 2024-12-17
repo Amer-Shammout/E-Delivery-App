@@ -1,9 +1,11 @@
+import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_icon.dart';
 import 'package:e_delivery_app/Core/widgets/profile_avatar.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class StatusAppBar extends StatelessWidget {
   const StatusAppBar({super.key});
@@ -14,8 +16,15 @@ class StatusAppBar extends StatelessWidget {
       padding: const EdgeInsets.only(left: 16, right: 16, top: 16),
       child: Row(
         children: [
-          const ProfileAvatar(
-            padding: 16,
+          GestureDetector(
+            onTap: () {
+              GoRouter.of(context).push(
+                AppRouter.kProfileView,
+              );
+            },
+            child: const ProfileAvatar(
+              padding: 16,
+            ),
           ),
           const SizedBox(
             width: 2 * kSpacing,

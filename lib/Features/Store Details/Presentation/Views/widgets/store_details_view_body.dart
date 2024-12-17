@@ -12,7 +12,6 @@ class StoreDetailsViewBody extends StatelessWidget {
     return CustomScrollView(
       slivers: [
         const StoreDetailsAppBar(),
-
         PinnedHeaderSliver(
           child: Container(
             color: Colors.white,
@@ -26,7 +25,6 @@ class StoreDetailsViewBody extends StatelessWidget {
             ),
           ),
         ),
-        //  SliverToBoxAdapter(child: SizedBox(height: kSpacing*4,),),
         const ProductsGridView(),
       ],
     );

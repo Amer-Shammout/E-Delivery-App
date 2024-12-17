@@ -21,10 +21,7 @@ class _RegisterationFormState extends State<RegisterationForm> {
   AutovalidateMode _isAutoValidate = AutovalidateMode.disabled;
   String? phoneNumber;
   @override
-  void dispose() {
-    _formKey.currentState!.dispose();
-    super.dispose();
-  }
+  
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +65,7 @@ class _RegisterationFormState extends State<RegisterationForm> {
             style: FontStyles.fontsSemiBold20(context),
             onPressed: () {
               if (_formKey.currentState!.validate()) {
-                GoRouter.of(context).push(
+                GoRouter.of(context).pushReplacement(
                   AppRouter.kVerificationView,
                 );
               } else {

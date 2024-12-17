@@ -1,7 +1,10 @@
+import 'package:e_delivery_app/Core/widgets/custom_nav_bar.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/lets_get_started_view.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/registeration_view.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/setting_info_view.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/verification_view.dart';
+import 'package:e_delivery_app/Features/Profile/Presentation/Views/profile_view.dart';
+import 'package:e_delivery_app/Features/Store%20Details/Presentation/Views/store_details_view.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
@@ -10,6 +13,9 @@ abstract class AppRouter {
   static const kVerificationView = '/verificationView';
   static const kSettingInfoView = '/settingInfoView';
   static const kHomeView = '/homeView';
+  static const kAppRoot = '/appRoot';
+  static const kStoreDetailsView = '/storeDetails';
+  static const kProfileView = '/profileView';
   static const kSearchView = '/searchView';
 
   static final router = GoRouter(
@@ -29,6 +35,18 @@ abstract class AppRouter {
       GoRoute(
         path: kSettingInfoView,
         builder: (context, state) => const SettingInfoView(),
+      ),
+      GoRoute(
+        path: kAppRoot,
+        builder: (context, state) => const AppWithNavBar(),
+      ),
+      GoRoute(
+        path: kStoreDetailsView,
+        builder: (context, state) => const StoreDetailsView(),
+      ),
+      GoRoute(
+        path: kProfileView,
+        builder: (context, state) => const ProfileView(),
       ),
     ],
   );

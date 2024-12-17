@@ -6,6 +6,8 @@ class StoreDetailsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const StoreDetailsViewBody();
+    return const Scaffold(
+      body:StoreDetailsViewBody() ,
+    ) ;
   }
 }
