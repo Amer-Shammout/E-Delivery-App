@@ -55,4 +55,3 @@ class OrdersViewBody extends StatelessWidget {
     );
   }
 }
-
