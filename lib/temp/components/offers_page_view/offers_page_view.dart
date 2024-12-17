@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:e_delivery_app/Core/widgets/custom_container.dart';
+import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/temp/components/offers_page_view/custom_dots_indicator.dart';
 import 'package:e_delivery_app/temp/components/offers_page_view/offers_page_view_item.dart';
 import 'package:flutter/material.dart';
@@ -32,41 +33,45 @@ class _OffersPageViewState extends State<OffersPageView> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 203,
-      child: Stack(
-        children: [
-          CustomContainer(
-            padding: EdgeInsets.zero,
-            child: SizedBox(
-              height: 203,
-              child: PageView(
-                controller: _pageController,
-                onPageChanged: swipeToNextPage,
-                children: [
-                  OffersPageViewItem(
-                    cardColor: const Color(0xff295BA7).withOpacity(.2),
-                  ),
-                  OffersPageViewItem(
-                    cardColor: const Color(0xff295BA7).withOpacity(.2),
-                  ),
-                  OffersPageViewItem(
-                    cardColor: const Color(0xff295BA7).withOpacity(.2),
-                  ),
-                ],
+    return Padding(
+      padding: const EdgeInsets.only(
+          left: kHorizontalPadding, right: kHorizontalPadding, top: 16),
+      child: SizedBox(
+        height: 203,
+        child: Stack(
+          children: [
+            CustomContainer(
+              padding: EdgeInsets.zero,
+              child: SizedBox(
+                height: 203,
+                child: PageView(
+                  controller: _pageController,
+                  onPageChanged: swipeToNextPage,
+                  children: [
+                    OffersPageViewItem(
+                      cardColor: const Color(0xff295BA7).withOpacity(.2),
+                    ),
+                    OffersPageViewItem(
+                      cardColor: const Color(0xff295BA7).withOpacity(.2),
+                    ),
+                    OffersPageViewItem(
+                      cardColor: const Color(0xff295BA7).withOpacity(.2),
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(bottom: 4.0),
-            child: Align(
-              alignment: Alignment.bottomCenter,
-              child: CustomDotsIndicator(
-                currentPosition: currentPosition,
+            Padding(
+              padding: const EdgeInsets.only(bottom: 4.0),
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: CustomDotsIndicator(
+                  currentPosition: currentPosition,
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

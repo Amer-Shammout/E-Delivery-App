@@ -17,10 +17,7 @@ class HomeViewBody extends StatelessWidget {
           child: CustomScrollView(
             slivers: [
               SliverToBoxAdapter(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
-                  child: OffersPageView(),
-                ),
+                child: OffersPageView(),
               ),
               SliverToBoxAdapter(
                 child: SizedBox(
@@ -30,7 +27,17 @@ class HomeViewBody extends StatelessWidget {
               SliverToBoxAdapter(
                 child: CategoriesListView(),
               ),
-              SliverFillRemaining(child: Expanded(child: ProductsGridView())),
+              SliverToBoxAdapter(
+                child: SizedBox(
+                  height: kSpacing * 2,
+                ),
+              ),
+              ProductsGridView(),
+              SliverToBoxAdapter(
+                child: SizedBox(
+                  height: kSpacing * 4,
+                ),
+              ),
             ],
           ),
         )
