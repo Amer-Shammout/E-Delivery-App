@@ -14,8 +14,10 @@ class _CategoriesListViewState extends State<CategoriesListView> {
   int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 32,
+    return Container(
+      padding: const EdgeInsets.only(top: 16, bottom: 8),
+      color: kWhiteColor,
+      height: 49,
       child: ListView.builder(
         padding: EdgeInsets.zero,
         itemCount: 10,

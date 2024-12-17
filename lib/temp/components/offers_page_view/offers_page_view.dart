@@ -35,7 +35,10 @@ class _OffersPageViewState extends State<OffersPageView> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(
-          left: kHorizontalPadding, right: kHorizontalPadding, top: 16),
+          left: kHorizontalPadding,
+          right: kHorizontalPadding,
+          top: kHorizontalPadding,
+          bottom: 8),
       child: SizedBox(
         height: 203,
         child: Stack(
