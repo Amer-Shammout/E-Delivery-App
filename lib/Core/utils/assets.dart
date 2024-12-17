@@ -46,6 +46,10 @@ class Assets {
   /// assets/icons/delivered.svg
   static const String iconsDelivered = "assets/icons/delivered.svg";
 
+  /// Assets for iconsDropDownArrow
+  /// assets/icons/drop_down_arrow.svg
+  static const String iconsDropDownArrow = "assets/icons/drop_down_arrow.svg";
+
   /// Assets for iconsEdit
   /// assets/icons/edit.svg
   static const String iconsEdit = "assets/icons/edit.svg";
