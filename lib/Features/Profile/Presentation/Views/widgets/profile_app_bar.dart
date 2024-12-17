@@ -12,6 +12,7 @@ class ProfileAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      automaticallyImplyLeading: false,
       toolbarHeight: 80,
       backgroundColor: Colors.transparent,
       elevation: 0,
@@ -33,6 +34,7 @@ class ProfileAppBar extends StatelessWidget implements PreferredSizeWidget {
           radius: 32,
         ),
       ),
+    
     );
   }
 
