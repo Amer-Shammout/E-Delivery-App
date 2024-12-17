@@ -1,4 +1,3 @@
-import 'package:e_delivery_app/Features/Store%20Details/Presentation/Views/widgets/store_details_view_body.dart';
 import 'package:e_delivery_app/Features/Stores/Presentation/Views/stores_view_body.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +17,7 @@ class EDelivery extends StatelessWidget {
         scaffoldBackgroundColor: kWhiteColor,
       ),
       home: const Scaffold(
-        body: StoreDetailsViewBody(),
+        body: StoresViewBody(),
       ),
     );
   }
