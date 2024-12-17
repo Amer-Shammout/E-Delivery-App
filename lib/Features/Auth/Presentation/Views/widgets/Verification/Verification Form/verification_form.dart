@@ -71,6 +71,7 @@ class _VerificationFormState extends State<VerificationForm> {
             height: kSpacing * 6,
           ),
           CTAButton(
+            style: FontStyles.fontsSemiBold20(context),
             onPressed: () {
               if (_formKey.currentState!.validate()) {
                 GoRouter.of(context).push(

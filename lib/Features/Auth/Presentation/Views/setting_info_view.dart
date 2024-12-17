@@ -7,11 +7,11 @@ class SettingInfoView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body:Padding(
-        padding: const EdgeInsets.symmetric(horizontal: kHorizontalPadding),
+    return const Scaffold(
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
         child: SettingInfoBody(),
-      ) ,
+      ),
     );
   }
 }

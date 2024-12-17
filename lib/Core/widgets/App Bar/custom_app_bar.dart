@@ -13,7 +13,7 @@ class CustomAppBar extends StatelessWidget {
           left: kHorizontalPadding,
           right: kHorizontalPadding,
           top: 48,
-          bottom: 32),
+          bottom: 16),
       child: Column(
         children: [
           StatusAppBar(),

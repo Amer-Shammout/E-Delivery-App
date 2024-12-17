@@ -1,8 +1,8 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
-import 'package:e_delivery_app/Core/widgets/custom_text_button.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class ProductPrice extends StatelessWidget {
   const ProductPrice({super.key});
@@ -10,7 +10,7 @@ class ProductPrice extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      crossAxisAlignment: CrossAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Row(
@@ -30,13 +30,19 @@ class ProductPrice extends StatelessWidget {
             ),
           ],
         ),
-        CustomTextButtonWithIcon(
-          onPressed: () {},
-          title: 'Add',
-          style: FontStyles.fontsMedium12(context),
-          color: kTeranyColor,
-          size: 16,
-          icon: Assets.iconsPlus,
+        Row(
+          children: [
+            Text(
+              'Add',
+              style: FontStyles.fontsMedium12(context)
+                  .copyWith(color: kTeranyColor),
+            ),
+            SvgPicture.asset(
+              Assets.iconsPlus,
+              colorFilter:
+                  const ColorFilter.mode(kTeranyColor, BlendMode.srcATop),
+            ),
+          ],
         ),
       ],
     );

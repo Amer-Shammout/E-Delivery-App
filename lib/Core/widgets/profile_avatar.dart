@@ -10,7 +10,9 @@ class ProfileAvatar extends StatelessWidget {
       {super.key,
       this.radius = 32,
       this.userImage = Assets.imagesUser,
-      this.borderWidth = 2});
+      this.borderWidth = 2,
+      this.padding = 24});
+  final double padding;
   final double radius;
   final double borderWidth;
   final String userImage;
@@ -34,8 +36,8 @@ class ProfileAvatar extends StatelessWidget {
         radius: radius,
         child: userImage == Assets.imagesUser
             ? Padding(
-                padding:
-                    EdgeInsets.all(userImage == Assets.imagesUser ? 24 : 0),
+                padding: EdgeInsets.all(
+                    userImage == Assets.imagesUser ? padding : 0),
                 child: ClipOval(
                   child: Image.asset(
                     userImage,

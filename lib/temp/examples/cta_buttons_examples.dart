@@ -1,4 +1,5 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
+import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
 import 'package:e_delivery_app/Core/widgets/c_t_a_button.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +17,7 @@ class CTAButtonsExamples extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           CTAButton(
+            style: FontStyles.fontsSemiBold20(context),
             onPressed: () {},
             title: 'REGISTER',
           ),
@@ -23,6 +25,7 @@ class CTAButtonsExamples extends StatelessWidget {
             height: 32,
           ),
           CTAButton(
+            style: FontStyles.fontsSemiBold20(context),
             onPressed: () {},
             title: 'LOGOUT',
             fillColor: kWhiteColor.withOpacity(.8),

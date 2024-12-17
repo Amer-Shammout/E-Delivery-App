@@ -13,7 +13,7 @@ class CustomProduct extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomContainer(
       child: Container(
-        padding: const EdgeInsets.only(left: 8, right: 4, top: 8, bottom: 8),
+        padding: const EdgeInsets.only(left: 8, right: 4, top: 8, bottom: 4),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
           image: const DecorationImage(

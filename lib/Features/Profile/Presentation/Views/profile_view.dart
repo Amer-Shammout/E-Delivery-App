@@ -8,7 +8,7 @@ class ProfileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomBackgroundContainer(
+    return const CustomBackgroundContainer(
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: ProfileAppBar(),
@@ -17,4 +17,3 @@ class ProfileView extends StatelessWidget {
     );
   }
 }
-
