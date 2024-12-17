@@ -10,29 +10,26 @@ class OrdersViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
+    return const CustomScrollView(
       slivers: [
-        const SliverToBoxAdapter(
+        SliverToBoxAdapter(
           child: StatusAppBar(),
         ),
         PinnedHeaderSliver(
-          child: Container(
-            color: kWhiteColor,
-            child: const Column(
-              children: [
-                CustomSearchBar(),
-                SizedBox(
-                  height: kSpacing * 4,
-                ),
-                FilterDropDownButton(),
-                SizedBox(
-                  height: kSpacing * 4,
-                ),
-              ],
-            ),
+          child: Column(
+            children: [
+              CustomSearchBar(),
+              SizedBox(
+                height: kSpacing * 4,
+              ),
+              FilterDropDownButton(),
+              SizedBox(
+                height: kSpacing * 4,
+              ),
+            ],
           ),
         ),
-        const SliverPadding(
+        SliverPadding(
           padding: EdgeInsets.symmetric(
             horizontal: kHorizontalPadding,
           ),

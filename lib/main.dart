@@ -1,8 +1,5 @@
-import 'package:e_delivery_app/Core/widgets/custom_nav_bar.dart';
-import 'package:e_delivery_app/Features/Orders/Presentation/Views/orders_view_body.dart';
-import 'package:e_delivery_app/Features/Stores/Presentation/Views/widgets/stores_card.dart';
+import 'package:e_delivery_app/Features/Stores/Presentation/Views/stores_view_body.dart';
 import 'package:e_delivery_app/constants.dart';
-import 'package:e_delivery_app/Features/Home/Presentation/Views/widgets/offers_page_view/offers_page_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,17 +17,7 @@ class EDelivery extends StatelessWidget {
         scaffoldBackgroundColor: kWhiteColor,
       ),
       home: const Scaffold(
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            OffersPageView(),
-            SizedBox(height: kSpacing*6,),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding,),
-              child: StoresCard(),
-            ),
-          ],
-        ),
+        body: StoresViewBody(),
       ),
     );
   }
