@@ -1,3 +1,4 @@
+import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
 import 'package:e_delivery_app/Features/Settings/Data/models/settings_model.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Views/widgets/custom_radio_buttons_group.dart';
@@ -18,6 +19,16 @@ class CustomSettingsExpansionTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ExpansionTile(
+      showTrailingIcon: true,
+      trailing: SvgPicture.asset(
+        Assets.iconsDropDownArrow,
+        width: 16,
+        height: 16,
+        colorFilter: const ColorFilter.mode(
+          kBlackColor,
+          BlendMode.srcATop,
+        ),
+      ),
       iconColor: kBlackColor,
       childrenPadding: const EdgeInsets.only(
           right: kHorizontalPadding,

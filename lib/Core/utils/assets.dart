@@ -82,6 +82,10 @@ class Assets {
   /// assets/icons/gps.svg
   static const String iconsGps = "assets/icons/gps.svg";
 
+  /// Assets for iconsKnob
+  /// assets/icons/Knob.png
+  static const String iconsKnob = "assets/icons/Knob.png";
+
   /// Assets for iconsLanguage
   /// assets/icons/language.svg
   static const String iconsLanguage = "assets/icons/language.svg";
@@ -169,6 +173,10 @@ class Assets {
   /// Assets for iconsTheme
   /// assets/icons/theme.svg
   static const String iconsTheme = "assets/icons/theme.svg";
+
+  /// Assets for iconsThumb
+  /// assets/icons/thumb.svg
+  static const String iconsThumb = "assets/icons/thumb.svg";
 
   /// Assets for iconsTime
   /// assets/icons/time.svg
