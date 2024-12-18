@@ -1,3 +1,4 @@
+import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/functions/validation.dart';
 import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
@@ -7,6 +8,7 @@ import 'package:e_delivery_app/Core/widgets/Setting%20Info/custom_image_picker.d
 import 'package:e_delivery_app/Core/widgets/Setting%20Info/custom_map.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SettingInfoForm extends StatefulWidget {
   const SettingInfoForm({super.key});
@@ -20,10 +22,7 @@ class _SettingInfoFormState extends State<SettingInfoForm> {
   AutovalidateMode _isAutoValidate = AutovalidateMode.disabled;
   String? phoneNumber;
   @override
-  void dispose() {
-    _formKey.currentState!.dispose();
-    super.dispose();
-  }
+ 
 
   @override
   Widget build(BuildContext context) {
@@ -54,6 +53,8 @@ class _SettingInfoFormState extends State<SettingInfoForm> {
             style: FontStyles.fontsSemiBold20(context),
             onPressed: () {
               if (_formKey.currentState!.validate()) {
+                        GoRouter.of(context).pushReplacement(AppRouter.kAppRoot,);
+
               } else {
                 _isAutoValidate = AutovalidateMode.always;
                 setState(() {});

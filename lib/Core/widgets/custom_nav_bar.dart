@@ -75,7 +75,6 @@ class _NavigationBarPages extends State<AppWithNavBar> {
               activatedIcon: Assets.iconsSolidSettingsBold),
         ],
       ),
-
       body: PageView(
         controller: _pageController,
         onPageChanged: _onPageChanged,
@@ -119,10 +118,12 @@ class _NavigationBarPages extends State<AppWithNavBar> {
             width: 32,
             height: 32,
             activatedIcon,
-            colorFilter: const ColorFilter.mode(
-              kPrimaryColor,
-              BlendMode.srcATop,
-            ),
+            colorFilter: activatedIcon == Assets.iconsSolidShops
+                ? null
+                : const ColorFilter.mode(
+                    kPrimaryColor,
+                    BlendMode.srcATop,
+                  ),
           ),
         ),
       ),

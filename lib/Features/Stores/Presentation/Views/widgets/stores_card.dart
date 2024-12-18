@@ -1,6 +1,8 @@
+import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/widgets/custom_card_pattern.dart';
 import 'package:e_delivery_app/Core/widgets/custom_container.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class StoresCard extends StatelessWidget {
   const StoresCard(
@@ -11,15 +13,20 @@ class StoresCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomContainer(
-      child: CustomCardPattern(
-        cardColor: cardColor,
-        child: SizedBox(
-          height: 70,
-          child: AspectRatio(
-            aspectRatio: 200 / 65,
-            child: Image.asset(
-              storeLogo,
+    return GestureDetector(
+      onTap: (){
+        GoRouter.of(context).push(AppRouter.kStoreDetailsView,);
+      },
+      child: CustomContainer(
+        child: CustomCardPattern(
+          cardColor: cardColor,
+          child: SizedBox(
+            height: 70,
+            child: AspectRatio(
+              aspectRatio: 200 / 65,
+              child: Image.asset(
+                storeLogo,
+              ),
             ),
           ),
         ),
