@@ -29,7 +29,7 @@ class LetsGetStartedBody extends StatelessWidget {
             widget: Text(
               'Make Your Life Easier',
               style: FontStyles.fontsBlack48(context)
-                  .copyWith(color: kWhiteColor, fontSize: 70),
+                  .copyWith(color: kWhiteColor, fontSize: 55),
             ),
             dashColor: kWhiteColor,
           ),

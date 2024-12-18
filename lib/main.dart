@@ -1,6 +1,5 @@
 import 'package:e_delivery_app/Core/utils/app_router.dart';
-import 'package:e_delivery_app/Core/widgets/custom_nav_bar.dart';
-import 'package:e_delivery_app/Features/Stores/Presentation/Views/stores_view_body.dart';
+import 'package:e_delivery_app/Features/Product/Presentation/Views/product_view.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -13,12 +12,16 @@ class EDelivery extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        scaffoldBackgroundColor: kWhiteColor,
-      ),
-      routerConfig: AppRouter.router,
+    return MaterialApp(
+      theme: ThemeData(scaffoldBackgroundColor: kWhiteColor),
+      home: const ProductView(),
     );
+    // return MaterialApp.router(
+    //   debugShowCheckedModeBanner: false,
+    //   theme: ThemeData(
+    //     scaffoldBackgroundColor: kWhiteColor,
+    //   ),
+    //   routerConfig: AppRouter.router,
+    // );
   }
 }
