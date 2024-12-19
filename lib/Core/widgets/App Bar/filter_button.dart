@@ -14,14 +14,15 @@ class FilterButton extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
-        boxShadow: Shadows.innerShadow,
+        boxShadow: Shadows.innerShadow(context),
         borderRadius: BorderRadius.circular(16),
       ),
       child: SvgPicture.asset(
         Assets.iconsFilter,
         height: 24,
         width: 24,
-        colorFilter: const ColorFilter.mode(kBlackColor, BlendMode.srcATop),
+        colorFilter: ColorFilter.mode(
+            Theme.of(context).colorScheme.error, BlendMode.srcATop),
       ),
     );
   }

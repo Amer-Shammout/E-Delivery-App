@@ -30,6 +30,7 @@ class RegisterationViewBody extends StatelessWidget {
                     Align(
                       alignment: Alignment.center,
                       child: CustomWidgetWithDash(
+                        dashColor: Theme.of(context).colorScheme.primary,
                         widget: Text(
                           'WELCOME',
                           style: FontStyles.fontsBlack48(context)

@@ -2,9 +2,10 @@ import 'package:e_delivery_app/Features/Settings/Presentation/Views/widgets/cust
 import 'package:flutter/material.dart';
 
 class CustomRadioButtonGroup extends StatefulWidget {
-  const CustomRadioButtonGroup({super.key, required this.titles});
+  const CustomRadioButtonGroup({super.key, required this.titles, required this.caller});
 
   final List<String> titles;
+  final String caller;
 
   @override
   State<CustomRadioButtonGroup> createState() => _CustomRadioButtonGroupState();

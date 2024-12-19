@@ -3,6 +3,7 @@ import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_icon.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class ProductAppBar extends StatelessWidget {
   const ProductAppBar({super.key});
@@ -12,7 +13,12 @@ class ProductAppBar extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const CustomIcon(icon: Assets.iconsBackArrow),
+        CustomIcon(
+          icon: Assets.iconsBackArrow,
+          onPressed: () {
+            GoRouter.of(context).pop();
+          },
+        ),
         Text(
           'HOT',
           style: FontStyles.fontsBold20(context).copyWith(color: kTeranyColor),

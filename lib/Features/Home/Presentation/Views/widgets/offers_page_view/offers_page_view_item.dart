@@ -36,7 +36,7 @@ class OffersPageViewItem extends StatelessWidget {
                 Text(
                   "Special Offer",
                   style: FontStyles.fontsBold24(context).copyWith(
-                    color: kBlackColor,
+                    color: Theme.of(context).colorScheme.error,
                   ),
                 ),
                 const SizedBox(
@@ -47,6 +47,8 @@ class OffersPageViewItem extends StatelessWidget {
                 ),
                 const Spacer(),
                 CTAButton(
+                  contentColor: Theme.of(context).colorScheme.surface,
+                  fillColor: Theme.of(context).colorScheme.primary,
                   enableShadow: false,
                   style: FontStyles.fontsSemiBold10(context),
                   onPressed: () {},

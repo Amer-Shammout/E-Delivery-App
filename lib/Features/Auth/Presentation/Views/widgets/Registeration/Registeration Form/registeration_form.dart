@@ -1,3 +1,4 @@
+
 import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/functions/validation.dart';
@@ -21,8 +22,6 @@ class _RegisterationFormState extends State<RegisterationForm> {
   AutovalidateMode _isAutoValidate = AutovalidateMode.disabled;
   String? phoneNumber;
   @override
-  
-
   @override
   Widget build(BuildContext context) {
     return Form(

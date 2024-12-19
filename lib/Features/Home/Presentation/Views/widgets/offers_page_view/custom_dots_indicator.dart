@@ -16,8 +16,8 @@ class CustomDotsIndicator extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       position: currentPosition,
       decorator: DotsDecorator(
-        activeColor: kPrimaryColor,
-        color: kPrimaryColor.withOpacity(
+        activeColor: Theme.of(context).colorScheme.primary,
+        color: Theme.of(context).colorScheme.primary.withOpacity(
           .3,
         ),
         activeShape: RoundedRectangleBorder(

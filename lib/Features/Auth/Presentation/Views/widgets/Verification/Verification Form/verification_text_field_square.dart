@@ -22,7 +22,7 @@ class VerificationTextFieldSquare extends StatelessWidget {
       height: 64,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
-        boxShadow: Shadows.innerShadow,
+        boxShadow: Shadows.innerShadow(context),
       ),
       child: TextFormField(
         validator: Validation.validateFieldIfEmpty,
@@ -35,8 +35,8 @@ class VerificationTextFieldSquare extends StatelessWidget {
           LengthLimitingTextInputFormatter(1),
           FilteringTextInputFormatter.digitsOnly,
         ],
-        cursorColor: kPrimaryColor,
-        cursorErrorColor: kTeranyColor,
+        cursorColor: Theme.of(context).colorScheme.primary,
+        cursorErrorColor: Theme.of(context).colorScheme.tertiary,
         decoration: InputDecoration(
           errorStyle: const TextStyle(
             fontSize: 0,
@@ -53,8 +53,8 @@ class VerificationTextFieldSquare extends StatelessWidget {
           focusedBorder: buildBorder(
             kPrimaryColor,
           ),
-          focusedErrorBorder: buildBorder(kTeranyColor),
-          errorBorder: buildBorder(kTeranyColor),
+          focusedErrorBorder: buildBorder(Theme.of(context).colorScheme.tertiary),
+          errorBorder: buildBorder(Theme.of(context).colorScheme.tertiary),
         ),
       ),
     );

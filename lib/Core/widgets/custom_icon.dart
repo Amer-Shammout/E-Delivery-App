@@ -24,7 +24,7 @@ class CustomIcon extends StatelessWidget {
       height: radius,
       width: radius,
       decoration: BoxDecoration(
-        color: backgroundColor,
+        color: Theme.of(context).colorScheme.secondary,
         borderRadius: BorderRadius.circular(360),
         boxShadow: const [Shadows.iconDropShadow],
       ),
@@ -34,7 +34,7 @@ class CustomIcon extends StatelessWidget {
           height: iconSize,
           width: iconSize,
           icon,
-          colorFilter: ColorFilter.mode(iconColor, BlendMode.srcATop),
+          colorFilter: ColorFilter.mode(Theme.of(context).colorScheme.primary, BlendMode.srcATop),
         ),
       ),
     );

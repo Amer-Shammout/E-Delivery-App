@@ -18,7 +18,7 @@ class ProductPrice extends StatelessWidget {
             Text(
               '57,55',
               style: FontStyles.fontsBlack20(context)
-                  .copyWith(color: kTeranyColor),
+                  .copyWith(color: Theme.of(context).colorScheme.tertiary),
             ),
             const SizedBox(
               width: kSpacing,
@@ -26,7 +26,7 @@ class ProductPrice extends StatelessWidget {
             Text(
               'S.P',
               style: FontStyles.fontsRegular10(context)
-                  .copyWith(color: kTeranyColor),
+                  .copyWith(color: Theme.of(context).colorScheme.tertiary),
             ),
           ],
         ),
@@ -35,12 +35,12 @@ class ProductPrice extends StatelessWidget {
             Text(
               'Add',
               style: FontStyles.fontsMedium12(context)
-                  .copyWith(color: kTeranyColor),
+                  .copyWith(color: Theme.of(context).colorScheme.tertiary),
             ),
             SvgPicture.asset(
               Assets.iconsPlus,
               colorFilter:
-                  const ColorFilter.mode(kTeranyColor, BlendMode.srcATop),
+                   ColorFilter.mode(Theme.of(context).colorScheme.tertiary, BlendMode.srcATop),
             ),
           ],
         ),

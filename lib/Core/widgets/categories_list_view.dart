@@ -16,7 +16,7 @@ class _CategoriesListViewState extends State<CategoriesListView> {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 16),
-      color: kWhiteColor,
+      color: Theme.of(context).colorScheme.surface,
       height: 57,
       child: ListView.builder(
         physics: const BouncingScrollPhysics(),
@@ -55,15 +55,15 @@ class _CategoriesListViewState extends State<CategoriesListView> {
     if (currentIndex != index) {
       return Colors.transparent;
     }
-    return kPrimaryColor;
+    return Theme.of(context).colorScheme.primary;
   }
 
   TextStyle formatTextStyle(int index, int currentIndex) {
     if (currentIndex != index) {
       return FontStyles.fontsMedium16(context).copyWith(
-        color: kPrimaryColor.withOpacity(0.5),
+        color: Theme.of(context).colorScheme.primary.withOpacity(0.5),
       );
     }
-    return FontStyles.fontsBold16(context).copyWith(color: kPrimaryColor);
+    return FontStyles.fontsBold16(context).copyWith(color: Theme.of(context).colorScheme.primary);
   }
 }
