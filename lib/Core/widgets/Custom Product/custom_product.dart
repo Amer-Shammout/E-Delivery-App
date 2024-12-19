@@ -4,7 +4,6 @@ import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
 import 'package:e_delivery_app/Core/widgets/Custom%20Product/product_content.dart';
 import 'package:e_delivery_app/Core/widgets/Custom%20Product/product_price.dart';
 import 'package:e_delivery_app/Core/widgets/custom_container.dart';
-import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -22,8 +21,9 @@ class CustomProduct extends StatelessWidget {
           padding: const EdgeInsets.only(left: 8, right: 4, top: 8, bottom: 4),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
-            image:  DecorationImage(
-              colorFilter: ColorFilter.mode(Theme.of(context).colorScheme.secondary, BlendMode.srcATop),
+            image: DecorationImage(
+              colorFilter: ColorFilter.mode(
+                  Theme.of(context).colorScheme.secondary, BlendMode.srcATop),
               fit: BoxFit.fill,
               image: AssetImage(
                 Assets.imagesHomeCard,

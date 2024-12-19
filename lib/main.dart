@@ -1,6 +1,5 @@
 import 'package:e_delivery_app/Core/utils/app_router.dart';
-import 'package:e_delivery_app/Core/widgets/custom_nav_bar.dart';
-import 'package:e_delivery_app/Features/Stores/Presentation/Views/stores_view_body.dart';
+import 'package:e_delivery_app/Features/Cart/Presentation/Views/empty_cart_view.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +17,7 @@ class EDelivery extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: kWhiteColor,
       ),
-      routerConfig: AppRouter.router,
+      home: const EmptyCartView(),
     );
   }
 }

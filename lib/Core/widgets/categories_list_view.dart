@@ -1,6 +1,5 @@
 import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_widget_with_dash.dart';
-import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 
 class CategoriesListView extends StatefulWidget {
@@ -64,6 +63,7 @@ class _CategoriesListViewState extends State<CategoriesListView> {
         color: Theme.of(context).colorScheme.primary.withOpacity(0.5),
       );
     }
-    return FontStyles.fontsBold16(context).copyWith(color: Theme.of(context).colorScheme.primary);
+    return FontStyles.fontsBold16(context)
+        .copyWith(color: Theme.of(context).colorScheme.primary);
   }
 }

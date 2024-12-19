@@ -25,6 +25,7 @@ class FavoriteProductContent extends StatelessWidget {
           ),
         ),
         CustomWidgetWithDash(
+          dashColor: kPrimaryColor,
           width: 20,
           height: 2,
           widget: Text(

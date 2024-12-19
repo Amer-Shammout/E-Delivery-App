@@ -1,5 +1,4 @@
 import 'package:dots_indicator/dots_indicator.dart';
-import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 
 class CustomDotsIndicator extends StatelessWidget {
@@ -18,8 +17,8 @@ class CustomDotsIndicator extends StatelessWidget {
       decorator: DotsDecorator(
         activeColor: Theme.of(context).colorScheme.primary,
         color: Theme.of(context).colorScheme.primary.withOpacity(
-          .3,
-        ),
+              .3,
+            ),
         activeShape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(
             16,
