@@ -2,6 +2,7 @@ import 'package:e_delivery_app/Features/Product/Presentation/Views/Widgets/custo
 import 'package:e_delivery_app/Features/Product/Presentation/Views/Widgets/product_app_bar.dart';
 import 'package:e_delivery_app/Features/Product/Presentation/Views/Widgets/product_image_mask.dart';
 import 'package:e_delivery_app/Features/Product/Presentation/Views/Widgets/product_view_content.dart';
+import 'package:e_delivery_app/Features/Product/Presentation/Views/Widgets/product_view_content_with_scroll_effect.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -23,10 +24,7 @@ class ProductViewBody extends StatelessWidget {
           ),
           Expanded(
             flex: 2,
-            child: ProductViewContent(),
-          ),
-          SizedBox(
-            height: kSpacing * 15,
+            child: ProductViewContentWithScrollEffect(),
           ),
           CustomProductPrice(),
         ],

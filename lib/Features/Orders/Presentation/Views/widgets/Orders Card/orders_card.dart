@@ -19,7 +19,7 @@ class OrdersCard extends StatelessWidget {
         boxShadow: [
           Shadows.dropShadow.copyWith(
             blurRadius: 10,
-            offset: Offset(0, 0),
+            offset: const Offset(0, 0),
           ),
         ],
       ),

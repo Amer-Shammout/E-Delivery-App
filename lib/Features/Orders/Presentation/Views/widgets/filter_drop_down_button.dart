@@ -27,7 +27,9 @@ class _FilterDropDownButtonState extends State<FilterDropDownButton> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: kHorizontalPadding,),
+      margin: const EdgeInsets.symmetric(
+        horizontal: kHorizontalPadding,
+      ),
       height: 40,
       padding: const EdgeInsets.symmetric(
         vertical: kSpacing * 2,
