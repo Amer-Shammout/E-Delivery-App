@@ -56,6 +56,7 @@ class ProductViewContent extends StatelessWidget {
             height: 8,
           ),
           CustomWidgetWithDash(
+            dashColor: Theme.of(context).colorScheme.primary,
             width: 40,
             height: 4,
             widget: Text(

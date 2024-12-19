@@ -5,7 +5,6 @@ import 'package:e_delivery_app/Features/Home/Presentation/Views/home_view_body.d
 import 'package:e_delivery_app/Features/Orders/Presentation/Views/orders_view_body.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Views/settings_view_body.dart';
 import 'package:e_delivery_app/Features/Stores/Presentation/Views/stores_view_body.dart';
-import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -50,12 +49,12 @@ class _NavigationBarPages extends State<AppWithNavBar> {
     return Scaffold(
       appBar: const SystemStatusAppBar(),
       bottomNavigationBar: BottomNavigationBar(
-        fixedColor: kPrimaryColor,
+        fixedColor: Theme.of(context).colorScheme.primary,
         showSelectedLabels: false,
         showUnselectedLabels: false,
         selectedLabelStyle: const TextStyle(fontSize: 0),
         unselectedLabelStyle: const TextStyle(fontSize: 0),
-        backgroundColor: kSecondaryColor,
+        backgroundColor: Theme.of(context).colorScheme.secondary,
         type: BottomNavigationBarType.fixed,
         currentIndex: index,
         onTap: _onItemTapped,
@@ -102,7 +101,7 @@ class _NavigationBarPages extends State<AppWithNavBar> {
             height: 32,
             icon,
             colorFilter: ColorFilter.mode(
-              kPrimaryColor.withOpacity(0.6),
+              Theme.of(context).colorScheme.primary.withOpacity(0.6),
               BlendMode.srcATop,
             ),
           ),
@@ -112,7 +111,7 @@ class _NavigationBarPages extends State<AppWithNavBar> {
         padding: const EdgeInsets.symmetric(vertical: 16),
         child: CustomWidgetWithDash(
           crossAxisAlignment: CrossAxisAlignment.center,
-          dashColor: kPrimaryColor,
+          dashColor: Theme.of(context).colorScheme.primary,
           width: 24,
           height: 4,
           spacing: 8,
@@ -122,8 +121,8 @@ class _NavigationBarPages extends State<AppWithNavBar> {
             activatedIcon,
             colorFilter: activatedIcon == Assets.iconsSolidShops
                 ? null
-                : const ColorFilter.mode(
-                    kPrimaryColor,
+                : ColorFilter.mode(
+                    Theme.of(context).colorScheme.primary,
                     BlendMode.srcATop,
                   ),
           ),

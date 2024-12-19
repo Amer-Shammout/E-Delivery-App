@@ -17,7 +17,7 @@ class OffersPageViewItemDetails extends StatelessWidget {
         Text(
           'Up to',
           style: FontStyles.fontsRegular14(context).copyWith(
-            color: kBlackColor,
+            color: Theme.of(context).colorScheme.error,
           ),
         ),
         const SizedBox(
@@ -30,7 +30,7 @@ class OffersPageViewItemDetails extends StatelessWidget {
           ),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
-            color: kTeranyColor,
+            color: Theme.of(context).colorScheme.tertiary,
           ),
           child: Text(
             '$offerDiscount%',

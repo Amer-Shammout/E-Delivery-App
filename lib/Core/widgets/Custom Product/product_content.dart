@@ -16,7 +16,7 @@ class ProductContent extends StatelessWidget {
         Text(
           'EMMATEL',
           style: FontStyles.fontsMedium10(context).copyWith(
-            color: kBlackColor.withOpacity(0.35),
+            color: Theme.of(context).colorScheme.error.withOpacity(0.35),
           ),
         ),
         Text(
@@ -24,14 +24,15 @@ class ProductContent extends StatelessWidget {
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
           style: FontStyles.fontsBold14(context).copyWith(
-            color: kBlackColor,
+            color: Theme.of(context).colorScheme.error,
           ),
         ),
         CustomWidgetWithDash(
+          dashColor: Theme.of(context).colorScheme.primary,
           widget: Text(
             'Mobiles',
             style:
-                FontStyles.fontsBold10(context).copyWith(color: kPrimaryColor),
+                FontStyles.fontsBold10(context).copyWith(color: Theme.of(context).colorScheme.primary),
           ),
           width: 20,
           height: 2,

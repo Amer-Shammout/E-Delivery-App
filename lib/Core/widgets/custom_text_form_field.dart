@@ -42,7 +42,7 @@ class CustomTextFormField extends StatelessWidget {
           padding: EdgeInsets.all(contentPadding),
           width: MediaQuery.sizeOf(context).width,
           decoration: BoxDecoration(
-            boxShadow: Shadows.innerShadow,
+            boxShadow: Shadows.innerShadow(context),
             borderRadius: BorderRadius.circular(16),
           ),
           child: Text(
@@ -58,9 +58,9 @@ class CustomTextFormField extends StatelessWidget {
           maxLength: maxLength,
           keyboardType: textInputType,
           validator: validator,
-          style: FontStyles.fontsMedium16(context).copyWith(color: kBlackColor),
-          cursorColor: kPrimaryColor,
-          cursorErrorColor: kTeranyColor,
+          style: FontStyles.fontsMedium16(context).copyWith(color: Theme.of(context).colorScheme.error),
+          cursorColor: Theme.of(context).colorScheme.primary,
+          cursorErrorColor: Theme.of(context).colorScheme.tertiary,
           decoration: InputDecoration(
             counterText: '',
             prefixIcon: prefix,
@@ -70,11 +70,11 @@ class CustomTextFormField extends StatelessWidget {
             contentPadding: EdgeInsets.all(contentPadding),
             hintText: hint,
             hintStyle: FontStyles.fontsMedium16(context).copyWith(
-              color: kBlackColor.withOpacity(.4),
+              color: Theme.of(context).colorScheme.error,
             ),
-            focusedErrorBorder: buildBorder(kTeranyColor),
+            focusedErrorBorder: buildBorder(Theme.of(context).colorScheme.tertiary),
             enabledBorder: buildBorder(Colors.transparent),
-            focusedBorder: buildBorder(kPrimaryColor),
+            focusedBorder: buildBorder(Theme.of(context).colorScheme.primary),
             errorBorder: buildBorder(
               kTeranyColor,
             ),

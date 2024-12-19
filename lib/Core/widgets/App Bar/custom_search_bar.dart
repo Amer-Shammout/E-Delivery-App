@@ -17,7 +17,7 @@ class CustomSearchBar extends StatelessWidget {
       onTap: onTap,
       child: Container(
         padding: const EdgeInsets.all(16),
-        color: kWhiteColor,
+        color: Theme.of(context).colorScheme.surface,
         child: Row(
           children: [
             Expanded(
@@ -32,8 +32,8 @@ class CustomSearchBar extends StatelessWidget {
                     Assets.iconsSearch,
                     width: 24,
                     height: 24,
-                    colorFilter:
-                        const ColorFilter.mode(kBlackColor, BlendMode.srcATop),
+                    colorFilter: ColorFilter.mode(
+                        Theme.of(context).colorScheme.error, BlendMode.srcATop),
                   ),
                 ),
               ),

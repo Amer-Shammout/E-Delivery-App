@@ -25,6 +25,7 @@ class _SettingsItemsListViewState extends State<SettingsItemsListView> {
       children: [
         TileTemplate(
           tile: CustomSettingsExpansionTile(
+            caller: 'theme',
             settingItem: kSettingItems[0],
             titles: kAppearanceModes,
           ),
@@ -45,6 +46,7 @@ class _SettingsItemsListViewState extends State<SettingsItemsListView> {
         ),
         TileTemplate(
           tile: CustomSettingsExpansionTile(
+            caller: 'language',
             settingItem: kSettingItems[2],
             titles: kLanguages,
           ),

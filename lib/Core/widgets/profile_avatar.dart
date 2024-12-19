@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/shadows.dart';
-import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 
 class ProfileAvatar extends StatelessWidget {
@@ -21,11 +20,12 @@ class ProfileAvatar extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        border: Border.all(width: borderWidth, color: kWhiteColor),
+        border: Border.all(
+            width: borderWidth, color: Theme.of(context).colorScheme.surface),
         boxShadow: const [Shadows.iconDropShadow],
       ),
       child: CircleAvatar(
-        backgroundColor: Colors.white,
+        backgroundColor: Theme.of(context).colorScheme.surface,
         backgroundImage: userImage == Assets.imagesUser
             ? null
             : FileImage(
@@ -40,6 +40,7 @@ class ProfileAvatar extends StatelessWidget {
                     userImage == Assets.imagesUser ? padding : 0),
                 child: ClipOval(
                   child: Image.asset(
+                    color: Theme.of(context).colorScheme.primary,
                     userImage,
                   ),
                 ),

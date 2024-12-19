@@ -13,7 +13,7 @@ class CustomContainer extends StatelessWidget {
       decoration: BoxDecoration(
         boxShadow: const [Shadows.dropShadow],
         borderRadius: BorderRadius.circular(20),
-        color: kWhiteColor,
+        color: Theme.of(context).colorScheme.surface,
       ),
       child: child,
     );

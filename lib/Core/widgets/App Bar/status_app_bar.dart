@@ -35,7 +35,7 @@ class StatusAppBar extends StatelessWidget {
               Text(
                 'Welcome',
                 style: FontStyles.fontsRegular10(context).copyWith(
-                  color: kBlackColor.withOpacity(0.4),
+                  color: Theme.of(context).colorScheme.error.withOpacity(0.4),
                 ),
               ),
               const SizedBox(
@@ -44,7 +44,7 @@ class StatusAppBar extends StatelessWidget {
               Text(
                 'Ahmad Mohsen',
                 style: FontStyles.fontsSemiBold14(context).copyWith(
-                  color: kBlackColor,
+                  color: Theme.of(context).colorScheme.error,
                 ),
               ),
             ],

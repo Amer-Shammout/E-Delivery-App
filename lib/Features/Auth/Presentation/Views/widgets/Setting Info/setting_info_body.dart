@@ -19,6 +19,7 @@ class SettingInfoBody extends StatelessWidget {
           Align(
             alignment: Alignment.center,
             child: CustomWidgetWithDash(
+              dashColor: Theme.of(context).colorScheme.primary,
               widget: Text(
                 'HI DEAR!',
                 style: FontStyles.fontsBlack48(context)
