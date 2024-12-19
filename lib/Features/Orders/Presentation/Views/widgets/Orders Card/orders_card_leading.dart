@@ -5,7 +5,8 @@ import 'package:flutter_svg/svg.dart';
 
 class OrdersCardLeading extends StatelessWidget {
   const OrdersCardLeading({
-    super.key, required this.icon,
+    super.key,
+    required this.icon,
   });
 
   final String icon;
@@ -17,7 +18,11 @@ class OrdersCardLeading extends StatelessWidget {
         children: [
           Text(
             '1',
-            style: FontStyles.fontsBold24(context),
+            style: FontStyles.fontsBold24(context).copyWith(
+              color: Theme.of(context).colorScheme.error.withOpacity(
+                    .7,
+                  ),
+            ),
           ),
           const SizedBox(
             width: kSpacing * 4,
@@ -25,9 +30,9 @@ class OrdersCardLeading extends StatelessWidget {
           SizedBox(
             height: 50,
             child: VerticalDivider(
-              color: kBlackColor.withOpacity(
-                .4,
-              ),
+              color: Theme.of(context).colorScheme.error.withOpacity(
+                    .4,
+                  ),
             ),
           ),
           const SizedBox(
@@ -35,6 +40,10 @@ class OrdersCardLeading extends StatelessWidget {
           ),
           SvgPicture.asset(
             icon,
+            colorFilter: ColorFilter.mode(
+              Theme.of(context).colorScheme.error,
+              BlendMode.srcATop,
+            ),
             width: 40,
             height: 40,
           ),

@@ -21,8 +21,6 @@ class _VerificationFormState extends State<VerificationForm> {
   AutovalidateMode _isAutoValidate = AutovalidateMode.disabled;
   bool isEnd = false;
 
- 
-
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -47,9 +45,9 @@ class _VerificationFormState extends State<VerificationForm> {
                   TextSpan(
                     text: 'Please enter code\nsent to ',
                     style: FontStyles.fontsRegular16(context).copyWith(
-                      color: kPrimaryColor.withOpacity(
-                        .6,
-                      ),
+                      color: Theme.of(context).colorScheme.primary.withOpacity(
+                            .6,
+                          ),
                     ),
                   ),
                   TextSpan(
@@ -80,6 +78,7 @@ class _VerificationFormState extends State<VerificationForm> {
             },
             title: 'VERIFY',
             icon: Assets.iconsButtonsArrow,
+            fillColor: Theme.of(context).colorScheme.primary,
           ),
           const SizedBox(
             height: kSpacing * 6,
@@ -95,6 +94,7 @@ class _VerificationFormState extends State<VerificationForm> {
                   });
                 },
                 title: 'Resend code',
+                color: Theme.of(context).colorScheme.primary,
               ),
             ),
           ),

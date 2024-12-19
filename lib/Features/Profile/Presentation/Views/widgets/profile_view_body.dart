@@ -46,8 +46,8 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
                           Assets.iconsEdit,
                           width: 16,
                           height: 16,
-                          colorFilter: const ColorFilter.mode(
-                            kBlackColor,
+                          colorFilter:  ColorFilter.mode(
+                            Theme.of(context).colorScheme.error,
                             BlendMode.srcATop,
                           ),
                         ),
@@ -63,8 +63,8 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
                           Assets.iconsEdit,
                           width: 16,
                           height: 16,
-                          colorFilter: const ColorFilter.mode(
-                            kBlackColor,
+                          colorFilter:  ColorFilter.mode(
+                            Theme.of(context).colorScheme.error,
                             BlendMode.srcATop,
                           ),
                         ),
@@ -92,9 +92,9 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
             style: FontStyles.fontsSemiBold20(context),
             onPressed: () {},
             title: 'LOGOUT',
-            fillColor: kWhiteColor.withOpacity(.8),
-            strokeColor: kTeranyColor,
-            contentColor: kTeranyColor,
+            fillColor: Theme.of(context).colorScheme.surface.withOpacity(.8),
+            strokeColor: Theme.of(context).colorScheme.tertiary,
+            contentColor: Theme.of(context).colorScheme.tertiary,
             icon: Assets.iconsLogout,
           ),
           const SizedBox(

@@ -40,7 +40,7 @@ class _RegisterationFormState extends State<RegisterationForm> {
             child: Text(
               'We will send you the 4 digit verification code',
               style: FontStyles.fontsRegular16(context).copyWith(
-                color: kPrimaryColor,
+                color: Theme.of(context).colorScheme.primary,
               ),
             ),
           ),

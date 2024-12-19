@@ -11,10 +11,10 @@ class OrdersListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverList.builder(
-      itemBuilder: (context, index) => const Padding(
-        padding: EdgeInsets.only(bottom: kSpacing * 4),
+      itemBuilder: (context, index) => Padding(
+        padding: const EdgeInsets.only(bottom: kSpacing * 4),
         child: OrdersCard(
-          cardColor: kDeliveredColor,
+          cardColor: Theme.of(context).colorScheme.outline,
           icon: Assets.iconsDelivered,
         ),
       ),

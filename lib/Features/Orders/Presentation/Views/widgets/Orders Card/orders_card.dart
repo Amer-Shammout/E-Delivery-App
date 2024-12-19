@@ -24,7 +24,7 @@ class OrdersCard extends StatelessWidget {
         ],
       ),
       child: ExpansionTile(
-        iconColor: kBlackColor,
+        iconColor: Theme.of(context).colorScheme.error,
         childrenPadding: const EdgeInsets.only(
           left: kHorizontalPadding,
           right: kHorizontalPadding,
@@ -55,7 +55,7 @@ class OrdersCard extends StatelessWidget {
         title: Text(
           'Delivered!',
           style: FontStyles.fontsBold16(context).copyWith(
-            color: kBlackColor,
+            color: Theme.of(context).colorScheme.error,
           ),
         ),
         subtitle: Text.rich(
@@ -64,12 +64,12 @@ class OrdersCard extends StatelessWidget {
               TextSpan(
                 text: '6M ',
                 style: FontStyles.fontsRegular12(context)
-                    .copyWith(color: kBlackColor),
+                    .copyWith(color: Theme.of(context).colorScheme.error),
               ),
               TextSpan(
                 text: 'S.P',
                 style: FontStyles.fontsSemiBold12(context)
-                    .copyWith(color: kBlackColor),
+                    .copyWith(color: Theme.of(context).colorScheme.error),
               )
             ],
           ),

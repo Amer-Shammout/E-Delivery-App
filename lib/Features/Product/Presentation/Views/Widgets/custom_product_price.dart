@@ -23,9 +23,9 @@ class CustomProductPrice extends StatelessWidget {
                   style: FontStyles.fontsRegular16(context).copyWith(
                       height: 0,
                       decoration: TextDecoration.lineThrough,
-                      decorationColor: kTeranyColor,
+                      decorationColor: Theme.of(context).colorScheme.tertiary,
                       decorationThickness: 2,
-                      color: kTeranyColor),
+                      color: Theme.of(context).colorScheme.tertiary),
                 ),
                 Row(
                   children: [
@@ -33,7 +33,7 @@ class CustomProductPrice extends StatelessWidget {
                       '57,55',
                       style: FontStyles.fontsBlack40(context).copyWith(
                         height: 0,
-                        color: kTeranyColor,
+                        color: Theme.of(context).colorScheme.tertiary,
                       ),
                     ),
                     const SizedBox(
@@ -42,7 +42,7 @@ class CustomProductPrice extends StatelessWidget {
                     Text(
                       'S.P',
                       style: FontStyles.fontsRegular20(context)
-                          .copyWith(color: kTeranyColor),
+                          .copyWith(color: Theme.of(context).colorScheme.tertiary),
                     ),
                   ],
                 ),
@@ -55,14 +55,14 @@ class CustomProductPrice extends StatelessWidget {
             Text(
               'Add',
               style: FontStyles.fontsMedium28(context)
-                  .copyWith(color: kTeranyColor),
+                  .copyWith(color: Theme.of(context).colorScheme.tertiary),
             ),
             SvgPicture.asset(
               width: 32,
               height: 32,
               Assets.iconsPlus,
               colorFilter:
-                  const ColorFilter.mode(kTeranyColor, BlendMode.srcATop),
+                   ColorFilter.mode(Theme.of(context).colorScheme.tertiary, BlendMode.srcATop),
             ),
             const SizedBox(
               width: kSpacing * 3,

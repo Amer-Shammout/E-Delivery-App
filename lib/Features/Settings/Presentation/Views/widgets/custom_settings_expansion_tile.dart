@@ -25,12 +25,12 @@ class CustomSettingsExpansionTile extends StatelessWidget {
         Assets.iconsDropDownArrow,
         width: 12,
         height: 12,
-        colorFilter: const ColorFilter.mode(
-          kBlackColor,
+        colorFilter:  ColorFilter.mode(
+          Theme.of(context).colorScheme.error,
           BlendMode.srcATop,
         ),
       ),
-      iconColor: kBlackColor,
+      iconColor: Theme.of(context).colorScheme.error,
       childrenPadding: const EdgeInsets.only(
           right: kHorizontalPadding,
           left: kHorizontalPadding,
@@ -44,20 +44,20 @@ class CustomSettingsExpansionTile extends StatelessWidget {
       collapsedShape: Border.all(
         color: Colors.transparent,
       ),
-      collapsedBackgroundColor: kWhiteColor,
-      backgroundColor: kWhiteColor,
+      collapsedBackgroundColor: Theme.of(context).colorScheme.surface,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       title: Text(
         settingItem.title,
         style: FontStyles.fontsMedium16(context).copyWith(
-          color: kBlackColor,
+          color: Theme.of(context).colorScheme.error,
         ),
       ),
       leading: SvgPicture.asset(
         settingItem.icon,
         width: 24,
         height: 24,
-        colorFilter: const ColorFilter.mode(
-          kBlackColor,
+        colorFilter:  ColorFilter.mode(
+          Theme.of(context).colorScheme.error,
           BlendMode.srcATop,
         ),
       ),

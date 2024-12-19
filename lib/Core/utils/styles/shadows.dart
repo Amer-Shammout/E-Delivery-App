@@ -32,16 +32,14 @@ abstract class Shadows {
     blurRadius: 15,
     color: Color.fromARGB(39, 0, 0, 0),
   );
-  static List<BoxShadow> innerShadow(context) {
-    return [
-      BoxShadow(
-        color: Color.fromARGB(26, 0, 0, 0),
-      ),
-      BoxShadow(
-        color: Theme.of(context).colorScheme.secondary,
-        spreadRadius: -1,
-        blurRadius: 10,
-      )
-    ];
-  }
+  static  List<BoxShadow> innerShadow(context)  {return [
+    BoxShadow(
+      color: Color.fromARGB(26, 0, 0, 0),
+    ),
+    BoxShadow(
+      color: Theme.of(context).colorScheme.secondary,
+      spreadRadius: -1,
+      blurRadius: 10,
+    )
+  ];}
 }

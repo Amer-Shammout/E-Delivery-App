@@ -22,15 +22,15 @@ class CustomHistoryTile extends StatelessWidget {
         title: Text(
           title,
           style: FontStyles.fontsMedium16(context).copyWith(
-            color: kBlackColor,
+            color: Theme.of(context).colorScheme.error,
           ),
         ),
         leading: SvgPicture.asset(
           Assets.iconsHistory,
           width: 24,
           height: 24,
-          colorFilter: const ColorFilter.mode(
-            kBlackColor,
+          colorFilter: ColorFilter.mode(
+            Theme.of(context).colorScheme.error,
             BlendMode.srcATop,
           ),
         ),
@@ -38,8 +38,8 @@ class CustomHistoryTile extends StatelessWidget {
           Assets.iconsButtonsArrow,
           width: 12,
           height: 12,
-          colorFilter: const ColorFilter.mode(
-            kBlackColor,
+          colorFilter: ColorFilter.mode(
+            Theme.of(context).colorScheme.error,
             BlendMode.srcATop,
           ),
         ),

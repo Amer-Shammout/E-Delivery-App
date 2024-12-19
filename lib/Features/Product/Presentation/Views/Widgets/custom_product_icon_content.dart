@@ -21,7 +21,7 @@ class CustomProductIconContent extends StatelessWidget {
             height: 24,
             icon,
             colorFilter:
-                const ColorFilter.mode(kPrimaryColor, BlendMode.srcATop),
+                 ColorFilter.mode(Theme.of(context).colorScheme.primary, BlendMode.srcATop),
           ),
         ),
         const SizedBox(
@@ -30,7 +30,7 @@ class CustomProductIconContent extends StatelessWidget {
         Text(
           '$text.',
           style: FontStyles.fontsSemiBold12(context)
-              .copyWith(color: kPrimaryColor),
+              .copyWith(color: Theme.of(context).colorScheme.primary),
         ),
       ],
     );

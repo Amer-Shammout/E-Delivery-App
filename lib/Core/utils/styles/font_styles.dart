@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 abstract class FontStyles {
   static TextStyle fontsRegular10(context) {
     return TextStyle(
-      color: kPrimaryColor,
+      color: Theme.of(context).colorScheme.primary,
       fontSize: getResponsiveFontSize(context, baseFontSize: 10),
       fontFamily: kMontserrat,
       fontWeight: FontWeight.w400,
@@ -13,7 +13,7 @@ abstract class FontStyles {
 
   static TextStyle fontsRegular12(context) {
     return TextStyle(
-      color: kPrimaryColor,
+      color: Theme.of(context).colorScheme.primary,
       fontSize: getResponsiveFontSize(context, baseFontSize: 12),
       fontFamily: kMontserrat,
       fontWeight: FontWeight.w400,
@@ -22,7 +22,7 @@ abstract class FontStyles {
 
   static TextStyle fontsRegular14(context) {
     return TextStyle(
-      color: kPrimaryColor,
+      color: Theme.of(context).colorScheme.primary,
       fontSize: getResponsiveFontSize(context, baseFontSize: 14),
       fontFamily: kMontserrat,
       fontWeight: FontWeight.w400,
@@ -31,7 +31,7 @@ abstract class FontStyles {
 
   static TextStyle fontsRegular16(context) {
     return TextStyle(
-      color: kPrimaryColor,
+      color: Theme.of(context).colorScheme.primary,
       fontSize: getResponsiveFontSize(context, baseFontSize: 16),
       fontFamily: kMontserrat,
       fontWeight: FontWeight.w400,
@@ -40,7 +40,7 @@ abstract class FontStyles {
 
   static TextStyle fontsRegular8(context) {
     return TextStyle(
-      color: kPrimaryColor,
+      color: Theme.of(context).colorScheme.primary,
       fontSize: getResponsiveFontSize(context, baseFontSize: 8),
       fontFamily: kMontserrat,
       fontWeight: FontWeight.w400,
@@ -49,7 +49,7 @@ abstract class FontStyles {
 
   static TextStyle fontsRegular20(context) {
     return TextStyle(
-      color: kPrimaryColor,
+      color: Theme.of(context).colorScheme.primary,
       fontSize: getResponsiveFontSize(context, baseFontSize: 20),
       fontFamily: kMontserrat,
       fontWeight: FontWeight.w400,
@@ -58,7 +58,7 @@ abstract class FontStyles {
 
   static TextStyle fontsRegular24(context) {
     return TextStyle(
-      color: kPrimaryColor,
+      color: Theme.of(context).colorScheme.primary,
       fontSize: getResponsiveFontSize(context, baseFontSize: 24),
       fontFamily: kMontserrat,
       fontWeight: FontWeight.w400,
@@ -67,7 +67,7 @@ abstract class FontStyles {
 
   static TextStyle fontsMedium16(context) {
     return TextStyle(
-      color: kBlackColor,
+      color: Theme.of(context).colorScheme.error,
       fontSize: getResponsiveFontSize(context, baseFontSize: 16),
       fontFamily: kMontserrat,
       fontWeight: FontWeight.w500,
@@ -76,7 +76,7 @@ abstract class FontStyles {
 
   static TextStyle fontsMedium32(context) {
     return TextStyle(
-      color: kBlackColor,
+      color: Theme.of(context).colorScheme.error,
       fontSize: getResponsiveFontSize(context, baseFontSize: 32),
       fontFamily: kMontserrat,
       fontWeight: FontWeight.w500,
@@ -85,7 +85,7 @@ abstract class FontStyles {
 
   static TextStyle fontsMedium10(context) {
     return TextStyle(
-      color: kBlackColor,
+      color: Theme.of(context).colorScheme.error,
       fontSize: getResponsiveFontSize(context, baseFontSize: 10),
       fontFamily: kMontserrat,
       fontWeight: FontWeight.w500,
@@ -94,7 +94,7 @@ abstract class FontStyles {
 
   static TextStyle fontsMedium12(context) {
     return TextStyle(
-      color: kBlackColor,
+      color: Theme.of(context).colorScheme.error,
       fontSize: getResponsiveFontSize(context, baseFontSize: 12),
       fontFamily: kMontserrat,
       fontWeight: FontWeight.w500,
@@ -103,7 +103,7 @@ abstract class FontStyles {
 
   static TextStyle fontsMedium8(context) {
     return TextStyle(
-      color: kBlackColor,
+      color: Theme.of(context).colorScheme.error,
       fontSize: getResponsiveFontSize(context, baseFontSize: 8),
       fontFamily: kMontserrat,
       fontWeight: FontWeight.w500,
@@ -112,7 +112,7 @@ abstract class FontStyles {
 
   static TextStyle fontsMedium14(context) {
     return TextStyle(
-      color: kBlackColor,
+      color: Theme.of(context).colorScheme.error,
       fontSize: getResponsiveFontSize(context, baseFontSize: 14),
       fontFamily: kMontserrat,
       fontWeight: FontWeight.w500,
@@ -121,7 +121,7 @@ abstract class FontStyles {
 
   static TextStyle fontsMedium28(context) {
     return TextStyle(
-      color: kBlackColor,
+      color: Theme.of(context).colorScheme.error,
       fontSize: getResponsiveFontSize(context, baseFontSize: 28),
       fontFamily: kMontserrat,
       fontWeight: FontWeight.w500,
@@ -130,7 +130,7 @@ abstract class FontStyles {
 
   static TextStyle fontsBold14(context) {
     return TextStyle(
-      color: kPrimaryColor,
+      color: Theme.of(context).colorScheme.primary,
       fontSize: getResponsiveFontSize(context, baseFontSize: 14),
       fontFamily: kMontserrat,
       fontWeight: FontWeight.w700,
@@ -139,7 +139,7 @@ abstract class FontStyles {
 
   static TextStyle fontsBold20(context) {
     return TextStyle(
-      color: kPrimaryColor,
+      color: Theme.of(context).colorScheme.primary,
       fontSize: getResponsiveFontSize(context, baseFontSize: 20),
       fontFamily: kMontserrat,
       fontWeight: FontWeight.w700,
@@ -148,7 +148,7 @@ abstract class FontStyles {
 
   static TextStyle fontsBold28(context) {
     return TextStyle(
-      color: kPrimaryColor,
+      color: Theme.of(context).colorScheme.primary,
       fontSize: getResponsiveFontSize(context, baseFontSize: 28),
       fontFamily: kMontserrat,
       fontWeight: FontWeight.w700,
@@ -157,7 +157,7 @@ abstract class FontStyles {
 
   static TextStyle fontsBold16(context) {
     return TextStyle(
-      color: kPrimaryColor,
+      color: Theme.of(context).colorScheme.primary,
       fontSize: getResponsiveFontSize(context, baseFontSize: 16),
       fontFamily: kMontserrat,
       fontWeight: FontWeight.w700,
@@ -166,7 +166,7 @@ abstract class FontStyles {
 
   static TextStyle fontsBold10(context) {
     return TextStyle(
-      color: kPrimaryColor,
+      color: Theme.of(context).colorScheme.primary,
       fontSize: getResponsiveFontSize(context, baseFontSize: 10),
       fontFamily: kMontserrat,
       fontWeight: FontWeight.w700,
@@ -175,7 +175,7 @@ abstract class FontStyles {
 
   static TextStyle fontsBold24(context) {
     return TextStyle(
-      color: kPrimaryColor,
+      color: Theme.of(context).colorScheme.primary,
       fontSize: getResponsiveFontSize(context, baseFontSize: 24),
       fontFamily: kMontserrat,
       fontWeight: FontWeight.w700,
@@ -184,7 +184,7 @@ abstract class FontStyles {
 
   static TextStyle fontsBold12(context) {
     return TextStyle(
-      color: kPrimaryColor,
+      color: Theme.of(context).colorScheme.primary,
       fontSize: getResponsiveFontSize(context, baseFontSize: 12),
       fontFamily: kMontserrat,
       fontWeight: FontWeight.w700,
@@ -193,7 +193,7 @@ abstract class FontStyles {
 
   static TextStyle fontsBold18(context) {
     return TextStyle(
-      color: kPrimaryColor,
+      color: Theme.of(context).colorScheme.primary,
       fontSize: getResponsiveFontSize(context, baseFontSize: 18),
       fontFamily: kMontserrat,
       fontWeight: FontWeight.w700,
@@ -202,7 +202,7 @@ abstract class FontStyles {
 
   static TextStyle fontsBlack20(context) {
     return TextStyle(
-      color: kBlackColor,
+      color: Theme.of(context).colorScheme.error,
       fontSize: getResponsiveFontSize(context, baseFontSize: 20),
       fontFamily: kMontserrat,
       fontWeight: FontWeight.w900,
@@ -211,7 +211,7 @@ abstract class FontStyles {
 
   static TextStyle fontsBlack22(context) {
     return TextStyle(
-      color: kBlackColor,
+      color: Theme.of(context).colorScheme.error,
       fontSize: getResponsiveFontSize(context, baseFontSize: 22),
       fontFamily: kMontserrat,
       fontWeight: FontWeight.w900,
@@ -220,7 +220,7 @@ abstract class FontStyles {
 
   static TextStyle fontsBlack24(context) {
     return TextStyle(
-      color: kBlackColor,
+      color: Theme.of(context).colorScheme.error,
       fontSize: getResponsiveFontSize(context, baseFontSize: 24),
       fontFamily: kMontserrat,
       fontWeight: FontWeight.w900,
@@ -229,7 +229,7 @@ abstract class FontStyles {
 
   static TextStyle fontsBlack28(context) {
     return TextStyle(
-      color: kBlackColor,
+      color: Theme.of(context).colorScheme.error,
       fontSize: getResponsiveFontSize(context, baseFontSize: 28),
       fontFamily: kMontserrat,
       fontWeight: FontWeight.w900,
@@ -238,7 +238,7 @@ abstract class FontStyles {
 
   static TextStyle fontsBlack40(context) {
     return TextStyle(
-      color: kBlackColor,
+      color: Theme.of(context).colorScheme.error,
       fontSize: getResponsiveFontSize(context, baseFontSize: 40),
       fontFamily: kMontserrat,
       fontWeight: FontWeight.w900,
@@ -247,7 +247,7 @@ abstract class FontStyles {
 
   static TextStyle fontsBlack48(context) {
     return TextStyle(
-      color: kBlackColor,
+      color: Theme.of(context).colorScheme.error,
       fontSize: getResponsiveFontSize(context, baseFontSize: 48),
       fontFamily: kMontserrat,
       fontWeight: FontWeight.w900,
@@ -256,7 +256,7 @@ abstract class FontStyles {
 
   static TextStyle fontsSemiBold14(context) {
     return TextStyle(
-      color: kPrimaryColor,
+      color: Theme.of(context).colorScheme.primary,
       fontSize: getResponsiveFontSize(context, baseFontSize: 14),
       fontFamily: kMontserrat,
       fontWeight: FontWeight.w600,
@@ -265,7 +265,7 @@ abstract class FontStyles {
 
   static TextStyle fontsSemiBold10(context) {
     return TextStyle(
-      color: kPrimaryColor,
+      color: Theme.of(context).colorScheme.primary,
       fontSize: getResponsiveFontSize(context, baseFontSize: 14),
       fontFamily: kMontserrat,
       fontWeight: FontWeight.w600,
@@ -274,7 +274,7 @@ abstract class FontStyles {
 
   static TextStyle fontsSemiBold12(context) {
     return TextStyle(
-      color: kPrimaryColor,
+      color: Theme.of(context).colorScheme.primary,
       fontSize: getResponsiveFontSize(context, baseFontSize: 12),
       fontFamily: kMontserrat,
       fontWeight: FontWeight.w600,
@@ -283,7 +283,7 @@ abstract class FontStyles {
 
   static TextStyle fontsSemiBold20(context) {
     return TextStyle(
-      color: kPrimaryColor,
+      color: Theme.of(context).colorScheme.primary,
       fontSize: getResponsiveFontSize(context, baseFontSize: 20),
       fontFamily: kMontserrat,
       fontWeight: FontWeight.w600,
@@ -292,7 +292,7 @@ abstract class FontStyles {
 
   static TextStyle fontsSemiBold18(context) {
     return TextStyle(
-      color: kPrimaryColor,
+      color: Theme.of(context).colorScheme.primary,
       fontSize: getResponsiveFontSize(context, baseFontSize: 18),
       fontFamily: kMontserrat,
       fontWeight: FontWeight.w600,
@@ -301,7 +301,7 @@ abstract class FontStyles {
 
   static TextStyle fontsSemiBold16(context) {
     return TextStyle(
-      color: kPrimaryColor,
+      color: Theme.of(context).colorScheme.primary,
       fontSize: getResponsiveFontSize(context, baseFontSize: 16),
       fontFamily: kMontserrat,
       fontWeight: FontWeight.w600,

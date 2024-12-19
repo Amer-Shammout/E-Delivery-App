@@ -22,15 +22,15 @@ class CustomSettingTile extends StatelessWidget {
       title: Text(
         settingItem.title,
         style: FontStyles.fontsMedium16(context).copyWith(
-          color: kBlackColor,
+          color: Theme.of(context).colorScheme.error,
         ),
       ),
       leading: SvgPicture.asset(
         settingItem.icon,
         width: 24,
         height: 24,
-        colorFilter: const ColorFilter.mode(
-          kBlackColor,
+        colorFilter:  ColorFilter.mode(
+          Theme.of(context).colorScheme.error,
           BlendMode.srcATop,
         ),
       ),

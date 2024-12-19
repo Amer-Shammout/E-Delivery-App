@@ -12,6 +12,7 @@ class VerificationViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomBackgroundContainer(
+      color: Theme.of(context).colorScheme.surface,
       child: ListView(
         children: [
           Stack(
@@ -31,8 +32,8 @@ class VerificationViewBody extends StatelessWidget {
                         dashColor: Theme.of(context).colorScheme.primary,
                         widget: Text(
                           'WAIT...',
-                          style: FontStyles.fontsBlack48(context)
-                              .copyWith(color: kPrimaryColor),
+                          style: FontStyles.fontsBlack48(context).copyWith(
+                              color: Theme.of(context).colorScheme.primary),
                         ),
                       ),
                     ),
