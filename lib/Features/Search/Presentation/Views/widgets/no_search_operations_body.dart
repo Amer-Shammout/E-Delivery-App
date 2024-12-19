@@ -17,8 +17,8 @@ class NoSearchOperationsBody extends StatelessWidget {
           height: MediaQuery.sizeOf(context).height * .15,
         ),
         Image.asset(
-          width: 300,
-          height: 300,
+          width: MediaQuery.sizeOf(context).width * .7,
+          height: MediaQuery.sizeOf(context).width * .7,
           Assets.imagesMagnifier,
         ),
         Text(

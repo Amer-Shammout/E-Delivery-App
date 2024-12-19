@@ -3,7 +3,9 @@ import 'package:e_delivery_app/Features/Auth/Presentation/Views/lets_get_started
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/registeration_view.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/setting_info_view.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/verification_view.dart';
+import 'package:e_delivery_app/Features/Product/Presentation/Views/product_view.dart';
 import 'package:e_delivery_app/Features/Profile/Presentation/Views/profile_view.dart';
+import 'package:e_delivery_app/Features/Search/Presentation/Views/search_view.dart';
 import 'package:e_delivery_app/Features/Store%20Details/Presentation/Views/store_details_view.dart';
 import 'package:go_router/go_router.dart';
 
@@ -17,6 +19,7 @@ abstract class AppRouter {
   static const kStoreDetailsView = '/storeDetails';
   static const kProfileView = '/profileView';
   static const kSearchView = '/searchView';
+  static const kProductDetailsView = '/productDetailsView';
 
   static final router = GoRouter(
     routes: [
@@ -47,6 +50,14 @@ abstract class AppRouter {
       GoRoute(
         path: kProfileView,
         builder: (context, state) => const ProfileView(),
+      ),
+      GoRoute(
+        path: kSearchView,
+        builder: (context, state) => const SearchView(),
+      ),
+      GoRoute(
+        path: kProductDetailsView,
+        builder: (context, state) => const ProductView(),
       ),
     ],
   );

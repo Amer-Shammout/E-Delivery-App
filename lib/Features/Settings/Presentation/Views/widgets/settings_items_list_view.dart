@@ -2,7 +2,7 @@ import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Views/widgets/custom_settings_expansion_tile.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Views/widgets/custom_settings_tile.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Views/widgets/custom_switch.dart';
-import 'package:e_delivery_app/Features/Settings/Presentation/Views/widgets/setting_item_template.dart';
+import 'package:e_delivery_app/Core/widgets/tile_template.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -23,13 +23,13 @@ class _SettingsItemsListViewState extends State<SettingsItemsListView> {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        SettingItemTemplate(
+        TileTemplate(
           tile: CustomSettingsExpansionTile(
             settingItem: kSettingItems[0],
             titles: kAppearanceModes,
           ),
         ),
-        SettingItemTemplate(
+        TileTemplate(
           tile: CustomSettingTile(
             onTap: () {},
             settingItem: kSettingItems[1],
@@ -43,20 +43,20 @@ class _SettingsItemsListViewState extends State<SettingsItemsListView> {
             ),
           ),
         ),
-        SettingItemTemplate(
+        TileTemplate(
           tile: CustomSettingsExpansionTile(
             settingItem: kSettingItems[2],
             titles: kLanguages,
           ),
         ),
-        SettingItemTemplate(
+        TileTemplate(
           tile: CustomSettingTile(
             onTap: () {},
             settingItem: kSettingItems[3],
             trailing: SvgPicture.asset(
               Assets.iconsButtonsArrow,
-              width: 16,
-              height: 16,
+              width: 12,
+              height: 12,
               colorFilter: const ColorFilter.mode(
                 kBlackColor,
                 BlendMode.srcATop,
@@ -64,14 +64,14 @@ class _SettingsItemsListViewState extends State<SettingsItemsListView> {
             ),
           ),
         ),
-        SettingItemTemplate(
+        TileTemplate(
           tile: CustomSettingTile(
             onTap: () {},
             settingItem: kSettingItems[4],
             trailing: SvgPicture.asset(
               Assets.iconsButtonsArrow,
-              width: 16,
-              height: 16,
+              width: 12,
+              height: 12,
               colorFilter: const ColorFilter.mode(
                 kBlackColor,
                 BlendMode.srcATop,

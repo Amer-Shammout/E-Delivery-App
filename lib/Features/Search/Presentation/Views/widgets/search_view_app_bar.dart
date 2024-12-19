@@ -29,7 +29,9 @@ class SearchViewAppBar extends StatelessWidget {
               radius: 32,
             ),
           ),
-          const Expanded(child: CustomSearchBar()),
+          const Expanded(
+            child: CustomSearchBar(),
+          ),
         ],
       ),
     );

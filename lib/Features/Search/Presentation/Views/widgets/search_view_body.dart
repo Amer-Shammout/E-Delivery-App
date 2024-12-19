@@ -6,10 +6,11 @@ class SearchViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       children: [
-        const SearchViewAppBar(),
+        SearchViewAppBar(),
         // NoSearchOperationsBody(),
+        // Expanded(child: SearchHistoryBody(),)
       ],
     );
   }
