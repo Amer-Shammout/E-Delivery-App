@@ -13,9 +13,28 @@ class ProductViewContentWithScrollEffect extends StatelessWidget {
           child: ProductViewContent(),
         ),
         Align(
+          alignment: Alignment.topCenter,
+          child: Container(
+            height: 16,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.bottomCenter,
+                end: Alignment.topCenter,
+                colors: [
+                  kSecondaryColor.withOpacity(0.25),
+                  kSecondaryColor.withOpacity(0.5),
+                  kSecondaryColor.withOpacity(0.75),
+                  kSecondaryColor,
+                  kSecondaryColor,
+                ],
+              ),
+            ),
+          ),
+        ),
+        Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            height: 40,
+            height: 44,
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
