@@ -17,7 +17,7 @@ class TileTemplate extends StatelessWidget {
           ),
           child: Divider(
             height: 0,
-            color: kBlackColor.withOpacity(.2),
+            color: Theme.of(context).colorScheme.error.withOpacity(.2),
           ),
         ),
       ],

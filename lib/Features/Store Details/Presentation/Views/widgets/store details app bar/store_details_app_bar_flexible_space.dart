@@ -13,6 +13,7 @@ class StoreDetailsAppBarFlexibleSpace extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlexibleSpaceBar(
       background: CustomBackgroundContainer(
+        color: Theme.of(context).colorScheme.surface,
         child: Padding(
           padding: const EdgeInsets.only(
             top: kSpacing * 24,
@@ -30,13 +31,13 @@ class StoreDetailsAppBarFlexibleSpace extends StatelessWidget {
               Text(
                 'Samatel Store',
                 style: FontStyles.fontsBold18(context)
-                    .copyWith(color: kBlackColor),
+                    .copyWith(color: Theme.of(context).colorScheme.error),
                 textAlign: TextAlign.center,
               ),
               Text(
                 '100 Items',
                 style: FontStyles.fontsRegular12(context)
-                    .copyWith(color: kBlackColor.withOpacity(.6)),
+                    .copyWith(color: Theme.of(context).colorScheme.error.withOpacity(.6)),
                 textAlign: TextAlign.center,
               ),
             ],

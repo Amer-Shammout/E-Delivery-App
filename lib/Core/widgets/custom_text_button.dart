@@ -8,11 +8,12 @@ class CustomTextButton extends StatelessWidget {
   const CustomTextButton({
     super.key,
     required this.onPressed,
-    required this.title,
+    required this.title, required this.color,
   });
 
   final VoidCallback onPressed;
   final String title;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,7 @@ class CustomTextButton extends StatelessWidget {
           overlayColor: Colors.transparent),
       child: Text(
         title,
-        style: FontStyles.fontsBold16(context),
+        style: FontStyles.fontsBold16(context).copyWith(color: color),
       ),
     );
   }

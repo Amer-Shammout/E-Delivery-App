@@ -35,7 +35,7 @@ class OffersPageViewItemDetails extends StatelessWidget {
           child: Text(
             '$offerDiscount%',
             style:
-                FontStyles.fontsBlack20(context).copyWith(color: kWhiteColor),
+                FontStyles.fontsBlack20(context).copyWith(color: Theme.of(context).colorScheme.surface),
           ),
         ),
       ],

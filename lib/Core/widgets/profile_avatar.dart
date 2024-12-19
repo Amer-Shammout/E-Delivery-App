@@ -21,11 +21,11 @@ class ProfileAvatar extends StatelessWidget {
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         border: Border.all(
-            width: borderWidth, color: Theme.of(context).colorScheme.surface),
+            width: borderWidth, color: Theme.of(context).colorScheme.secondary),
         boxShadow: const [Shadows.iconDropShadow],
       ),
       child: CircleAvatar(
-        backgroundColor: Theme.of(context).colorScheme.surface,
+        backgroundColor: Theme.of(context).colorScheme.secondary,
         backgroundImage: userImage == Assets.imagesUser
             ? null
             : FileImage(

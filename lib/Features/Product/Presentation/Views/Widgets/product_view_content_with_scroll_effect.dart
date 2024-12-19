@@ -1,5 +1,4 @@
 import 'package:e_delivery_app/Features/Product/Presentation/Views/Widgets/product_view_content.dart';
-import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 
 class ProductViewContentWithScrollEffect extends StatelessWidget {
@@ -21,11 +20,11 @@ class ProductViewContentWithScrollEffect extends StatelessWidget {
                 begin: Alignment.bottomCenter,
                 end: Alignment.topCenter,
                 colors: [
-                  kSecondaryColor.withOpacity(0.25),
-                  kSecondaryColor.withOpacity(0.5),
-                  kSecondaryColor.withOpacity(0.75),
-                  kSecondaryColor,
-                  kSecondaryColor,
+                  Theme.of(context).colorScheme.secondary.withOpacity(0.25),
+                  Theme.of(context).colorScheme.secondary.withOpacity(0.5),
+                  Theme.of(context).colorScheme.secondary.withOpacity(0.75),
+                  Theme.of(context).colorScheme.secondary,
+                  Theme.of(context).colorScheme.secondary,
                 ],
               ),
             ),
@@ -40,11 +39,11 @@ class ProductViewContentWithScrollEffect extends StatelessWidget {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  kSecondaryColor.withOpacity(0.25),
-                  kSecondaryColor.withOpacity(0.5),
-                  kSecondaryColor.withOpacity(0.75),
-                  kSecondaryColor,
-                  kSecondaryColor,
+                  Theme.of(context).colorScheme.secondary.withOpacity(0.25),
+                  Theme.of(context).colorScheme.secondary.withOpacity(0.5),
+                  Theme.of(context).colorScheme.secondary.withOpacity(0.75),
+                  Theme.of(context).colorScheme.secondary,
+                  Theme.of(context).colorScheme.secondary,
                 ],
               ),
             ),

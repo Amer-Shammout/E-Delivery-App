@@ -1,6 +1,5 @@
 import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
 import 'package:e_delivery_app/Core/utils/styles/shadows.dart';
-import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextFormField extends StatelessWidget {
@@ -76,7 +75,7 @@ class CustomTextFormField extends StatelessWidget {
             enabledBorder: buildBorder(Colors.transparent),
             focusedBorder: buildBorder(Theme.of(context).colorScheme.primary),
             errorBorder: buildBorder(
-              kTeranyColor,
+              Theme.of(context).colorScheme.tertiary,
             ),
             disabledBorder: buildBorder(Colors.transparent),
           ),

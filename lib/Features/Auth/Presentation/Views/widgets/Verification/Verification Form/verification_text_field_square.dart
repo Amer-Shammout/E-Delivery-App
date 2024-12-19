@@ -1,7 +1,6 @@
 import 'package:e_delivery_app/Core/utils/functions/validation.dart';
 import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
 import 'package:e_delivery_app/Core/utils/styles/shadows.dart';
-import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -51,7 +50,7 @@ class VerificationTextFieldSquare extends StatelessWidget {
             Colors.transparent,
           ),
           focusedBorder: buildBorder(
-            kPrimaryColor,
+            Theme.of(context).colorScheme.primary,
           ),
           focusedErrorBorder: buildBorder(Theme.of(context).colorScheme.tertiary),
           errorBorder: buildBorder(Theme.of(context).colorScheme.tertiary),

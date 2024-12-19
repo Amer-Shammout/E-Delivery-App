@@ -1,5 +1,4 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
-import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 
 class ProductImageMask extends StatelessWidget {
@@ -38,13 +37,13 @@ class ProductImageMask extends StatelessWidget {
                 Colors.transparent,
                 Colors.transparent,
                 Colors.transparent,
-                kSecondaryColor.withOpacity(0.01),
-                kSecondaryColor.withOpacity(0.15),
-                kSecondaryColor.withOpacity(0.5),
-                kSecondaryColor.withOpacity(0.75),
-                kSecondaryColor,
-                kSecondaryColor,
-                kSecondaryColor,
+                Theme.of(context).colorScheme.secondary.withOpacity(0.01),
+                Theme.of(context).colorScheme.secondary.withOpacity(0.15),
+                Theme.of(context).colorScheme.secondary.withOpacity(0.5),
+                Theme.of(context).colorScheme.secondary.withOpacity(0.75),
+                Theme.of(context).colorScheme.secondary,
+                Theme.of(context).colorScheme.secondary,
+                Theme.of(context).colorScheme.secondary,
               ],
             ),
           ),

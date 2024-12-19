@@ -28,7 +28,7 @@ class CustomRadioButtonListTile extends StatelessWidget {
         title: Text(
           title,
           style:
-              FontStyles.fontsRegular16(context).copyWith(color: kBlackColor),
+              FontStyles.fontsRegular16(context).copyWith(color: Theme.of(context).colorScheme.error),
         ),
       ),
     );
@@ -41,9 +41,9 @@ class CustomRadioButtonListTile extends StatelessWidget {
       width: 16,
       height: 16,
       decoration: BoxDecoration(
-        color: isSelected ? kPrimaryColor : Colors.transparent,
+        color: isSelected ? Theme.of(context).colorScheme.primary : Colors.transparent,
         borderRadius: BorderRadius.circular(4),
-        border: Border.all(color: kPrimaryColor),
+        border: Border.all(color: Theme.of(context).colorScheme.primary),
       ),
       child: Center(
         child: isSelected

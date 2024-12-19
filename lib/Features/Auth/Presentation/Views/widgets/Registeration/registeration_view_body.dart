@@ -14,6 +14,7 @@ class RegisterationViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomBackgroundContainer(
+      color: Theme.of(context).colorScheme.surface,
       child: ListView(
         children: [
           Stack(
@@ -34,7 +35,7 @@ class RegisterationViewBody extends StatelessWidget {
                         widget: Text(
                           'WELCOME',
                           style: FontStyles.fontsBlack48(context)
-                              .copyWith(color: kPrimaryColor),
+                              .copyWith(color: Theme.of(context).colorScheme.primary),
                         ),
                       ),
                     ),

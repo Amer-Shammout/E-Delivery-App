@@ -1,4 +1,3 @@
-import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 
 abstract class Shadows {
@@ -34,7 +33,7 @@ abstract class Shadows {
     color: Color.fromARGB(39, 0, 0, 0),
   );
   static  List<BoxShadow> innerShadow(context)  {return [
-    BoxShadow(
+    const BoxShadow(
       color: Color.fromARGB(26, 0, 0, 0),
     ),
     BoxShadow(

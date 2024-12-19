@@ -43,6 +43,7 @@ class _CustomImagePickerState extends State<CustomImagePicker> {
             onPressed: () {},
             title: 'Upload photo',
             style: FontStyles.fontsRegular16(context),
+            color: Theme.of(context).colorScheme.primary,
           ),
         ],
       ),

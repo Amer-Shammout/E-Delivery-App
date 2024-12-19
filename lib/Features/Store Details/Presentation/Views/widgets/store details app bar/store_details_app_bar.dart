@@ -17,10 +17,13 @@ class StoreDetailsAppBar extends StatelessWidget {
       surfaceTintColor: Colors.transparent,
       pinned: false,
       floating: true,
-      backgroundColor: kWhiteColor,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       automaticallyImplyLeading: false,
       leading: Padding(
-        padding: const EdgeInsets.only(left: kHorizontalPadding,top: 16,),
+        padding: const EdgeInsets.only(
+          left: kHorizontalPadding,
+          top: 16,
+        ),
         child: Center(
           child: CustomIcon(
             icon: Assets.iconsBackArrow,
@@ -36,7 +39,6 @@ class StoreDetailsAppBar extends StatelessWidget {
             right: kHorizontalPadding,
             top: 16,
           ),
-          
           child: CustomIcon(
             icon: Assets.iconsCart,
           ),
@@ -47,4 +49,3 @@ class StoreDetailsAppBar extends StatelessWidget {
     );
   }
 }
-

@@ -1,6 +1,5 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Features/Product/Presentation/Views/Widgets/product_view_body.dart';
-import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -36,11 +35,15 @@ class _ProductViewState extends State<ProductView> with WidgetsBindingObserver {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
-        color: kWhiteColor,
+      decoration: BoxDecoration(
+        color: Theme.of(context).colorScheme.surface,
         image: DecorationImage(
+          colorFilter: ColorFilter.mode(
+              Theme.of(context).colorScheme.secondary, BlendMode.srcATop),
           fit: BoxFit.cover,
-          image: AssetImage(Assets.imagesProductCard),
+          image: const AssetImage(
+            Assets.imagesProductCard,
+          ),
         ),
       ),
       child: const SafeArea(

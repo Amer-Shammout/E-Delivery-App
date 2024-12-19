@@ -19,7 +19,7 @@ class OrdersViewBody extends StatelessWidget {
         ),
         PinnedHeaderSliver(
           child: Container(
-            color: kWhiteColor,
+            color: Theme.of(context).colorScheme.surface,
             child: Column(
               children: [
                 CustomSearchBar(

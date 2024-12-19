@@ -59,8 +59,8 @@ class _SettingsItemsListViewState extends State<SettingsItemsListView> {
               Assets.iconsButtonsArrow,
               width: 12,
               height: 12,
-              colorFilter: const ColorFilter.mode(
-                kBlackColor,
+              colorFilter:  ColorFilter.mode(
+                Theme.of(context).colorScheme.error,
                 BlendMode.srcATop,
               ),
             ),
@@ -74,8 +74,8 @@ class _SettingsItemsListViewState extends State<SettingsItemsListView> {
               Assets.iconsButtonsArrow,
               width: 12,
               height: 12,
-              colorFilter: const ColorFilter.mode(
-                kBlackColor,
+              colorFilter:  ColorFilter.mode(
+                Theme.of(context).colorScheme.error,
                 BlendMode.srcATop,
               ),
             ),

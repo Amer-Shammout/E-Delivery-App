@@ -37,7 +37,7 @@ class _FilterDropDownButtonState extends State<FilterDropDownButton> {
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
-        color: kWhiteColor,
+        color: Theme.of(context).colorScheme.surface,
         boxShadow: const [Shadows.dropDownButtonDropShadow],
       ),
       child: DropdownButton(
@@ -45,8 +45,8 @@ class _FilterDropDownButtonState extends State<FilterDropDownButton> {
         value: valueChoose,
         icon: SvgPicture.asset(
           Assets.iconsDropDownArrow,
-          colorFilter: const ColorFilter.mode(
-            kPrimaryColor,
+          colorFilter: ColorFilter.mode(
+            Theme.of(context).colorScheme.primary,
             BlendMode.srcATop,
           ),
           width: 12,
@@ -57,8 +57,8 @@ class _FilterDropDownButtonState extends State<FilterDropDownButton> {
         style: FontStyles.fontsSemiBold16(context),
         elevation: 0,
         borderRadius: BorderRadius.circular(12),
-        dropdownColor: kWhiteColor,
-        focusColor: kPrimaryColor,
+        dropdownColor: Theme.of(context).colorScheme.surface,
+        focusColor: Theme.of(context).colorScheme.primary,
         items: List.generate(listitem.length, (index) {
           return DropdownMenuItem(
             value: listitem[index],

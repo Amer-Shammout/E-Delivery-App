@@ -1,4 +1,3 @@
-import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 
 class SystemStatusAppBar extends StatelessWidget
@@ -8,7 +7,7 @@ class SystemStatusAppBar extends StatelessWidget
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: kWhiteColor,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       surfaceTintColor: Colors.transparent,
       elevation: 0,
       toolbarHeight: 0,

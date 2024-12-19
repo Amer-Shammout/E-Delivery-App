@@ -1,6 +1,5 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
-import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 
 class NoSearchOperationsBody extends StatelessWidget {
@@ -24,7 +23,7 @@ class NoSearchOperationsBody extends StatelessWidget {
         Text(
           "What are you looking for?",
           style: FontStyles.fontsBold20(context).copyWith(
-            color: kBlackColor,
+            color: Theme.of(context).colorScheme.error,
           ),
         )
       ],

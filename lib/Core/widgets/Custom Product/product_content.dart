@@ -1,6 +1,5 @@
 import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_widget_with_dash.dart';
-import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 
 class ProductContent extends StatelessWidget {
