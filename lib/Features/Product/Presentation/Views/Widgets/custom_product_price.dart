@@ -65,7 +65,7 @@ class CustomProductPrice extends StatelessWidget {
                   const ColorFilter.mode(kTeranyColor, BlendMode.srcATop),
             ),
             const SizedBox(
-              width: kSpacing * 2,
+              width: kSpacing * 3,
             ),
           ],
         ),

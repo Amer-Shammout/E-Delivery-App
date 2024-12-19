@@ -14,6 +14,9 @@ class ProductViewContent extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          const SizedBox(
+            height: 12,
+          ),
           Text(
             'EMMATEL',
             style: FontStyles.fontsSemiBold14(context).copyWith(
@@ -92,7 +95,7 @@ class ProductViewContent extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 36,
+            height: 40,
           ),
         ],
       ),
