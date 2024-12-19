@@ -22,8 +22,8 @@ class CustomSettingsExpansionTile extends StatelessWidget {
       showTrailingIcon: true,
       trailing: SvgPicture.asset(
         Assets.iconsDropDownArrow,
-        width: 16,
-        height: 16,
+        width: 12,
+        height: 12,
         colorFilter: const ColorFilter.mode(
           kBlackColor,
           BlendMode.srcATop,

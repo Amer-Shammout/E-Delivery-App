@@ -1,8 +1,8 @@
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 
-class SettingItemTemplate extends StatelessWidget {
-  const SettingItemTemplate({super.key, required this.tile});
+class TileTemplate extends StatelessWidget {
+  const TileTemplate({super.key, required this.tile});
 
   final Widget tile;
 

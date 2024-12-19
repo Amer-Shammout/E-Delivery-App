@@ -34,7 +34,6 @@ dependencies:
   dio: ^5.7.0
   dots_indicator: ^3.0.0
   equatable: null
-  fancy_shimmer_image: null
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.6
@@ -51,7 +50,6 @@ dependencies:
   latlong2: ^0.9.1
   location: ^7.0.1
   lottie: null
-  shimmer: ^3.0.0
   widget_mask: ^1.0.0+0
 
 

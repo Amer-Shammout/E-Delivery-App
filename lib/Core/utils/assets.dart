@@ -82,6 +82,10 @@ class Assets {
   /// assets/icons/gps.svg
   static const String iconsGps = "assets/icons/gps.svg";
 
+  /// Assets for iconsHistory
+  /// assets/icons/history.svg
+  static const String iconsHistory = "assets/icons/history.svg";
+
   /// Assets for iconsKnob
   /// assets/icons/Knob.png
   static const String iconsKnob = "assets/icons/Knob.png";

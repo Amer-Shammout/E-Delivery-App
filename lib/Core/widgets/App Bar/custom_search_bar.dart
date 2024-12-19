@@ -6,37 +6,44 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomSearchBar extends StatelessWidget {
-  const CustomSearchBar({super.key});
+  const CustomSearchBar({super.key, this.onTap, this.isEnabled});
+
+  final VoidCallback? onTap;
+  final bool? isEnabled;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      color: kWhiteColor,
-      child: Row(
-        children: [
-          Expanded(
-            // ignore: missing_required_param
-            child: CustomTextFormField(
-              contentPadding: 16,
-              hint: 'Search...',
-              prefix: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: SvgPicture.asset(
-                  Assets.iconsSearch,
-                  width: 24,
-                  height: 24,
-                  colorFilter:
-                      const ColorFilter.mode(kBlackColor, BlendMode.srcATop),
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.all(16),
+        color: kWhiteColor,
+        child: Row(
+          children: [
+            Expanded(
+              // ignore: missing_required_param
+              child: CustomTextFormField(
+                isEnabled: isEnabled ?? true,
+                contentPadding: 16,
+                hint: 'Search...',
+                prefix: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: SvgPicture.asset(
+                    Assets.iconsSearch,
+                    width: 24,
+                    height: 24,
+                    colorFilter:
+                        const ColorFilter.mode(kBlackColor, BlendMode.srcATop),
+                  ),
                 ),
               ),
             ),
-          ),
-          const SizedBox(
-            width: 2 * kSpacing,
-          ),
-          const FilterButton(),
-        ],
+            const SizedBox(
+              width: 2 * kSpacing,
+            ),
+            const FilterButton(),
+          ],
+        ),
       ),
     );
   }
