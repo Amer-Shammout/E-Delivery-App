@@ -33,7 +33,7 @@ abstract class Shadows {
     color: Color.fromARGB(39, 0, 0, 0),
   );
   static  List<BoxShadow> innerShadow(context)  {return [
-    const BoxShadow(
+    BoxShadow(
       color: Color.fromARGB(26, 0, 0, 0),
     ),
     BoxShadow(

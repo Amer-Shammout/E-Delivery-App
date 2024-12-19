@@ -21,8 +21,9 @@ class CustomProduct extends StatelessWidget {
           padding: const EdgeInsets.only(left: 8, right: 4, top: 8, bottom: 4),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
-            image:  DecorationImage(
-              colorFilter: ColorFilter.mode(Theme.of(context).colorScheme.secondary, BlendMode.srcATop),
+            image: DecorationImage(
+              colorFilter: ColorFilter.mode(
+                  Theme.of(context).colorScheme.secondary, BlendMode.srcATop),
               fit: BoxFit.fill,
               image: AssetImage(
                 Assets.imagesHomeCard,

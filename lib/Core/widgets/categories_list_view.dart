@@ -63,6 +63,7 @@ class _CategoriesListViewState extends State<CategoriesListView> {
         color: Theme.of(context).colorScheme.primary.withOpacity(0.5),
       );
     }
-    return FontStyles.fontsBold16(context).copyWith(color: Theme.of(context).colorScheme.primary);
+    return FontStyles.fontsBold16(context)
+        .copyWith(color: Theme.of(context).colorScheme.primary);
   }
 }

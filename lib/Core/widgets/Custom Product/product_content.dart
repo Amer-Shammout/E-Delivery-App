@@ -30,8 +30,8 @@ class ProductContent extends StatelessWidget {
           dashColor: Theme.of(context).colorScheme.primary,
           widget: Text(
             'Mobiles',
-            style:
-                FontStyles.fontsBold10(context).copyWith(color: Theme.of(context).colorScheme.primary),
+            style: FontStyles.fontsBold10(context)
+                .copyWith(color: Theme.of(context).colorScheme.primary),
           ),
           width: 20,
           height: 2,

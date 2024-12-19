@@ -12,7 +12,6 @@ class SettingsItemsListView extends StatefulWidget {
     super.key,
   });
 
-
   @override
   State<SettingsItemsListView> createState() => _SettingsItemsListViewState();
 }
@@ -22,6 +21,7 @@ class _SettingsItemsListViewState extends State<SettingsItemsListView> {
   @override
   Widget build(BuildContext context) {
     return ListView(
+      physics: const BouncingScrollPhysics(),
       children: [
         TileTemplate(
           tile: CustomSettingsExpansionTile(
