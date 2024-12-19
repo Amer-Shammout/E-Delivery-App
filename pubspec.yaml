@@ -46,12 +46,13 @@ dependencies:
   get_it: ^8.0.0
   go_router: ^14.6.2
   gradient_borders: ^1.0.1
+  hydrated_bloc: ^9.1.5
   image_picker: ^1.1.2
   latlong2: ^0.9.1
   location: ^7.0.1
   lottie: null
+  path_provider: ^2.1.5
   widget_mask: ^1.0.0+0
-
 
 dev_dependencies:
   flutter_lints: ^4.0.0

@@ -1,11 +1,19 @@
 import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_theme.dart';
-import 'package:e_delivery_app/Core/widgets/custom_nav_bar.dart';
-import 'package:e_delivery_app/Features/Stores/Presentation/Views/stores_view_body.dart';
-import 'package:e_delivery_app/constants.dart';
+import 'package:e_delivery_app/Features/Settings/Presentation/Manager/theme_cubit/theme_cubit.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:path_provider/path_provider.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  HydratedBloc.storage = await HydratedStorage.build(
+    storageDirectory: kIsWeb
+        ? HydratedStorage.webStorageDirectory
+        : await getApplicationDocumentsDirectory(),
+  );
   runApp(const EDelivery());
 }
 
@@ -14,12 +22,23 @@ class EDelivery extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        scaffoldBackgroundColor: kWhiteColor,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (_) => ThemeCubit(),
+        ),
+      ],
+      child: BlocBuilder<ThemeCubit, ThemeMode>(
+        builder: (context, mode) {
+          return MaterialApp.router(
+            themeMode: mode,
+            darkTheme: AppTheme.darkTheme,
+            debugShowCheckedModeBanner: false,
+            theme:AppTheme.lightTheme,
+            routerConfig: AppRouter.router,
+          );
+        },
       ),
-      routerConfig:AppRouter.router ,
     );
   }
 }

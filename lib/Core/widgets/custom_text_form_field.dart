@@ -69,7 +69,7 @@ class CustomTextFormField extends StatelessWidget {
             contentPadding: EdgeInsets.all(contentPadding),
             hintText: hint,
             hintStyle: FontStyles.fontsMedium16(context).copyWith(
-              color: Theme.of(context).colorScheme.error,
+              color: Theme.of(context).colorScheme.error.withOpacity(.4),
             ),
             focusedErrorBorder: buildBorder(Theme.of(context).colorScheme.tertiary),
             enabledBorder: buildBorder(Colors.transparent),
