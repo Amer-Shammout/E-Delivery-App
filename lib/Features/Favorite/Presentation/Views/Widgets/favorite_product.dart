@@ -13,7 +13,7 @@ class FavoriteProduct extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomContainer(
       child: Container(
-        height: 140,
+        height: 124,
         padding: const EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 8),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),

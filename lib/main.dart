@@ -1,4 +1,5 @@
 import 'package:e_delivery_app/Core/utils/app_router.dart';
+import 'package:e_delivery_app/Features/Cart/Presentation/Views/cart_view.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/empty_cart_view.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,7 @@ class EDelivery extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: kWhiteColor,
       ),
-      home: const EmptyCartView(),
+      home: const CartView(),
     );
   }
 }
