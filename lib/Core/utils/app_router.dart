@@ -1,4 +1,4 @@
-import 'package:e_delivery_app/Core/widgets/custom_nav_bar.dart';
+import 'package:e_delivery_app/Core/widgets/app_with_nav_bar.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/lets_get_started_view.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/registeration_view.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/setting_info_view.dart';
