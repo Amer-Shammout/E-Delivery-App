@@ -22,8 +22,6 @@ class _SettingInfoFormState extends State<SettingInfoForm> {
   AutovalidateMode _isAutoValidate = AutovalidateMode.disabled;
   String? phoneNumber;
   @override
- 
-
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -50,11 +48,13 @@ class _SettingInfoFormState extends State<SettingInfoForm> {
             height: kSpacing * 6,
           ),
           CTAButton(
+            fillColor: Theme.of(context).colorScheme.primary,
             style: FontStyles.fontsSemiBold20(context),
             onPressed: () {
               if (_formKey.currentState!.validate()) {
-                        GoRouter.of(context).pushReplacement(AppRouter.kAppRoot,);
-
+                GoRouter.of(context).pushReplacement(
+                  AppRouter.kAppRoot,
+                );
               } else {
                 _isAutoValidate = AutovalidateMode.always;
                 setState(() {});

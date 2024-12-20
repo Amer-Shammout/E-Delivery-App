@@ -19,6 +19,7 @@ class StoresCard extends StatelessWidget {
       },
       child: CustomContainer(
         child: CustomCardPattern(
+          opacity: 1,
           cardColor: cardColor,
           child: SizedBox(
             height: 70,

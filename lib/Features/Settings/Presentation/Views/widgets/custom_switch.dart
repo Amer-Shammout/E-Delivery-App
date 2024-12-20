@@ -1,4 +1,5 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
+import 'package:e_delivery_app/Core/utils/functions/set_theme_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 
@@ -15,26 +16,26 @@ class CustomSwitch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 24,
-      width: 36,
+      height: 28,
+      width: 40,
       child: FittedBox(
         fit: BoxFit.fill,
         child: Switch(
           materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
           value: isSwitched,
           onChanged: onChanged,
-          inactiveThumbImage: Svg(Assets.iconsThumb,
-              size: const Size(32, 32),
-              color: Colors.white),
-          activeThumbImage: Svg(Assets.iconsThumb,
+          inactiveThumbImage: const Svg(Assets.iconsThumb,
               size: Size(32, 32), color: Colors.white),
-          thumbColor:
-              WidgetStatePropertyAll(Colors.white,),
+          activeThumbImage: const Svg(Assets.iconsThumb,
+              size: Size(32, 32), color: Colors.white),
+          thumbColor: const WidgetStatePropertyAll(
+            Colors.white,
+          ),
           inactiveThumbColor: Theme.of(context).colorScheme.surface,
           activeTrackColor: Theme.of(context).colorScheme.primary,
-          inactiveTrackColor: Theme.of(context).colorScheme.secondary,
+          inactiveTrackColor: SetThemeColors.isDarkMode(context) ? Theme.of(context).colorScheme.secondary : Colors.grey.shade300,
           activeColor: Theme.of(context).colorScheme.primary,
-          trackOutlineColor: WidgetStatePropertyAll(Colors.transparent),
+          trackOutlineColor: const WidgetStatePropertyAll(Colors.transparent),
         ),
       ),
     );

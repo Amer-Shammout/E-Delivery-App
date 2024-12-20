@@ -1,3 +1,4 @@
+import 'package:e_delivery_app/Core/utils/functions/set_theme_colors.dart';
 import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
 import 'package:e_delivery_app/Core/utils/styles/shadows.dart';
 import 'package:flutter/material.dart';
@@ -41,7 +42,9 @@ class CustomTextFormField extends StatelessWidget {
           padding: EdgeInsets.all(contentPadding),
           width: MediaQuery.sizeOf(context).width,
           decoration: BoxDecoration(
-            boxShadow: Shadows.innerShadow(context),
+            boxShadow: SetThemeColors.isDarkMode(context)
+                ? null
+                : Shadows.innerShadow(context),
             borderRadius: BorderRadius.circular(16),
           ),
           child: Text(
@@ -57,7 +60,8 @@ class CustomTextFormField extends StatelessWidget {
           maxLength: maxLength,
           keyboardType: textInputType,
           validator: validator,
-          style: FontStyles.fontsMedium16(context).copyWith(color: Theme.of(context).colorScheme.error),
+          style: FontStyles.fontsMedium16(context)
+              .copyWith(color: Theme.of(context).colorScheme.error),
           cursorColor: Theme.of(context).colorScheme.primary,
           cursorErrorColor: Theme.of(context).colorScheme.tertiary,
           decoration: InputDecoration(
@@ -65,13 +69,16 @@ class CustomTextFormField extends StatelessWidget {
             prefixIcon: prefix,
             suffixIcon: suffixIcon,
             filled: true,
-            fillColor: Colors.transparent,
+            fillColor: SetThemeColors.isDarkMode(context)
+                ? Theme.of(context).colorScheme.secondary
+                : Colors.transparent,
             contentPadding: EdgeInsets.all(contentPadding),
             hintText: hint,
             hintStyle: FontStyles.fontsMedium16(context).copyWith(
               color: Theme.of(context).colorScheme.error.withOpacity(.4),
             ),
-            focusedErrorBorder: buildBorder(Theme.of(context).colorScheme.tertiary),
+            focusedErrorBorder:
+                buildBorder(Theme.of(context).colorScheme.tertiary),
             enabledBorder: buildBorder(Colors.transparent),
             focusedBorder: buildBorder(Theme.of(context).colorScheme.primary),
             errorBorder: buildBorder(

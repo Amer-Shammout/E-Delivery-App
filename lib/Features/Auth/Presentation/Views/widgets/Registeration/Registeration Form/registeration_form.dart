@@ -61,6 +61,7 @@ class _RegisterationFormState extends State<RegisterationForm> {
             height: kSpacing * 6,
           ),
           CTAButton(
+            fillColor: Theme.of(context).colorScheme.primary,
             style: FontStyles.fontsSemiBold20(context),
             onPressed: () {
               if (_formKey.currentState!.validate()) {

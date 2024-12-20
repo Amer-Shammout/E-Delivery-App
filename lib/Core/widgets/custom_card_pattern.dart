@@ -5,12 +5,14 @@ class CustomCardPattern extends StatelessWidget {
   const CustomCardPattern({
     super.key,
     required this.cardColor,
-    this.margin = 0, required this.child,
+    this.margin = 0,
+    required this.child, required this.opacity,
   });
 
   final Color cardColor;
   final double margin;
   final Widget child;
+  final double opacity;
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +26,9 @@ class CustomCardPattern extends StatelessWidget {
           16,
         ),
         color: cardColor.withOpacity(.2),
-        image: const DecorationImage(
-          image: AssetImage(
+        image:  DecorationImage(
+          opacity: opacity,
+          image: const AssetImage(
             Assets.imagesCardBackground,
           ),
           fit: BoxFit.cover,

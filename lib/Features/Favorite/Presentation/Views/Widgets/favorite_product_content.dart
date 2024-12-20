@@ -15,23 +15,23 @@ class FavoriteProductContent extends StatelessWidget {
           'EMMATEL',
           style: FontStyles.fontsMedium10(context).copyWith(
             fontSize: 8,
-            color: kBlackColor.withOpacity(0.35),
+            color: Theme.of(context).colorScheme.error.withOpacity(0.35),
           ),
         ),
         Text(
           'IPHONE 16 PRO MAX',
           style: FontStyles.fontsBold14(context).copyWith(
-            color: kBlackColor,
+            color: Theme.of(context).colorScheme.error,
           ),
         ),
         CustomWidgetWithDash(
-          dashColor: kPrimaryColor,
+          dashColor: Theme.of(context).colorScheme.primary,
           width: 20,
           height: 2,
           widget: Text(
             'Mobiles',
             style: FontStyles.fontsSemiBold12(context).copyWith(
-              color: kPrimaryColor,
+              color: Theme.of(context).colorScheme.primary,
             ),
           ),
         ),
@@ -43,16 +43,16 @@ class FavoriteProductContent extends StatelessWidget {
           style: FontStyles.fontsRegular10(context).copyWith(
               height: 0,
               decoration: TextDecoration.lineThrough,
-              decorationColor: kTeranyColor,
+              decorationColor: Theme.of(context).colorScheme.tertiary,
               decorationThickness: 2,
-              color: kTeranyColor),
+              color: Theme.of(context).colorScheme.tertiary),
         ),
         Row(
           children: [
             Text(
               '57,5',
               style: FontStyles.fontsBlack20(context)
-                  .copyWith(color: kTeranyColor, height: 0),
+                  .copyWith(color: Theme.of(context).colorScheme.tertiary, height: 0),
             ),
             const SizedBox(
               width: kSpacing,
@@ -60,7 +60,7 @@ class FavoriteProductContent extends StatelessWidget {
             Text(
               'S.P',
               style: FontStyles.fontsRegular10(context).copyWith(
-                color: kTeranyColor,
+                color: Theme.of(context).colorScheme.tertiary,
               ),
             ),
           ],

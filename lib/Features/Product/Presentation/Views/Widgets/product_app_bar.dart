@@ -17,12 +17,17 @@ class ProductAppBar extends StatelessWidget {
           onPressed: () {
             GoRouter.of(context).pop();
           },
+          backgroundColor: Theme.of(context).colorScheme.surface,
         ),
         Text(
           'HOT',
-          style: FontStyles.fontsBold20(context).copyWith(color: Theme.of(context).colorScheme.tertiary),
+          style: FontStyles.fontsBold20(context)
+              .copyWith(color: Theme.of(context).colorScheme.tertiary),
         ),
-        const CustomIcon(icon: Assets.iconsOutlineHeartOutline),
+        CustomIcon(
+          icon: Assets.iconsOutlineHeartOutline,
+          backgroundColor: Theme.of(context).colorScheme.surface,
+        ),
       ],
     );
   }

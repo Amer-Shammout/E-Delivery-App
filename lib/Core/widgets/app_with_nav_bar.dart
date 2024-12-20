@@ -1,4 +1,5 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
+import 'package:e_delivery_app/Core/utils/functions/set_theme_colors.dart';
 import 'package:e_delivery_app/Core/widgets/custom_widget_with_dash.dart';
 import 'package:e_delivery_app/Core/widgets/system_status_app_bar.dart';
 import 'package:e_delivery_app/Features/Favorite/Presentation/Views/favorite_view_body.dart';
@@ -66,7 +67,7 @@ class _NavigationBarPages extends State<AppWithNavBar> {
               activatedIcon: Assets.iconsSolidHomeBold),
           navIcon(
               icon: Assets.iconsOutlineShopsOutline,
-              activatedIcon: Assets.iconsSolidShops),
+              activatedIcon: SetThemeColors.isDarkMode(context) ? Assets.iconsSolidStoresDark : Assets.iconsSolidShops),
           navIcon(
               icon: Assets.iconsOutlineOrdersOutline,
               activatedIcon: Assets.iconsSolidOrdersBold),

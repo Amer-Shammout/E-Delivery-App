@@ -15,7 +15,7 @@ class StoreDetailsAppBar extends StatelessWidget {
     return SliverAppBar(
       toolbarHeight: 65,
       surfaceTintColor: Colors.transparent,
-      pinned: false,
+      pinned: true,
       floating: true,
       backgroundColor: Theme.of(context).colorScheme.surface,
       automaticallyImplyLeading: false,

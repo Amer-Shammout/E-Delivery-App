@@ -50,7 +50,7 @@ class StatusAppBar extends StatelessWidget {
             ],
           ),
           const Spacer(),
-          const CustomIcon(icon: Assets.iconsCart),
+          const CustomIcon(icon: Assets.iconsCart,),
           const SizedBox(
             width: 4 * kSpacing,
           ),

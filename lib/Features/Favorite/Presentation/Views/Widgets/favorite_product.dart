@@ -17,9 +17,11 @@ class FavoriteProduct extends StatelessWidget {
         padding: const EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 8),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
-          image: const DecorationImage(
+          image: DecorationImage(
+            colorFilter: ColorFilter.mode(
+                Theme.of(context).colorScheme.secondary, BlendMode.srcATop),
             fit: BoxFit.fill,
-            image: AssetImage(Assets.imagesFavoriteCard),
+            image: const AssetImage(Assets.imagesFavoriteCard),
           ),
         ),
         child: Row(
@@ -43,14 +45,14 @@ class FavoriteProduct extends StatelessWidget {
                 Text(
                   'HOT',
                   style: FontStyles.fontsBold12(context)
-                      .copyWith(color: kTeranyColor),
+                      .copyWith(color: Theme.of(context).colorScheme.tertiary),
                 ),
                 SvgPicture.asset(
                   width: 20,
                   height: 20,
                   Assets.iconsTrash,
-                  colorFilter: const ColorFilter.mode(
-                    kTeranyColor,
+                  colorFilter: ColorFilter.mode(
+                    Theme.of(context).colorScheme.tertiary,
                     BlendMode.srcATop,
                   ),
                 ),

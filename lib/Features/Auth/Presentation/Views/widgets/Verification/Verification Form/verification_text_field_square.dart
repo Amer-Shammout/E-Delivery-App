@@ -1,3 +1,4 @@
+import 'package:e_delivery_app/Core/utils/functions/set_theme_colors.dart';
 import 'package:e_delivery_app/Core/utils/functions/validation.dart';
 import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
 import 'package:e_delivery_app/Core/utils/styles/shadows.dart';
@@ -21,7 +22,7 @@ class VerificationTextFieldSquare extends StatelessWidget {
       height: 64,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
-        boxShadow: Shadows.innerShadow(context),
+        boxShadow: SetThemeColors.isDarkMode(context) ? null : Shadows.innerShadow(context),
       ),
       child: TextFormField(
         validator: Validation.validateFieldIfEmpty,
@@ -40,7 +41,7 @@ class VerificationTextFieldSquare extends StatelessWidget {
           errorStyle: const TextStyle(
             fontSize: 0,
           ),
-          fillColor: Colors.transparent,
+          fillColor: SetThemeColors.isDarkMode(context) ? Theme.of(context).colorScheme.secondary : Colors.transparent,
           filled: true,
           contentPadding: const EdgeInsets.symmetric(
             horizontal: 18,

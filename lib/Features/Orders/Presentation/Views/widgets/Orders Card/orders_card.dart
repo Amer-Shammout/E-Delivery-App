@@ -1,9 +1,11 @@
+import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
 import 'package:e_delivery_app/Core/utils/styles/shadows.dart';
 import 'package:e_delivery_app/Features/Orders/Presentation/Views/widgets/Orders%20Card/order_details_table.dart';
 import 'package:e_delivery_app/Features/Orders/Presentation/Views/widgets/Orders%20Card/orders_card_leading.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class OrdersCard extends StatelessWidget {
   const OrdersCard({super.key, required this.cardColor, required this.icon});
@@ -24,7 +26,17 @@ class OrdersCard extends StatelessWidget {
         ],
       ),
       child: ExpansionTile(
-        iconColor: Theme.of(context).colorScheme.error,
+        showTrailingIcon: true,
+        iconColor: kBlackColor,
+        trailing: SvgPicture.asset(
+          Assets.iconsDropDownArrow,
+          width: 12,
+          height: 12,
+          colorFilter: const ColorFilter.mode(
+            kBlackColor,
+            BlendMode.srcATop,
+          ),
+        ),
         childrenPadding: const EdgeInsets.only(
           left: kHorizontalPadding,
           right: kHorizontalPadding,
@@ -55,7 +67,7 @@ class OrdersCard extends StatelessWidget {
         title: Text(
           'Delivered!',
           style: FontStyles.fontsBold16(context).copyWith(
-            color: Theme.of(context).colorScheme.error,
+            color: kBlackColor,
           ),
         ),
         subtitle: Text.rich(
@@ -64,12 +76,12 @@ class OrdersCard extends StatelessWidget {
               TextSpan(
                 text: '6M ',
                 style: FontStyles.fontsRegular12(context)
-                    .copyWith(color: Theme.of(context).colorScheme.error),
+                    .copyWith(color: kBlackColor),
               ),
               TextSpan(
                 text: 'S.P',
                 style: FontStyles.fontsSemiBold12(context)
-                    .copyWith(color: Theme.of(context).colorScheme.error),
+                    .copyWith(color: kBlackColor),
               )
             ],
           ),

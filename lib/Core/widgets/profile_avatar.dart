@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:e_delivery_app/Core/utils/assets.dart';
+import 'package:e_delivery_app/Core/utils/functions/set_theme_colors.dart';
 import 'package:e_delivery_app/Core/utils/styles/shadows.dart';
 import 'package:flutter/material.dart';
 
@@ -21,11 +22,11 @@ class ProfileAvatar extends StatelessWidget {
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         border: Border.all(
-            width: borderWidth, color: Theme.of(context).colorScheme.secondary),
+            width: borderWidth, color: Theme.of(context).colorScheme.surface),
         boxShadow: const [Shadows.iconDropShadow],
       ),
       child: CircleAvatar(
-        backgroundColor: Theme.of(context).colorScheme.secondary,
+        backgroundColor: SetThemeColors.setBackgroundColor(context),
         backgroundImage: userImage == Assets.imagesUser
             ? null
             : FileImage(

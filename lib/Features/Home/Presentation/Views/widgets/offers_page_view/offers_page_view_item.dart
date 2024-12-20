@@ -1,4 +1,5 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
+import 'package:e_delivery_app/Core/utils/functions/set_theme_colors.dart';
 import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
 import 'package:e_delivery_app/Core/widgets/c_t_a_button.dart';
 import 'package:e_delivery_app/Core/widgets/custom_card_pattern.dart';
@@ -15,6 +16,7 @@ class OffersPageViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomCardPattern(
+      opacity: SetThemeColors.isDarkMode(context) ? .25 : 1,
       margin: kSpacing,
       cardColor: const Color(0xff295BA7),
       child: Row(
