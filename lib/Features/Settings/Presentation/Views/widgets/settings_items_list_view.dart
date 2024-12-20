@@ -1,10 +1,12 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
+import 'package:e_delivery_app/Features/Settings/Presentation/Manager/theme_cubit/theme_cubit.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Views/widgets/custom_settings_expansion_tile.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Views/widgets/custom_settings_tile.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Views/widgets/custom_switch.dart';
 import 'package:e_delivery_app/Core/widgets/tile_template.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 
 class SettingsItemsListView extends StatefulWidget {
@@ -24,10 +26,15 @@ class _SettingsItemsListViewState extends State<SettingsItemsListView> {
       physics: const BouncingScrollPhysics(),
       children: [
         TileTemplate(
-          tile: CustomSettingsExpansionTile(
-            caller: 'theme',
-            settingItem: kSettingItems[0],
-            titles: kAppearanceModes,
+          tile: BlocBuilder<ThemeCubit , ThemeMode>(
+            builder: (context, mode) {
+              return CustomSettingsExpansionTile(
+                onChanged: changeThemeMode,
+                groupValue: mode.name,
+                settingItem: kSettingItems[0],
+                titles: kAppearanceModes,
+              );
+            },
           ),
         ),
         TileTemplate(
@@ -46,7 +53,10 @@ class _SettingsItemsListViewState extends State<SettingsItemsListView> {
         ),
         TileTemplate(
           tile: CustomSettingsExpansionTile(
-            caller: 'language',
+            onChanged: (p0) {
+              
+            },
+            groupValue: '',
             settingItem: kSettingItems[2],
             titles: kLanguages,
           ),
@@ -59,7 +69,7 @@ class _SettingsItemsListViewState extends State<SettingsItemsListView> {
               Assets.iconsButtonsArrow,
               width: 12,
               height: 12,
-              colorFilter:  ColorFilter.mode(
+              colorFilter: ColorFilter.mode(
                 Theme.of(context).colorScheme.error,
                 BlendMode.srcATop,
               ),
@@ -74,7 +84,7 @@ class _SettingsItemsListViewState extends State<SettingsItemsListView> {
               Assets.iconsButtonsArrow,
               width: 12,
               height: 12,
-              colorFilter:  ColorFilter.mode(
+              colorFilter: ColorFilter.mode(
                 Theme.of(context).colorScheme.error,
                 BlendMode.srcATop,
               ),
@@ -87,4 +97,20 @@ class _SettingsItemsListViewState extends State<SettingsItemsListView> {
       ],
     );
   }
+  changeThemeMode(value) {
+    switch (value) {
+      case 'light':
+        BlocProvider.of<ThemeCubit>(context).updateTheme(ThemeMode.light);
+        break;
+      case 'dark':
+        BlocProvider.of<ThemeCubit>(context).updateTheme(ThemeMode.dark);
+        break;
+      case 'system':
+        BlocProvider.of<ThemeCubit>(context).updateTheme(ThemeMode.system);
+
+        break;
+    }
+  }
+
 }
+

@@ -6,8 +6,8 @@ import 'package:flutter_svg/svg.dart';
 
 class CustomRadioButtonListTile extends StatelessWidget {
   final String title;
-  final groupValue;
-  final value;
+  final String groupValue;
+  final String value;
   final Function(dynamic) onChanged;
   const CustomRadioButtonListTile(
       {super.key,

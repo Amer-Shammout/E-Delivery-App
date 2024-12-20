@@ -14,9 +14,9 @@ const Color kOnTheWayColor = Color(0xFF526077);
 const kMontserrat = 'Montserrat';
 const double kHorizontalPadding = 16;
 const kAppearanceModes = [
-  'Light',
-  'Dark',
-  'System',
+  'light',
+  'dark',
+  'system',
 ];
 const kLanguages = [
   'English',

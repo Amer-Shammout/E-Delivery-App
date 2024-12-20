@@ -10,12 +10,13 @@ class CustomSettingsExpansionTile extends StatelessWidget {
   const CustomSettingsExpansionTile({
     super.key,
     required this.settingItem,
-    required this.titles, required this.caller,
+    required this.titles, required this.groupValue, required this.onChanged,
   });
 
   final SettingsModel settingItem;
   final List<String> titles;
-  final String caller;
+  final String groupValue;
+  final dynamic Function(dynamic) onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +64,8 @@ class CustomSettingsExpansionTile extends StatelessWidget {
       ),
       children: [
         CustomRadioButtonGroup(
-          caller: caller,
+          onChanged: onChanged,
+          groupValue: groupValue,
           titles: titles,
         ),
       ],
