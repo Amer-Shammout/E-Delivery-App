@@ -240,6 +240,10 @@ class Assets {
   /// assets/images/favorite_card.png
   static const String imagesFavoriteCard = "assets/images/favorite_card.png";
 
+  /// Assets for imagesCartCard
+  /// assets/images/cart_card.png
+  static const String imagesCartCard = "assets/images/cart_card.png";
+
   /// Assets for imagesIphoneTest
   /// assets/images/iphone_test.png
   static const String imagesIphoneTest = "assets/images/iphone_test.png";

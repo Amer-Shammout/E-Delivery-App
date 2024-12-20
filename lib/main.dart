@@ -1,7 +1,6 @@
 import 'package:e_delivery_app/Core/utils/app_router.dart';
-import 'package:e_delivery_app/Core/utils/styles/app_theme.dart';
-import 'package:e_delivery_app/Features/Settings/Presentation/Manager/theme_cubit/theme_cubit.dart';
-import 'package:flutter/foundation.dart';
+import 'package:e_delivery_app/Features/Cart/Presentation/Views/empty_cart_view.dart';
+import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
@@ -22,23 +21,12 @@ class EDelivery extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          create: (_) => ThemeCubit(),
-        ),
-      ],
-      child: BlocBuilder<ThemeCubit, ThemeMode>(
-        builder: (context, mode) {
-          return MaterialApp.router(
-            themeMode: mode,
-            darkTheme: AppTheme.darkTheme,
-            debugShowCheckedModeBanner: false,
-            theme:AppTheme.lightTheme,
-            routerConfig: AppRouter.router,
-          );
-        },
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        scaffoldBackgroundColor: kWhiteColor,
       ),
+      home: const EmptyCartView(),
     );
   }
 }
