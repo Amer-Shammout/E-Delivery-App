@@ -1,8 +1,7 @@
-import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/widgets/custom_check_box.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class CustomRadioButtonListTile extends StatelessWidget {
   final String title;
@@ -27,8 +26,8 @@ class CustomRadioButtonListTile extends StatelessWidget {
         leading: _customRadioButton(context),
         title: Text(
           title,
-          style:
-              FontStyles.fontsRegular16(context).copyWith(color: Theme.of(context).colorScheme.error),
+          style: FontStyles.fontsRegular16(context)
+              .copyWith(color: Theme.of(context).colorScheme.error),
         ),
       ),
     );
@@ -37,23 +36,6 @@ class CustomRadioButtonListTile extends StatelessWidget {
   Widget _customRadioButton(context) {
     bool isSelected = value == groupValue;
 
-    return Container(
-      width: 16,
-      height: 16,
-      decoration: BoxDecoration(
-        color: isSelected ? Theme.of(context).colorScheme.primary : Colors.transparent,
-        borderRadius: BorderRadius.circular(4),
-        border: Border.all(color: Theme.of(context).colorScheme.primary),
-      ),
-      child: Center(
-        child: isSelected
-            ? SvgPicture.asset(
-                Assets.iconsCheck,
-                width: 5.5,
-                height: 5.5,
-              )
-            : const SizedBox.shrink(),
-      ),
-    );
+    return CustomCheckBox(value: isSelected);
   }
 }
