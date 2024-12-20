@@ -1,12 +1,13 @@
+import 'package:e_delivery_app/Features/Cart/Presentation/Views/Widgets/Cart%20View%20Widgets/custom_check_box.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/Widgets/Cart%20View%20Widgets/custom_delete_button.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/Widgets/Cart%20View%20Widgets/product_card_cart.dart';
-import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
 class ProductSlidable extends StatelessWidget {
-  const ProductSlidable({super.key});
+  const ProductSlidable({super.key, required this.toDo});
+  final void Function() toDo;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class ProductSlidable extends StatelessWidget {
       closeWhenOpened: true,
       child: Slidable(
         dragStartBehavior: DragStartBehavior.start,
-        endActionPane: ActionPane(
+        endActionPane: const ActionPane(
           extentRatio: 0.238375,
           motion: ScrollMotion(),
           children: [CustomDeleteButton()],
@@ -24,14 +25,7 @@ class ProductSlidable extends StatelessWidget {
             const SizedBox(
               width: 16,
             ),
-            Container(
-              height: 20,
-              width: 20,
-              decoration: BoxDecoration(
-                color: kPrimaryColor,
-                borderRadius: BorderRadius.circular(4),
-              ),
-            ),
+            CustomCheckBox(toDo: toDo),
             const SizedBox(
               width: 8,
             ),
