@@ -26,8 +26,8 @@ class _CustomCartCheckBoxState extends State<CustomCartCheckBox> {
     );
   }
 
-  Future<dynamic> _customBottomSheet(BuildContext context) {
-    return showModalBottomSheet(
+  PersistentBottomSheetController _customBottomSheet(BuildContext context) {
+    return showBottomSheet(
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(40),
