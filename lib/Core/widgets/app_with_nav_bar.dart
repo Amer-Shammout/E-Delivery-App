@@ -122,7 +122,7 @@ class _NavigationBarPages extends State<AppWithNavBar> {
             width: 32,
             height: 32,
             activatedIcon,
-            colorFilter: activatedIcon == Assets.iconsSolidShops
+            colorFilter: activatedIcon == Assets.iconsSolidShops || activatedIcon == Assets.iconsSolidStoresDark 
                 ? null
                 : ColorFilter.mode(
                     Theme.of(context).colorScheme.primary,
