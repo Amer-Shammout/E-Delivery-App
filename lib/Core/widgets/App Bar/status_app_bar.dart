@@ -50,7 +50,12 @@ class StatusAppBar extends StatelessWidget {
             ],
           ),
           const Spacer(),
-          const CustomIcon(icon: Assets.iconsCart,),
+          CustomIcon(
+            icon: Assets.iconsCart,
+            onPressed: () {
+              GoRouter.of(context).push(AppRouter.kCartView);
+            },
+          ),
           const SizedBox(
             width: 4 * kSpacing,
           ),

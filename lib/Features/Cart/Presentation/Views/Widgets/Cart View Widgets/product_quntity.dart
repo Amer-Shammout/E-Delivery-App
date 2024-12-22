@@ -11,26 +11,24 @@ class ProductQuntity extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const CustomIconButton(
-          icon: Assets.iconsPlus,
-          color: kTeranyColor,
-        ),
+        CustomIconButton(
+            icon: Assets.iconsPlus,
+            color: Theme.of(context).colorScheme.tertiary),
         const SizedBox(
           width: kSpacing * 4,
         ),
         Text(
           '1',
           style: AppStyles.fontsBold16(context).copyWith(
-            color: kTeranyColor,
+            color: Theme.of(context).colorScheme.tertiary,
           ),
         ),
         const SizedBox(
           width: kSpacing * 4,
         ),
-        const CustomIconButton(
-          icon: Assets.iconsMinus,
-          color: kTeranyColor,
-        ),
+        CustomIconButton(
+            icon: Assets.iconsMinus,
+            color: Theme.of(context).colorScheme.tertiary),
       ],
     );
   }

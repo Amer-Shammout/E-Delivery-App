@@ -21,7 +21,7 @@ class ProductCartContent extends StatelessWidget {
                 'EMMATEL',
                 style: AppStyles.fontsMedium10(context).copyWith(
                   fontSize: 8,
-                  color: kBlackColor.withOpacity(0.35),
+                  color: Theme.of(context).colorScheme.error.withOpacity(0.35),
                 ),
               ),
               Row(
@@ -29,7 +29,7 @@ class ProductCartContent extends StatelessWidget {
                   Text(
                     'HOT',
                     style: AppStyles.fontsBold12(context)
-                        .copyWith(color: kTeranyColor),
+                        .copyWith(color: Theme.of(context).colorScheme.tertiary),
                   ),
                   const SizedBox(
                     width: kSpacing,
@@ -41,17 +41,17 @@ class ProductCartContent extends StatelessWidget {
           Text(
             'IPHONE 16 PRO MAX',
             style: AppStyles.fontsBold14(context).copyWith(
-              color: kBlackColor,
+              color: Theme.of(context).colorScheme.error,
             ),
           ),
           CustomWidgetWithDash(
-            dashColor: kPrimaryColor,
+            dashColor: Theme.of(context).colorScheme.primary,
             width: 20,
             height: 2,
             widget: Text(
               'Mobiles',
               style: AppStyles.fontsSemiBold12(context).copyWith(
-                color: kPrimaryColor,
+                color: Theme.of(context).colorScheme.primary,
               ),
             ),
           ),

@@ -15,9 +15,13 @@ class ProductCardCart extends StatelessWidget {
         padding: const EdgeInsets.only(left: 12, right: 12, top: 8, bottom: 4),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
-          image: const DecorationImage(
+          image: DecorationImage(
+            colorFilter: ColorFilter.mode(
+                Theme.of(context).colorScheme.secondary, BlendMode.srcATop),
             fit: BoxFit.fill,
-            image: AssetImage(Assets.imagesCartCard),
+            image: const AssetImage(
+              Assets.imagesCartCard,
+            ),
           ),
         ),
         child: Row(

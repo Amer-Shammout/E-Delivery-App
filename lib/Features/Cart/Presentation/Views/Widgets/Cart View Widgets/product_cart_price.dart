@@ -15,16 +15,16 @@ class ProductCartPrice extends StatelessWidget {
           style: AppStyles.fontsRegular14(context).copyWith(
               height: 0,
               decoration: TextDecoration.lineThrough,
-              decorationColor: kTeranyColor,
+              decorationColor: Theme.of(context).colorScheme.tertiary,
               decorationThickness: 2,
-              color: kTeranyColor),
+              color: Theme.of(context).colorScheme.tertiary),
         ),
         Row(
           children: [
             Text(
               '57,5',
               style: AppStyles.fontsBlack24(context)
-                  .copyWith(color: kTeranyColor, height: 0),
+                  .copyWith(color: Theme.of(context).colorScheme.tertiary, height: 0),
             ),
             const SizedBox(
               width: kSpacing,
@@ -32,7 +32,7 @@ class ProductCartPrice extends StatelessWidget {
             Text(
               'S.P',
               style: AppStyles.fontsRegular10(context).copyWith(
-                color: kTeranyColor,
+                color: Theme.of(context).colorScheme.tertiary,
               ),
             ),
           ],
