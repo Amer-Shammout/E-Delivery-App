@@ -34,9 +34,11 @@ dependencies:
   dio: ^5.7.0
   dots_indicator: ^3.0.0
   equatable: null
+  feedback: ^3.1.0
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.6
+  flutter_email_sender: ^6.0.3
   flutter_inner_shadow: ^0.0.1
   flutter_map: ^7.0.2
   flutter_native_splash: ^2.4.3

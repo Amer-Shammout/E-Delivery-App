@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Manager/theme_cubit/theme_cubit.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Views/widgets/custom_settings_expansion_tile.dart';
@@ -5,9 +7,13 @@ import 'package:e_delivery_app/Features/Settings/Presentation/Views/widgets/cust
 import 'package:e_delivery_app/Features/Settings/Presentation/Views/widgets/custom_switch.dart';
 import 'package:e_delivery_app/Core/widgets/tile_template.dart';
 import 'package:e_delivery_app/constants.dart';
+import 'package:feedback/feedback.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_email_sender/flutter_email_sender.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:path_provider/path_provider.dart';
 
 class SettingsItemsListView extends StatefulWidget {
   const SettingsItemsListView({
@@ -26,7 +32,7 @@ class _SettingsItemsListViewState extends State<SettingsItemsListView> {
       physics: const BouncingScrollPhysics(),
       children: [
         TileTemplate(
-          tile: BlocBuilder<ThemeCubit , ThemeMode>(
+          tile: BlocBuilder<ThemeCubit, ThemeMode>(
             builder: (context, mode) {
               return CustomSettingsExpansionTile(
                 onChanged: changeThemeMode,
@@ -53,9 +59,7 @@ class _SettingsItemsListViewState extends State<SettingsItemsListView> {
         ),
         TileTemplate(
           tile: CustomSettingsExpansionTile(
-            onChanged: (p0) {
-              
-            },
+            onChanged: (p0) {},
             groupValue: '',
             settingItem: kSettingItems[2],
             titles: kLanguages,
@@ -78,7 +82,24 @@ class _SettingsItemsListViewState extends State<SettingsItemsListView> {
         ),
         TileTemplate(
           tile: CustomSettingTile(
-            onTap: () {},
+            onTap: () {
+              BetterFeedback.of(context).show(
+                (UserFeedback feedback) async {
+                  final screenshotFilePath =
+                      await writeImageToStorage (feedback.screenshot);
+
+                  final Email email = Email(
+                    body: feedback.text,
+                    subject: 'App Feedback',
+                    recipients: ['amershammout2004@gmail.com'],
+                    attachmentPaths: [screenshotFilePath],
+                    isHTML: false,
+                  );
+
+                  await FlutterEmailSender.send(email);
+                },
+              );
+            },
             settingItem: kSettingItems[4],
             trailing: SvgPicture.asset(
               Assets.iconsButtonsArrow,
@@ -97,6 +118,7 @@ class _SettingsItemsListViewState extends State<SettingsItemsListView> {
       ],
     );
   }
+
   changeThemeMode(value) {
     switch (value) {
       case 'light':
@@ -112,5 +134,11 @@ class _SettingsItemsListViewState extends State<SettingsItemsListView> {
     }
   }
 
+  Future<String> writeImageToStorage(Uint8List feedbackScreenshot) async {
+  final Directory output = await getTemporaryDirectory();
+  final String screenshotFilePath = '${output.path}/feedback.png';
+  final File screenshotFile = File(screenshotFilePath);
+  await screenshotFile.writeAsBytes(feedbackScreenshot);
+  return screenshotFilePath;
 }
-
+}
