@@ -46,7 +46,6 @@ ServerFailure _handleBadResponseError(DioException dioException,int statusCode) 
       return ServerFailure(errMessage: ResponseMessage.badRequest);
     case ResponseCode.unauthorised:
       return ServerFailure(errMessage: ResponseMessage.unauthorised);
-
     case ResponseCode.forbidden:
       return ServerFailure(errMessage: ResponseMessage.forbidden);
     case ResponseCode.notFound:
