@@ -1,19 +1,15 @@
-import 'dart:io';
-
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Manager/theme_cubit/theme_cubit.dart';
+import 'package:e_delivery_app/Features/Settings/Presentation/Views/functions/settings_function.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Views/widgets/custom_settings_expansion_tile.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Views/widgets/custom_settings_tile.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Views/widgets/custom_switch.dart';
 import 'package:e_delivery_app/Core/widgets/tile_template.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:feedback/feedback.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_email_sender/flutter_email_sender.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:path_provider/path_provider.dart';
 
 class SettingsItemsListView extends StatefulWidget {
   const SettingsItemsListView({
@@ -35,7 +31,8 @@ class _SettingsItemsListViewState extends State<SettingsItemsListView> {
           tile: BlocBuilder<ThemeCubit, ThemeMode>(
             builder: (context, mode) {
               return CustomSettingsExpansionTile(
-                onChanged: changeThemeMode,
+                onChanged: (value) =>
+                    SettingsFunction.changeThemeMode(value, context),
                 groupValue: mode.name,
                 settingItem: kSettingItems[0],
                 titles: kAppearanceModes,
@@ -85,18 +82,7 @@ class _SettingsItemsListViewState extends State<SettingsItemsListView> {
             onTap: () {
               BetterFeedback.of(context).show(
                 (UserFeedback feedback) async {
-                  final screenshotFilePath =
-                      await writeImageToStorage (feedback.screenshot);
-
-                  final Email email = Email(
-                    body: feedback.text,
-                    subject: 'App Feedback',
-                    recipients: ['amershammout2004@gmail.com'],
-                    attachmentPaths: [screenshotFilePath],
-                    isHTML: false,
-                  );
-
-                  await FlutterEmailSender.send(email);
+                  await SettingsFunction.sendEmail(feedback);
                 },
               );
             },
@@ -118,27 +104,4 @@ class _SettingsItemsListViewState extends State<SettingsItemsListView> {
       ],
     );
   }
-
-  changeThemeMode(value) {
-    switch (value) {
-      case 'light':
-        BlocProvider.of<ThemeCubit>(context).updateTheme(ThemeMode.light);
-        break;
-      case 'dark':
-        BlocProvider.of<ThemeCubit>(context).updateTheme(ThemeMode.dark);
-        break;
-      case 'system':
-        BlocProvider.of<ThemeCubit>(context).updateTheme(ThemeMode.system);
-
-        break;
-    }
-  }
-
-  Future<String> writeImageToStorage(Uint8List feedbackScreenshot) async {
-  final Directory output = await getTemporaryDirectory();
-  final String screenshotFilePath = '${output.path}/feedback.png';
-  final File screenshotFile = File(screenshotFilePath);
-  await screenshotFile.writeAsBytes(feedbackScreenshot);
-  return screenshotFilePath;
-}
 }
