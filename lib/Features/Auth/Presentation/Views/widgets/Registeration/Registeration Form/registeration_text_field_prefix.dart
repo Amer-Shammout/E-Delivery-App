@@ -1,5 +1,5 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -26,7 +26,7 @@ class RegisterationTextFieldPrefix extends StatelessWidget {
             ),
             Text(
               '+963',
-              style: FontStyles.fontsMedium16(context),
+              style: AppStyles.fontsMedium16(context),
             ),
             const SizedBox(
               width: kSpacing*3,

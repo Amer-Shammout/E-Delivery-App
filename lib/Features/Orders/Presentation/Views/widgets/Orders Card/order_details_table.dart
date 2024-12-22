@@ -1,4 +1,4 @@
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -48,7 +48,7 @@ DataColumn orderDetailsTableDataColumn(String title, context) {
     label: Text(
       textAlign: TextAlign.center,
       title,
-      style: FontStyles.fontsSemiBold12(context).copyWith(
+      style: AppStyles.fontsSemiBold12(context).copyWith(
         color: kBlackColor,
       ),
     ),
@@ -64,7 +64,7 @@ DataRow orderDetailsTableDataRow(context) {
           textAlign: TextAlign.center,
           'Iphone 15',
           style:
-              FontStyles.fontsRegular10(context).copyWith(color: kBlackColor),
+              AppStyles.fontsRegular10(context).copyWith(color: kBlackColor),
         ),
       ),
       DataCell(
@@ -72,7 +72,7 @@ DataRow orderDetailsTableDataRow(context) {
           child: Text(
             textAlign: TextAlign.center,
             '1x',
-            style: FontStyles.fontsRegular10(context)
+            style: AppStyles.fontsRegular10(context)
                 .copyWith(color: kBlackColor),
           ),
         ),
@@ -82,7 +82,7 @@ DataRow orderDetailsTableDataRow(context) {
           child: Text(
             textAlign: TextAlign.center,
             '2M',
-            style: FontStyles.fontsRegular10(context)
+            style: AppStyles.fontsRegular10(context)
                 .copyWith(color: kBlackColor),
           ),
         ),

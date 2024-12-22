@@ -1,5 +1,5 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Features/Settings/Data/models/settings_model.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Views/widgets/custom_radio_buttons_group.dart';
 import 'package:e_delivery_app/constants.dart';
@@ -49,7 +49,7 @@ class CustomSettingsExpansionTile extends StatelessWidget {
       backgroundColor: Theme.of(context).colorScheme.surface,
       title: Text(
         settingItem.title,
-        style: FontStyles.fontsMedium16(context).copyWith(
+        style: AppStyles.fontsMedium16(context).copyWith(
           color: Theme.of(context).colorScheme.error,
         ),
       ),

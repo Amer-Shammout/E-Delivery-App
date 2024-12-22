@@ -1,5 +1,5 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_icon_button.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +20,7 @@ class ProductQuntity extends StatelessWidget {
         ),
         Text(
           '1',
-          style: FontStyles.fontsBold16(context).copyWith(
+          style: AppStyles.fontsBold16(context).copyWith(
             color: kTeranyColor,
           ),
         ),

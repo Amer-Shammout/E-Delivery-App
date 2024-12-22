@@ -1,4 +1,4 @@
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomItemBottomSheet extends StatelessWidget {
@@ -12,7 +12,7 @@ class CustomItemBottomSheet extends StatelessWidget {
       children: [
         Text(
           title,
-          style: FontStyles.fontsMedium16(context).copyWith(
+          style: AppStyles.fontsMedium16(context).copyWith(
             color: Theme.of(context).colorScheme.primary,
           ),
         ),
@@ -20,7 +20,7 @@ class CustomItemBottomSheet extends StatelessWidget {
           children: [
             Text(
               '57,5',
-              style: FontStyles.fontsBlack24(context)
+              style: AppStyles.fontsBlack24(context)
                   .copyWith(color: Theme.of(context).colorScheme.primary),
             ),
             const SizedBox(
@@ -28,7 +28,7 @@ class CustomItemBottomSheet extends StatelessWidget {
             ),
             Text(
               'S.P',
-              style: FontStyles.fontsRegular14(context).copyWith(
+              style: AppStyles.fontsRegular14(context).copyWith(
                 color: Theme.of(context).colorScheme.primary,
               ),
             ),

@@ -2,7 +2,7 @@
 import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/functions/validation.dart';
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/c_t_a_button.dart';
 import 'package:e_delivery_app/Core/widgets/custom_text_form_field.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/Registeration/Registeration%20Form/registeration_text_field_prefix.dart';
@@ -31,7 +31,7 @@ class _RegisterationFormState extends State<RegisterationForm> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text('Enter your phone number',
-              style: FontStyles.fontsBold24(context)),
+              style: AppStyles.fontsBold24(context)),
           const SizedBox(
             height: kSpacing,
           ),
@@ -39,7 +39,7 @@ class _RegisterationFormState extends State<RegisterationForm> {
             opacity: .6,
             child: Text(
               'We will send you the 4 digit verification code',
-              style: FontStyles.fontsRegular16(context).copyWith(
+              style: AppStyles.fontsRegular16(context).copyWith(
                 color: Theme.of(context).colorScheme.primary,
               ),
             ),
@@ -62,7 +62,7 @@ class _RegisterationFormState extends State<RegisterationForm> {
           ),
           CTAButton(
             fillColor: Theme.of(context).colorScheme.primary,
-            style: FontStyles.fontsSemiBold20(context),
+            style: AppStyles.fontsSemiBold20(context),
             onPressed: () {
               if (_formKey.currentState!.validate()) {
                 GoRouter.of(context).pushReplacement(

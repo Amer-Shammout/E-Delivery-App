@@ -1,4 +1,4 @@
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/Widgets/Cart%20View%20Widgets/custom_cart_check_box.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +15,7 @@ class SelectAll extends StatelessWidget {
         ),
         Text(
           'Select All',
-          style: FontStyles.fontsMedium14(context)
+          style: AppStyles.fontsMedium14(context)
               .copyWith(color: Theme.of(context).colorScheme.primary),
         )
       ],

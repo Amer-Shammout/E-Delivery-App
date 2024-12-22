@@ -1,6 +1,6 @@
 import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/Custom%20Product/product_content.dart';
 import 'package:e_delivery_app/Core/widgets/Custom%20Product/product_price.dart';
 import 'package:e_delivery_app/Core/widgets/custom_container.dart';
@@ -38,7 +38,7 @@ class CustomProduct extends StatelessWidget {
                   const Spacer(),
                   Text(
                     'HOT',
-                    style: FontStyles.fontsBold10(context).copyWith(
+                    style: AppStyles.fontsBold10(context).copyWith(
                         color: Theme.of(context).colorScheme.tertiary),
                   ),
                   const SizedBox(

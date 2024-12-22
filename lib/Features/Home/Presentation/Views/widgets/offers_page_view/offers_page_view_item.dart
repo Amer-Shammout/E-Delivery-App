@@ -1,6 +1,6 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/functions/set_theme_colors.dart';
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/c_t_a_button.dart';
 import 'package:e_delivery_app/Core/widgets/custom_card_pattern.dart';
 import 'package:e_delivery_app/constants.dart';
@@ -37,7 +37,7 @@ class OffersPageViewItem extends StatelessWidget {
                 const Spacer(),
                 Text(
                   "Special Offer",
-                  style: FontStyles.fontsBold24(context).copyWith(
+                  style: AppStyles.fontsBold24(context).copyWith(
                     color: Theme.of(context).colorScheme.error,
                   ),
                 ),
@@ -52,7 +52,7 @@ class OffersPageViewItem extends StatelessWidget {
                   contentColor: Theme.of(context).colorScheme.surface,
                   fillColor: Theme.of(context).colorScheme.primary,
                   enableShadow: false,
-                  style: FontStyles.fontsSemiBold10(context),
+                  style: AppStyles.fontsSemiBold10(context),
                   onPressed: () {},
                   title: 'Shop Now',
                   icon: Assets.iconsButtonsArrow,

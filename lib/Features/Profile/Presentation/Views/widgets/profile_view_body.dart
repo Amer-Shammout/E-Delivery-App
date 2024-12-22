@@ -1,6 +1,6 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/functions/validation.dart';
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/Setting%20Info/custom_image_picker.dart';
 import 'package:e_delivery_app/Core/widgets/Setting%20Info/custom_map.dart';
 import 'package:e_delivery_app/Core/widgets/c_t_a_button.dart';
@@ -89,7 +89,7 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
             ),
           ),
           CTAButton(
-            style: FontStyles.fontsSemiBold20(context),
+            style: AppStyles.fontsSemiBold20(context),
             onPressed: () {},
             title: 'LOGOUT',
             fillColor: Theme.of(context).colorScheme.surface.withOpacity(.8),

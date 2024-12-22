@@ -1,5 +1,5 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -21,7 +21,7 @@ class ProductAppBar extends StatelessWidget {
         ),
         Text(
           'HOT',
-          style: FontStyles.fontsBold20(context)
+          style: AppStyles.fontsBold20(context)
               .copyWith(color: Theme.of(context).colorScheme.tertiary),
         ),
         CustomIcon(

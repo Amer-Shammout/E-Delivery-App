@@ -1,5 +1,5 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/utils/styles/shadows.dart';
 import 'package:e_delivery_app/Features/Orders/Presentation/Views/widgets/Orders%20Card/order_details_table.dart';
 import 'package:e_delivery_app/Features/Orders/Presentation/Views/widgets/Orders%20Card/orders_card_leading.dart';
@@ -66,7 +66,7 @@ class OrdersCard extends StatelessWidget {
         backgroundColor: cardColor,
         title: Text(
           'Delivered!',
-          style: FontStyles.fontsBold16(context).copyWith(
+          style: AppStyles.fontsBold16(context).copyWith(
             color: kBlackColor,
           ),
         ),
@@ -75,12 +75,12 @@ class OrdersCard extends StatelessWidget {
             children: [
               TextSpan(
                 text: '6M ',
-                style: FontStyles.fontsRegular12(context)
+                style: AppStyles.fontsRegular12(context)
                     .copyWith(color: kBlackColor),
               ),
               TextSpan(
                 text: 'S.P',
-                style: FontStyles.fontsSemiBold12(context)
+                style: AppStyles.fontsSemiBold12(context)
                     .copyWith(color: kBlackColor),
               )
             ],

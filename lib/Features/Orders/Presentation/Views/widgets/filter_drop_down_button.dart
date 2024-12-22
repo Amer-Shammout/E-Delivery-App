@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/functions/set_theme_colors.dart';
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/utils/styles/shadows.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
@@ -55,7 +55,7 @@ class _FilterDropDownButtonState extends State<FilterDropDownButton> {
         ),
         isExpanded: true,
         underline: const SizedBox(),
-        style: FontStyles.fontsSemiBold16(context),
+        style: AppStyles.fontsSemiBold16(context),
         elevation: 0,
         borderRadius: BorderRadius.circular(12),
         dropdownColor: Theme.of(context).colorScheme.surface,

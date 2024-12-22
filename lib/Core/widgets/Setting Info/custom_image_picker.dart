@@ -1,5 +1,5 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_text_button.dart';
 import 'package:e_delivery_app/Core/widgets/profile_avatar.dart';
 import 'package:flutter/material.dart';
@@ -42,7 +42,7 @@ class _CustomImagePickerState extends State<CustomImagePicker> {
           CustomTextButtonWithIcon(
             onPressed: () {},
             title: 'Upload photo',
-            style: FontStyles.fontsRegular16(context),
+            style: AppStyles.fontsRegular16(context),
             color: Theme.of(context).colorScheme.primary,
           ),
         ],

@@ -1,6 +1,6 @@
 import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/c_t_a_button.dart';
 import 'package:e_delivery_app/Core/widgets/custom_text_button.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/Verification/Verification%20Form/custom_timer.dart';
@@ -31,7 +31,7 @@ class _VerificationFormState extends State<VerificationForm> {
         children: [
           Text(
             'Verification Code',
-            style: FontStyles.fontsBold24(context),
+            style: AppStyles.fontsBold24(context),
           ),
           const SizedBox(
             height: kSpacing,
@@ -44,7 +44,7 @@ class _VerificationFormState extends State<VerificationForm> {
                 children: [
                   TextSpan(
                     text: 'Please enter code\nsent to ',
-                    style: FontStyles.fontsRegular16(context).copyWith(
+                    style: AppStyles.fontsRegular16(context).copyWith(
                       color: Theme.of(context).colorScheme.primary.withOpacity(
                             .6,
                           ),
@@ -52,7 +52,7 @@ class _VerificationFormState extends State<VerificationForm> {
                   ),
                   TextSpan(
                       text: '+963993865338',
-                      style: FontStyles.fontsSemiBold16(context)),
+                      style: AppStyles.fontsSemiBold16(context)),
                 ],
               ),
             ),
@@ -65,7 +65,7 @@ class _VerificationFormState extends State<VerificationForm> {
             height: kSpacing * 6,
           ),
           CTAButton(
-            style: FontStyles.fontsSemiBold20(context),
+            style: AppStyles.fontsSemiBold20(context),
             onPressed: () {
               if (_formKey.currentState!.validate()) {
                 GoRouter.of(context).pushReplacement(

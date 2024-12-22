@@ -1,4 +1,4 @@
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_widget_with_dash.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/Widgets/Cart%20View%20Widgets/product_cart_price.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/Widgets/Cart%20View%20Widgets/product_quntity.dart';
@@ -19,7 +19,7 @@ class ProductCartContent extends StatelessWidget {
             children: [
               Text(
                 'EMMATEL',
-                style: FontStyles.fontsMedium10(context).copyWith(
+                style: AppStyles.fontsMedium10(context).copyWith(
                   fontSize: 8,
                   color: kBlackColor.withOpacity(0.35),
                 ),
@@ -28,7 +28,7 @@ class ProductCartContent extends StatelessWidget {
                 children: [
                   Text(
                     'HOT',
-                    style: FontStyles.fontsBold12(context)
+                    style: AppStyles.fontsBold12(context)
                         .copyWith(color: kTeranyColor),
                   ),
                   const SizedBox(
@@ -40,7 +40,7 @@ class ProductCartContent extends StatelessWidget {
           ),
           Text(
             'IPHONE 16 PRO MAX',
-            style: FontStyles.fontsBold14(context).copyWith(
+            style: AppStyles.fontsBold14(context).copyWith(
               color: kBlackColor,
             ),
           ),
@@ -50,7 +50,7 @@ class ProductCartContent extends StatelessWidget {
             height: 2,
             widget: Text(
               'Mobiles',
-              style: FontStyles.fontsSemiBold12(context).copyWith(
+              style: AppStyles.fontsSemiBold12(context).copyWith(
                 color: kPrimaryColor,
               ),
             ),

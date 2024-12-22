@@ -1,4 +1,4 @@
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_widget_with_dash.dart';
 import 'package:flutter/material.dart';
 
@@ -59,11 +59,11 @@ class _CategoriesListViewState extends State<CategoriesListView> {
 
   TextStyle formatTextStyle(int index, int currentIndex) {
     if (currentIndex != index) {
-      return FontStyles.fontsMedium16(context).copyWith(
+      return AppStyles.fontsMedium16(context).copyWith(
         color: Theme.of(context).colorScheme.primary.withOpacity(0.5),
       );
     }
-    return FontStyles.fontsBold16(context)
+    return AppStyles.fontsBold16(context)
         .copyWith(color: Theme.of(context).colorScheme.primary);
   }
 }

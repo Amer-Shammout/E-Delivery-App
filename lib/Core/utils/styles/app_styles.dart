@@ -1,7 +1,7 @@
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 
-abstract class FontStyles {
+abstract class AppStyles {
   static TextStyle fontsRegular10(context) {
     return TextStyle(
       color: Theme.of(context).colorScheme.primary,

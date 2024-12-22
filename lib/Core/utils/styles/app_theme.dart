@@ -1,5 +1,5 @@
 import 'package:e_delivery_app/Core/utils/styles/app_colors.dart';
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:feedback/feedback.dart';
 import 'package:flutter/material.dart';
 
@@ -30,11 +30,11 @@ class AppTheme {
 
   static FeedbackThemeData lightFeedbackThemeData(BuildContext context) =>
       FeedbackThemeData(
-        bottomSheetTextInputStyle: FontStyles.fontsMedium16(context)
+        bottomSheetTextInputStyle: AppStyles.fontsMedium16(context)
             .copyWith(color: AppTheme.lightTheme.colorScheme.error),
         background: AppTheme.lightTheme.colorScheme.secondary,
         feedbackSheetColor: AppTheme.lightTheme.colorScheme.surface,
-        bottomSheetDescriptionStyle: FontStyles.fontsMedium16(context).copyWith(
+        bottomSheetDescriptionStyle: AppStyles.fontsMedium16(context).copyWith(
           color: AppTheme.lightTheme.colorScheme.error,
         ),
         dragHandleColor: Colors.grey.shade400,
@@ -42,11 +42,11 @@ class AppTheme {
 
   static FeedbackThemeData darkFeedbackThemeData(BuildContext context) =>
       FeedbackThemeData(
-        bottomSheetTextInputStyle: FontStyles.fontsMedium16(context)
+        bottomSheetTextInputStyle: AppStyles.fontsMedium16(context)
             .copyWith(color: AppTheme.darkTheme.colorScheme.error),
         background: AppTheme.darkTheme.colorScheme.secondary,
         feedbackSheetColor: AppTheme.darkTheme.colorScheme.surface,
-        bottomSheetDescriptionStyle: FontStyles.fontsMedium16(context).copyWith(
+        bottomSheetDescriptionStyle: AppStyles.fontsMedium16(context).copyWith(
           color: AppTheme.darkTheme.colorScheme.error,
         ),
         dragHandleColor: AppTheme.darkTheme.colorScheme.error,

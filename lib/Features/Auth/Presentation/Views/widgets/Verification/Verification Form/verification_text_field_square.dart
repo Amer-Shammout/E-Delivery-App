@@ -1,6 +1,6 @@
 import 'package:e_delivery_app/Core/utils/functions/set_theme_colors.dart';
 import 'package:e_delivery_app/Core/utils/functions/validation.dart';
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/utils/styles/shadows.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -28,7 +28,7 @@ class VerificationTextFieldSquare extends StatelessWidget {
         validator: Validation.validateFieldIfEmpty,
         onSaved: onSaved,
         onChanged: onChanged,
-        style: FontStyles.fontsMedium32(context),
+        style: AppStyles.fontsMedium32(context),
         textAlign: TextAlign.center,
         keyboardType: TextInputType.number,
         inputFormatters: [

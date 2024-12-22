@@ -1,4 +1,4 @@
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/c_t_a_button.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/Widgets/Cart%20View%20Widgets/custom_item_bottom_sheet.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +32,7 @@ class CartBottomSheet extends StatelessWidget {
               CTAButton(
                 onPressed: () {},
                 title: 'SUBMIT',
-                style: FontStyles.fontsSemiBold20(context).copyWith(
+                style: AppStyles.fontsSemiBold20(context).copyWith(
                   color: Theme.of(context).colorScheme.surface,
                 ),
               ),

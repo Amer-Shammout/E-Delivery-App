@@ -1,5 +1,5 @@
 import 'package:e_delivery_app/Core/utils/functions/set_theme_colors.dart';
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/utils/styles/shadows.dart';
 import 'package:flutter/material.dart';
 
@@ -49,7 +49,7 @@ class CustomTextFormField extends StatelessWidget {
           ),
           child: Text(
             ' ',
-            style: FontStyles.fontsMedium16(context),
+            style: AppStyles.fontsMedium16(context),
           ),
         ),
         TextFormField(
@@ -60,7 +60,7 @@ class CustomTextFormField extends StatelessWidget {
           maxLength: maxLength,
           keyboardType: textInputType,
           validator: validator,
-          style: FontStyles.fontsMedium16(context)
+          style: AppStyles.fontsMedium16(context)
               .copyWith(color: Theme.of(context).colorScheme.error),
           cursorColor: Theme.of(context).colorScheme.primary,
           cursorErrorColor: Theme.of(context).colorScheme.tertiary,
@@ -74,7 +74,7 @@ class CustomTextFormField extends StatelessWidget {
                 : Colors.transparent,
             contentPadding: EdgeInsets.all(contentPadding),
             hintText: hint,
-            hintStyle: FontStyles.fontsMedium16(context).copyWith(
+            hintStyle: AppStyles.fontsMedium16(context).copyWith(
               color: Theme.of(context).colorScheme.error.withOpacity(.4),
             ),
             focusedErrorBorder:

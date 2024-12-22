@@ -1,4 +1,4 @@
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -18,7 +18,7 @@ class OrdersCardLeading extends StatelessWidget {
         children: [
           Text(
             '1',
-            style: FontStyles.fontsBold24(context).copyWith(
+            style: AppStyles.fontsBold24(context).copyWith(
               color: kBlackColor.withOpacity(
                     .7,
                   ),

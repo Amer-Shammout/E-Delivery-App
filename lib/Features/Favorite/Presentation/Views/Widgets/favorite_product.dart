@@ -1,5 +1,5 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_container.dart';
 import 'package:e_delivery_app/Features/Favorite/Presentation/Views/Widgets/favorite_product_content.dart';
 import 'package:e_delivery_app/constants.dart';
@@ -44,7 +44,7 @@ class FavoriteProduct extends StatelessWidget {
               children: [
                 Text(
                   'HOT',
-                  style: FontStyles.fontsBold12(context)
+                  style: AppStyles.fontsBold12(context)
                       .copyWith(color: Theme.of(context).colorScheme.tertiary),
                 ),
                 SvgPicture.asset(

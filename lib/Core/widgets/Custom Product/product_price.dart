@@ -1,5 +1,5 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -17,7 +17,7 @@ class ProductPrice extends StatelessWidget {
           children: [
             Text(
               '57,55',
-              style: FontStyles.fontsBlack20(context)
+              style: AppStyles.fontsBlack20(context)
                   .copyWith(color: Theme.of(context).colorScheme.tertiary),
             ),
             const SizedBox(
@@ -25,7 +25,7 @@ class ProductPrice extends StatelessWidget {
             ),
             Text(
               'S.P',
-              style: FontStyles.fontsRegular10(context)
+              style: AppStyles.fontsRegular10(context)
                   .copyWith(color: Theme.of(context).colorScheme.tertiary),
             ),
           ],
@@ -34,7 +34,7 @@ class ProductPrice extends StatelessWidget {
           children: [
             Text(
               'Add',
-              style: FontStyles.fontsMedium12(context)
+              style: AppStyles.fontsMedium12(context)
                   .copyWith(color: Theme.of(context).colorScheme.tertiary),
             ),
             SvgPicture.asset(

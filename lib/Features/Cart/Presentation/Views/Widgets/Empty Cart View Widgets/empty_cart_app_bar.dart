@@ -1,5 +1,5 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_icon.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +18,7 @@ class EmptyCartAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       title: Text(
         'Cart',
-        style: FontStyles.fontsBold28(context).copyWith(
+        style: AppStyles.fontsBold28(context).copyWith(
           color: kPrimaryColor,
         ),
       ),
