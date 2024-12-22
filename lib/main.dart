@@ -31,12 +31,17 @@ class EDelivery extends StatelessWidget {
       ],
       child: BlocBuilder<ThemeCubit, ThemeMode>(
         builder: (context, mode) {
-          return MaterialApp.router(
+          return BetterFeedback(
             themeMode: mode,
-            darkTheme: AppTheme.darkTheme,
-            debugShowCheckedModeBanner: false,
-            theme:AppTheme.lightTheme,
-            routerConfig: AppRouter.router,
+            darkTheme: AppTheme.darkFeedbackThemeData(context),
+            theme: AppTheme.lightFeedbackThemeData(context),
+            child: MaterialApp.router(
+              themeMode: mode,
+              darkTheme: AppTheme.darkTheme,
+              debugShowCheckedModeBanner: false,
+              theme: AppTheme.lightTheme,
+              routerConfig: AppRouter.router,
+            ),
           );
         },
       ),
