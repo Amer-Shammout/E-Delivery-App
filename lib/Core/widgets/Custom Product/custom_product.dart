@@ -18,7 +18,7 @@ class CustomProduct extends StatelessWidget {
       },
       child: CustomContainer(
         child: Container(
-          padding: const EdgeInsets.only(left: 8, right: 4, top: 8, bottom: 4),
+          padding: const EdgeInsetsDirectional.only(start: 8, end: 4, top: 8, bottom: 4),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
             image: DecorationImage(

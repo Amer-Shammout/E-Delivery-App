@@ -14,7 +14,7 @@ class FavoriteProduct extends StatelessWidget {
     return CustomContainer(
       child: Container(
         height: 124,
-        padding: const EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 8),
+        padding: const EdgeInsets.only(left: kHorizontalPadding, right: kHorizontalPadding, top: kSpacing*4, bottom: kSpacing*2),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
           image: DecorationImage(

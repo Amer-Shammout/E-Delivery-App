@@ -20,9 +20,9 @@ class StoreDetailsAppBar extends StatelessWidget {
       backgroundColor: Theme.of(context).colorScheme.surface,
       automaticallyImplyLeading: false,
       leading: Padding(
-        padding: const EdgeInsets.only(
-          left: kHorizontalPadding,
-          top: 16,
+        padding: const EdgeInsetsDirectional.only(
+          start: kHorizontalPadding,
+          top: kHorizontalPadding,
         ),
         child: Center(
           child: CustomIcon(
@@ -35,8 +35,8 @@ class StoreDetailsAppBar extends StatelessWidget {
       ),
       actions: const [
         Padding(
-          padding: EdgeInsets.only(
-            right: kHorizontalPadding,
+          padding: EdgeInsetsDirectional.only(
+            end: kHorizontalPadding,
             top: 16,
           ),
           child: CustomIcon(

@@ -20,9 +20,9 @@ class ProductsGridView extends StatelessWidget {
     );
   }
 
-  EdgeInsets formatPadding(int index) {
+  EdgeInsetsGeometry formatPadding(int index) {
     return index % 2 == 0
-        ? const EdgeInsets.only(left: 16)
-        : const EdgeInsets.only(right: 16);
+        ? const EdgeInsetsDirectional.only(start: 16)
+        : const EdgeInsetsDirectional.only(end: 16);
   }
 }

@@ -12,7 +12,7 @@ class ProductCardCart extends StatelessWidget {
     return CustomContainer(
       child: Container(
         height: 132,
-        padding: const EdgeInsets.only(left: 12, right: 12, top: 8, bottom: 4),
+        padding: const EdgeInsets.only(left: kSpacing*3, right: kSpacing*3, top: kSpacing*2, bottom: kSpacing),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
           image: DecorationImage(

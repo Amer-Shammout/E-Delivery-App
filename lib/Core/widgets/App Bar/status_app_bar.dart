@@ -13,7 +13,7 @@ class StatusAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 16, right: 16, top: 16),
+      padding: const EdgeInsets.only(left: kHorizontalPadding, right: kHorizontalPadding, top: kSpacing*4),
       child: Row(
         children: [
           GestureDetector(
@@ -23,7 +23,7 @@ class StatusAppBar extends StatelessWidget {
               );
             },
             child: const ProfileAvatar(
-              padding: 16,
+              padding: kSpacing*4,
             ),
           ),
           const SizedBox(

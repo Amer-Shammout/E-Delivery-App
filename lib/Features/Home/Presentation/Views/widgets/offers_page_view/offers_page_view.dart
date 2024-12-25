@@ -20,7 +20,6 @@ class _OffersPageViewState extends State<OffersPageView> {
   late PageController _pageController;
   @override
   void initState() {
-    
     _pageController = PageController();
     _startTimer();
     super.initState();
@@ -63,7 +62,7 @@ class _OffersPageViewState extends State<OffersPageView> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(bottom: 4.0),
+              padding: const EdgeInsets.only(bottom: kSpacing),
               child: Align(
                 alignment: Alignment.bottomCenter,
                 child: CustomDotsIndicator(
@@ -87,23 +86,22 @@ class _OffersPageViewState extends State<OffersPageView> {
     _timer = Timer.periodic(
       const Duration(seconds: 6),
       (timer) {
-
         if (mounted) {
-  if (_pageController.page == 2) {
-    _pageController.animateToPage(
-      0,
-      duration: const Duration(
-        milliseconds: 500,
-      ),
-      curve: Curves.easeInOut,
-    );
-  } else {
-    _pageController.nextPage(
-      duration: const Duration(milliseconds: 500),
-      curve: Curves.easeInOut,
-    );
-  }
-}
+          if (_pageController.page == 2) {
+            _pageController.animateToPage(
+              0,
+              duration: const Duration(
+                milliseconds: 500,
+              ),
+              curve: Curves.easeInOut,
+            );
+          } else {
+            _pageController.nextPage(
+              duration: const Duration(milliseconds: 500),
+              curve: Curves.easeInOut,
+            );
+          }
+        }
       },
     );
   }

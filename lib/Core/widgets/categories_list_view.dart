@@ -42,11 +42,11 @@ class _CategoriesListViewState extends State<CategoriesListView> {
     );
   }
 
-  EdgeInsets formatPadding(int index) {
+  EdgeInsetsGeometry formatPadding(int index) {
     return index == 0
-        ? const EdgeInsets.only(left: 16, right: 8)
+        ? const EdgeInsetsDirectional.only(start: 16, end: 8)
         : index == 9
-            ? const EdgeInsets.only(right: 16, left: 8)
+            ? const EdgeInsetsDirectional.only(end: 16, start: 8)
             : const EdgeInsets.symmetric(horizontal: 8);
   }
 

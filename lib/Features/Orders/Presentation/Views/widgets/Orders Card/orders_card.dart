@@ -37,10 +37,10 @@ class OrdersCard extends StatelessWidget {
             BlendMode.srcATop,
           ),
         ),
-        childrenPadding: const EdgeInsets.only(
-          left: kHorizontalPadding,
-          right: kHorizontalPadding,
-          bottom: 24,
+        childrenPadding: const EdgeInsetsDirectional.only(
+          start: kHorizontalPadding,
+          end: kHorizontalPadding,
+          bottom: kSpacing*6,
         ),
         tilePadding: const EdgeInsets.symmetric(
           horizontal: 16,

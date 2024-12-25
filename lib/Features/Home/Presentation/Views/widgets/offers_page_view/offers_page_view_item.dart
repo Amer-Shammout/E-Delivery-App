@@ -30,6 +30,7 @@ class OffersPageViewItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Image.asset(
+                  fit: BoxFit.fill,
                   Assets.imagesSmatelLogoTest,
                   width: 80,
                   height: 20,

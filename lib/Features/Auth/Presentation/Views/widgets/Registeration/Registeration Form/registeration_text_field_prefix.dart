@@ -11,7 +11,7 @@ class RegisterationTextFieldPrefix extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 24.0),
+      padding: const EdgeInsetsDirectional.only(start: kSpacing*6),
       child: FittedBox(
         fit: BoxFit.scaleDown,
         child: Row(
