@@ -21,8 +21,8 @@ class GlassButton extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              begin: Alignment.centerLeft,
-              end: Alignment.centerRight,
+              begin: AlignmentDirectional.centerStart,
+              end: AlignmentDirectional.centerEnd,
               stops: const [0.42, 1.0],
               colors: [
                 kWhiteColor.withOpacity(0.2),
@@ -32,8 +32,8 @@ class GlassButton extends StatelessWidget {
             border: GradientBoxBorder(
               width: 2,
               gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
+                begin: AlignmentDirectional.topStart,
+                end: AlignmentDirectional.bottomEnd,
                 stops: const [0.4, 1.0],
                 colors: [
                   kWhiteColor.withOpacity(.6),
