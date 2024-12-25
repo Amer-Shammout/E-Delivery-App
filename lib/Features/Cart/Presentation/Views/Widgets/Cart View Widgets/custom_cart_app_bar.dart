@@ -3,6 +3,7 @@ import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_icon.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/Widgets/Cart%20View%20Widgets/select_all.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class CustomCartAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomCartAppBar({super.key});
@@ -12,9 +13,14 @@ class CustomCartAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       toolbarHeight: 80,
       leadingWidth: 80,
-      leading: const Padding(
-        padding: EdgeInsets.all(16),
-        child: CustomIcon(icon: Assets.iconsBackArrow),
+      leading: Padding(
+        padding: const EdgeInsets.all(16),
+        child: CustomIcon(
+          icon: Assets.iconsBackArrow,
+          onPressed: () {
+            GoRouter.of(context).pop();
+          },
+        ),
       ),
       title: Text(
         'Cart',
