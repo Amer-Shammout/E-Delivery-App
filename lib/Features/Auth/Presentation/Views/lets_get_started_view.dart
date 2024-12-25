@@ -22,7 +22,7 @@ class LetsGetStartedView extends StatelessWidget {
                   Colors.transparent,
                   Colors.black.withOpacity(0.5),
                 ],
-                center: AlignmentDirectional.topStart,),
+                center: Alignment.topLeft),
           ),
           child: const Scaffold(
             backgroundColor: Colors.transparent,
