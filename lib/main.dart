@@ -26,7 +26,7 @@ Future<void> main() async {
   await Prefs.init();
 
   setupGetit();
-  runApp(const BetterFeedback(child: EDelivery()));
+  runApp(const EDelivery());
 }
 
 class EDelivery extends StatelessWidget {
@@ -40,28 +40,33 @@ class EDelivery extends StatelessWidget {
           create: (_) => ThemeCubit(),
         ),
         BlocProvider(
-          create: (_) => LocalizationCubit(context),
+          create: (_) => LocalizationCubit(),
         ),
       ],
       child: BlocBuilder<LocalizationCubit, String>(
         builder: (context, lang) {
           return BlocBuilder<ThemeCubit, ThemeMode>(
             builder: (context, mode) {
-              return MaterialApp.router(
-                locale: Locale(setLocale(lang, context)),
-                localizationsDelegates: const [
-                  S.delegate,
-                  GlobalMaterialLocalizations.delegate,
-                  GlobalWidgetsLocalizations.delegate,
-                  GlobalCupertinoLocalizations.delegate,
-                ],
-                supportedLocales: S.delegate.supportedLocales,
+              return BetterFeedback(
                 themeMode: mode,
-                darkTheme: AppTheme.darkTheme,
-                debugShowCheckedModeBanner: false,
-                theme: AppTheme.lightTheme,
-                routerConfig: AppRouter.router,
-                // home: const CartView(),
+                darkTheme: AppTheme.darkFeedbackThemeData(context),
+                theme: AppTheme.lightFeedbackThemeData(context),
+                child: MaterialApp.router(
+                  locale: Locale(setLocale(lang, context)),
+                  localizationsDelegates: const [
+                    S.delegate,
+                    GlobalMaterialLocalizations.delegate,
+                    GlobalWidgetsLocalizations.delegate,
+                    GlobalCupertinoLocalizations.delegate,
+                  ],
+                  supportedLocales: S.delegate.supportedLocales,
+                  themeMode: mode,
+                  darkTheme: AppTheme.darkTheme,
+                  debugShowCheckedModeBanner: false,
+                  theme: AppTheme.lightTheme,
+                  routerConfig: AppRouter.router,
+                  // home: const CartView(),
+                ),
               );
             },
           );

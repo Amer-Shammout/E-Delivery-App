@@ -1,6 +1,3 @@
-import 'package:e_delivery_app/Core/utils/assets.dart';
-import 'package:e_delivery_app/Features/Settings/Data/models/settings_model.dart';
-import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 const double kSpacing = 4;
