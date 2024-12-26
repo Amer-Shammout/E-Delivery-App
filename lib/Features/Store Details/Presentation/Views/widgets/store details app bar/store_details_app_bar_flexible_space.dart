@@ -1,5 +1,5 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_background_container.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
@@ -30,13 +30,13 @@ class StoreDetailsAppBarFlexibleSpace extends StatelessWidget {
               ),
               Text(
                 'Samatel Store',
-                style: FontStyles.fontsBold18(context)
+                style: AppStyles.fontsBold18(context)
                     .copyWith(color: Theme.of(context).colorScheme.error),
                 textAlign: TextAlign.center,
               ),
               Text(
                 '100 Items',
-                style: FontStyles.fontsRegular12(context)
+                style: AppStyles.fontsRegular12(context)
                     .copyWith(color: Theme.of(context).colorScheme.error.withOpacity(.6)),
                 textAlign: TextAlign.center,
               ),

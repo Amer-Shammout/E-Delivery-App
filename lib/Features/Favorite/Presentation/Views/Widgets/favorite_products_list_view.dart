@@ -1,4 +1,5 @@
 import 'package:e_delivery_app/Features/Favorite/Presentation/Views/Widgets/favorite_product.dart';
+import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 
 class FavoriteProductsListView extends StatelessWidget {
@@ -9,7 +10,7 @@ class FavoriteProductsListView extends StatelessWidget {
     return SliverList.builder(
       itemCount: 10,
       itemBuilder: (context, index) => const Padding(
-        padding: EdgeInsets.only(bottom: 24, left: 16, right: 16),
+        padding: EdgeInsets.only(bottom: kSpacing*6, left: kHorizontalPadding, right: kHorizontalPadding),
         child: FavoriteProduct(),
       ),
     );

@@ -1,4 +1,4 @@
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_check_box.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +26,7 @@ class CustomRadioButtonListTile extends StatelessWidget {
         leading: _customRadioButton(context),
         title: Text(
           title,
-          style: FontStyles.fontsRegular16(context)
+          style: AppStyles.fontsRegular16(context)
               .copyWith(color: Theme.of(context).colorScheme.error),
         ),
       ),

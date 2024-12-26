@@ -1,5 +1,5 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -20,7 +20,7 @@ class CustomProductPrice extends StatelessWidget {
               children: [
                 Text(
                   '57,55',
-                  style: FontStyles.fontsRegular16(context).copyWith(
+                  style: AppStyles.fontsRegular16(context).copyWith(
                       height: 0,
                       decoration: TextDecoration.lineThrough,
                       decorationColor: Theme.of(context).colorScheme.tertiary,
@@ -31,7 +31,7 @@ class CustomProductPrice extends StatelessWidget {
                   children: [
                     Text(
                       '57,55',
-                      style: FontStyles.fontsBlack40(context).copyWith(
+                      style: AppStyles.fontsBlack40(context).copyWith(
                         height: 0,
                         color: Theme.of(context).colorScheme.tertiary,
                       ),
@@ -41,7 +41,7 @@ class CustomProductPrice extends StatelessWidget {
                     ),
                     Text(
                       'S.P',
-                      style: FontStyles.fontsRegular20(context)
+                      style: AppStyles.fontsRegular20(context)
                           .copyWith(color: Theme.of(context).colorScheme.tertiary),
                     ),
                   ],
@@ -54,7 +54,7 @@ class CustomProductPrice extends StatelessWidget {
           children: [
             Text(
               'Add',
-              style: FontStyles.fontsMedium28(context)
+              style: AppStyles.fontsMedium28(context)
                   .copyWith(color: Theme.of(context).colorScheme.tertiary),
             ),
             SvgPicture.asset(

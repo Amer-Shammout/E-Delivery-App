@@ -1,4 +1,4 @@
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +16,7 @@ class OffersPageViewItemDetails extends StatelessWidget {
       children: [
         Text(
           'Up to',
-          style: FontStyles.fontsRegular14(context).copyWith(
+          style: AppStyles.fontsRegular14(context).copyWith(
             color: Theme.of(context).colorScheme.error,
           ),
         ),
@@ -35,7 +35,7 @@ class OffersPageViewItemDetails extends StatelessWidget {
           child: Text(
             '$offerDiscount%',
             style:
-                FontStyles.fontsBlack20(context).copyWith(color: Theme.of(context).colorScheme.surface),
+                AppStyles.fontsBlack20(context).copyWith(color: Theme.of(context).colorScheme.surface),
           ),
         ),
       ],

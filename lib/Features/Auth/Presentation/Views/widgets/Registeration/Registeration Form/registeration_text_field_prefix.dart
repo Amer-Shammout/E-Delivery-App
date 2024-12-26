@@ -1,5 +1,5 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +11,7 @@ class RegisterationTextFieldPrefix extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 24.0),
+      padding: const EdgeInsetsDirectional.only(start: kSpacing*6),
       child: FittedBox(
         fit: BoxFit.scaleDown,
         child: Row(
@@ -26,7 +26,7 @@ class RegisterationTextFieldPrefix extends StatelessWidget {
             ),
             Text(
               '+963',
-              style: FontStyles.fontsMedium16(context),
+              style: AppStyles.fontsMedium16(context),
             ),
             const SizedBox(
               width: kSpacing*3,

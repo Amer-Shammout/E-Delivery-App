@@ -13,8 +13,8 @@ class SearchViewAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(
-        left: kHorizontalPadding,
+      padding: const EdgeInsetsDirectional.only(
+        start: kHorizontalPadding,
         top: kSpacing,
       ),
       child: Row(

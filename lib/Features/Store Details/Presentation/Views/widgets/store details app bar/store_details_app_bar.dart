@@ -15,14 +15,14 @@ class StoreDetailsAppBar extends StatelessWidget {
     return SliverAppBar(
       toolbarHeight: 65,
       surfaceTintColor: Colors.transparent,
-      pinned: false,
+      pinned: true,
       floating: true,
       backgroundColor: Theme.of(context).colorScheme.surface,
       automaticallyImplyLeading: false,
       leading: Padding(
-        padding: const EdgeInsets.only(
-          left: kHorizontalPadding,
-          top: 16,
+        padding: const EdgeInsetsDirectional.only(
+          start: kHorizontalPadding,
+          top: kHorizontalPadding,
         ),
         child: Center(
           child: CustomIcon(
@@ -35,8 +35,8 @@ class StoreDetailsAppBar extends StatelessWidget {
       ),
       actions: const [
         Padding(
-          padding: EdgeInsets.only(
-            right: kHorizontalPadding,
+          padding: EdgeInsetsDirectional.only(
+            end: kHorizontalPadding,
             top: 16,
           ),
           child: CustomIcon(

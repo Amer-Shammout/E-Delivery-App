@@ -8,8 +8,9 @@ class ProfileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CustomBackgroundContainer(
-      child: Scaffold(
+    return CustomBackgroundContainer(
+      color: Theme.of(context).colorScheme.surface,
+      child: const Scaffold(
         backgroundColor: Colors.transparent,
         appBar: ProfileAppBar(),
         body: ProfileViewBody(),

@@ -14,7 +14,7 @@ class StoreDetailsViewBody extends StatelessWidget {
         const StoreDetailsAppBar(),
         PinnedHeaderSliver(
           child: Container(
-            color: Colors.white,
+            color: Theme.of(context).colorScheme.surface,
             child: const Column(
               children: [
                 SizedBox(

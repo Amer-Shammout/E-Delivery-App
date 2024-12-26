@@ -1,3 +1,4 @@
+import 'package:e_delivery_app/Core/utils/functions/set_theme_colors.dart';
 import 'package:e_delivery_app/Core/utils/styles/shadows.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
@@ -7,24 +8,25 @@ class CustomIcon extends StatelessWidget {
   const CustomIcon(
       {super.key,
       this.radius = 40,
-      this.backgroundColor = kWhiteColor,
+      this.backgroundColor,
       required this.icon,
       this.iconColor = kPrimaryColor,
       this.onPressed,
       this.iconSize = 16});
   final double radius;
-  final Color backgroundColor;
+  final Color? backgroundColor;
   final String icon;
   final Color iconColor;
   final void Function()? onPressed;
   final double iconSize;
+
   @override
   Widget build(BuildContext context) {
     return Container(
       height: radius,
       width: radius,
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.secondary,
+        color: backgroundColor?? SetThemeColors.setBackgroundColor(context),
         borderRadius: BorderRadius.circular(360),
         boxShadow: const [Shadows.iconDropShadow],
       ),
@@ -34,9 +36,12 @@ class CustomIcon extends StatelessWidget {
           height: iconSize,
           width: iconSize,
           icon,
-          colorFilter: ColorFilter.mode(Theme.of(context).colorScheme.primary, BlendMode.srcATop),
+          colorFilter: ColorFilter.mode(
+              Theme.of(context).colorScheme.primary, BlendMode.srcATop),
         ),
       ),
     );
   }
 }
+
+

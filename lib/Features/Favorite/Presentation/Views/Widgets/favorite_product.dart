@@ -1,5 +1,5 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_container.dart';
 import 'package:e_delivery_app/Features/Favorite/Presentation/Views/Widgets/favorite_product_content.dart';
 import 'package:e_delivery_app/constants.dart';
@@ -14,12 +14,14 @@ class FavoriteProduct extends StatelessWidget {
     return CustomContainer(
       child: Container(
         height: 124,
-        padding: const EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 8),
+        padding: const EdgeInsets.only(left: kHorizontalPadding, right: kHorizontalPadding, top: kSpacing*4, bottom: kSpacing*2),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
-          image: const DecorationImage(
+          image: DecorationImage(
+            colorFilter: ColorFilter.mode(
+                Theme.of(context).colorScheme.secondary, BlendMode.srcATop),
             fit: BoxFit.fill,
-            image: AssetImage(Assets.imagesFavoriteCard),
+            image: const AssetImage(Assets.imagesFavoriteCard),
           ),
         ),
         child: Row(
@@ -42,15 +44,15 @@ class FavoriteProduct extends StatelessWidget {
               children: [
                 Text(
                   'HOT',
-                  style: FontStyles.fontsBold12(context)
-                      .copyWith(color: kTeranyColor),
+                  style: AppStyles.fontsBold12(context)
+                      .copyWith(color: Theme.of(context).colorScheme.tertiary),
                 ),
                 SvgPicture.asset(
                   width: 20,
                   height: 20,
                   Assets.iconsTrash,
-                  colorFilter: const ColorFilter.mode(
-                    kTeranyColor,
+                  colorFilter: ColorFilter.mode(
+                    Theme.of(context).colorScheme.tertiary,
                     BlendMode.srcATop,
                   ),
                 ),

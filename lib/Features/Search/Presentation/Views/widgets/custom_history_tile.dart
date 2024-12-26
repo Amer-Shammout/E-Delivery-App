@@ -1,5 +1,5 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/tile_template.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +21,7 @@ class CustomHistoryTile extends StatelessWidget {
             horizontal: kHorizontalPadding, vertical: kSpacing * 4),
         title: Text(
           title,
-          style: FontStyles.fontsMedium16(context).copyWith(
+          style: AppStyles.fontsMedium16(context).copyWith(
             color: Theme.of(context).colorScheme.error,
           ),
         ),

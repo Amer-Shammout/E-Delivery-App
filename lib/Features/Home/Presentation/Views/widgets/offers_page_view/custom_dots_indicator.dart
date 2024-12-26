@@ -1,4 +1,5 @@
 import 'package:dots_indicator/dots_indicator.dart';
+import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 
 class CustomDotsIndicator extends StatelessWidget {
@@ -27,9 +28,9 @@ class CustomDotsIndicator extends StatelessWidget {
         activeSize: const Size(16, 4),
         size: const Size(4, 4),
         shape: const CircleBorder(),
-        spacing: const EdgeInsets.only(
-          right: 4,
-          bottom: 8,
+        spacing: const EdgeInsets.only( //single
+          right: kSpacing,
+          bottom: kSpacing*2,
         ),
       ),
       dotsCount: 3,

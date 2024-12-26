@@ -13,8 +13,8 @@ class OffersPageViewItemImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(
-        right: kSpacing,
+      padding: const EdgeInsetsDirectional.only(
+        end: kSpacing,
         bottom: kSpacing*3,
         top: kSpacing*3,
       ),

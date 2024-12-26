@@ -1,4 +1,5 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
+import 'package:e_delivery_app/Core/utils/functions/set_theme_colors.dart';
 import 'package:e_delivery_app/Core/utils/styles/shadows.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +13,7 @@ class CTAButton extends StatelessWidget {
       this.icon = Assets.iconsButtonsArrow,
       this.fillColor = kPrimaryColor,
       this.strokeColor = kPrimaryColor,
-      this.contentColor = kWhiteColor,
+      this.contentColor ,
       this.radius = 12,
       this.fontSize = 20,
       this.iconSize = 16,
@@ -23,7 +24,7 @@ class CTAButton extends StatelessWidget {
   final void Function() onPressed;
   final Color fillColor;
   final Color strokeColor;
-  final Color contentColor;
+  final Color? contentColor;
   final String title;
   final String icon;
   final double radius;
@@ -60,7 +61,7 @@ class CTAButton extends StatelessWidget {
             Text(
               title,
               style: style.copyWith(
-                color: contentColor,
+                color: contentColor?? (SetThemeColors.isDarkMode(context) ? kBlackColor : kWhiteColor),
                 fontSize: fontSize,
               ),
             ),
@@ -71,7 +72,7 @@ class CTAButton extends StatelessWidget {
               icon,
               height: iconSize,
               width: iconSize,
-              colorFilter: ColorFilter.mode(contentColor, BlendMode.srcATop),
+              colorFilter: ColorFilter.mode(contentColor?? (SetThemeColors.isDarkMode(context) ? kBlackColor : kWhiteColor), BlendMode.srcATop),
             )
           ],
         ),

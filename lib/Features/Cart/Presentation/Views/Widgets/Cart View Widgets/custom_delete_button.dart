@@ -1,5 +1,5 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -39,7 +39,7 @@ class CustomDeleteButton extends StatelessWidget {
               ),
               Text(
                 'Delete',
-                style: FontStyles.fontsBold14(context)
+                style: AppStyles.fontsBold14(context)
                     .copyWith(color: Theme.of(context).colorScheme.surface),
               )
             ],

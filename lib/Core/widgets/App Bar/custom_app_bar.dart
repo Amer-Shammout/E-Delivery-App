@@ -12,13 +12,13 @@ class CustomAppBar extends StatelessWidget {
       padding: EdgeInsets.only(
           left: kHorizontalPadding,
           right: kHorizontalPadding,
-          top: 48,
-          bottom: 16),
+          top: kSpacing*12,
+          bottom: kSpacing*4),
       child: Column(
         children: [
           StatusAppBar(),
           SizedBox(
-            height: 16,
+            height: kSpacing*4,
           ),
           CustomSearchBar()
         ],

@@ -1,6 +1,6 @@
 import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/Custom%20Product/product_content.dart';
 import 'package:e_delivery_app/Core/widgets/Custom%20Product/product_price.dart';
 import 'package:e_delivery_app/Core/widgets/custom_container.dart';
@@ -18,7 +18,7 @@ class CustomProduct extends StatelessWidget {
       },
       child: CustomContainer(
         child: Container(
-          padding: const EdgeInsets.only(left: 8, right: 4, top: 8, bottom: 4),
+          padding: const EdgeInsetsDirectional.only(start: 8, end: 4, top: 8, bottom: 4),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
             image: DecorationImage(
@@ -38,7 +38,7 @@ class CustomProduct extends StatelessWidget {
                   const Spacer(),
                   Text(
                     'HOT',
-                    style: FontStyles.fontsBold10(context).copyWith(
+                    style: AppStyles.fontsBold10(context).copyWith(
                         color: Theme.of(context).colorScheme.tertiary),
                   ),
                   const SizedBox(

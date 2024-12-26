@@ -1,6 +1,5 @@
-
 import 'package:e_delivery_app/Core/utils/app_router.dart';
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_widget_with_dash.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/temp/components/glass_button.dart';
@@ -22,14 +21,14 @@ class LetsGetStartedBody extends StatelessWidget {
           ),
           Text(
             'We Will',
-            style: FontStyles.fontsSemiBold18(context).copyWith(
+            style: AppStyles.fontsSemiBold18(context).copyWith(
               color: kWhiteColor.withOpacity(0.4),
             ),
           ),
           CustomWidgetWithDash(
             widget: Text(
               'Make Your Life Easier',
-              style: FontStyles.fontsBlack48(context)
+              style: AppStyles.fontsBlack48(context)
                   .copyWith(color: kWhiteColor, fontSize: 55),
             ),
             dashColor: kWhiteColor,

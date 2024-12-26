@@ -1,4 +1,4 @@
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_background_container.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/Setting%20Info/Setting%20info%20form/setting_info_form.dart';
 import 'package:e_delivery_app/Core/widgets/custom_widget_with_dash.dart';
@@ -22,7 +22,7 @@ class SettingInfoBody extends StatelessWidget {
               dashColor: Theme.of(context).colorScheme.primary,
               widget: Text(
                 'HI DEAR!',
-                style: FontStyles.fontsBlack48(context)
+                style: AppStyles.fontsBlack48(context)
                     .copyWith(color: Theme.of(context).colorScheme.primary),
               ),
             ),

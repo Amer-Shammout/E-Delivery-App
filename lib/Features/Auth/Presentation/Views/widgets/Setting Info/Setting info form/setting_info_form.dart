@@ -1,7 +1,7 @@
 import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/functions/validation.dart';
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/c_t_a_button.dart';
 import 'package:e_delivery_app/Core/widgets/custom_text_form_field.dart';
 import 'package:e_delivery_app/Core/widgets/Setting%20Info/custom_image_picker.dart';
@@ -22,8 +22,6 @@ class _SettingInfoFormState extends State<SettingInfoForm> {
   AutovalidateMode _isAutoValidate = AutovalidateMode.disabled;
   String? phoneNumber;
   @override
- 
-
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -50,11 +48,13 @@ class _SettingInfoFormState extends State<SettingInfoForm> {
             height: kSpacing * 6,
           ),
           CTAButton(
-            style: FontStyles.fontsSemiBold20(context),
+            fillColor: Theme.of(context).colorScheme.primary,
+            style: AppStyles.fontsSemiBold20(context),
             onPressed: () {
               if (_formKey.currentState!.validate()) {
-                        GoRouter.of(context).pushReplacement(AppRouter.kAppRoot,);
-
+                GoRouter.of(context).pushReplacement(
+                  AppRouter.kAppRoot,
+                );
               } else {
                 _isAutoValidate = AutovalidateMode.always;
                 setState(() {});

@@ -1,4 +1,4 @@
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -18,8 +18,8 @@ class OrdersCardLeading extends StatelessWidget {
         children: [
           Text(
             '1',
-            style: FontStyles.fontsBold24(context).copyWith(
-              color: Theme.of(context).colorScheme.error.withOpacity(
+            style: AppStyles.fontsBold24(context).copyWith(
+              color: kBlackColor.withOpacity(
                     .7,
                   ),
             ),
@@ -30,7 +30,7 @@ class OrdersCardLeading extends StatelessWidget {
           SizedBox(
             height: 50,
             child: VerticalDivider(
-              color: Theme.of(context).colorScheme.error.withOpacity(
+              color: kBlackColor.withOpacity(
                     .4,
                   ),
             ),
@@ -40,8 +40,8 @@ class OrdersCardLeading extends StatelessWidget {
           ),
           SvgPicture.asset(
             icon,
-            colorFilter: ColorFilter.mode(
-              Theme.of(context).colorScheme.error,
+            colorFilter: const ColorFilter.mode(
+              kBlackColor,
               BlendMode.srcATop,
             ),
             width: 40,

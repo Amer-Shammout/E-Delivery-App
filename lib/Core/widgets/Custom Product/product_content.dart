@@ -1,4 +1,4 @@
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_widget_with_dash.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +14,7 @@ class ProductContent extends StatelessWidget {
       children: [
         Text(
           'EMMATEL',
-          style: FontStyles.fontsMedium10(context).copyWith(
+          style: AppStyles.fontsMedium10(context).copyWith(
             color: Theme.of(context).colorScheme.error.withOpacity(0.35),
           ),
         ),
@@ -22,7 +22,7 @@ class ProductContent extends StatelessWidget {
           'IPHONE 16 PRO MAX',
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
-          style: FontStyles.fontsBold14(context).copyWith(
+          style: AppStyles.fontsBold14(context).copyWith(
             color: Theme.of(context).colorScheme.error,
           ),
         ),
@@ -30,7 +30,7 @@ class ProductContent extends StatelessWidget {
           dashColor: Theme.of(context).colorScheme.primary,
           widget: Text(
             'Mobiles',
-            style: FontStyles.fontsBold10(context)
+            style: AppStyles.fontsBold10(context)
                 .copyWith(color: Theme.of(context).colorScheme.primary),
           ),
           width: 20,

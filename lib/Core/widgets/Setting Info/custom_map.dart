@@ -1,4 +1,5 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
+import 'package:e_delivery_app/Core/utils/functions/set_theme_colors.dart';
 import 'package:e_delivery_app/Core/widgets/custom_container.dart';
 import 'package:e_delivery_app/Core/widgets/custom_icon.dart';
 import 'package:e_delivery_app/constants.dart';
@@ -34,7 +35,6 @@ class _CustomMapState extends State<CustomMap> {
                 options: const MapOptions(
                   initialCenter: LatLng(33.510414, 36.278336),
                   initialZoom: 15.0,
-                  // onTap: (tapPosition, point) => _addDestinationMarker(point),
                 ),
                 children: [
                   TileLayer(
@@ -46,6 +46,14 @@ class _CustomMapState extends State<CustomMap> {
                   ),
                 ],
               ),
+            ),
+          ),
+          if(SetThemeColors.isDarkMode(context))
+          Container(
+            height: 178,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16),
+              color: Colors.black.withOpacity(.3),
             ),
           ),
           Positioned(

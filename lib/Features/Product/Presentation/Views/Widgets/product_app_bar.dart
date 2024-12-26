@@ -1,5 +1,5 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
-import 'package:e_delivery_app/Core/utils/styles/font_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -17,12 +17,17 @@ class ProductAppBar extends StatelessWidget {
           onPressed: () {
             GoRouter.of(context).pop();
           },
+          backgroundColor: Theme.of(context).colorScheme.surface,
         ),
         Text(
           'HOT',
-          style: FontStyles.fontsBold20(context).copyWith(color: Theme.of(context).colorScheme.tertiary),
+          style: AppStyles.fontsBold20(context)
+              .copyWith(color: Theme.of(context).colorScheme.tertiary),
         ),
-        const CustomIcon(icon: Assets.iconsOutlineHeartOutline),
+        CustomIcon(
+          icon: Assets.iconsOutlineHeartOutline,
+          backgroundColor: Theme.of(context).colorScheme.surface,
+        ),
       ],
     );
   }
