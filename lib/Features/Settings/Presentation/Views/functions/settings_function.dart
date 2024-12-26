@@ -23,6 +23,20 @@ abstract class SettingsFunction {
     }
   }
 
+  static changeLanguage(value, context) {
+    switch (value) {
+      case 'light':
+        BlocProvider.of<ThemeCubit>(context).updateTheme(ThemeMode.light);
+        break;
+      case 'dark':
+        BlocProvider.of<ThemeCubit>(context).updateTheme(ThemeMode.dark);
+        break;
+      case 'system':
+        BlocProvider.of<ThemeCubit>(context).updateTheme(ThemeMode.system);
+        break;
+    }
+  }
+
   static Future<String> writeImageToStorage(
       Uint8List feedbackScreenshot) async {
     final Directory output = await getTemporaryDirectory();

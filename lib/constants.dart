@@ -19,7 +19,8 @@ const kAppearanceModes = [
   'dark',
   'system',
 ];
-const kLanguages = [
+var kLanguages = [
+  S.current.setting1_details1,
   'English',
   'العربيّة',
 ];

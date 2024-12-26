@@ -5,6 +5,7 @@ import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_theme.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/cart_view.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/empty_cart_view.dart';
+import 'package:e_delivery_app/Features/Settings/Presentation/Manager/localization_cubit/localization_cubit.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Manager/theme_cubit/theme_cubit.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:feedback/feedback.dart';
@@ -39,6 +40,9 @@ class EDelivery extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (_) => ThemeCubit(),
+        ),
+        BlocProvider(
+          create: (_) => LocalizationCubit(context),
         ),
       ],
       child: BlocBuilder<ThemeCubit, ThemeMode>(
