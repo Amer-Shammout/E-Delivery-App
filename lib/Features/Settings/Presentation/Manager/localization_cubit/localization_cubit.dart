@@ -1,9 +1,10 @@
-import 'package:flutter/material.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
+
+
 
 class LocalizationCubit extends HydratedCubit<String> {
   LocalizationCubit(context)
-      : super(Localizations.localeOf(context).languageCode);
+      : super('System');
 
   void updateLanguage(String language) => emit(language);
 

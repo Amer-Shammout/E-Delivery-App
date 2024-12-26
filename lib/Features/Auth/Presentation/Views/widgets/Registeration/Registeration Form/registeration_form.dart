@@ -30,7 +30,7 @@ class _RegisterationFormState extends State<RegisterationForm> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(S.of(context).register1, style: AppStyles.fontsBold24(context)),
+          Text(S.of(context).register2, style: AppStyles.fontsBold24(context)),
           const SizedBox(
             height: kSpacing,
           ),

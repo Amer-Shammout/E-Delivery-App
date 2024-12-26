@@ -14,36 +14,6 @@ const Color kDeliveredColor = Color(0xFFD2FFB7);
 const Color kOnTheWayColor = Color(0xFF526077);
 const kMontserrat = 'Montserrat';
 const double kHorizontalPadding = 16;
-const kAppearanceModes = [
-  'light',
-  'dark',
-  'system',
-];
-var kLanguages = [
-  S.current.setting1_details1,
-  'English',
-  'العربيّة',
-];
 
-var kSettingItems = [
-  SettingsModel(
-    icon: Assets.iconsTheme,
-    title: S.current.setting1,
-  ),
-  SettingsModel(
-    icon: Assets.iconsNotification,
-    title: S.current.setting2,
-  ),
-  SettingsModel(
-    icon: Assets.iconsLanguage,
-    title: S.current.setting3,
-  ),
-  SettingsModel(
-    icon: Assets.iconsAbout,
-    title: S.current.setting4,
-  ),
-  SettingsModel(
-    icon: Assets.iconsFeedback,
-    title: S.current.setting5,
-  ),
-];
+
+

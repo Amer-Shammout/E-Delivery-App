@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:e_delivery_app/Core/utils/functions/localizations_funs.dart';
+import 'package:e_delivery_app/Features/Settings/Presentation/Manager/localization_cubit/localization_cubit.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Manager/theme_cubit/theme_cubit.dart';
 import 'package:feedback/feedback.dart';
 import 'package:flutter/foundation.dart';
@@ -11,29 +13,56 @@ import 'package:path_provider/path_provider.dart';
 abstract class SettingsFunction {
   static changeThemeMode(value, context) {
     switch (value) {
-      case 'light':
+      case 'Light' || 'فاتح':
         BlocProvider.of<ThemeCubit>(context).updateTheme(ThemeMode.light);
         break;
-      case 'dark':
+      case 'Dark' || 'داكن':
         BlocProvider.of<ThemeCubit>(context).updateTheme(ThemeMode.dark);
         break;
-      case 'system':
+      case 'System' || 'النّظام':
         BlocProvider.of<ThemeCubit>(context).updateTheme(ThemeMode.system);
         break;
     }
   }
 
+  static String setThemesGroupValue(String modeName, context) {
+    if (LocalizationsFuns.isArabic(context)) {
+      switch (modeName) {
+        case 'light':
+          return 'فاتح';
+        case 'dark':
+          return 'داكن';
+        default:
+          return 'النّظام';
+      }
+    } else {
+      return "${modeName.substring(0, 1).toUpperCase()}${modeName.substring(1)}";
+    }
+  }
+
   static changeLanguage(value, context) {
     switch (value) {
-      case 'light':
-        BlocProvider.of<ThemeCubit>(context).updateTheme(ThemeMode.light);
+      case 'العربيّة':
+        BlocProvider.of<LocalizationCubit>(context).updateLanguage('العربيّة');
         break;
-      case 'dark':
-        BlocProvider.of<ThemeCubit>(context).updateTheme(ThemeMode.dark);
+      case 'English':
+        BlocProvider.of<LocalizationCubit>(context).updateLanguage('English');
         break;
-      case 'system':
-        BlocProvider.of<ThemeCubit>(context).updateTheme(ThemeMode.system);
+      case "System" || "النّظام":
+        BlocProvider.of<LocalizationCubit>(context).updateLanguage('System');
         break;
+    }
+  }
+
+   static String setLanguagesGroupValue(String lang, context) {
+    if (lang == "System") {
+      if (LocalizationsFuns.isArabic(context)) {
+        return 'النّظام';
+      } else {
+        return 'System';
+      }
+    } else {
+      return lang;
     }
   }
 
