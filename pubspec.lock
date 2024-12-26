@@ -278,14 +278,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.0.3"
-  flutter_inner_shadow:
-    dependency: "direct main"
-    description:
-      name: flutter_inner_shadow
-      sha256: b50693ec5214700340e20b920835af4504b788673da2217a794eea95309a4de0
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.0.1"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -295,7 +287,7 @@ packages:
     source: hosted
     version: "4.0.0"
   flutter_localizations:
-    dependency: transitive
+    dependency: "direct main"
     description: flutter
     source: sdk
     version: "0.0.0"
@@ -1034,14 +1026,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.1.0"
-  widget_mask:
-    dependency: "direct main"
-    description:
-      name: widget_mask
-      sha256: fa1f5b6b9ac7f7a300a67ae267191b329f3f812cf86ad7a0d03369dc68e5e732
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.0+0"
   wkt_parser:
     dependency: transitive
     description:

@@ -6,10 +6,12 @@ import 'package:e_delivery_app/Core/utils/styles/app_theme.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/cart_view.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/empty_cart_view.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Manager/theme_cubit/theme_cubit.dart';
+import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:feedback/feedback.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -42,6 +44,13 @@ class EDelivery extends StatelessWidget {
       child: BlocBuilder<ThemeCubit, ThemeMode>(
         builder: (context, mode) {
           return MaterialApp(
+            localizationsDelegates: const [
+              S.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
+            supportedLocales: S.delegate.supportedLocales,
             themeMode: mode,
             darkTheme: AppTheme.darkTheme,
             debugShowCheckedModeBanner: false,
