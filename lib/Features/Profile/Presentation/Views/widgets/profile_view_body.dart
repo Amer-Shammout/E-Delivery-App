@@ -7,6 +7,7 @@ import 'package:e_delivery_app/Core/widgets/c_t_a_button.dart';
 import 'package:e_delivery_app/Core/widgets/custom_text_form_field.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/Registeration/Registeration%20Form/registeration_text_field_prefix.dart';
 import 'package:e_delivery_app/constants.dart';
+import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -46,7 +47,7 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
                           Assets.iconsEdit,
                           width: 16,
                           height: 16,
-                          colorFilter:  ColorFilter.mode(
+                          colorFilter: ColorFilter.mode(
                             Theme.of(context).colorScheme.error,
                             BlendMode.srcATop,
                           ),
@@ -63,7 +64,7 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
                           Assets.iconsEdit,
                           width: 16,
                           height: 16,
-                          colorFilter:  ColorFilter.mode(
+                          colorFilter: ColorFilter.mode(
                             Theme.of(context).colorScheme.error,
                             BlendMode.srcATop,
                           ),
@@ -91,7 +92,7 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
           CTAButton(
             style: AppStyles.fontsSemiBold20(context),
             onPressed: () {},
-            title: 'LOGOUT',
+            title: S.of(context).logout_button,
             fillColor: Theme.of(context).colorScheme.surface.withOpacity(.8),
             strokeColor: Theme.of(context).colorScheme.tertiary,
             contentColor: Theme.of(context).colorScheme.tertiary,

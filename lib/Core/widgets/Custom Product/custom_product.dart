@@ -4,6 +4,7 @@ import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/Custom%20Product/product_content.dart';
 import 'package:e_delivery_app/Core/widgets/Custom%20Product/product_price.dart';
 import 'package:e_delivery_app/Core/widgets/custom_container.dart';
+import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -18,14 +19,15 @@ class CustomProduct extends StatelessWidget {
       },
       child: CustomContainer(
         child: Container(
-          padding: const EdgeInsetsDirectional.only(start: 8, end: 4, top: 8, bottom: 4),
+          padding: const EdgeInsetsDirectional.only(
+              start: 8, end: 4, top: 8, bottom: 4),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
             image: DecorationImage(
               colorFilter: ColorFilter.mode(
                   Theme.of(context).colorScheme.secondary, BlendMode.srcATop),
               fit: BoxFit.fill,
-              image: AssetImage(
+              image: const AssetImage(
                 Assets.imagesHomeCard,
               ),
             ),
@@ -37,7 +39,7 @@ class CustomProduct extends StatelessWidget {
                 children: [
                   const Spacer(),
                   Text(
-                    'HOT',
+                    S.of(context).hot,
                     style: AppStyles.fontsBold10(context).copyWith(
                         color: Theme.of(context).colorScheme.tertiary),
                   ),

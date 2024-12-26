@@ -1,6 +1,7 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_icon.dart';
+import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -20,7 +21,7 @@ class ProfileAppBar extends StatelessWidget implements PreferredSizeWidget {
       surfaceTintColor: Colors.transparent,
       shadowColor: Colors.transparent,
       title: Text(
-        "Profile",
+        S.of(context).profile,
         style: AppStyles.fontsBold28(context),
       ),
       centerTitle: true,
@@ -34,7 +35,6 @@ class ProfileAppBar extends StatelessWidget implements PreferredSizeWidget {
           radius: 32,
         ),
       ),
-    
     );
   }
 

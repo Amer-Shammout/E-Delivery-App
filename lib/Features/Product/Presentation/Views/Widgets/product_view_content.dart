@@ -2,6 +2,7 @@ import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_widget_with_dash.dart';
 import 'package:e_delivery_app/Features/Product/Presentation/Views/Widgets/custom_product_icon_content.dart';
+import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class ProductViewContent extends StatelessWidget {
@@ -70,19 +71,21 @@ class ProductViewContent extends StatelessWidget {
           const SizedBox(
             height: 24,
           ),
-          const Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               CustomProductIconContent(
-                  text: '10 Items', icon: Assets.iconsQuantity),
-              CustomProductIconContent(text: '3 Days', icon: Assets.iconsTime),
+                  text: '10${S.of(context).product_details1}',
+                  icon: Assets.iconsQuantity),
+              const CustomProductIconContent(
+                  text: '3 Days', icon: Assets.iconsTime),
             ],
           ),
           const SizedBox(
             height: 24,
           ),
           Text(
-            'Description',
+            S.current.product_details2,
             style: AppStyles.fontsSemiBold18(context)
                 .copyWith(color: Theme.of(context).colorScheme.error),
           ),

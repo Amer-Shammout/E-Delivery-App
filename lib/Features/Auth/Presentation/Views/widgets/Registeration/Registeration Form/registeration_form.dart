@@ -1,4 +1,3 @@
-
 import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/functions/validation.dart';
@@ -7,6 +6,7 @@ import 'package:e_delivery_app/Core/widgets/c_t_a_button.dart';
 import 'package:e_delivery_app/Core/widgets/custom_text_form_field.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/Registeration/Registeration%20Form/registeration_text_field_prefix.dart';
 import 'package:e_delivery_app/constants.dart';
+import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -30,15 +30,14 @@ class _RegisterationFormState extends State<RegisterationForm> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('Enter your phone number',
-              style: AppStyles.fontsBold24(context)),
+          Text(S.of(context).register1, style: AppStyles.fontsBold24(context)),
           const SizedBox(
             height: kSpacing,
           ),
           Opacity(
             opacity: .6,
             child: Text(
-              'We will send you the 4 digit verification code',
+              S.of(context).register3,
               style: AppStyles.fontsRegular16(context).copyWith(
                 color: Theme.of(context).colorScheme.primary,
               ),
@@ -73,7 +72,7 @@ class _RegisterationFormState extends State<RegisterationForm> {
                 setState(() {});
               }
             },
-            title: 'REGISTER',
+            title: S.of(context).register_button,
             icon: Assets.iconsButtonsArrow,
           ),
         ],

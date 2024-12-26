@@ -1,6 +1,7 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/constants.dart';
+import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -40,9 +41,9 @@ class CustomProductPrice extends StatelessWidget {
                       width: kSpacing * 2,
                     ),
                     Text(
-                      'S.P',
-                      style: AppStyles.fontsRegular20(context)
-                          .copyWith(color: Theme.of(context).colorScheme.tertiary),
+                      S.of(context).sp,
+                      style: AppStyles.fontsRegular20(context).copyWith(
+                          color: Theme.of(context).colorScheme.tertiary),
                     ),
                   ],
                 ),
@@ -53,7 +54,7 @@ class CustomProductPrice extends StatelessWidget {
         Row(
           children: [
             Text(
-              'Add',
+              S.of(context).add_button,
               style: AppStyles.fontsMedium28(context)
                   .copyWith(color: Theme.of(context).colorScheme.tertiary),
             ),
@@ -61,8 +62,8 @@ class CustomProductPrice extends StatelessWidget {
               width: 32,
               height: 32,
               Assets.iconsPlus,
-              colorFilter:
-                   ColorFilter.mode(Theme.of(context).colorScheme.tertiary, BlendMode.srcATop),
+              colorFilter: ColorFilter.mode(
+                  Theme.of(context).colorScheme.tertiary, BlendMode.srcATop),
             ),
             const SizedBox(
               width: kSpacing * 3,

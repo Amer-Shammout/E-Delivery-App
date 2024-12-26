@@ -39,11 +39,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "order_details3": MessageLookupByLibrary.simpleMessage("السّعر"),
         "order_filter1": MessageLookupByLibrary.simpleMessage("الأحدث"),
         "order_filter2": MessageLookupByLibrary.simpleMessage("الأقدم"),
-        "order_filter3": MessageLookupByLibrary.simpleMessage("تم التّوصيل!"),
-        "order_filter4":
-            MessageLookupByLibrary.simpleMessage("قيد التّوصيل..."),
-        "order_filter5":
-            MessageLookupByLibrary.simpleMessage("قيد التّحضير..."),
+        "order_filter3": MessageLookupByLibrary.simpleMessage("تم التّوصيل"),
+        "order_filter4": MessageLookupByLibrary.simpleMessage("قيد التّوصيل"),
+        "order_filter5": MessageLookupByLibrary.simpleMessage("قيد التّحضير"),
         "product_details1": MessageLookupByLibrary.simpleMessage("عنصر"),
         "product_details2": MessageLookupByLibrary.simpleMessage("الوصف"),
         "profile": MessageLookupByLibrary.simpleMessage("الملف الشّخصي"),
@@ -54,7 +52,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "register_button": MessageLookupByLibrary.simpleMessage("تسجيل"),
         "resend_code_button":
             MessageLookupByLibrary.simpleMessage("إعادة الإرسال"),
-        "search_hint": MessageLookupByLibrary.simpleMessage("ابحث"),
+        "search_hint": MessageLookupByLibrary.simpleMessage("ابحث..."),
         "search_phrase":
             MessageLookupByLibrary.simpleMessage("ما الّذي تبحث عنه؟"),
         "setting1": MessageLookupByLibrary.simpleMessage("المظهر"),

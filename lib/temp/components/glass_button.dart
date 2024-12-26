@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/constants.dart';
+import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gradient_borders/box_borders/gradient_box_border.dart';
@@ -56,7 +57,7 @@ class GlassButton extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Let\'s Get Started',
+                  S.of(context).lets_get_started_button,
                   style: AppStyles.fontsRegular24(context)
                       .copyWith(color: kWhiteColor),
                 ),

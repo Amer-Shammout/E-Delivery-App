@@ -5,6 +5,7 @@ import 'package:e_delivery_app/Core/utils/functions/set_theme_colors.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/utils/styles/shadows.dart';
 import 'package:e_delivery_app/constants.dart';
+import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -16,13 +17,13 @@ class FilterDropDownButton extends StatefulWidget {
 }
 
 class _FilterDropDownButtonState extends State<FilterDropDownButton> {
-  String? valueChoose = 'Newest';
+  String? valueChoose = S.current.order_filter1;
   List listitem = [
-    'Newest',
-    'Oldest',
-    'Delivered',
-    'On the way',
-    'Preparing',
+    S.current.order_filter1,
+    S.current.order_filter2,
+    S.current.order_filter3,
+    S.current.order_filter4,
+    S.current.order_filter5,
   ];
 
   @override

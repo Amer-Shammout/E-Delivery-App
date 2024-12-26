@@ -2,6 +2,7 @@ import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_widget_with_dash.dart';
 import 'package:e_delivery_app/constants.dart';
+import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:e_delivery_app/temp/components/glass_button.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -20,14 +21,14 @@ class LetsGetStartedBody extends StatelessWidget {
             height: 64,
           ),
           Text(
-            'We Will',
+            S.of(context).welcome1,
             style: AppStyles.fontsSemiBold18(context).copyWith(
               color: kWhiteColor.withOpacity(0.4),
             ),
           ),
           CustomWidgetWithDash(
             widget: Text(
-              'Make Your Life Easier',
+              S.of(context).welcome2,
               style: AppStyles.fontsBlack48(context)
                   .copyWith(color: kWhiteColor, fontSize: 55),
             ),

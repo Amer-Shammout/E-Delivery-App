@@ -6,6 +6,7 @@ import 'package:e_delivery_app/Core/widgets/custom_text_button.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/Verification/Verification%20Form/custom_timer.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/Verification/Verification%20Form/verification_text_field.dart';
 import 'package:e_delivery_app/constants.dart';
+import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -30,7 +31,7 @@ class _VerificationFormState extends State<VerificationForm> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            'Verification Code',
+            S.of(context).verification2,
             style: AppStyles.fontsBold24(context),
           ),
           const SizedBox(
@@ -43,7 +44,7 @@ class _VerificationFormState extends State<VerificationForm> {
               TextSpan(
                 children: [
                   TextSpan(
-                    text: 'Please enter code\nsent to ',
+                    text: S.of(context).verification3,
                     style: AppStyles.fontsRegular16(context).copyWith(
                       color: Theme.of(context).colorScheme.primary.withOpacity(
                             .6,
@@ -76,7 +77,7 @@ class _VerificationFormState extends State<VerificationForm> {
                 setState(() {});
               }
             },
-            title: 'VERIFY',
+            title: S.of(context).verification_button,
             icon: Assets.iconsButtonsArrow,
             fillColor: Theme.of(context).colorScheme.primary,
           ),
@@ -93,7 +94,7 @@ class _VerificationFormState extends State<VerificationForm> {
                     isEnd = false;
                   });
                 },
-                title: 'Resend code',
+                title: S.of(context).resend_code_button,
                 color: Theme.of(context).colorScheme.primary,
               ),
             ),

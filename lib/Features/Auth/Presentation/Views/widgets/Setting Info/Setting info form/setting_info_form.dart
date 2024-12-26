@@ -7,6 +7,7 @@ import 'package:e_delivery_app/Core/widgets/custom_text_form_field.dart';
 import 'package:e_delivery_app/Core/widgets/Setting%20Info/custom_image_picker.dart';
 import 'package:e_delivery_app/Core/widgets/Setting%20Info/custom_map.dart';
 import 'package:e_delivery_app/constants.dart';
+import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -34,8 +35,8 @@ class _SettingInfoFormState extends State<SettingInfoForm> {
           const SizedBox(
             height: kSpacing * 8,
           ),
-          const CustomTextFormField(
-            hint: 'Full Name',
+          CustomTextFormField(
+            hint: S.of(context).full_name_hint,
             validator: Validation.validateFieldIfEmpty,
             contentPadding: 16,
             maxLines: 1,
@@ -60,7 +61,7 @@ class _SettingInfoFormState extends State<SettingInfoForm> {
                 setState(() {});
               }
             },
-            title: 'SUBMIT',
+            title: S.of(context).submit_button,
             icon: Assets.iconsButtonsArrow,
           ),
         ],

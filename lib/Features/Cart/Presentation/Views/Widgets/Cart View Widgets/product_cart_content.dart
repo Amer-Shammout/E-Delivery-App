@@ -3,6 +3,7 @@ import 'package:e_delivery_app/Core/widgets/custom_widget_with_dash.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/Widgets/Cart%20View%20Widgets/product_cart_price.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/Widgets/Cart%20View%20Widgets/product_quntity.dart';
 import 'package:e_delivery_app/constants.dart';
+import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class ProductCartContent extends StatelessWidget {
@@ -27,9 +28,9 @@ class ProductCartContent extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    'HOT',
-                    style: AppStyles.fontsBold12(context)
-                        .copyWith(color: Theme.of(context).colorScheme.tertiary),
+                    S.of(context).hot,
+                    style: AppStyles.fontsBold12(context).copyWith(
+                        color: Theme.of(context).colorScheme.tertiary),
                   ),
                   const SizedBox(
                     width: kSpacing,

@@ -4,6 +4,7 @@ import 'package:e_delivery_app/Core/widgets/custom_background_container.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/Registeration/Registeration%20Form/registeration_form.dart';
 import 'package:e_delivery_app/Core/widgets/custom_widget_with_dash.dart';
 import 'package:e_delivery_app/constants.dart';
+import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class RegisterationViewBody extends StatelessWidget {
@@ -33,9 +34,9 @@ class RegisterationViewBody extends StatelessWidget {
                       child: CustomWidgetWithDash(
                         dashColor: Theme.of(context).colorScheme.primary,
                         widget: Text(
-                          'WELCOME',
-                          style: AppStyles.fontsBlack48(context)
-                              .copyWith(color: Theme.of(context).colorScheme.primary),
+                          S.of(context).register1,
+                          style: AppStyles.fontsBlack48(context).copyWith(
+                              color: Theme.of(context).colorScheme.primary),
                         ),
                       ),
                     ),

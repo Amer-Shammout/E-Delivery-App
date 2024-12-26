@@ -1,5 +1,6 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
+import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class NoSearchOperationsBody extends StatelessWidget {
@@ -21,7 +22,7 @@ class NoSearchOperationsBody extends StatelessWidget {
           Assets.imagesMagnifier,
         ),
         Text(
-          "What are you looking for?",
+          S.of(context).search_phrase,
           style: AppStyles.fontsBold20(context).copyWith(
             color: Theme.of(context).colorScheme.error,
           ),

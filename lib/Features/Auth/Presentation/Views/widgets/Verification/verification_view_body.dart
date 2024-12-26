@@ -4,6 +4,7 @@ import 'package:e_delivery_app/Core/widgets/custom_background_container.dart';
 import 'package:e_delivery_app/Core/widgets/custom_widget_with_dash.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/Verification/Verification%20Form/verification_form.dart';
 import 'package:e_delivery_app/constants.dart';
+import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class VerificationViewBody extends StatelessWidget {
@@ -31,7 +32,7 @@ class VerificationViewBody extends StatelessWidget {
                       child: CustomWidgetWithDash(
                         dashColor: Theme.of(context).colorScheme.primary,
                         widget: Text(
-                          'WAIT...',
+                          S.of(context).verification1,
                           style: AppStyles.fontsBlack48(context).copyWith(
                               color: Theme.of(context).colorScheme.primary),
                         ),

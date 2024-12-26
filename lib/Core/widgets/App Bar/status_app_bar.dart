@@ -4,6 +4,7 @@ import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_icon.dart';
 import 'package:e_delivery_app/Core/widgets/profile_avatar.dart';
 import 'package:e_delivery_app/constants.dart';
+import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -13,7 +14,10 @@ class StatusAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: kHorizontalPadding, right: kHorizontalPadding, top: kSpacing*4),
+      padding: const EdgeInsets.only(
+          left: kHorizontalPadding,
+          right: kHorizontalPadding,
+          top: kSpacing * 4),
       child: Row(
         children: [
           GestureDetector(
@@ -23,7 +27,7 @@ class StatusAppBar extends StatelessWidget {
               );
             },
             child: const ProfileAvatar(
-              padding: kSpacing*4,
+              padding: kSpacing * 4,
             ),
           ),
           const SizedBox(
@@ -33,7 +37,7 @@ class StatusAppBar extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Welcome',
+                S.of(context).home1,
                 style: AppStyles.fontsRegular10(context).copyWith(
                   color: Theme.of(context).colorScheme.error.withOpacity(0.4),
                 ),

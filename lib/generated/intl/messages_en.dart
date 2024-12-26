@@ -39,9 +39,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "order_details3": MessageLookupByLibrary.simpleMessage("Price"),
         "order_filter1": MessageLookupByLibrary.simpleMessage("Newest"),
         "order_filter2": MessageLookupByLibrary.simpleMessage("Oldest"),
-        "order_filter3": MessageLookupByLibrary.simpleMessage("Delivered!"),
-        "order_filter4": MessageLookupByLibrary.simpleMessage("On the way..."),
-        "order_filter5": MessageLookupByLibrary.simpleMessage("Preparing..."),
+        "order_filter3": MessageLookupByLibrary.simpleMessage("Delivered"),
+        "order_filter4": MessageLookupByLibrary.simpleMessage("On the way"),
+        "order_filter5": MessageLookupByLibrary.simpleMessage("Preparing"),
         "product_details1": MessageLookupByLibrary.simpleMessage("Items"),
         "product_details2": MessageLookupByLibrary.simpleMessage("Description"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
@@ -53,7 +53,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "register_button": MessageLookupByLibrary.simpleMessage("REGISTER"),
         "resend_code_button":
             MessageLookupByLibrary.simpleMessage("Resend code"),
-        "search_hint": MessageLookupByLibrary.simpleMessage("Search"),
+        "search_hint": MessageLookupByLibrary.simpleMessage("Search..."),
         "search_phrase":
             MessageLookupByLibrary.simpleMessage("What are you looking for?"),
         "setting1": MessageLookupByLibrary.simpleMessage("Appearance"),
@@ -76,7 +76,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "verification2":
             MessageLookupByLibrary.simpleMessage("Verification Code"),
         "verification3":
-            MessageLookupByLibrary.simpleMessage("Please enter code send to"),
+            MessageLookupByLibrary.simpleMessage("Please enter code sent to"),
         "verification_button": MessageLookupByLibrary.simpleMessage("VERIFY"),
         "welcome1": MessageLookupByLibrary.simpleMessage("We Will"),
         "welcome2":

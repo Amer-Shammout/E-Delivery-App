@@ -3,6 +3,7 @@ import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_container.dart';
 import 'package:e_delivery_app/Features/Favorite/Presentation/Views/Widgets/favorite_product_content.dart';
 import 'package:e_delivery_app/constants.dart';
+import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -14,7 +15,11 @@ class FavoriteProduct extends StatelessWidget {
     return CustomContainer(
       child: Container(
         height: 124,
-        padding: const EdgeInsets.only(left: kHorizontalPadding, right: kHorizontalPadding, top: kSpacing*4, bottom: kSpacing*2),
+        padding: const EdgeInsets.only(
+            left: kHorizontalPadding,
+            right: kHorizontalPadding,
+            top: kSpacing * 4,
+            bottom: kSpacing * 2),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
           image: DecorationImage(
@@ -43,7 +48,7 @@ class FavoriteProduct extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'HOT',
+                  S.of(context).hot,
                   style: AppStyles.fontsBold12(context)
                       .copyWith(color: Theme.of(context).colorScheme.tertiary),
                 ),

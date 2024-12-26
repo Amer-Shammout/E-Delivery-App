@@ -2,6 +2,7 @@ import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_background_container.dart';
 import 'package:e_delivery_app/constants.dart';
+import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class StoreDetailsAppBarFlexibleSpace extends StatelessWidget {
@@ -35,9 +36,9 @@ class StoreDetailsAppBarFlexibleSpace extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               Text(
-                '100 Items',
-                style: AppStyles.fontsRegular12(context)
-                    .copyWith(color: Theme.of(context).colorScheme.error.withOpacity(.6)),
+                '100${S.of(context).product_details1}',
+                style: AppStyles.fontsRegular12(context).copyWith(
+                    color: Theme.of(context).colorScheme.error.withOpacity(.6)),
                 textAlign: TextAlign.center,
               ),
             ],

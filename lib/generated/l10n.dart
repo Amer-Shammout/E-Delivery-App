@@ -140,10 +140,10 @@ class S {
     );
   }
 
-  /// `Please enter code send to`
+  /// `Please enter code sent to`
   String get verification3 {
     return Intl.message(
-      'Please enter code send to',
+      'Please enter code sent to',
       name: 'verification3',
       desc: '',
       args: [],
@@ -220,10 +220,10 @@ class S {
     );
   }
 
-  /// `Search`
+  /// `Search...`
   String get search_hint {
     return Intl.message(
-      'Search',
+      'Search...',
       name: 'search_hint',
       desc: '',
       args: [],
@@ -310,30 +310,30 @@ class S {
     );
   }
 
-  /// `Delivered!`
+  /// `Delivered`
   String get order_filter3 {
     return Intl.message(
-      'Delivered!',
+      'Delivered',
       name: 'order_filter3',
       desc: '',
       args: [],
     );
   }
 
-  /// `On the way...`
+  /// `On the way`
   String get order_filter4 {
     return Intl.message(
-      'On the way...',
+      'On the way',
       name: 'order_filter4',
       desc: '',
       args: [],
     );
   }
 
-  /// `Preparing...`
+  /// `Preparing`
   String get order_filter5 {
     return Intl.message(
-      'Preparing...',
+      'Preparing',
       name: 'order_filter5',
       desc: '',
       args: [],

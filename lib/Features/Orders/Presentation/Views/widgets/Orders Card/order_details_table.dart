@@ -1,5 +1,6 @@
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/constants.dart';
+import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class OrderDetailsTable extends StatelessWidget {
@@ -28,9 +29,9 @@ class OrderDetailsTable extends StatelessWidget {
         headingRowHeight: 32,
         horizontalMargin: 4,
         columns: [
-          orderDetailsTableDataColumn('Product', context),
-          orderDetailsTableDataColumn('Quantity', context),
-          orderDetailsTableDataColumn('Price', context),
+          orderDetailsTableDataColumn(S.of(context).order_details1, context),
+          orderDetailsTableDataColumn(S.of(context).order_details2, context),
+          orderDetailsTableDataColumn(S.of(context).order_details3, context),
         ],
         rows: [
           // هون منعملن توليد بالمستقبل
@@ -63,8 +64,7 @@ DataRow orderDetailsTableDataRow(context) {
         Text(
           textAlign: TextAlign.center,
           'Iphone 15',
-          style:
-              AppStyles.fontsRegular10(context).copyWith(color: kBlackColor),
+          style: AppStyles.fontsRegular10(context).copyWith(color: kBlackColor),
         ),
       ),
       DataCell(
@@ -72,8 +72,8 @@ DataRow orderDetailsTableDataRow(context) {
           child: Text(
             textAlign: TextAlign.center,
             '1x',
-            style: AppStyles.fontsRegular10(context)
-                .copyWith(color: kBlackColor),
+            style:
+                AppStyles.fontsRegular10(context).copyWith(color: kBlackColor),
           ),
         ),
       ),
@@ -82,8 +82,8 @@ DataRow orderDetailsTableDataRow(context) {
           child: Text(
             textAlign: TextAlign.center,
             '2M',
-            style: AppStyles.fontsRegular10(context)
-                .copyWith(color: kBlackColor),
+            style:
+                AppStyles.fontsRegular10(context).copyWith(color: kBlackColor),
           ),
         ),
       ),

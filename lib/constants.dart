@@ -1,5 +1,6 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Features/Settings/Data/models/settings_model.dart';
+import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 const double kSpacing = 4;
@@ -20,28 +21,28 @@ const kAppearanceModes = [
 ];
 const kLanguages = [
   'English',
-  'Arabic',
+  'العربيّة',
 ];
 
-const kSettingItems = [
+var kSettingItems = [
   SettingsModel(
     icon: Assets.iconsTheme,
-    title: "Appearance",
+    title: S.current.setting1,
   ),
   SettingsModel(
     icon: Assets.iconsNotification,
-    title: "Notifications",
+    title: S.current.setting2,
   ),
   SettingsModel(
     icon: Assets.iconsLanguage,
-    title: "Language",
+    title: S.current.setting3,
   ),
   SettingsModel(
     icon: Assets.iconsAbout,
-    title: "About",
+    title: S.current.setting4,
   ),
   SettingsModel(
     icon: Assets.iconsFeedback,
-    title: "Feedback",
+    title: S.current.setting5,
   ),
 ];
