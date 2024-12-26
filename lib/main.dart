@@ -2,6 +2,7 @@ import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_theme.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/cart_view.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/empty_cart_view.dart';
+import 'package:e_delivery_app/Features/Product/Presentation/Views/product_view.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Manager/theme_cubit/theme_cubit.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/foundation.dart';
@@ -39,7 +40,7 @@ class EDelivery extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             theme: AppTheme.lightTheme,
             //   routerConfig: AppRouter.router,
-            home: const CartView(),
+            home: const ProductView(),
           );
         },
       ),
