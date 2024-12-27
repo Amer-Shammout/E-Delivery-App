@@ -26,7 +26,11 @@ Future<void> main() async {
   await Prefs.init();
 
   setupGetit();
-  runApp(const BetterFeedback(child: EDelivery()));
+  runApp(
+    const BetterFeedback(
+      child: EDelivery(),
+    ),
+  );
 }
 
 class EDelivery extends StatelessWidget {
