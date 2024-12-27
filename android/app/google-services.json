@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "399831058561",
+    "project_id": "e-delivery-app-6338d",
+    "storage_bucket": "e-delivery-app-6338d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:399831058561:android:dfd48d74e0404a5093a580",
+        "android_client_info": {
+          "package_name": "com.example.e_delivery_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhf_fIq_DTh61AmoSUTCJIOx92KPpTw3c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

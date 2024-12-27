@@ -5,8 +5,10 @@ import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_theme.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Manager/localization_cubit/localization_cubit.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Manager/theme_cubit/theme_cubit.dart';
+import 'package:e_delivery_app/firebase_options.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:feedback/feedback.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -16,6 +18,9 @@ import 'package:path_provider/path_provider.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+);
   Bloc.observer = CustomBlocObserver();
 
   HydratedBloc.storage = await HydratedStorage.build(
