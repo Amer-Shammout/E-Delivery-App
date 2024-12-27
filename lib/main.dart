@@ -1,4 +1,5 @@
 import 'package:e_delivery_app/Core/services/custom_bloc_observer.dart';
+import 'package:e_delivery_app/Core/services/firebase_notification.dart';
 import 'package:e_delivery_app/Core/services/service_locator.dart';
 import 'package:e_delivery_app/Core/services/shared_preferences_singleton.dart';
 import 'package:e_delivery_app/Core/utils/app_router.dart';
@@ -20,7 +21,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
-);
+  );
   Bloc.observer = CustomBlocObserver();
 
   HydratedBloc.storage = await HydratedStorage.build(
@@ -31,6 +32,7 @@ Future<void> main() async {
   await Prefs.init();
 
   setupGetit();
+  print("token: ${FirebaseNotification.getFCMToken()}");
   runApp(const BetterFeedback(child: EDelivery()));
 }
 
