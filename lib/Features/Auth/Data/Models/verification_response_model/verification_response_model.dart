@@ -2,21 +2,21 @@ import 'package:equatable/equatable.dart';
 
 import 'user.dart';
 
-class VerificationModel extends Equatable {
+class VerificationResponseModel extends Equatable {
   final String? message;
   final String? token;
   final User? user;
   final bool? isNewUser;
 
-  const VerificationModel({
+  const VerificationResponseModel({
     this.message,
     this.token,
     this.user,
     this.isNewUser,
   });
 
-  factory VerificationModel.fromJson(Map<String, dynamic> json) {
-    return VerificationModel(
+  factory VerificationResponseModel.fromJson(Map<String, dynamic> json) {
+    return VerificationResponseModel(
       message: json['message'] as String?,
       token: json['token'] as String?,
       user: json['user'] == null
