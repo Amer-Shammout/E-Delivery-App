@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:equatable/equatable.dart';
 
 class User extends Equatable {
@@ -29,25 +27,23 @@ class User extends Equatable {
     this.allowNotifications,
   });
 
-  factory User.fromMessageVerificationSuccessfulPleaseCompleteYourProfileToken1NbYvAmmwlH45JxWOmClMwIAyeiPfJSnFrZgDd4xzb0a07f02UserId1FullNameNullPhoneNumber963967730281LangEnImageNullRoleUserLatitudeNullLongitudeNullThemeModeLightAllowGps0AllowNotifications0IsNewUserTrue(
-      Map<String, dynamic> data) {
+  factory User.fromJson(Map<String, dynamic> json) {
     return User(
-      id: data['id'] as int?,
-      fullName: data['full_name'] as dynamic,
-      phoneNumber: data['phone_number'] as String?,
-      lang: data['lang'] as String?,
-      image: data['image'] as dynamic,
-      role: data['role'] as String?,
-      latitude: data['latitude'] as dynamic,
-      longitude: data['longitude'] as dynamic,
-      themeMode: data['theme_mode'] as String?,
-      allowGps: data['allow_gps'] as int?,
-      allowNotifications: data['allow_notifications'] as int?,
+      id: json['id'] as int?,
+      fullName: json['full_name'] as dynamic,
+      phoneNumber: json['phone_number'] as String?,
+      lang: json['lang'] as String?,
+      image: json['image'] as dynamic,
+      role: json['role'] as String?,
+      latitude: json['latitude'] as dynamic,
+      longitude: json['longitude'] as dynamic,
+      themeMode: json['theme_mode'] as String?,
+      allowGps: json['allow_gps'] as int?,
+      allowNotifications: json['allow_notifications'] as int?,
     );
   }
 
-  Map<String, dynamic>
-      toMessageVerificationSuccessfulPleaseCompleteYourProfileToken1NbYvAmmwlH45JxWOmClMwIAyeiPfJSnFrZgDd4xzb0a07f02UserId1FullNameNullPhoneNumber963967730281LangEnImageNullRoleUserLatitudeNullLongitudeNullThemeModeLightAllowGps0AllowNotifications0IsNewUserTrue() {
+  Map<String, dynamic> toJson() {
     return {
       'id': id,
       'full_name': fullName,
@@ -62,21 +58,6 @@ class User extends Equatable {
       'allow_notifications': allowNotifications,
     };
   }
-
-  /// `dart:convert`
-  ///
-  /// Parses the string and returns the resulting Json object as [User].
-  factory User.fromJson(String data) {
-    return User
-        .fromMessageVerificationSuccessfulPleaseCompleteYourProfileToken1NbYvAmmwlH45JxWOmClMwIAyeiPfJSnFrZgDd4xzb0a07f02UserId1FullNameNullPhoneNumber963967730281LangEnImageNullRoleUserLatitudeNullLongitudeNullThemeModeLightAllowGps0AllowNotifications0IsNewUserTrue(
-            json.decode(data) as Map<String, dynamic>);
-  }
-
-  /// `dart:convert`
-  ///
-  /// Converts [User] to a JSON string.
-  String toJson() => json.encode(
-      toMessageVerificationSuccessfulPleaseCompleteYourProfileToken1NbYvAmmwlH45JxWOmClMwIAyeiPfJSnFrZgDd4xzb0a07f02UserId1FullNameNullPhoneNumber963967730281LangEnImageNullRoleUserLatitudeNullLongitudeNullThemeModeLightAllowGps0AllowNotifications0IsNewUserTrue());
 
   @override
   List<Object?> get props {

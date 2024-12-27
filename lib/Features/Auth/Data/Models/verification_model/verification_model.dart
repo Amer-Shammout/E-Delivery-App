@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:equatable/equatable.dart';
 
 import 'user.dart';
@@ -17,45 +15,25 @@ class VerificationModel extends Equatable {
     this.isNewUser,
   });
 
-  factory VerificationModel.fromMessageVerificationSuccessfulPleaseCompleteYourProfileToken1NbYvAmmwlH45JxWOmClMwIAyeiPfJSnFrZgDd4xzb0a07f02UserId1FullNameNullPhoneNumber963967730281LangEnImageNullRoleUserLatitudeNullLongitudeNullThemeModeLightAllowGps0AllowNotifications0IsNewUserTrue(
-      Map<String, dynamic> data) {
+  factory VerificationModel.fromJson(Map<String, dynamic> json) {
     return VerificationModel(
-      message: data['message'] as String?,
-      token: data['token'] as String?,
-      user: data['user'] == null
+      message: json['message'] as String?,
+      token: json['token'] as String?,
+      user: json['user'] == null
           ? null
-          : User
-              .fromMessageVerificationSuccessfulPleaseCompleteYourProfileToken1NbYvAmmwlH45JxWOmClMwIAyeiPfJSnFrZgDd4xzb0a07f02UserId1FullNameNullPhoneNumber963967730281LangEnImageNullRoleUserLatitudeNullLongitudeNullThemeModeLightAllowGps0AllowNotifications0IsNewUserTrue(
-                  data['user'] as Map<String, dynamic>),
-      isNewUser: data['is_new_user'] as bool?,
+          : User.fromJson(json['user'] as Map<String, dynamic>),
+      isNewUser: json['is_new_user'] as bool?,
     );
   }
 
-  Map<String, dynamic>
-      toMessageVerificationSuccessfulPleaseCompleteYourProfileToken1NbYvAmmwlH45JxWOmClMwIAyeiPfJSnFrZgDd4xzb0a07f02UserId1FullNameNullPhoneNumber963967730281LangEnImageNullRoleUserLatitudeNullLongitudeNullThemeModeLightAllowGps0AllowNotifications0IsNewUserTrue() {
+  Map<String, dynamic> toJson() {
     return {
       'message': message,
       'token': token,
-      'user': user
-          ?.toMessageVerificationSuccessfulPleaseCompleteYourProfileToken1NbYvAmmwlH45JxWOmClMwIAyeiPfJSnFrZgDd4xzb0a07f02UserId1FullNameNullPhoneNumber963967730281LangEnImageNullRoleUserLatitudeNullLongitudeNullThemeModeLightAllowGps0AllowNotifications0IsNewUserTrue(),
+      'user': user?.toJson(),
       'is_new_user': isNewUser,
     };
   }
-
-  /// `dart:convert`
-  ///
-  /// Parses the string and returns the resulting Json object as [VerificationModel].
-  factory VerificationModel.fromJson(String data) {
-    return VerificationModel
-        .fromMessageVerificationSuccessfulPleaseCompleteYourProfileToken1NbYvAmmwlH45JxWOmClMwIAyeiPfJSnFrZgDd4xzb0a07f02UserId1FullNameNullPhoneNumber963967730281LangEnImageNullRoleUserLatitudeNullLongitudeNullThemeModeLightAllowGps0AllowNotifications0IsNewUserTrue(
-            json.decode(data) as Map<String, dynamic>);
-  }
-
-  /// `dart:convert`
-  ///
-  /// Converts [VerificationModel] to a JSON string.
-  String toJson() => json.encode(
-      toMessageVerificationSuccessfulPleaseCompleteYourProfileToken1NbYvAmmwlH45JxWOmClMwIAyeiPfJSnFrZgDd4xzb0a07f02UserId1FullNameNullPhoneNumber963967730281LangEnImageNullRoleUserLatitudeNullLongitudeNullThemeModeLightAllowGps0AllowNotifications0IsNewUserTrue());
 
   @override
   List<Object?> get props => [message, token, user, isNewUser];
