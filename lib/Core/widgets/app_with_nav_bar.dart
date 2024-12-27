@@ -67,7 +67,9 @@ class _NavigationBarPages extends State<AppWithNavBar> {
               activatedIcon: Assets.iconsSolidHomeBold),
           navIcon(
               icon: Assets.iconsOutlineShopsOutline,
-              activatedIcon: SetThemeColors.isDarkMode(context) ? Assets.iconsSolidStoresDark : Assets.iconsSolidShops),
+              activatedIcon: SetThemeColors.isDarkMode(context)
+                  ? Assets.iconsSolidStoresDark
+                  : Assets.iconsSolidShops),
           navIcon(
               icon: Assets.iconsOutlineOrdersOutline,
               activatedIcon: Assets.iconsSolidOrdersBold),
@@ -122,7 +124,8 @@ class _NavigationBarPages extends State<AppWithNavBar> {
             width: 32,
             height: 32,
             activatedIcon,
-            colorFilter: activatedIcon == Assets.iconsSolidShops || activatedIcon == Assets.iconsSolidStoresDark 
+            colorFilter: activatedIcon == Assets.iconsSolidShops ||
+                    activatedIcon == Assets.iconsSolidStoresDark
                 ? null
                 : ColorFilter.mode(
                     Theme.of(context).colorScheme.primary,

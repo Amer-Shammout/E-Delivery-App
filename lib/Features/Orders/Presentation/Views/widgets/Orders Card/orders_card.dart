@@ -40,7 +40,7 @@ class OrdersCard extends StatelessWidget {
         childrenPadding: const EdgeInsetsDirectional.only(
           start: kHorizontalPadding,
           end: kHorizontalPadding,
-          bottom: kSpacing*6,
+          bottom: kSpacing * 6,
         ),
         tilePadding: const EdgeInsets.symmetric(
           horizontal: 16,

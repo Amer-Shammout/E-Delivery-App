@@ -18,5 +18,4 @@ class AppColors {
   static const Color kdarkPreparingColor = Color(0xFF658FAB);
   static const Color kdarkDeliveredColor = Color(0xFF79A560);
   static const Color kdarkOnTheWayColor = Color(0xFFA29A68);
-  
 }

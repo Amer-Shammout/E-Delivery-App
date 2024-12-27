@@ -5,14 +5,11 @@ class ThemeCubit extends HydratedCubit<ThemeMode> {
   ThemeCubit() : super(ThemeMode.system);
 
   void updateTheme(ThemeMode themeMode) => emit(themeMode);
-  
+
   @override
-  ThemeMode? fromJson(Map<String, dynamic> json) => ThemeMode.values[json['value'] as int];
+  ThemeMode? fromJson(Map<String, dynamic> json) =>
+      ThemeMode.values[json['value'] as int];
 
-  
   @override
-  Map<String, int>? toJson(ThemeMode state) => { 'value': state.index };
-
- 
-
+  Map<String, int>? toJson(ThemeMode state) => {'value': state.index};
 }

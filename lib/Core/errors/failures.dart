@@ -14,7 +14,6 @@ class ServerFailure extends Failure {
   factory ServerFailure.fromDioError(DioException dioException) {
     return _handleError(dioException);
   }
-  
 }
 
 ServerFailure _handleError(DioException dioException) {
@@ -28,7 +27,8 @@ ServerFailure _handleError(DioException dioException) {
     case DioExceptionType.badCertificate:
       return ServerFailure(errMessage: ResponseMessage.badCertificate);
     case DioExceptionType.badResponse:
-      return _handleBadResponseError(dioException,dioException.response!.statusCode!);
+      return _handleBadResponseError(
+          dioException, dioException.response!.statusCode!);
     case DioExceptionType.cancel:
       return ServerFailure(errMessage: ResponseMessage.cancel);
     case DioExceptionType.connectionError:
@@ -40,7 +40,8 @@ ServerFailure _handleError(DioException dioException) {
   }
 }
 
-ServerFailure _handleBadResponseError(DioException dioException,int statusCode) {
+ServerFailure _handleBadResponseError(
+    DioException dioException, int statusCode) {
   switch (statusCode) {
     case ResponseCode.badRequest:
       return ServerFailure(errMessage: ResponseMessage.badRequest);

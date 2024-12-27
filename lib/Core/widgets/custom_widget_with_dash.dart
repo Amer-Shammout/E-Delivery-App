@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class CustomWidgetWithDash extends StatelessWidget {
   const CustomWidgetWithDash({
     super.key,
-    required this.dashColor ,
+    required this.dashColor,
     this.width = 75,
     this.height = 10,
     required this.widget,

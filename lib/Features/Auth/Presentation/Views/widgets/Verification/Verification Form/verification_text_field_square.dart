@@ -22,7 +22,9 @@ class VerificationTextFieldSquare extends StatelessWidget {
       height: 64,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
-        boxShadow: SetThemeColors.isDarkMode(context) ? null : Shadows.innerShadow(context),
+        boxShadow: SetThemeColors.isDarkMode(context)
+            ? null
+            : Shadows.innerShadow(context),
       ),
       child: TextFormField(
         validator: Validation.validateFieldIfEmpty,
@@ -41,7 +43,9 @@ class VerificationTextFieldSquare extends StatelessWidget {
           errorStyle: const TextStyle(
             fontSize: 0,
           ),
-          fillColor: SetThemeColors.isDarkMode(context) ? Theme.of(context).colorScheme.secondary : Colors.transparent,
+          fillColor: SetThemeColors.isDarkMode(context)
+              ? Theme.of(context).colorScheme.secondary
+              : Colors.transparent,
           filled: true,
           contentPadding: const EdgeInsets.symmetric(
             horizontal: 18,
@@ -53,7 +57,8 @@ class VerificationTextFieldSquare extends StatelessWidget {
           focusedBorder: buildBorder(
             Theme.of(context).colorScheme.primary,
           ),
-          focusedErrorBorder: buildBorder(Theme.of(context).colorScheme.tertiary),
+          focusedErrorBorder:
+              buildBorder(Theme.of(context).colorScheme.tertiary),
           errorBorder: buildBorder(Theme.of(context).colorScheme.tertiary),
         ),
       ),

@@ -22,8 +22,10 @@ class HomeViewBody extends StatelessWidget {
         PinnedHeaderSliver(
           child: CustomSearchBar(
             isEnabled: false,
-            onTap: (){
-              GoRouter.of(context).push(AppRouter.kSearchView,);
+            onTap: () {
+              GoRouter.of(context).push(
+                AppRouter.kSearchView,
+              );
             },
           ),
         ),

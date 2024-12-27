@@ -13,7 +13,7 @@ class CTAButton extends StatelessWidget {
       this.icon = Assets.iconsButtonsArrow,
       this.fillColor = kPrimaryColor,
       this.strokeColor = kPrimaryColor,
-      this.contentColor ,
+      this.contentColor,
       this.radius = 12,
       this.fontSize = 20,
       this.iconSize = 16,
@@ -61,7 +61,10 @@ class CTAButton extends StatelessWidget {
             Text(
               title,
               style: style.copyWith(
-                color: contentColor?? (SetThemeColors.isDarkMode(context) ? kBlackColor : kWhiteColor),
+                color: contentColor ??
+                    (SetThemeColors.isDarkMode(context)
+                        ? kBlackColor
+                        : kWhiteColor),
                 fontSize: fontSize,
               ),
             ),
@@ -72,7 +75,12 @@ class CTAButton extends StatelessWidget {
               icon,
               height: iconSize,
               width: iconSize,
-              colorFilter: ColorFilter.mode(contentColor?? (SetThemeColors.isDarkMode(context) ? kBlackColor : kWhiteColor), BlendMode.srcATop),
+              colorFilter: ColorFilter.mode(
+                  contentColor ??
+                      (SetThemeColors.isDarkMode(context)
+                          ? kBlackColor
+                          : kWhiteColor),
+                  BlendMode.srcATop),
             )
           ],
         ),

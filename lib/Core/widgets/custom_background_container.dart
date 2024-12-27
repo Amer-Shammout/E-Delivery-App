@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 
 class CustomBackgroundContainer extends StatelessWidget {
   const CustomBackgroundContainer(
-      {super.key, required this.child, this.image = Assets.imagesPattern, this.color = Colors.white});
+      {super.key,
+      required this.child,
+      this.image = Assets.imagesPattern,
+      this.color = Colors.white});
 
   final Widget child;
   final String image;

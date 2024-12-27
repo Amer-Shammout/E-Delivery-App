@@ -28,8 +28,7 @@ class AppTheme {
     shadow: AppColors.kdarkOnTheWayColor,
   ));
 
-  static FeedbackThemeData lightFeedbackThemeData() =>
-      FeedbackThemeData(
+  static FeedbackThemeData lightFeedbackThemeData() => FeedbackThemeData(
         bottomSheetTextInputStyle: const TextStyle(
           color: Color(0xFF302F34),
           fontSize: 16,
@@ -47,8 +46,7 @@ class AppTheme {
         dragHandleColor: Colors.grey.shade400,
       );
 
-  static FeedbackThemeData darkFeedbackThemeData() =>
-      FeedbackThemeData(
+  static FeedbackThemeData darkFeedbackThemeData() => FeedbackThemeData(
         bottomSheetTextInputStyle: const TextStyle(
           color: Color(0xFFC4C4C4),
           fontSize: 16,

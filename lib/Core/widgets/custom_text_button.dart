@@ -8,7 +8,8 @@ class CustomTextButton extends StatelessWidget {
   const CustomTextButton({
     super.key,
     required this.onPressed,
-    required this.title, required this.color,
+    required this.title,
+    required this.color,
   });
 
   final VoidCallback onPressed;

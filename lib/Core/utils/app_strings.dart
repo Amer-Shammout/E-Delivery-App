@@ -1,20 +1,23 @@
 abstract class AppStrings {
- ///English Message
-static const strSuccess = "success";
-static const strBadRequestError= "bad request. try again later";
-static const strNoContent= "success with not content";
-static const strForbiddenError= "forbidden request. try again later";
-static const strUnauthorizedError= "user unauthorized, try again later";
-static const strNotFoundError= "url not found, try again later";
-static const strConflictError= "conflict found, try again later";
-static const strInternalServerError= "some thing went wrong, try again later";
-static const strUnknownError= "some thing went wrong, try again later";
-static const strTimeoutError= "time out, try again later";
-static const strDefaultError= "some thing went wrong, try again later";
-static const strCacheError= "cache error, try again later";
-static const strNoInternetError= "Please check your internet connection";
-static const strCancelError= "Request to server was canceled, try again later";
-static const strBadCertificateError= "Bad Certificate error, try again later";
+  ///English Message
+  static const strSuccess = "success";
+  static const strBadRequestError = "bad request. try again later";
+  static const strNoContent = "success with not content";
+  static const strForbiddenError = "forbidden request. try again later";
+  static const strUnauthorizedError = "user unauthorized, try again later";
+  static const strNotFoundError = "url not found, try again later";
+  static const strConflictError = "conflict found, try again later";
+  static const strInternalServerError =
+      "some thing went wrong, try again later";
+  static const strUnknownError = "some thing went wrong, try again later";
+  static const strTimeoutError = "time out, try again later";
+  static const strDefaultError = "some thing went wrong, try again later";
+  static const strCacheError = "cache error, try again later";
+  static const strNoInternetError = "Please check your internet connection";
+  static const strCancelError =
+      "Request to server was canceled, try again later";
+  static const strBadCertificateError =
+      "Bad Certificate error, try again later";
 
 //Arabic Message
 // static const success= "تم بنجاح";

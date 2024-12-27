@@ -12,7 +12,9 @@ class StoresListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverList.builder(
       itemBuilder: (context, index) => const Padding(
-        padding: EdgeInsets.only(bottom: kSpacing*4,),
+        padding: EdgeInsets.only(
+          bottom: kSpacing * 4,
+        ),
         child: StoresCard(
           cardColor: Color(0xff153F71),
           storeLogo: Assets.imagesSmatelLogoTest,

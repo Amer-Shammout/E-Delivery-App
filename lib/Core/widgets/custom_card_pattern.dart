@@ -6,7 +6,8 @@ class CustomCardPattern extends StatelessWidget {
     super.key,
     required this.cardColor,
     this.margin = 0,
-    required this.child, required this.opacity,
+    required this.child,
+    required this.opacity,
   });
 
   final Color cardColor;
@@ -26,7 +27,7 @@ class CustomCardPattern extends StatelessWidget {
           16,
         ),
         color: cardColor.withOpacity(.2),
-        image:  DecorationImage(
+        image: DecorationImage(
           opacity: opacity,
           image: const AssetImage(
             Assets.imagesCardBackground,

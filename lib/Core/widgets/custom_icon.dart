@@ -26,7 +26,7 @@ class CustomIcon extends StatelessWidget {
       height: radius,
       width: radius,
       decoration: BoxDecoration(
-        color: backgroundColor?? SetThemeColors.setBackgroundColor(context),
+        color: backgroundColor ?? SetThemeColors.setBackgroundColor(context),
         borderRadius: BorderRadius.circular(360),
         boxShadow: const [Shadows.iconDropShadow],
       ),
@@ -43,5 +43,3 @@ class CustomIcon extends StatelessWidget {
     );
   }
 }
-
-

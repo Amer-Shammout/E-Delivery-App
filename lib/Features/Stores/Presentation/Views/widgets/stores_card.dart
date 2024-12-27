@@ -14,8 +14,10 @@ class StoresCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
-        GoRouter.of(context).push(AppRouter.kStoreDetailsView,);
+      onTap: () {
+        GoRouter.of(context).push(
+          AppRouter.kStoreDetailsView,
+        );
       },
       child: CustomContainer(
         child: CustomCardPattern(

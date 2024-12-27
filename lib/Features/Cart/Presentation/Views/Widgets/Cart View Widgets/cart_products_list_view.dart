@@ -8,11 +8,11 @@ class CartProductsListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      padding: const EdgeInsets.only(top: kSpacing*6),
+      padding: const EdgeInsets.only(top: kSpacing * 6),
       itemCount: 10,
       physics: const BouncingScrollPhysics(),
       itemBuilder: (context, index) => const Padding(
-        padding: EdgeInsets.only(bottom: kSpacing*6),
+        padding: EdgeInsets.only(bottom: kSpacing * 6),
         child: ProductSlidable(),
       ),
     );

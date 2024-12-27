@@ -11,7 +11,11 @@ class ProductViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding: EdgeInsets.only(left: kSpacing*8, right: kSpacing*8, top: kSpacing*8, bottom: kSpacing*4),
+      padding: EdgeInsets.only(
+          left: kSpacing * 8,
+          right: kSpacing * 8,
+          top: kSpacing * 8,
+          bottom: kSpacing * 4),
       child: Column(
         children: [
           ProductAppBar(),

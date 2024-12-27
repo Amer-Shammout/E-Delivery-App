@@ -7,7 +7,7 @@ abstract class FirebaseNotification {
     final FirebaseMessaging firebaseMessaging = FirebaseMessaging.instance;
     await firebaseMessaging.requestPermission();
     String? fcmToken = await firebaseMessaging.getToken();
-    log(fcmToken??'no token');
+    log(fcmToken ?? 'no token');
     return fcmToken;
   }
 }

@@ -11,7 +11,7 @@ class RegisterationTextFieldPrefix extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsetsDirectional.only(start: kSpacing*6),
+      padding: const EdgeInsetsDirectional.only(start: kSpacing * 6),
       child: FittedBox(
         fit: BoxFit.scaleDown,
         child: Row(
@@ -22,14 +22,14 @@ class RegisterationTextFieldPrefix extends StatelessWidget {
               height: 30,
             ),
             const SizedBox(
-              width: kSpacing*2,
+              width: kSpacing * 2,
             ),
             Text(
               '+963',
               style: AppStyles.fontsMedium16(context),
             ),
             const SizedBox(
-              width: kSpacing*3,
+              width: kSpacing * 3,
             ),
             SizedBox(
               height: 16,
@@ -39,7 +39,7 @@ class RegisterationTextFieldPrefix extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              width: kSpacing*3,
+              width: kSpacing * 3,
             ),
           ],
         ),

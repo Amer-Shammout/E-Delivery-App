@@ -48,14 +48,14 @@ class _CustomMapState extends State<CustomMap> {
               ),
             ),
           ),
-          if(SetThemeColors.isDarkMode(context))
-          Container(
-            height: 178,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
-              color: Colors.black.withOpacity(.3),
+          if (SetThemeColors.isDarkMode(context))
+            Container(
+              height: 178,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16),
+                color: Colors.black.withOpacity(.3),
+              ),
             ),
-          ),
           Positioned(
             right: 8,
             bottom: 8,

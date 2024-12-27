@@ -5,9 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class CustomSettingTile extends StatelessWidget {
-  const CustomSettingTile({
-    super.key, required this.settingItem,required this.trailing, required this.onTap
-  });
+  const CustomSettingTile(
+      {super.key,
+      required this.settingItem,
+      required this.trailing,
+      required this.onTap});
 
   final SettingsModel settingItem;
   final Widget trailing;
@@ -29,12 +31,12 @@ class CustomSettingTile extends StatelessWidget {
         settingItem.icon,
         width: 24,
         height: 24,
-        colorFilter:  ColorFilter.mode(
+        colorFilter: ColorFilter.mode(
           Theme.of(context).colorScheme.error,
           BlendMode.srcATop,
         ),
       ),
-      trailing: trailing ,
+      trailing: trailing,
     );
   }
 }

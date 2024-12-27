@@ -10,7 +10,10 @@ class FavoriteProductsListView extends StatelessWidget {
     return SliverList.builder(
       itemCount: 10,
       itemBuilder: (context, index) => const Padding(
-        padding: EdgeInsets.only(bottom: kSpacing*6, left: kHorizontalPadding, right: kHorizontalPadding),
+        padding: EdgeInsets.only(
+            bottom: kSpacing * 6,
+            left: kHorizontalPadding,
+            right: kHorizontalPadding),
         child: FavoriteProduct(),
       ),
     );

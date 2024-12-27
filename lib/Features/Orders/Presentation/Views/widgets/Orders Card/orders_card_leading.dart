@@ -20,8 +20,8 @@ class OrdersCardLeading extends StatelessWidget {
             '1',
             style: AppStyles.fontsBold24(context).copyWith(
               color: kBlackColor.withOpacity(
-                    .7,
-                  ),
+                .7,
+              ),
             ),
           ),
           const SizedBox(
@@ -31,8 +31,8 @@ class OrdersCardLeading extends StatelessWidget {
             height: 50,
             child: VerticalDivider(
               color: kBlackColor.withOpacity(
-                    .4,
-                  ),
+                .4,
+              ),
             ),
           ),
           const SizedBox(

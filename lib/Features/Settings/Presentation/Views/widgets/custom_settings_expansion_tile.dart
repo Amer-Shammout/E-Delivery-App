@@ -10,7 +10,9 @@ class CustomSettingsExpansionTile extends StatelessWidget {
   const CustomSettingsExpansionTile({
     super.key,
     required this.settingItem,
-    required this.titles, required this.groupValue, required this.onChanged,
+    required this.titles,
+    required this.groupValue,
+    required this.onChanged,
   });
 
   final SettingsModel settingItem;
@@ -26,7 +28,7 @@ class CustomSettingsExpansionTile extends StatelessWidget {
         Assets.iconsDropDownArrow,
         width: 12,
         height: 12,
-        colorFilter:  ColorFilter.mode(
+        colorFilter: ColorFilter.mode(
           Theme.of(context).colorScheme.error,
           BlendMode.srcATop,
         ),
@@ -57,7 +59,7 @@ class CustomSettingsExpansionTile extends StatelessWidget {
         settingItem.icon,
         width: 24,
         height: 24,
-        colorFilter:  ColorFilter.mode(
+        colorFilter: ColorFilter.mode(
           Theme.of(context).colorScheme.error,
           BlendMode.srcATop,
         ),

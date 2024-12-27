@@ -20,8 +20,8 @@ class CustomProductIconContent extends StatelessWidget {
             width: 24,
             height: 24,
             icon,
-            colorFilter:
-                 ColorFilter.mode(Theme.of(context).colorScheme.primary, BlendMode.srcATop),
+            colorFilter: ColorFilter.mode(
+                Theme.of(context).colorScheme.primary, BlendMode.srcATop),
           ),
         ),
         const SizedBox(

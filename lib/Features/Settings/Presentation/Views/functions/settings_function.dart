@@ -54,7 +54,7 @@ abstract class SettingsFunction {
     }
   }
 
-   static String setLanguagesGroupValue(String lang, context) {
+  static String setLanguagesGroupValue(String lang, context) {
     if (lang == "System") {
       if (LocalizationsFuns.isArabic(context)) {
         return 'النّظام';

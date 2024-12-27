@@ -20,7 +20,9 @@ abstract class SetThemeColors {
   }
 
   static bool isDarkMode(context) {
-    if ((BlocProvider.of<ThemeCubit>(context).state == ThemeMode.system && MediaQuery.of(context).platformBrightness == Brightness.dark) || BlocProvider.of<ThemeCubit>(context).state == ThemeMode.dark) {
+    if ((BlocProvider.of<ThemeCubit>(context).state == ThemeMode.system &&
+            MediaQuery.of(context).platformBrightness == Brightness.dark) ||
+        BlocProvider.of<ThemeCubit>(context).state == ThemeMode.dark) {
       return true;
     }
     return false;

@@ -15,8 +15,8 @@ class OffersPageViewItemImage extends StatelessWidget {
     return Padding(
       padding: const EdgeInsetsDirectional.only(
         end: kSpacing,
-        bottom: kSpacing*3,
-        top: kSpacing*3,
+        bottom: kSpacing * 3,
+        top: kSpacing * 3,
       ),
       child: Image.asset(
         Assets.imagesIphoneTest,

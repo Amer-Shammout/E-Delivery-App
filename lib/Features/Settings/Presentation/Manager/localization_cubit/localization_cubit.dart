@@ -1,10 +1,7 @@
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 
-
-
 class LocalizationCubit extends HydratedCubit<String> {
-  LocalizationCubit()
-      : super('System');
+  LocalizationCubit() : super('System');
 
   void updateLanguage(String language) => emit(language);
 

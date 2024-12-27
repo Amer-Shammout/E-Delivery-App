@@ -33,7 +33,9 @@ class CustomSwitch extends StatelessWidget {
           ),
           inactiveThumbColor: Theme.of(context).colorScheme.surface,
           activeTrackColor: Theme.of(context).colorScheme.primary,
-          inactiveTrackColor: SetThemeColors.isDarkMode(context) ? Theme.of(context).colorScheme.secondary : Colors.grey.shade300,
+          inactiveTrackColor: SetThemeColors.isDarkMode(context)
+              ? Theme.of(context).colorScheme.secondary
+              : Colors.grey.shade300,
           activeColor: Theme.of(context).colorScheme.primary,
           trackOutlineColor: const WidgetStatePropertyAll(Colors.transparent),
         ),
