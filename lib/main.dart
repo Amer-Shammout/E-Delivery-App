@@ -22,6 +22,7 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await FirebaseNotification.getFCMToken();
   Bloc.observer = CustomBlocObserver();
 
   HydratedBloc.storage = await HydratedStorage.build(
@@ -32,7 +33,7 @@ Future<void> main() async {
   await Prefs.init();
 
   setupGetit();
-  print("token: ${FirebaseNotification.getFCMToken()}");
+
   runApp(const BetterFeedback(child: EDelivery()));
 }
 
