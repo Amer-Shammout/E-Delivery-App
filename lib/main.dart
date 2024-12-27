@@ -33,7 +33,7 @@ Future<void> main() async {
   await Prefs.init();
 
   setupGetit();
-
+  print("token: ${FirebaseNotification.getFCMToken()}");
   runApp(const BetterFeedback(child: EDelivery()));
 }
 
