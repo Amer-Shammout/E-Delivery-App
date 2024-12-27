@@ -33,8 +33,21 @@ Future<void> main() async {
   await Prefs.init();
 
   setupGetit();
-  print("token: ${FirebaseNotification.getFCMToken()}");
-  runApp(const BetterFeedback(child: EDelivery()));
+  runApp(
+    BlocProvider(
+      create: (context) => ThemeCubit(),
+      child: BlocBuilder<ThemeCubit, ThemeMode>(
+        builder: (context, mode) {
+          return BetterFeedback(
+            themeMode: mode,
+            darkTheme: AppTheme.darkFeedbackThemeData(),
+            theme: AppTheme.lightFeedbackThemeData(),
+            child: const EDelivery(),
+          );
+        },
+      ),
+    ),
+  );
 }
 
 class EDelivery extends StatelessWidget {
@@ -45,9 +58,6 @@ class EDelivery extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (_) => ThemeCubit(),
-        ),
-        BlocProvider(
           create: (_) => LocalizationCubit(),
         ),
       ],
@@ -55,26 +65,21 @@ class EDelivery extends StatelessWidget {
         builder: (context, lang) {
           return BlocBuilder<ThemeCubit, ThemeMode>(
             builder: (context, mode) {
-              return BetterFeedback(
+              return MaterialApp.router(
+                locale: Locale(setLocale(lang, context)),
+                localizationsDelegates: const [
+                  S.delegate,
+                  GlobalMaterialLocalizations.delegate,
+                  GlobalWidgetsLocalizations.delegate,
+                  GlobalCupertinoLocalizations.delegate,
+                ],
+                supportedLocales: S.delegate.supportedLocales,
                 themeMode: mode,
-                darkTheme: AppTheme.darkFeedbackThemeData(context),
-                theme: AppTheme.lightFeedbackThemeData(context),
-                child: MaterialApp.router(
-                  locale: Locale(setLocale(lang, context)),
-                  localizationsDelegates: const [
-                    S.delegate,
-                    GlobalMaterialLocalizations.delegate,
-                    GlobalWidgetsLocalizations.delegate,
-                    GlobalCupertinoLocalizations.delegate,
-                  ],
-                  supportedLocales: S.delegate.supportedLocales,
-                  themeMode: mode,
-                  darkTheme: AppTheme.darkTheme,
-                  debugShowCheckedModeBanner: false,
-                  theme: AppTheme.lightTheme,
-                  routerConfig: AppRouter.router,
-                  // home: const CartView(),
-                ),
+                darkTheme: AppTheme.darkTheme,
+                debugShowCheckedModeBanner: false,
+                theme: AppTheme.lightTheme,
+                routerConfig: AppRouter.router,
+                // home: const CartView(),
               );
             },
           );

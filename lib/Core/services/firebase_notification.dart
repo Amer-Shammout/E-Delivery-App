@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:firebase_messaging/firebase_messaging.dart';
 
 abstract class FirebaseNotification {
@@ -5,7 +7,7 @@ abstract class FirebaseNotification {
     final FirebaseMessaging firebaseMessaging = FirebaseMessaging.instance;
     await firebaseMessaging.requestPermission();
     String? fcmToken = await firebaseMessaging.getToken();
-    print(fcmToken);
+    log(fcmToken??'no token');
     return fcmToken;
   }
 }
