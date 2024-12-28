@@ -22,8 +22,8 @@ class StatusAppBar extends StatelessWidget {
         children: [
           GestureDetector(
             onTap: () {
-              GoRouter.of(context).push(
-                AppRouter.kProfileView,
+              GoRouter.of(context).pushNamed(
+                AppRouter.kProfileName,
               );
             },
             child: const ProfileAvatar(
@@ -57,7 +57,7 @@ class StatusAppBar extends StatelessWidget {
           CustomIcon(
             icon: Assets.iconsCart,
             onPressed: () {
-              GoRouter.of(context).push(AppRouter.kCartView);
+              GoRouter.of(context).push(AppRouter.kCartName);
             },
           ),
           const SizedBox(

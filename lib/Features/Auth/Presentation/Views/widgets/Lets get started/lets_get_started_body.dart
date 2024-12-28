@@ -37,8 +37,8 @@ class LetsGetStartedBody extends StatelessWidget {
           const Spacer(),
           GlassButton(
             onPressed: () {
-              GoRouter.of(context).pushReplacement(
-                AppRouter.kRegisterationView,
+              GoRouter.of(context).pushReplacementNamed(
+                AppRouter.kRegisterationName,
               );
             },
           ),

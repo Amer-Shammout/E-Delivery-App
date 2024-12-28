@@ -23,8 +23,8 @@ class HomeViewBody extends StatelessWidget {
           child: CustomSearchBar(
             isEnabled: false,
             onTap: () {
-              GoRouter.of(context).push(
-                AppRouter.kSearchView,
+              GoRouter.of(context).pushNamed(
+                AppRouter.kSearchName,
               );
             },
           ),

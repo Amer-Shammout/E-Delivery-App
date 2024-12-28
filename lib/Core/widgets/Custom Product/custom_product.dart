@@ -15,7 +15,7 @@ class CustomProduct extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRouter.kProductDetailsView);
+        GoRouter.of(context).push(AppRouter.kProductDetailsName);
       },
       child: CustomContainer(
         child: Container(

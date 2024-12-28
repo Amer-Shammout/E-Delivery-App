@@ -64,9 +64,9 @@ class _RegisterationFormState extends State<RegisterationForm> {
             style: AppStyles.fontsSemiBold20(context),
             onPressed: () {
               if (_formKey.currentState!.validate()) {
-                GoRouter.of(context).pushReplacement(
-                  AppRouter.kVerificationView,
-                );
+                GoRouter.of(context).pushReplacementNamed(
+                    AppRouter.kVerificationName,
+                    pathParameters: {'phoneNumber': phoneNumber!});
               } else {
                 _isAutoValidate = AutovalidateMode.always;
                 setState(() {});

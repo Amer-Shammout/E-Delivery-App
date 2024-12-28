@@ -53,8 +53,8 @@ class _SettingInfoFormState extends State<SettingInfoForm> {
             style: AppStyles.fontsSemiBold20(context),
             onPressed: () {
               if (_formKey.currentState!.validate()) {
-                GoRouter.of(context).pushReplacement(
-                  AppRouter.kAppRoot,
+                GoRouter.of(context).pushReplacementNamed(
+                  AppRouter.kAppRootName,
                 );
               } else {
                 _isAutoValidate = AutovalidateMode.always;

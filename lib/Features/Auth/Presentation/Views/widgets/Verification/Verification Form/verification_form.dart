@@ -3,6 +3,7 @@ import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/c_t_a_button.dart';
 import 'package:e_delivery_app/Core/widgets/custom_text_button.dart';
+import 'package:e_delivery_app/Features/Auth/Data/Models/verification_model.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/Verification/Verification%20Form/custom_timer.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/Verification/Verification%20Form/verification_text_field.dart';
 import 'package:e_delivery_app/constants.dart';
@@ -11,7 +12,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class VerificationForm extends StatefulWidget {
-  const VerificationForm({super.key});
+  const VerificationForm({super.key, required this.phoneNumber});
+
+  final String phoneNumber;
 
   @override
   State<VerificationForm> createState() => _VerificationFormState();
@@ -21,6 +24,8 @@ class _VerificationFormState extends State<VerificationForm> {
   final GlobalKey<FormState> _formKey = GlobalKey();
   AutovalidateMode _isAutoValidate = AutovalidateMode.disabled;
   bool isEnd = false;
+
+  String code = "0000";
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +66,20 @@ class _VerificationFormState extends State<VerificationForm> {
           const SizedBox(
             height: kSpacing * 8,
           ),
-          const VerificationTextField(),
+          VerificationTextField(
+            onSaved1: (data) {
+              code.replaceRange(0, 1, data!);
+            },
+            onSaved2: (data) {
+              code.replaceRange(1, 2, data!);
+            },
+            onSaved3: (data) {
+              code.replaceRange(2, 3, data!);
+            },
+            onSaved4: (data) {
+              code.replaceRange(3, 4, data!);
+            },
+          ),
           const SizedBox(
             height: kSpacing * 6,
           ),
@@ -69,8 +87,12 @@ class _VerificationFormState extends State<VerificationForm> {
             style: AppStyles.fontsSemiBold20(context),
             onPressed: () {
               if (_formKey.currentState!.validate()) {
-                GoRouter.of(context).pushReplacement(
-                  AppRouter.kSettingInfoView,
+                VerificationModel verificationModel = VerificationModel(
+                  phoneNumber: widget.phoneNumber,
+                  code: code,
+                );
+                GoRouter.of(context).pushReplacementNamed(
+                  AppRouter.kSettingInfoName,
                 );
               } else {
                 _isAutoValidate = AutovalidateMode.always;

@@ -16,7 +16,7 @@ class StoresCard extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         GoRouter.of(context).push(
-          AppRouter.kStoreDetailsView,
+          AppRouter.kStoreDetailsName,
         );
       },
       child: CustomContainer(

@@ -8,7 +8,9 @@ import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class VerificationViewBody extends StatelessWidget {
-  const VerificationViewBody({super.key});
+  const VerificationViewBody({super.key, required this.phoneNumber});
+
+  final String phoneNumber;
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +43,9 @@ class VerificationViewBody extends StatelessWidget {
                     SizedBox(
                       height: MediaQuery.sizeOf(context).height * .12,
                     ),
-                    const VerificationForm(),
+                     VerificationForm(
+                      phoneNumber: phoneNumber,
+                    ),
                     SizedBox(
                       height: MediaQuery.sizeOf(context).height * .36,
                     ),

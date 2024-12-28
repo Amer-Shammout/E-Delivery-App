@@ -15,8 +15,8 @@ class CustomTimer extends StatelessWidget {
       DateTime.now().month,
       DateTime.now().day,
       DateTime.now().hour,
-      DateTime.now().minute + 1,
-      DateTime.now().second + 30,
+      DateTime.now().minute + 2,
+      DateTime.now().second,
     );
     return TimerCountdown(
       onEnd: onEnd,

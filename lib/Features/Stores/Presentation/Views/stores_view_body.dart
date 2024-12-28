@@ -22,7 +22,7 @@ class StoresViewBody extends StatelessWidget {
             isEnabled: false,
             onTap: () {
               GoRouter.of(context).push(
-                AppRouter.kSearchView,
+                AppRouter.kSearchName,
               );
             },
           ),

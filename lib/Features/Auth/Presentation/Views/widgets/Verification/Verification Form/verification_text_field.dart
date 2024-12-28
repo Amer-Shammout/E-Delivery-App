@@ -3,7 +3,17 @@ import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 
 class VerificationTextField extends StatelessWidget {
-  const VerificationTextField({super.key});
+  const VerificationTextField(
+      {super.key,
+      required this.onSaved1,
+      required this.onSaved2,
+      required this.onSaved3,
+      required this.onSaved4});
+
+  final void Function(String?) onSaved1;
+  final void Function(String?) onSaved2;
+  final void Function(String?) onSaved3;
+  final void Function(String?) onSaved4;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +24,7 @@ class VerificationTextField extends StatelessWidget {
           onChanged: (value) {
             firstSquareMethod(context, value);
           },
-          onSaved: (data) {},
+          onSaved: onSaved1,
         ),
         const SizedBox(
           width: kSpacing * 4,
@@ -23,7 +33,7 @@ class VerificationTextField extends StatelessWidget {
           onChanged: (value) {
             squareMethod(context, value);
           },
-          onSaved: (data) {},
+          onSaved: onSaved2,
         ),
         const SizedBox(
           width: kSpacing * 4,
@@ -32,7 +42,7 @@ class VerificationTextField extends StatelessWidget {
           onChanged: (value) {
             squareMethod(context, value);
           },
-          onSaved: (data) {},
+          onSaved: onSaved3,
         ),
         const SizedBox(
           width: kSpacing * 4,
@@ -41,7 +51,7 @@ class VerificationTextField extends StatelessWidget {
           onChanged: (value) {
             lastSquareMethod(context, value);
           },
-          onSaved: (data) {},
+          onSaved: onSaved4,
         ),
       ],
     );

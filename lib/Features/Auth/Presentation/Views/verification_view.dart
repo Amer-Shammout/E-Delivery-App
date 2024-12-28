@@ -2,12 +2,16 @@ import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/Verifica
 import 'package:flutter/material.dart';
 
 class VerificationView extends StatelessWidget {
-  const VerificationView({super.key});
+  const VerificationView({super.key, required this.phoneNumber});
+
+  final String phoneNumber;
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: VerificationViewBody(),
+    return Scaffold(
+      body: VerificationViewBody(
+        phoneNumber: phoneNumber,
+      ),
     );
   }
 }
