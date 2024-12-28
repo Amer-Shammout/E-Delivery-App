@@ -1,7 +1,7 @@
-class ResendOtpModel {
+class ResendCodeModel {
   final String phoneNumber;
 
-  ResendOtpModel({required this.phoneNumber});
+  ResendCodeModel({required this.phoneNumber});
 
   Map<String, String> toJson() {
     return {'phone_number': phoneNumber};

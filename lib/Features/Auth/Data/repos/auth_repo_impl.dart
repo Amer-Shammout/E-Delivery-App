@@ -6,7 +6,7 @@ import 'package:e_delivery_app/Core/network/dio_client.dart';
 import 'package:e_delivery_app/Core/services/service_locator.dart';
 import 'package:e_delivery_app/Core/utils/app_strings.dart';
 import 'package:e_delivery_app/Features/Auth/Data/Models/registeration_model.dart';
-import 'package:e_delivery_app/Features/Auth/Data/Models/resend_otp_model.dart';
+import 'package:e_delivery_app/Features/Auth/Data/Models/resend_code_model.dart';
 import 'package:e_delivery_app/Features/Auth/Data/Models/verification_model.dart';
 import 'package:e_delivery_app/Features/Auth/Data/Models/verification_response_model/verification_response_model.dart';
 import 'package:e_delivery_app/Features/Auth/Data/repos/auth_repo.dart';
@@ -31,7 +31,7 @@ class AuthRepoImpl extends AuthRepo {
 
   @override
   Future<Either<Failure, bool>> resendCode(
-      ResendOtpModel resendOtpModel) async {
+      ResendCodeModel resendOtpModel) async {
     try {
       await getIt
           .get<DioClient>()
