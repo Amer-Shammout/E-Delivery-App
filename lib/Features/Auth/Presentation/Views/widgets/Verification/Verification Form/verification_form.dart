@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/functions/show_snack_bar.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
@@ -28,7 +30,11 @@ class _VerificationFormState extends State<VerificationForm> {
   AutovalidateMode _isAutoValidate = AutovalidateMode.disabled;
   bool isEnd = false;
 
-  String code = "0000";
+  String? code;
+  String? c1;
+  String? c2;
+  String? c3;
+  String? c4;
 
   @override
   Widget build(BuildContext context) {
@@ -69,19 +75,22 @@ class _VerificationFormState extends State<VerificationForm> {
           const SizedBox(
             height: kSpacing * 8,
           ),
-          VerificationTextField(
-            onSaved1: (data) {
-              code.replaceRange(0, 1, data!);
-            },
-            onSaved2: (data) {
-              code.replaceRange(1, 2, data!);
-            },
-            onSaved3: (data) {
-              code.replaceRange(2, 3, data!);
-            },
-            onSaved4: (data) {
-              code.replaceRange(3, 4, data!);
-            },
+          Directionality(
+            textDirection: TextDirection.ltr,
+            child: VerificationTextField(
+              onSaved1: (data) {
+                c1 = data;
+              },
+              onSaved2: (data) {
+                c2 = data;
+              },
+              onSaved3: (data) {
+                c3 = data;
+              },
+              onSaved4: (data) {
+                c4 = data;
+              },
+            ),
           ),
           const SizedBox(
             height: kSpacing * 6,
@@ -91,9 +100,11 @@ class _VerificationFormState extends State<VerificationForm> {
             onPressed: () {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
+                code = c1! + c2! + c3! + c4!;
+                log(code!);
                 VerificationModel verificationModel = VerificationModel(
                   phoneNumber: widget.phoneNumber,
-                  code: code,
+                  code: code!,
                 );
                 BlocProvider.of<VerificationCubit>(context)
                     .verify(verificationModel);

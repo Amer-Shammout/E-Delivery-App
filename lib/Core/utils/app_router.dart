@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:e_delivery_app/Core/services/service_locator.dart';
+import 'package:e_delivery_app/Core/services/shared_preferences_singleton.dart';
 import 'package:e_delivery_app/Core/widgets/app_with_nav_bar.dart';
 import 'package:e_delivery_app/Features/Auth/Data/repos/auth_repo_impl.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/lets_get_started_view.dart';
@@ -13,6 +16,7 @@ import 'package:e_delivery_app/Features/Product/Presentation/Views/product_view.
 import 'package:e_delivery_app/Features/Profile/Presentation/Views/profile_view.dart';
 import 'package:e_delivery_app/Features/Search/Presentation/Views/search_view.dart';
 import 'package:e_delivery_app/Features/Store%20Details/Presentation/Views/store_details_view.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
@@ -45,68 +49,87 @@ abstract class AppRouter {
       GoRoute(
         name: kLetsGetStartedName,
         path: '/',
-        builder: (context, state) => const LetsGetStartedView(),
+        pageBuilder: (context, state) =>
+            const MaterialPage(child: LetsGetStartedView()),
       ),
       GoRoute(
         path: kRegisterationView,
         name: kRegisterationName,
-        builder: (context, state) => BlocProvider(
-          create: (context) => RegisterCubit(getIt.get<AuthRepoImpl>()),
-          child: const RegisterationView(),
+        pageBuilder: (context, state) => MaterialPage(
+          child: BlocProvider(
+            create: (context) => RegisterCubit(getIt.get<AuthRepoImpl>()),
+            child: const RegisterationView(),
+          ),
         ),
       ),
       GoRoute(
         path: kVerificationView,
         name: kVerificationName,
-        builder: (context, state) => MultiBlocProvider(
-          providers: [
-            BlocProvider(
-              create: (context) => VerificationCubit(getIt.get<AuthRepoImpl>()),
+        pageBuilder: (context, state) => MaterialPage(
+          child: MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (context) =>
+                    VerificationCubit(getIt.get<AuthRepoImpl>()),
+              ),
+              BlocProvider(
+                create: (context) => ResendCodeCubit(getIt.get<AuthRepoImpl>()),
+              ),
+            ],
+            child: VerificationView(
+              phoneNumber: state.pathParameters['phoneNumber']!,
             ),
-            BlocProvider(
-              create: (context) => ResendCodeCubit(getIt.get<AuthRepoImpl>()),
-            ),
-          ],
-          child: VerificationView(
-            phoneNumber: state.pathParameters['phoneNumber']!,
           ),
         ),
       ),
       GoRoute(
         path: kSettingInfoView,
         name: kSettingInfoName,
-        builder: (context, state) => SettingInfoView(),
+        pageBuilder: (context, state) =>
+            const MaterialPage(child: SettingInfoView()),
       ),
       GoRoute(
         path: kAppRoot,
         name: kAppRootName,
-        builder: (context, state) => const AppWithNavBar(),
+        pageBuilder: (context, state) =>
+            const MaterialPage(child: AppWithNavBar()),
       ),
       GoRoute(
         path: kStoreDetailsView,
         name: kStoreDetailsName,
-        builder: (context, state) => const StoreDetailsView(),
+        pageBuilder: (context, state) =>
+            const MaterialPage(child: StoreDetailsView()),
       ),
       GoRoute(
         path: kProfileView,
         name: kProfileName,
-        builder: (context, state) => const ProfileView(),
+        pageBuilder: (context, state) => const MaterialPage(child: ProfileView()),
       ),
       GoRoute(
         path: kSearchView,
         name: kSearchName,
-        builder: (context, state) => const SearchView(),
+        pageBuilder: (context, state) => const MaterialPage(child: SearchView()),
       ),
       GoRoute(
         path: kProductDetailsView,
         name: kProductDetailsName,
-        builder: (context, state) => const ProductView(),
+        pageBuilder: (context, state) => const MaterialPage(child: ProductView()),
       ),
       GoRoute(
         path: kCartView,
         name: kCartName,
-        builder: (context, state) => const CartView(),
+        pageBuilder: (context, state) => const MaterialPage(child: CartView()),
       ),
     ],
+    redirect: (context, state) {
+      bool isAuth = Prefs.getString('token') != '';
+      log(Prefs.getString('token'));
+      if (isAuth && state.namedLocation(kLetsGetStartedName) == '/') {
+        log(state.namedLocation(kLetsGetStartedName));
+        return kAppRoot;
+      } else {
+        return null;
+      }
+    },
   );
 }
