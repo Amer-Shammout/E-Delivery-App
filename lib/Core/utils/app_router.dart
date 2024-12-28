@@ -1,13 +1,17 @@
+import 'package:e_delivery_app/Core/services/service_locator.dart';
 import 'package:e_delivery_app/Core/widgets/app_with_nav_bar.dart';
+import 'package:e_delivery_app/Features/Auth/Data/repos/auth_repo_impl.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/lets_get_started_view.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/registeration_view.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/setting_info_view.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/verification_view.dart';
+import 'package:e_delivery_app/Features/Auth/Presentation/manager/register_cubit/register_cubit.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/cart_view.dart';
 import 'package:e_delivery_app/Features/Product/Presentation/Views/product_view.dart';
 import 'package:e_delivery_app/Features/Profile/Presentation/Views/profile_view.dart';
 import 'package:e_delivery_app/Features/Search/Presentation/Views/search_view.dart';
 import 'package:e_delivery_app/Features/Store%20Details/Presentation/Views/store_details_view.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
@@ -44,7 +48,10 @@ abstract class AppRouter {
       GoRoute(
         path: kRegisterationView,
         name: kRegisterationName,
-        builder: (context, state) => const RegisterationView(),
+        builder: (context, state) => BlocProvider(
+          create: (context) => RegisterCubit(getIt.get<AuthRepoImpl>()),
+          child: const RegisterationView(),
+        ),
       ),
       GoRoute(
         path: kVerificationView,

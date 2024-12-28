@@ -1,13 +1,17 @@
+import 'package:e_delivery_app/Core/services/firebase_notification.dart';
 import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/functions/validation.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/c_t_a_button.dart';
 import 'package:e_delivery_app/Core/widgets/custom_text_form_field.dart';
+import 'package:e_delivery_app/Features/Auth/Data/Models/registeration_model.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/Registeration/Registeration%20Form/registeration_text_field_prefix.dart';
+import 'package:e_delivery_app/Features/Auth/Presentation/manager/register_cubit/register_cubit.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 class RegisterationForm extends StatefulWidget {
@@ -52,7 +56,7 @@ class _RegisterationFormState extends State<RegisterationForm> {
             textInputType: TextInputType.number,
             prefix: const RegisterationTextFieldPrefix(),
             onSaved: (inputPhoneNumber) {
-              phoneNumber = inputPhoneNumber;
+              phoneNumber = "+963$inputPhoneNumber";
             },
             validator: Validation.validatePhoneNumber,
           ),
@@ -62,11 +66,18 @@ class _RegisterationFormState extends State<RegisterationForm> {
           CTAButton(
             fillColor: Theme.of(context).colorScheme.primary,
             style: AppStyles.fontsSemiBold20(context),
-            onPressed: () {
+            onPressed: () async {
               if (_formKey.currentState!.validate()) {
-                GoRouter.of(context).pushReplacementNamed(
-                    AppRouter.kVerificationName,
-                    pathParameters: {'phoneNumber': phoneNumber!});
+                _formKey.currentState!.save();
+
+                RegisterationModel registerationModel = RegisterationModel(
+                    phoneNumber: phoneNumber!,
+                    fcmToken: (await FirebaseNotification.getFCMToken())!);
+                BlocProvider.of<RegisterCubit>(context)
+                    .register(registerationModel);
+                // GoRouter.of(context).pushReplacementNamed(
+                //     AppRouter.kVerificationName,
+                //     pathParameters: {'phoneNumber': phoneNumber!});
               } else {
                 _isAutoValidate = AutovalidateMode.always;
                 setState(() {});
