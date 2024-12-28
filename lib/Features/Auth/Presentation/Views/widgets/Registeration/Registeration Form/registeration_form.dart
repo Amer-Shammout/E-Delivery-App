@@ -72,7 +72,7 @@ class _RegisterationFormState extends State<RegisterationForm> {
 
                 RegisterationModel registerationModel = RegisterationModel(
                     phoneNumber: phoneNumber!,
-                    fcmToken: (await FirebaseNotification.getFCMToken())!);
+                    fcmToken: FirebaseNotification.fcmToken!);
                 BlocProvider.of<RegisterCubit>(context)
                     .register(registerationModel);
                 // GoRouter.of(context).pushReplacementNamed(
