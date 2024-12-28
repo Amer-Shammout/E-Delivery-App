@@ -11,7 +11,11 @@ final class RegisterInitial extends RegisterState {}
 
 final class RegisterLoading extends RegisterState {}
 
-final class RegisterSuccess extends RegisterState {}
+final class RegisterSuccess extends RegisterState {
+  final String phoneNumber;
+
+  const RegisterSuccess({required this.phoneNumber});
+}
 
 final class RegisterFailure extends RegisterState {
   final String errMessage;

@@ -4,14 +4,15 @@ import 'interceptors.dart';
 
 class DioClient {
   late final Dio _dio;
-  final String _baseUrl = "http://127.0.0.1:8000/api/";
+  // final String _baseUrl = "http://127.0.0.1:8000/api/";
+  final String _baseUrl = 'http://192.168.108.141:8000/api/';
   DioClient()
       : _dio = Dio(
           BaseOptions(
               headers: {'Content-Type': 'application/json; charset=UTF-8'},
               responseType: ResponseType.json,
-              sendTimeout: const Duration(seconds: 10),
-              receiveTimeout: const Duration(seconds: 10)),
+              sendTimeout: const Duration(seconds: 20),
+              receiveTimeout: const Duration(seconds: 20)),
         )..interceptors.addAll([LoggerInterceptor()]);
 
   // GET METHOD

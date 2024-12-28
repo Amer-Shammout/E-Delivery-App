@@ -1,5 +1,4 @@
 import 'package:e_delivery_app/Core/services/firebase_notification.dart';
-import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/functions/validation.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
@@ -12,7 +11,6 @@ import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 
 class RegisterationForm extends StatefulWidget {
   const RegisterationForm({super.key});
@@ -71,13 +69,11 @@ class _RegisterationFormState extends State<RegisterationForm> {
                 _formKey.currentState!.save();
 
                 RegisterationModel registerationModel = RegisterationModel(
-                    phoneNumber: phoneNumber!,
-                    fcmToken: FirebaseNotification.fcmToken!);
+                  phoneNumber: phoneNumber!,
+                  fcmToken: FirebaseNotification.fcmToken!,
+                );
                 BlocProvider.of<RegisterCubit>(context)
                     .register(registerationModel);
-                // GoRouter.of(context).pushReplacementNamed(
-                //     AppRouter.kVerificationName,
-                //     pathParameters: {'phoneNumber': phoneNumber!});
               } else {
                 _isAutoValidate = AutovalidateMode.always;
                 setState(() {});
