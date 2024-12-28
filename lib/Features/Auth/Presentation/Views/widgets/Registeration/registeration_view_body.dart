@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/functions/show_snack_bar.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
@@ -11,6 +12,7 @@ import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
@@ -24,7 +26,9 @@ class RegisterationViewBody extends StatelessWidget {
     return BlocConsumer<RegisterCubit, RegisterState>(
       listener: (context, state) {
         if (state is RegisterSuccess) {
-          showSuccessSnackBar('Success', context);
+          GoRouter.of(context).pushReplacementNamed(
+                    AppRouter.kVerificationName,
+                    pathParameters: {'phoneNumber': state.phoneNumber});
           log('success');
         }
         if (state is RegisterFailure) {
