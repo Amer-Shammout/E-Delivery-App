@@ -51,7 +51,7 @@ class _RegisterationFormState extends State<RegisterationForm> {
             hint: '9xx xxx xxx',
             textInputType: TextInputType.number,
             prefix: const RegisterationTextFieldPrefix(),
-            onChanged: (inputPhoneNumber) {
+            onSaved: (inputPhoneNumber) {
               phoneNumber = inputPhoneNumber;
             },
             validator: Validation.validatePhoneNumber,

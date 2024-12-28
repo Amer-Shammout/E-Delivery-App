@@ -58,6 +58,7 @@ dependencies:
   location: ^7.0.1
   logger: ^2.5.0
   lottie: null
+  modal_progress_hud_nsn: ^0.5.1
   path_provider: ^2.1.5
   shared_preferences: ^2.3.4
 
