@@ -1,4 +1,5 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
+import 'package:e_delivery_app/Core/utils/functions/setting_info_functions.dart';
 import 'package:e_delivery_app/Core/utils/functions/validation.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/Setting%20Info/custom_image_picker.dart';
@@ -32,7 +33,9 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
               children: [
                 Column(
                   children: [
-                    const CustomImagePicker(),
+                    CustomImagePicker(
+                      pickImage: () => SettingInfoFunctions.pickImage(),
+                    ),
                     const SizedBox(
                       height: kSpacing * 8,
                     ),
@@ -80,7 +83,10 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
                     const SizedBox(
                       height: kSpacing * 4,
                     ),
-                    const CustomMap(),
+                    CustomMap(
+                      getUserLocation: () =>
+                          SettingInfoFunctions.getUserLocation(),
+                    ),
                     const SizedBox(
                       height: kSpacing * 8,
                     )

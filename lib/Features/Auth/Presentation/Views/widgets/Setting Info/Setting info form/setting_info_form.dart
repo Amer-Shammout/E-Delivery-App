@@ -1,5 +1,6 @@
-import 'package:e_delivery_app/Core/utils/app_router.dart';
+import 'package:dio/dio.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
+import 'package:e_delivery_app/Core/utils/functions/setting_info_functions.dart';
 import 'package:e_delivery_app/Core/utils/functions/validation.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/c_t_a_button.dart';
@@ -12,7 +13,8 @@ import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:location/location.dart';
 
 class SettingInfoForm extends StatefulWidget {
   const SettingInfoForm({super.key});
@@ -26,6 +28,8 @@ class _SettingInfoFormState extends State<SettingInfoForm> {
   AutovalidateMode _isAutoValidate = AutovalidateMode.disabled;
   String? phoneNumber;
   String? fullName;
+  XFile? profileImage;
+  LocationData? userLocation;
   @override
   @override
   Widget build(BuildContext context) {
@@ -35,7 +39,12 @@ class _SettingInfoFormState extends State<SettingInfoForm> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const CustomImagePicker(),
+          CustomImagePicker(
+            pickImage: () async {
+              profileImage = await SettingInfoFunctions.pickImage();
+              return profileImage!;
+            },
+          ),
           const SizedBox(
             height: kSpacing * 8,
           ),
@@ -51,21 +60,29 @@ class _SettingInfoFormState extends State<SettingInfoForm> {
           const SizedBox(
             height: kSpacing * 4,
           ),
-          const CustomMap(),
+          CustomMap(
+            getUserLocation: () async {
+              userLocation = await SettingInfoFunctions.getUserLocation();
+              return userLocation!;
+            },
+          ),
           const SizedBox(
             height: kSpacing * 6,
           ),
           CTAButton(
             fillColor: Theme.of(context).colorScheme.primary,
             style: AppStyles.fontsSemiBold20(context),
-            onPressed: () {
+            onPressed: () async {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
+                MultipartFile profileImageMultiPartFile =
+                    await MultipartFile.fromFile(profileImage!.path);
                 SettingInfoModel settingInfoModel = SettingInfoModel(
-                    fullName: fullName!,
-                    longitude: 0,
-                    latitude: 0,
-                    profileImage: profileImage);
+                  fullName: fullName,
+                  longitude: userLocation?.longitude,
+                  latitude: userLocation?.latitude,
+                  profileImage: profileImageMultiPartFile,
+                );
                 BlocProvider.of<SettingInfoCubit>(context)
                     .settingInfo(settingInfoModel);
               } else {

@@ -10,7 +10,9 @@ import 'package:latlong2/latlong.dart';
 import 'package:location/location.dart';
 
 class CustomMap extends StatefulWidget {
-  const CustomMap({super.key});
+  const CustomMap({super.key, required this.getUserLocation});
+
+  final Future<LocationData> Function() getUserLocation;
 
   @override
   State<CustomMap> createState() => _CustomMapState();
@@ -80,10 +82,8 @@ class _CustomMapState extends State<CustomMap> {
   }
 
   Future<void> _getCurrentLocation() async {
-    var location = Location();
-
     try {
-      var userLocation = await location.getLocation();
+      var userLocation = await widget.getUserLocation();
       setState(() {
         currentLocation = userLocation;
         marker = Marker(

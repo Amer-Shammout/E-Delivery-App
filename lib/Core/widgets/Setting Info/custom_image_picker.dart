@@ -7,28 +7,30 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 class CustomImagePicker extends StatefulWidget {
-  const CustomImagePicker({super.key});
+  const CustomImagePicker({super.key, required this.pickImage});
+
+  final  Future<XFile> Function() pickImage;
 
   @override
   State<CustomImagePicker> createState() => _CustomImagePickerState();
 }
 
 class _CustomImagePickerState extends State<CustomImagePicker> {
-  final ImagePicker _picker = ImagePicker();
-  XFile? _image; // تخزين الصورة المختارة
+  XFile? _image;
 
-  Future<void> _pickImage() async {
-    // افتح معرض الصور لاختيار صورة
-    final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
-    setState(() {
-      _image = image; // خزّن الصورة المختارة
+  
+
+  void displayImage() async{
+    final XFile image = await widget.pickImage();
+     setState(() {
+      _image = image;
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: _pickImage,
+      onTap: displayImage,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
