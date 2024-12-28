@@ -6,9 +6,11 @@ import 'package:e_delivery_app/Core/widgets/custom_text_button.dart';
 import 'package:e_delivery_app/Features/Auth/Data/Models/verification_model.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/Verification/Verification%20Form/custom_timer.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/Verification/Verification%20Form/verification_text_field.dart';
+import 'package:e_delivery_app/Features/Auth/Presentation/manager/verification_cubit/verification_cubit.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 class VerificationForm extends StatefulWidget {
@@ -87,13 +89,16 @@ class _VerificationFormState extends State<VerificationForm> {
             style: AppStyles.fontsSemiBold20(context),
             onPressed: () {
               if (_formKey.currentState!.validate()) {
+                _formKey.currentState!.save();
                 VerificationModel verificationModel = VerificationModel(
                   phoneNumber: widget.phoneNumber,
                   code: code,
                 );
-                GoRouter.of(context).pushReplacementNamed(
-                  AppRouter.kSettingInfoName,
-                );
+                BlocProvider.of<VerificationCubit>(context)
+                    .verify(verificationModel);
+                // GoRouter.of(context).pushReplacementNamed(
+                //   AppRouter.kSettingInfoName,
+                // );
               } else {
                 _isAutoValidate = AutovalidateMode.always;
                 setState(() {});

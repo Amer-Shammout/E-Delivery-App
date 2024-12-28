@@ -6,6 +6,7 @@ import 'package:e_delivery_app/Features/Auth/Presentation/Views/registeration_vi
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/setting_info_view.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/verification_view.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/manager/register_cubit/register_cubit.dart';
+import 'package:e_delivery_app/Features/Auth/Presentation/manager/verification_cubit/verification_cubit.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/cart_view.dart';
 import 'package:e_delivery_app/Features/Product/Presentation/Views/product_view.dart';
 import 'package:e_delivery_app/Features/Profile/Presentation/Views/profile_view.dart';
@@ -56,14 +57,17 @@ abstract class AppRouter {
       GoRoute(
         path: kVerificationView,
         name: kVerificationName,
-        builder: (context, state) => VerificationView(
-          phoneNumber: state.pathParameters['phoneNumber']!,
+        builder: (context, state) => BlocProvider(
+          create: (context) => VerificationCubit(getIt.get<AuthRepoImpl>()),
+          child: VerificationView(
+            phoneNumber: state.pathParameters['phoneNumber']!,
+          ),
         ),
       ),
       GoRoute(
         path: kSettingInfoView,
         name: kSettingInfoName,
-        builder: (context, state) => const SettingInfoView(),
+        builder: (context, state) => SettingInfoView(),
       ),
       GoRoute(
         path: kAppRoot,
