@@ -1,11 +1,14 @@
 import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
+import 'package:e_delivery_app/Core/utils/functions/show_snack_bar.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/c_t_a_button.dart';
 import 'package:e_delivery_app/Core/widgets/custom_text_button.dart';
+import 'package:e_delivery_app/Features/Auth/Data/Models/resend_code_model.dart';
 import 'package:e_delivery_app/Features/Auth/Data/Models/verification_model.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/Verification/Verification%20Form/custom_timer.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/Verification/Verification%20Form/verification_text_field.dart';
+import 'package:e_delivery_app/Features/Auth/Presentation/manager/resend_code/resend_code_cubit.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/manager/verification_cubit/verification_cubit.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
@@ -111,20 +114,46 @@ class _VerificationFormState extends State<VerificationForm> {
           const SizedBox(
             height: kSpacing * 6,
           ),
-          AbsorbPointer(
-            absorbing: isEnd ? false : true,
-            child: Opacity(
-              opacity: isEnd ? 1 : .3,
-              child: CustomTextButton(
-                onPressed: () {
-                  setState(() {
-                    isEnd = false;
-                  });
-                },
-                title: S.of(context).resend_code_button,
-                color: Theme.of(context).colorScheme.primary,
-              ),
-            ),
+          BlocConsumer<ResendCodeCubit, ResendCodeState>(
+            listener: (context, state) {
+              if (state is ResendCodeSuccess) {
+                showSuccessSnackBar(
+                    'Verification code will send you!', context);
+                setState(() {
+                  isEnd = false;
+                });
+              }
+              if (state is ResendCodeFailure) {
+                showFailureSnackBar(state.errMessage, context);
+              }
+            },
+            builder: (context, state) {
+              return AbsorbPointer(
+                absorbing: isEnd ? false : true,
+                child: state is ResendCodeLoading
+                    ? Center(
+                        child: CircularProgressIndicator(
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
+                      )
+                    : Opacity(
+                        opacity: isEnd ? 1 : .3,
+                        child: CustomTextButton(
+                          onPressed: () {
+                            ResendCodeModel resendCodeModel = ResendCodeModel(
+                                phoneNumber: widget.phoneNumber);
+                            BlocProvider.of<ResendCodeCubit>(context)
+                                .resenCode(resendCodeModel);
+                            setState(() {
+                              isEnd = false;
+                            });
+                          },
+                          title: S.of(context).resend_code_button,
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
+                      ),
+              );
+            },
           ),
           isEnd
               ? const SizedBox()
