@@ -58,7 +58,8 @@ class AuthRepoImpl extends AuthRepo {
       dynamic jsonData = response.data;
       VerificationResponseModel data =
           VerificationResponseModel.fromJson(jsonData);
-          
+      Prefs.setString(kToken, data.token!);
+      Prefs.setString(kId, data.user!.id.toString());
       return right(data);
     } on DioException catch (e) {
       if (e.response!.statusCode == 401) {
@@ -75,8 +76,8 @@ class AuthRepoImpl extends AuthRepo {
   Future<Either<Failure, User>> settingInfo(
       SettingInfoModel settingInfoModel) async {
     try {
-      String id = Prefs.getString('id');
-      String token = Prefs.getString('token');
+      String id = Prefs.getString(kId);
+      String token = Prefs.getString(kToken);
       Response response = await getIt.get<DioClient>().put(
             '$kUpdateUserUrl/$id',
             data: settingInfoModel.toJson(),
@@ -88,7 +89,7 @@ class AuthRepoImpl extends AuthRepo {
             ),
           );
       dynamic jsonData = response.data;
-      User user = User.fromJson(jsonData);
+      User user = User.fromJson(jsonData['user']);
       return right(user);
     } on DioException catch (e) {
       return left(ServerFailure.fromDioError(e));
