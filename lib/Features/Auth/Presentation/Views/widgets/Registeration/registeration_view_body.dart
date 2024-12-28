@@ -26,9 +26,8 @@ class RegisterationViewBody extends StatelessWidget {
     return BlocConsumer<RegisterCubit, RegisterState>(
       listener: (context, state) {
         if (state is RegisterSuccess) {
-          GoRouter.of(context).pushReplacementNamed(
-                    AppRouter.kVerificationName,
-                    pathParameters: {'phoneNumber': state.phoneNumber});
+          GoRouter.of(context).pushReplacementNamed(AppRouter.kVerificationName,
+              pathParameters: {'phoneNumber': state.phoneNumber});
           log('success');
         }
         if (state is RegisterFailure) {
@@ -42,6 +41,7 @@ class RegisterationViewBody extends StatelessWidget {
           inAsyncCall: (state is RegisterLoading),
           progressIndicator: Lottie.asset(
             Assets.lottieLoading,
+            repeat: true,
           ),
           child: CustomBackgroundContainer(
             color: Theme.of(context).colorScheme.surface,
