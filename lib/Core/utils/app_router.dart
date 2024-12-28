@@ -1,5 +1,6 @@
 import 'package:e_delivery_app/Core/services/service_locator.dart';
 import 'package:e_delivery_app/Core/widgets/app_with_nav_bar.dart';
+import 'package:e_delivery_app/Features/Auth/Data/Models/verification_response_model/user.dart';
 import 'package:e_delivery_app/Features/Auth/Data/repos/auth_repo_impl.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/lets_get_started_view.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/registeration_view.dart';
@@ -7,6 +8,7 @@ import 'package:e_delivery_app/Features/Auth/Presentation/Views/setting_info_vie
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/verification_view.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/manager/register_cubit/register_cubit.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/manager/resend_code/resend_code_cubit.dart';
+import 'package:e_delivery_app/Features/Auth/Presentation/manager/setting_info_cubit/setting_info_cubit.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/manager/verification_cubit/verification_cubit.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/cart_view.dart';
 import 'package:e_delivery_app/Features/Product/Presentation/Views/product_view.dart';
@@ -75,12 +77,17 @@ abstract class AppRouter {
       GoRoute(
         path: kSettingInfoView,
         name: kSettingInfoName,
-        builder: (context, state) => SettingInfoView(),
+        builder: (context, state) => BlocProvider(
+          create: (context) => SettingInfoCubit(getIt.get<AuthRepoImpl>()),
+          child: const SettingInfoView(),
+        ),
       ),
       GoRoute(
         path: kAppRoot,
         name: kAppRootName,
-        builder: (context, state) => const AppWithNavBar(),
+        builder: (context, state) => AppWithNavBar(
+          user: state.extra as User,
+        ),
       ),
       GoRoute(
         path: kStoreDetailsView,

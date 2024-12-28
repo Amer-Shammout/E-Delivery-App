@@ -58,7 +58,7 @@ class AuthRepoImpl extends AuthRepo {
       dynamic jsonData = response.data;
       VerificationResponseModel data =
           VerificationResponseModel.fromJson(jsonData);
-          
+
       return right(data);
     } on DioException catch (e) {
       if (e.response!.statusCode == 401) {
@@ -88,7 +88,7 @@ class AuthRepoImpl extends AuthRepo {
             ),
           );
       dynamic jsonData = response.data;
-      User user = User.fromJson(jsonData);
+      User user = User.fromJson(jsonData['user']);
       return right(user);
     } on DioException catch (e) {
       return left(ServerFailure.fromDioError(e));
