@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:e_delivery_app/Core/services/shared_preferences_singleton.dart';
 import 'package:e_delivery_app/Features/Auth/Data/Models/verification_model.dart';
 import 'package:e_delivery_app/Features/Auth/Data/Models/verification_response_model/verification_response_model.dart';
 import 'package:e_delivery_app/Features/Auth/Data/repos/auth_repo.dart';
@@ -25,8 +24,6 @@ class VerificationCubit extends Cubit<VerificationState> {
           VerificationSuccess(
               verificationResponseModel: verificationResponseModel),
         );
-        Prefs.setString('id', verificationResponseModel.user!.id.toString());
-        Prefs.setString('token', verificationResponseModel.token!);
       },
     );
   }
