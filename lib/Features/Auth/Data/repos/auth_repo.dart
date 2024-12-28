@@ -9,6 +9,6 @@ abstract class AuthRepo {
   Future<Either<Failure, bool>> register(RegisterationModel registerModel);
   Future<Either<Failure, VerificationResponseModel>> verify(
       VerificationModel verificationModel);
-  Future<Either<Failure, bool>> resendCode(ResendOtpModel resendOTPModel);
+  Future<Either<Failure, bool>> resendCode(ResendOtpModel resendOtpModel);
   // Future<Either<Failure,String>> settingInfo(String phoneNumber); //TODO
 }

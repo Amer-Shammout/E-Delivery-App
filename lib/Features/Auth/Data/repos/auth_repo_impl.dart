@@ -31,11 +31,11 @@ class AuthRepoImpl extends AuthRepo {
 
   @override
   Future<Either<Failure, bool>> resendCode(
-      ResendOtpModel resendOTPModel) async {
+      ResendOtpModel resendOtpModel) async {
     try {
       await getIt
           .get<DioClient>()
-          .post(kResendOTPUrl, data: resendOTPModel.toJson());
+          .post(kResendOTPUrl, data: resendOtpModel.toJson());
       return right(true);
     } on DioException catch (e) {
       return left(ServerFailure.fromDioError(e));
