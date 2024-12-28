@@ -144,9 +144,6 @@ class _VerificationFormState extends State<VerificationForm> {
                                 phoneNumber: widget.phoneNumber);
                             BlocProvider.of<ResendCodeCubit>(context)
                                 .resenCode(resendCodeModel);
-                            setState(() {
-                              isEnd = false;
-                            });
                           },
                           title: S.of(context).resend_code_button,
                           color: Theme.of(context).colorScheme.primary,
