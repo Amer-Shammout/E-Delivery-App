@@ -13,3 +13,4 @@ const kMontserrat = 'Montserrat';
 const double kHorizontalPadding = 16;
 const kRegisterUrl = "auth/handlePhoneNumber";
 const kVerificationUrl = "auth/verify";
+const kResendOTPUrl = "auth/resend-otp";
