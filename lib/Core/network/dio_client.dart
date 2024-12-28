@@ -4,6 +4,7 @@ import 'interceptors.dart';
 
 class DioClient {
   late final Dio _dio;
+  final String _baseUrl = "http://127.0.0.1:8000/api/";
   DioClient()
       : _dio = Dio(
           BaseOptions(
@@ -22,7 +23,7 @@ class DioClient {
     ProgressCallback? onReceiveProgress,
   }) async {
     final Response response = await _dio.get(
-      url,
+      "$_baseUrl$url",
       queryParameters: queryParameters,
       options: options,
       cancelToken: cancelToken,
@@ -41,7 +42,7 @@ class DioClient {
     ProgressCallback? onReceiveProgress,
   }) async {
     final Response response = await _dio.post(
-      url,
+      "$_baseUrl$url",
       data: data,
       options: options,
       onSendProgress: onSendProgress,
@@ -61,7 +62,7 @@ class DioClient {
     ProgressCallback? onReceiveProgress,
   }) async {
     final Response response = await _dio.put(
-      url,
+      "$_baseUrl$url",
       data: data,
       queryParameters: queryParameters,
       options: options,
@@ -81,7 +82,7 @@ class DioClient {
     CancelToken? cancelToken,
   }) async {
     final Response response = await _dio.delete(
-      url,
+      "$_baseUrl$url",
       data: data,
       queryParameters: queryParameters,
       options: options,
