@@ -1,4 +1,3 @@
-import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/functions/show_snack_bar.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
@@ -14,7 +13,6 @@ import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 
 class VerificationForm extends StatefulWidget {
   const VerificationForm({super.key, required this.phoneNumber});
@@ -62,7 +60,7 @@ class _VerificationFormState extends State<VerificationForm> {
                     ),
                   ),
                   TextSpan(
-                      text: '+963993865338',
+                      text: ' ${widget.phoneNumber}',
                       style: AppStyles.fontsSemiBold16(context)),
                 ],
               ),
@@ -99,9 +97,6 @@ class _VerificationFormState extends State<VerificationForm> {
                 );
                 BlocProvider.of<VerificationCubit>(context)
                     .verify(verificationModel);
-                // GoRouter.of(context).pushReplacementNamed(
-                //   AppRouter.kSettingInfoName,
-                // );
               } else {
                 _isAutoValidate = AutovalidateMode.always;
                 setState(() {});
