@@ -12,3 +12,4 @@ const Color kOnTheWayColor = Color(0xFF526077);
 const kMontserrat = 'Montserrat';
 const double kHorizontalPadding = 16;
 const kRegisterUrl = "auth/handlePhoneNumber";
+const kVerificationUrl = "auth/verify";
