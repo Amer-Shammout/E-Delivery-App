@@ -52,9 +52,10 @@ class AuthRepoImpl extends AuthRepo {
   Future<Either<Failure, VerificationResponseModel>> verify(
       VerificationModel verificationModel) async {
     try {
+      FormData formData = FormData.fromMap(verificationModel.toJson());
       Response response = await getIt
           .get<DioClient>()
-          .post(kVerificationUrl, data: verificationModel.toJson());
+          .post(kVerificationUrl, data: formData);
       dynamic jsonData = response.data;
       VerificationResponseModel data =
           VerificationResponseModel.fromJson(jsonData);
