@@ -1,3 +1,6 @@
+import 'dart:developer';
+
+import 'package:e_delivery_app/Core/services/shared_preferences_singleton.dart';
 import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_widget_with_dash.dart';
@@ -38,8 +41,9 @@ class LetsGetStartedBody extends StatelessWidget {
           GlassButton(
             onPressed: () {
               GoRouter.of(context).pushReplacementNamed(
-                AppRouter.kSettingInfoName,
+                AppRouter.kRegisterationName,
               );
+              log("${Prefs.getString(kToken)}");
             },
           ),
           const SizedBox(

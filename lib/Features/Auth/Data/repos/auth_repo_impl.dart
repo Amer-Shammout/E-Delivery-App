@@ -60,6 +60,8 @@ class AuthRepoImpl extends AuthRepo {
           VerificationResponseModel.fromJson(jsonData);
       Prefs.setString(kToken, data.token!);
       Prefs.setString(kId, data.user!.id.toString());
+      log("$data");
+
       return right(data);
     } on DioException catch (e) {
       if (e.response!.statusCode == 401) {

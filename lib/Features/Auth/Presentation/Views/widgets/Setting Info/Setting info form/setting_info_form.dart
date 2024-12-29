@@ -1,3 +1,4 @@
+
 import 'package:dio/dio.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/functions/setting_info_functions.dart';
@@ -76,7 +77,12 @@ class _SettingInfoFormState extends State<SettingInfoForm> {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
                 MultipartFile profileImageMultiPartFile =
-                    await MultipartFile.fromFile(profileImage!.path);
+                    await MultipartFile.fromFile(
+                  profileImage!.path,
+                  contentType: DioMediaType("image", "image"),
+                  filename: 'profile.jpg',
+                );
+
                 SettingInfoModel settingInfoModel = SettingInfoModel(
                   fullName: fullName,
                   longitude: userLocation?.longitude,

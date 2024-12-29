@@ -18,6 +18,7 @@ import 'package:e_delivery_app/Features/Product/Presentation/Views/product_view.
 import 'package:e_delivery_app/Features/Profile/Presentation/Views/profile_view.dart';
 import 'package:e_delivery_app/Features/Search/Presentation/Views/search_view.dart';
 import 'package:e_delivery_app/Features/Store%20Details/Presentation/Views/store_details_view.dart';
+import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -96,8 +97,10 @@ abstract class AppRouter {
       GoRoute(
         path: kAppRoot,
         name: kAppRootName,
-        pageBuilder: (context, state) =>
-             MaterialPage(child: AppWithNavBar(user: state.extra as User,)),
+        pageBuilder: (context, state) => MaterialPage(
+            child: AppWithNavBar(
+          user: state.extra as User,
+        )),
       ),
       GoRoute(
         path: kStoreDetailsView,
@@ -130,14 +133,14 @@ abstract class AppRouter {
       ),
     ],
     redirect: (context, state) {
-      bool isAuth = Prefs.getString('token') != '';
-      log(Prefs.getString('token'));
-      if (isAuth && state.namedLocation(kLetsGetStartedName) == '/') {
-        log(state.namedLocation(kLetsGetStartedName));
-        return kAppRoot;
-      } else {
-        return null;
-      }
+      // bool isAuth = Prefs.getString(kToken) != '';
+      // log(Prefs.getString(kToken));
+      // if (isAuth && state.namedLocation(kLetsGetStartedName) == '/') {
+      //   log(state.namedLocation(kLetsGetStartedName));
+      //   return kAppRoot;
+      // } else {
+      //   return null;
+      // }
     },
   );
 }

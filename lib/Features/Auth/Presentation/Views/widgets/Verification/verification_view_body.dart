@@ -27,10 +27,12 @@ class VerificationViewBody extends StatelessWidget {
       listener: (context, state) {
         if (state is VerificationSuccess) {
           if (state.verificationResponseModel.isNewUser!) {
+            log("message");
+            log("${state.verificationResponseModel.isNewUser!}");
             GoRouter.of(context)
                 .pushReplacementNamed(AppRouter.kSettingInfoName);
           } else {
-            GoRouter.of(context).pushReplacementNamed(AppRouter.kHomeName);
+            GoRouter.of(context).pushReplacementNamed(AppRouter.kAppRootName,extra: state.verificationResponseModel.user);
           }
         }
         if (state is VerificationFailure) {
