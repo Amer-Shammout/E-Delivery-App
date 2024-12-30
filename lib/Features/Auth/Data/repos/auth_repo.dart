@@ -14,5 +14,5 @@ abstract class AuthRepo {
       VerificationModel verificationModel);
   Future<Either<Failure, bool>> resendCode(ResendCodeModel resendOtpModel);
   Future<Either<Failure, User>> settingInfo(
-      SettingInfoModel settingInfoModel, MultipartFile? profileImage);
+      FormData formData,SettingInfoModel model);
 }

@@ -12,9 +12,9 @@ class SettingInfoCubit extends Cubit<SettingInfoState> {
   final AuthRepo _authRepo;
 
   Future<void> settingInfo(
-      SettingInfoModel settingInfoModel, MultipartFile? profileImage) async {
+      FormData formData,SettingInfoModel model) async {
     emit(SettingInfoLoading());
-    var result = await _authRepo.settingInfo(settingInfoModel, profileImage);
+    var result = await _authRepo.settingInfo(formData,model);
     result.fold(
       (failure) {
         emit(SettingInfoFailure(errMessage: failure.errMessage));

@@ -76,21 +76,22 @@ class AuthRepoImpl extends AuthRepo {
 
   @override
   Future<Either<Failure, User>> settingInfo(
-      SettingInfoModel settingInfoModel, MultipartFile? profileImage) async {
+      FormData formData, SettingInfoModel model) async {
     try {
       String id = Prefs.getString(kId);
       String token = Prefs.getString(kToken);
-      FormData formData = FormData.fromMap(settingInfoModel.toJson());
-      if (profileImage != null) {
-        formData.files.add(MapEntry('image', profileImage));
-      }
-      Response response = await getIt.get<DioClient>().post(
+      FormData formData = FormData();
+      // formData.files.add(MapEntry('image', model.image));
+      // if (profileImage != null) {
+      //   formData.files.add(MapEntry('image', profileImage));
+      // }
+      Response response = await getIt.get<DioClient>().put(
             '$kUpdateUserUrl/$id',
-            data: {"object": formData, "_method": "PUT"},
+            // data: formData,
+            data: model.toJson(),
             options: Options(
               headers: {
                 "Authorization": "Bearer $token",
-                "Content-Type": "multipart/form-data",
               },
             ),
           );

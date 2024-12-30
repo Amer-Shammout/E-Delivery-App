@@ -1,4 +1,6 @@
+import 'dart:convert';
 import 'dart:developer';
+import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
@@ -32,6 +34,7 @@ class _SettingInfoFormState extends State<SettingInfoForm> {
   String? fullName;
   XFile? profileImage;
   LocationData? userLocation;
+  File? file;
   @override
   @override
   Widget build(BuildContext context) {
@@ -44,6 +47,7 @@ class _SettingInfoFormState extends State<SettingInfoForm> {
           CustomImagePicker(
             pickImage: () async {
               profileImage = await SettingInfoFunctions.pickImage();
+              file = File(profileImage!.path);
               return profileImage!;
             },
           ),
@@ -77,19 +81,38 @@ class _SettingInfoFormState extends State<SettingInfoForm> {
             onPressed: () async {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
+                // String fileName = file?.path.split('/').last ?? '';
+                // log(fileName);
 
-                log(profileImage!.path);
-                MultipartFile profileImageMultiPartFile =
-                    await MultipartFile.fromFile(
-                  profileImage!.path,
-                );
+                // log(profileImage!.path);
+                // MultipartFile profileImageMultiPartFile =
+                //     await MultipartFile.fromFile(
+                //   file!.path,
+                //   filename: fileName,
+                // );
+
+                FormData formData = FormData.fromMap({
+                  'full_name': fullName,
+                  'latitude': 0,
+                  'longitude': 0,
+                  // 'image': profileImageMultiPartFile
+                });
+
+                // final bytes = file!.readAsBytesSync();
+                // String base64Image = base64Encode(bytes);
+
+                // Map<String, dynamic> jsonPay = {'image': base64Image};
+                // String s = jsonEncode(jsonPay);
+
                 SettingInfoModel settingInfoModel = SettingInfoModel(
                   fullName: fullName,
                   longitude: userLocation?.longitude,
                   latitude: userLocation?.latitude,
+                  // image: profileImageMultiPartFile,
                 );
+                log("$settingInfoModel");
                 BlocProvider.of<SettingInfoCubit>(context)
-                    .settingInfo(settingInfoModel, profileImageMultiPartFile);
+                    .settingInfo(formData, settingInfoModel);
               } else {
                 _isAutoValidate = AutovalidateMode.always;
                 setState(() {});
