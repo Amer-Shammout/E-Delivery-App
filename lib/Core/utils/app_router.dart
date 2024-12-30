@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:e_delivery_app/Core/errors/failures.dart';
 import 'package:e_delivery_app/Core/services/service_locator.dart';
 import 'package:e_delivery_app/Core/services/shared_preferences_singleton.dart';
 import 'package:e_delivery_app/Core/widgets/app_with_nav_bar.dart';
@@ -24,7 +25,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
-  static const kLetsGetStartedView = '/letsGetStartedView';
+  static const kLetsGetStartedView = '/';
   static const kLetsGetStartedName = '/letsGetStartedView';
   static const kRegisterationView = '/registerationView';
   static const kRegisterationName = '/registerationView';
@@ -47,13 +48,17 @@ abstract class AppRouter {
   static const kCartView = '/CartView';
   static const kCartName = '/CartView';
 
+  static bool isAuth = Prefs.getString(kToken) != '';
+
   static final router = GoRouter(
+    // initialLocation: isAuth ? kAppRoot : kLetsGetStartedView,
     routes: [
       GoRoute(
         name: kLetsGetStartedName,
         path: '/',
         pageBuilder: (context, state) =>
             const MaterialPage(child: LetsGetStartedView()),
+     
       ),
       GoRoute(
         path: kRegisterationView,
@@ -88,16 +93,21 @@ abstract class AppRouter {
       GoRoute(
         path: kSettingInfoView,
         name: kSettingInfoName,
-        pageBuilder: (context, state) => const MaterialPage(
-            child: SettingInfoView()),
+        pageBuilder: (context, state) =>
+            const MaterialPage(child: SettingInfoView()),
       ),
       GoRoute(
         path: kAppRoot,
         name: kAppRootName,
-        pageBuilder: (context, state) => MaterialPage(
-            child: AppWithNavBar(
-          user: state.extra as User,
-        )),
+        
+        pageBuilder: (context, state) {
+          return MaterialPage(
+             
+              child: AppWithNavBar(
+                
+            user: state.extra as User,
+          ));
+        },
       ),
       GoRoute(
         path: kStoreDetailsView,
@@ -130,14 +140,14 @@ abstract class AppRouter {
       ),
     ],
     redirect: (context, state) {
-      bool isAuth = Prefs.getString(kToken) != '';
-      log(Prefs.getString(kToken));
-      if (isAuth && state.namedLocation(kLetsGetStartedName) == '/') {
-        log(state.namedLocation(kLetsGetStartedName));
-        return kAppRoot;
-      } else {
-        return null;
-      }
+      // bool isAuth = Prefs.getString(kToken) != '';
+      // log(Prefs.getString(kToken));
+      // if (isAuth && state.namedLocation(kLetsGetStartedName) == '/') {
+      //   log(state.namedLocation(kLetsGetStartedName));
+      //   return kAppRoot;
+      // } else {
+      //   return null;
+      // }
     },
   );
 }

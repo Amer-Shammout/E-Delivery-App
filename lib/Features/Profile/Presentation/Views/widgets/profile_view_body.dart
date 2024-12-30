@@ -20,6 +20,8 @@ class ProfileViewBody extends StatefulWidget {
 }
 
 class _ProfileViewBodyState extends State<ProfileViewBody> {
+  final GlobalKey<FormState> _formKey = GlobalKey();
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -39,20 +41,24 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
                     const SizedBox(
                       height: kSpacing * 8,
                     ),
-                    CustomTextFormField(
-                      initialValue: 'Amer Shammout',
-                      validator: Validation.validateFieldIfEmpty,
-                      contentPadding: 16,
-                      maxLines: 1,
-                      suffixIcon: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: SvgPicture.asset(
-                          Assets.iconsEdit,
-                          width: 16,
-                          height: 16,
-                          colorFilter: ColorFilter.mode(
-                            Theme.of(context).colorScheme.error,
-                            BlendMode.srcATop,
+                    Form(
+                      key: _formKey,
+                      child: CustomTextFormField(
+                        
+                        initialValue: 'Amer Shammout',
+                        validator: Validation.validateFieldIfEmpty,
+                        contentPadding: 16,
+                        maxLines: 1,
+                        suffixIcon: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: SvgPicture.asset(
+                            Assets.iconsEdit,
+                            width: 16,
+                            height: 16,
+                            colorFilter: ColorFilter.mode(
+                              Theme.of(context).colorScheme.error,
+                              BlendMode.srcATop,
+                            ),
                           ),
                         ),
                       ),

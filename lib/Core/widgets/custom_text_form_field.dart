@@ -18,7 +18,7 @@ class CustomTextFormField extends StatelessWidget {
       this.initialValue,
       this.isEnabled = true,
       this.onSaved,
-      this.onTap});
+      this.onTap, this.onFieldSubmitted});
 
   final String? hint;
   final int? maxLength;
@@ -33,6 +33,7 @@ class CustomTextFormField extends StatelessWidget {
   final String? initialValue;
   final bool isEnabled;
   final VoidCallback? onTap;
+  final void Function(String)? onFieldSubmitted;
 
   @override
   Widget build(BuildContext context) {
@@ -53,6 +54,7 @@ class CustomTextFormField extends StatelessWidget {
           ),
         ),
         TextFormField(
+          onFieldSubmitted: onFieldSubmitted,
           onTap: onTap,
           onSaved: onSaved,
           enabled: isEnabled,

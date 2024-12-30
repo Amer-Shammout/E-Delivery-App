@@ -64,7 +64,7 @@ class EDelivery extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => SettingInfoCubit(getIt.get<AuthRepoImpl>()),
-        ),
+          )
       ],
       child: BlocBuilder<LocalizationCubit, String>(
         builder: (context, lang) {

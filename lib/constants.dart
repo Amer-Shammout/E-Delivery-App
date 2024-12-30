@@ -15,5 +15,6 @@ const kRegisterUrl = "auth/handlePhoneNumber";
 const kVerificationUrl = "auth/verify";
 const kResendOTPUrl = "auth/resend-otp";
 const kUpdateUserUrl = "users";
+const kLogoutUrl = "auth/logout";
 const String kToken = 'token';
 const kId = 'id';

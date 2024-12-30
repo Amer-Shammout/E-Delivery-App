@@ -75,21 +75,36 @@ class AuthRepoImpl extends AuthRepo {
   }
 
   @override
-  Future<Either<Failure, User>> settingInfo(SettingInfoModel model) async {
+  Future<Either<Failure, User>> settingInfo(SettingInfoModel? model) async {
     try {
       String id = Prefs.getString(kId);
       String token = Prefs.getString(kToken);
-      Response response = await getIt.get<DioClient>().post(
+      if (model != null) {
+        Response response = await getIt.get<DioClient>().post(
+              '$kUpdateUserUrl/$id',
+              data: FormData.fromMap(model.toJson()),
+              options: Options(
+                headers: {
+                  "Authorization": "Bearer $token",
+                  "Content-Type": "multipart/form-data"
+                },
+              ),
+            );
+        dynamic jsonData = response.data;
+        User user = User.fromJson(jsonData['user']);
+        return right(user);
+      }
+      Response response = await getIt.get<DioClient>().put(
             '$kUpdateUserUrl/$id',
-            data: FormData.fromMap(model.toJson()),
+            data: {},
             options: Options(
               headers: {
                 "Authorization": "Bearer $token",
-                "Content-Type": "multipart/form-data"
               },
             ),
           );
       dynamic jsonData = response.data;
+
       User user = User.fromJson(jsonData['user']);
       return right(user);
     } on DioException catch (e) {
