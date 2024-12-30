@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:e_delivery_app/Core/services/firebase_notification.dart';
+import 'package:e_delivery_app/Core/services/shared_preferences_singleton.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/functions/validation.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
@@ -67,7 +70,7 @@ class _RegisterationFormState extends State<RegisterationForm> {
             onPressed: () async {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
-
+                log(Prefs.getString('id'));
                 RegisterationModel registerationModel = RegisterationModel(
                   phoneNumber: phoneNumber!,
                   fcmToken: FirebaseNotification.fcmToken!,

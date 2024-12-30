@@ -1,3 +1,4 @@
+import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
@@ -76,21 +77,19 @@ class _SettingInfoFormState extends State<SettingInfoForm> {
             onPressed: () async {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
+
+                log(profileImage!.path);
                 MultipartFile profileImageMultiPartFile =
                     await MultipartFile.fromFile(
                   profileImage!.path,
-                  contentType: DioMediaType("image", "image"),
-                  filename: 'profile.jpg',
                 );
-
                 SettingInfoModel settingInfoModel = SettingInfoModel(
                   fullName: fullName,
                   longitude: userLocation?.longitude,
                   latitude: userLocation?.latitude,
-                  profileImage: profileImageMultiPartFile,
                 );
                 BlocProvider.of<SettingInfoCubit>(context)
-                    .settingInfo(settingInfoModel);
+                    .settingInfo(settingInfoModel, profileImageMultiPartFile);
               } else {
                 _isAutoValidate = AutovalidateMode.always;
                 setState(() {});

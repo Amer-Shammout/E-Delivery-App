@@ -52,10 +52,9 @@ class AuthRepoImpl extends AuthRepo {
   Future<Either<Failure, VerificationResponseModel>> verify(
       VerificationModel verificationModel) async {
     try {
-      FormData formData = FormData.fromMap(verificationModel.toJson());
       Response response = await getIt
           .get<DioClient>()
-          .post(kVerificationUrl, data: formData);
+          .post(kVerificationUrl, data: verificationModel.toJson());
       dynamic jsonData = response.data;
       VerificationResponseModel data =
           VerificationResponseModel.fromJson(jsonData);
@@ -77,17 +76,21 @@ class AuthRepoImpl extends AuthRepo {
 
   @override
   Future<Either<Failure, User>> settingInfo(
-      SettingInfoModel settingInfoModel) async {
+      SettingInfoModel settingInfoModel, MultipartFile? profileImage) async {
     try {
       String id = Prefs.getString(kId);
       String token = Prefs.getString(kToken);
-      Response response = await getIt.get<DioClient>().put(
+      FormData formData = FormData.fromMap(settingInfoModel.toJson());
+      if (profileImage != null) {
+        formData.files.add(MapEntry('image', profileImage));
+      }
+      Response response = await getIt.get<DioClient>().post(
             '$kUpdateUserUrl/$id',
-            data: settingInfoModel.toJson(),
+            data: {"object": formData, "_method": "PUT"},
             options: Options(
               headers: {
-                "Content-Type": "application/json",
-                "Authorization": "Bearer $token"
+                "Authorization": "Bearer $token",
+                "Content-Type": "multipart/form-data",
               },
             ),
           );
