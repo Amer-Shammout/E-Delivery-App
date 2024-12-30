@@ -12,7 +12,7 @@ import 'package:location/location.dart';
 class CustomMap extends StatefulWidget {
   const CustomMap({super.key, required this.getUserLocation});
 
-  final Future<LocationData> Function() getUserLocation;
+  final Future<LocationData?> Function() getUserLocation;
 
   @override
   State<CustomMap> createState() => _CustomMapState();
@@ -83,13 +83,13 @@ class _CustomMapState extends State<CustomMap> {
 
   Future<void> _getCurrentLocation() async {
     try {
-      var userLocation = await widget.getUserLocation();
+      LocationData? userLocation = await widget.getUserLocation();
       setState(() {
         currentLocation = userLocation;
         marker = Marker(
           width: 80.0,
           height: 80.0,
-          point: LatLng(userLocation.latitude!, userLocation.longitude!),
+          point: LatLng(userLocation!.latitude!, userLocation.longitude!),
           child: Center(
             child: SvgPicture.asset(
               Assets.iconsMapPoint,

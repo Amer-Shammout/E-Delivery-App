@@ -4,6 +4,8 @@ import 'package:e_delivery_app/Core/services/service_locator.dart';
 import 'package:e_delivery_app/Core/services/shared_preferences_singleton.dart';
 import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_theme.dart';
+import 'package:e_delivery_app/Features/Auth/Data/repos/auth_repo_impl.dart';
+import 'package:e_delivery_app/Features/Auth/Presentation/manager/setting_info_cubit/setting_info_cubit.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Manager/localization_cubit/localization_cubit.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Manager/theme_cubit/theme_cubit.dart';
 import 'package:e_delivery_app/firebase_options.dart';
@@ -59,6 +61,9 @@ class EDelivery extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (_) => LocalizationCubit(),
+        ),
+        BlocProvider(
+          create: (context) => SettingInfoCubit(getIt.get<AuthRepoImpl>()),
         ),
       ],
       child: BlocBuilder<LocalizationCubit, String>(

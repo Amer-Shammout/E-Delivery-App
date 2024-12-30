@@ -88,11 +88,8 @@ abstract class AppRouter {
       GoRoute(
         path: kSettingInfoView,
         name: kSettingInfoName,
-        pageBuilder: (context, state) => MaterialPage(
-            child: BlocProvider(
-          create: (context) => SettingInfoCubit(getIt.get<AuthRepoImpl>()),
-          child: const SettingInfoView(),
-        )),
+        pageBuilder: (context, state) => const MaterialPage(
+            child: SettingInfoView()),
       ),
       GoRoute(
         path: kAppRoot,
@@ -133,14 +130,14 @@ abstract class AppRouter {
       ),
     ],
     redirect: (context, state) {
-      // bool isAuth = Prefs.getString(kToken) != '';
-      // log(Prefs.getString(kToken));
-      // if (isAuth && state.namedLocation(kLetsGetStartedName) == '/') {
-      //   log(state.namedLocation(kLetsGetStartedName));
-      //   return kAppRoot;
-      // } else {
-      //   return null;
-      // }
+      bool isAuth = Prefs.getString(kToken) != '';
+      log(Prefs.getString(kToken));
+      if (isAuth && state.namedLocation(kLetsGetStartedName) == '/') {
+        log(state.namedLocation(kLetsGetStartedName));
+        return kAppRoot;
+      } else {
+        return null;
+      }
     },
   );
 }

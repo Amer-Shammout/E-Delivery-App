@@ -1,4 +1,3 @@
-import 'dart:io';
 
 import 'package:dio/dio.dart';
 
@@ -6,7 +5,6 @@ class SettingInfoModel {
   final String? fullName;
   final double? longitude, latitude;
   final MultipartFile? image;
-  // final String? image;
 
   SettingInfoModel({
     this.fullName,
@@ -17,6 +15,7 @@ class SettingInfoModel {
 
   Map<String, dynamic> toJson() {
     return {
+      '_method': 'PUT',
       'full_name': fullName,
       'latitude': latitude,
       'longitude': longitude,

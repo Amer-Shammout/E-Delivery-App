@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:dio/dio.dart';
 import 'package:e_delivery_app/Core/errors/failures.dart';
 import 'package:e_delivery_app/Features/Auth/Data/Models/registeration_model.dart';
 import 'package:e_delivery_app/Features/Auth/Data/Models/resend_code_model.dart';
@@ -14,5 +13,5 @@ abstract class AuthRepo {
       VerificationModel verificationModel);
   Future<Either<Failure, bool>> resendCode(ResendCodeModel resendOtpModel);
   Future<Either<Failure, User>> settingInfo(
-      FormData formData,SettingInfoModel model);
+      SettingInfoModel model);
 }

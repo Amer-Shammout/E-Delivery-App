@@ -1,4 +1,3 @@
-import 'package:dio/dio.dart';
 import 'package:e_delivery_app/Features/Auth/Data/Models/setting_info_model.dart';
 import 'package:e_delivery_app/Features/Auth/Data/Models/verification_response_model/user.dart';
 import 'package:e_delivery_app/Features/Auth/Data/repos/auth_repo.dart';
@@ -12,9 +11,9 @@ class SettingInfoCubit extends Cubit<SettingInfoState> {
   final AuthRepo _authRepo;
 
   Future<void> settingInfo(
-      FormData formData,SettingInfoModel model) async {
+      SettingInfoModel model) async {
     emit(SettingInfoLoading());
-    var result = await _authRepo.settingInfo(formData,model);
+    var result = await _authRepo.settingInfo(model);
     result.fold(
       (failure) {
         emit(SettingInfoFailure(errMessage: failure.errMessage));

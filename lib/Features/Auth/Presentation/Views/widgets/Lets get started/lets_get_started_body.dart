@@ -44,6 +44,7 @@ class LetsGetStartedBody extends StatelessWidget {
                 AppRouter.kSettingInfoName,
               );
               log("${Prefs.getString(kToken)}");
+              log("${Prefs.getString(kId)}");
             },
           ),
           const SizedBox(
