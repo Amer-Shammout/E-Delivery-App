@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dio/dio.dart';
 import 'package:e_delivery_app/Features/Profile/data/repos/profile_repo.dart';
 import 'package:equatable/equatable.dart';
@@ -18,6 +20,8 @@ class UpdateNameCubit extends Cubit<UpdateNameState> {
         UpdateNameFailure(errMessage: failure.errMessage),
       );
     }, (response) {
+      log("$response");
+
       emit(
         UpdateNameSuccess(response: response),
       );

@@ -48,5 +48,10 @@
     "delete_button":"حذف",
     "profile":"الملف الشّخصي",
     "logout_button":"تسجيل خروج",
-    "search_phrase":"ما الّذي تبحث عنه؟"
+    "search_phrase":"ما الّذي تبحث عنه؟",
+    "wait_message":"...الرجاء الانتظار قليلاً",
+    "edit_location_message":"تم تعديل موقعك بنجاح!",
+    "edit_name_message":"تم تعديل اسمك بنجاح!"
+
+
 }

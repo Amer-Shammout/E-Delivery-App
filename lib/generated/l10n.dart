@@ -549,6 +549,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Please wait a little...`
+  String get wait_message {
+    return Intl.message(
+      'Please wait a little...',
+      name: 'wait_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your location was updates successfully!`
+  String get edit_location_message {
+    return Intl.message(
+      'Your location was updates successfully!',
+      name: 'edit_location_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your name was changed successfully!`
+  String get edit_name_message {
+    return Intl.message(
+      'Your name was changed successfully!',
+      name: 'edit_name_message',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

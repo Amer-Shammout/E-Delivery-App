@@ -11,7 +11,7 @@ class UpdateLocationCubit extends Cubit<UpdateLocationState> {
 
   final ProfileRepo _profileRepo;
 
-  updateName(LocationData newLocation) async {
+  updateLocation(LocationData newLocation) async {
     emit(UpdateLocationLoading());
     var result = await _profileRepo.updateLocation(newLocation);
     result.fold((failure) {

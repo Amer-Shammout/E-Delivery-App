@@ -48,5 +48,9 @@
     "delete_button":"Delete",
     "profile":"Profile",
     "logout_button":"LOGOUT",
-    "search_phrase":"What are you looking for?"
+    "search_phrase":"What are you looking for?",
+    "wait_message":"Please wait a little...",
+    "edit_location_message":"Your location was updates successfully!",
+    "edit_name_message":"Your name was changed successfully!"
+
 }

@@ -17,6 +17,11 @@ import 'package:e_delivery_app/Features/Auth/Presentation/manager/verification_c
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/cart_view.dart';
 import 'package:e_delivery_app/Features/Product/Presentation/Views/product_view.dart';
 import 'package:e_delivery_app/Features/Profile/Presentation/Views/profile_view.dart';
+import 'package:e_delivery_app/Features/Profile/Presentation/manager/logout_cubit/logout_cubit.dart';
+import 'package:e_delivery_app/Features/Profile/Presentation/manager/update_image_cubit/update_image_cubit.dart';
+import 'package:e_delivery_app/Features/Profile/Presentation/manager/update_location_cubit/update_location_cubit.dart';
+import 'package:e_delivery_app/Features/Profile/Presentation/manager/update_name_cubit/update_name_cubit.dart';
+import 'package:e_delivery_app/Features/Profile/data/repos/profile_repo_impl.dart';
 import 'package:e_delivery_app/Features/Search/Presentation/Views/search_view.dart';
 import 'package:e_delivery_app/Features/Store%20Details/Presentation/Views/store_details_view.dart';
 import 'package:e_delivery_app/constants.dart';
@@ -58,7 +63,6 @@ abstract class AppRouter {
         path: '/',
         pageBuilder: (context, state) =>
             const MaterialPage(child: LetsGetStartedView()),
-     
       ),
       GoRoute(
         path: kRegisterationView,
@@ -99,12 +103,9 @@ abstract class AppRouter {
       GoRoute(
         path: kAppRoot,
         name: kAppRootName,
-        
         pageBuilder: (context, state) {
           return MaterialPage(
-             
               child: AppWithNavBar(
-                
             user: state.extra as User,
           ));
         },
@@ -118,8 +119,27 @@ abstract class AppRouter {
       GoRoute(
         path: kProfileView,
         name: kProfileName,
-        pageBuilder: (context, state) =>
-            const MaterialPage(child: ProfileView()),
+        pageBuilder: (context, state) => MaterialPage(
+            child: MultiBlocProvider(
+          providers: [
+            BlocProvider(
+              create: (context) => LogoutCubit(getIt.get<ProfileRepoImpl>()),
+            ),
+            BlocProvider(
+              create: (context) =>
+                  UpdateNameCubit(getIt.get<ProfileRepoImpl>()),
+            ),
+            BlocProvider(
+              create: (context) =>
+                  UpdateLocationCubit(getIt.get<ProfileRepoImpl>()),
+            ),
+            BlocProvider(
+              create: (context) =>
+                  UpdateImageCubit(getIt.get<ProfileRepoImpl>()),
+            ),
+          ],
+          child: const ProfileView(),
+        )),
       ),
       GoRoute(
         path: kSearchView,

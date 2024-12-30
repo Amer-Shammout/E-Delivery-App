@@ -28,6 +28,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "cart3": MessageLookupByLibrary.simpleMessage("كلفة التّوصيل"),
         "cart4": MessageLookupByLibrary.simpleMessage("السّعر الكلّي"),
         "delete_button": MessageLookupByLibrary.simpleMessage("حذف"),
+        "edit_location_message":
+            MessageLookupByLibrary.simpleMessage("تم تعديل موقعك بنجاح!"),
+        "edit_name_message":
+            MessageLookupByLibrary.simpleMessage("تم تعديل اسمك بنجاح!"),
         "full_name_hint": MessageLookupByLibrary.simpleMessage("الاسم الكامل"),
         "home1": MessageLookupByLibrary.simpleMessage("مرحباً"),
         "hot": MessageLookupByLibrary.simpleMessage("خاص"),
@@ -76,6 +80,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "verification3": MessageLookupByLibrary.simpleMessage(
             "الرجاء إدخال الرمز المرسل إلى"),
         "verification_button": MessageLookupByLibrary.simpleMessage("تحقّق"),
+        "wait_message":
+            MessageLookupByLibrary.simpleMessage("...الرجاء الانتظار قليلاً"),
         "welcome1": MessageLookupByLibrary.simpleMessage("نحن سوف"),
         "welcome2": MessageLookupByLibrary.simpleMessage("نجعل حياتك أسهل")
       };

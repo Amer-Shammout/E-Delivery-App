@@ -28,6 +28,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "cart3": MessageLookupByLibrary.simpleMessage("Delivery Charge"),
         "cart4": MessageLookupByLibrary.simpleMessage("Subtotal"),
         "delete_button": MessageLookupByLibrary.simpleMessage("Delete"),
+        "edit_location_message": MessageLookupByLibrary.simpleMessage(
+            "Your location was updates successfully!"),
+        "edit_name_message": MessageLookupByLibrary.simpleMessage(
+            "Your name was changed successfully!"),
         "full_name_hint": MessageLookupByLibrary.simpleMessage("Full Name"),
         "home1": MessageLookupByLibrary.simpleMessage("Welcome"),
         "hot": MessageLookupByLibrary.simpleMessage("HOT"),
@@ -78,6 +82,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "verification3":
             MessageLookupByLibrary.simpleMessage("Please enter code sent to"),
         "verification_button": MessageLookupByLibrary.simpleMessage("VERIFY"),
+        "wait_message":
+            MessageLookupByLibrary.simpleMessage("Please wait a little..."),
         "welcome1": MessageLookupByLibrary.simpleMessage("We Will"),
         "welcome2":
             MessageLookupByLibrary.simpleMessage("Make Your Life Easier")
