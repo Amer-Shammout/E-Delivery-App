@@ -23,6 +23,7 @@ class FavoriteProduct extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
           image: DecorationImage(
+            matchTextDirection: true,
             colorFilter: ColorFilter.mode(
                 Theme.of(context).colorScheme.secondary, BlendMode.srcATop),
             fit: BoxFit.fill,

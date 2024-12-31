@@ -1,4 +1,5 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
+import 'package:e_delivery_app/Core/utils/functions/localizations_funs.dart';
 import 'package:e_delivery_app/Core/widgets/App%20Bar/custom_search_bar.dart';
 import 'package:e_delivery_app/Core/widgets/custom_icon.dart';
 import 'package:e_delivery_app/constants.dart';
@@ -20,13 +21,16 @@ class SearchViewAppBar extends StatelessWidget {
       child: Row(
         children: [
           Center(
-            child: CustomIcon(
-              icon: Assets.iconsBackArrow,
-              iconSize: 12,
-              onPressed: () {
-                GoRouter.of(context).pop();
-              },
-              radius: 32,
+            child: RotatedBox(
+              quarterTurns: LocalizationsFuns.isArabic(context) ? 2 : 0,
+              child: CustomIcon(
+                icon: Assets.iconsBackArrow,
+                iconSize: 12,
+                onPressed: () {
+                  GoRouter.of(context).pop();
+                },
+                radius: 32,
+              ),
             ),
           ),
           const Expanded(

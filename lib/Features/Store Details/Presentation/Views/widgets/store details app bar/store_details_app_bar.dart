@@ -1,4 +1,5 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
+import 'package:e_delivery_app/Core/utils/functions/localizations_funs.dart';
 import 'package:e_delivery_app/Core/widgets/custom_icon.dart';
 import 'package:e_delivery_app/Features/Store%20Details/Presentation/Views/widgets/store%20details%20app%20bar/store_details_app_bar_flexible_space.dart';
 import 'package:e_delivery_app/constants.dart';
@@ -25,11 +26,14 @@ class StoreDetailsAppBar extends StatelessWidget {
           top: kHorizontalPadding,
         ),
         child: Center(
-          child: CustomIcon(
-            icon: Assets.iconsBackArrow,
-            onPressed: () {
-              GoRouter.of(context).pop();
-            },
+          child: RotatedBox(
+            quarterTurns: LocalizationsFuns.isArabic(context) ? 2 : 0,
+            child: CustomIcon(
+              icon: Assets.iconsBackArrow,
+              onPressed: () {
+                GoRouter.of(context).pop();
+              },
+            ),
           ),
         ),
       ),

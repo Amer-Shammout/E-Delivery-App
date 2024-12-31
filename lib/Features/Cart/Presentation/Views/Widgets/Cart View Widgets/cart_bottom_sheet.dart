@@ -34,8 +34,9 @@ class CartBottomSheet extends StatelessWidget {
                 onPressed: () {},
                 title: S.of(context).submit_button,
                 style: AppStyles.fontsSemiBold20(context).copyWith(
-                  color: Theme.of(context).colorScheme.surface,
+                  color: Theme.of(context).colorScheme.error,
                 ),
+                fillColor: Theme.of(context).colorScheme.primary,
               ),
             ],
           ),

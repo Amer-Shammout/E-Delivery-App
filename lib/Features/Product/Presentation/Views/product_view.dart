@@ -38,6 +38,7 @@ class _ProductViewState extends State<ProductView> with WidgetsBindingObserver {
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.surface,
         image: DecorationImage(
+          matchTextDirection: true,
           colorFilter: ColorFilter.mode(
               Theme.of(context).colorScheme.secondary, BlendMode.srcATop),
           fit: BoxFit.cover,

@@ -6,7 +6,7 @@
     "register2":"أدخل رقم هاتفك",
     "register3":"نحن سوف نرسل لك رمز تحقق من أربع خانات",
     "register_button":"تسجيل",
-    "verification1":"أنتظر...",
+    "verification1":"انتظر...",
     "verification2":"رمز التّحقق",
     "verification3":"الرجاء إدخال الرمز المرسل إلى",
     "verification_button":"تحقّق",
@@ -45,6 +45,7 @@
     "cart2":"العناصر المختارة",
     "cart3":"كلفة التّوصيل",
     "cart4":"السّعر الكلّي",
+    "cart5":"Select All",
     "delete_button":"حذف",
     "profile":"الملف الشّخصي",
     "logout_button":"تسجيل خروج",
@@ -52,8 +53,11 @@
     "wait_message":"الرجاء الانتظار قليلاً...",
     "edit_location_message":"تم تعديل موقعك بنجاح!",
     "edit_name_message":"تم تعديل اسمك بنجاح!",
-    "edit_image_message":"تم تعديل صورتك بنجاح!"
-
-
+    "edit_image_message":"تم تعديل صورتك بنجاح!",
+    "phone_number_message":"الرجاء إدخال رقم صالح",
+    "field_empty_message":"الحقل مطلوب",
+    "full_name_message":"يرجى إدخال اسم كامل مكون من ثلاثة كلمات على الأكثر فقط",
+    "full_name_message2":"أدخل اسم صالح!",
+    "verification_message":"تم إرسال رمز التحقق إليك!"
 
 }

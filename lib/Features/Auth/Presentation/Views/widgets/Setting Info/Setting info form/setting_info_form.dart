@@ -43,7 +43,7 @@ class _SettingInfoFormState extends State<SettingInfoForm> {
           CustomImagePicker(
             pickImage: () async {
               profileImage = await SettingInfoFunctions.pickImage();
-              return profileImage!;
+              return profileImage;
             },
           ),
           const SizedBox(
@@ -54,7 +54,8 @@ class _SettingInfoFormState extends State<SettingInfoForm> {
               fullName = value;
             },
             hint: S.of(context).full_name_hint,
-            validator: Validation.validateFieldIfEmpty,
+            validator: (fullName) =>
+                Validation.validateFullName(fullName, context),
             contentPadding: 16,
             maxLines: 1,
           ),
@@ -76,12 +77,14 @@ class _SettingInfoFormState extends State<SettingInfoForm> {
             onPressed: () async {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
+                MultipartFile? profileImageMultiPartFile;
 
-                log(profileImage!.path);
-                MultipartFile profileImageMultiPartFile =
-                    await MultipartFile.fromFile(
-                  profileImage!.path,
-                );
+                if (profileImage != null) {
+                  profileImageMultiPartFile = await MultipartFile.fromFile(
+                    profileImage!.path,
+                  );
+                }
+
                 SettingInfoModel settingInfoModel = SettingInfoModel(
                     fullName: fullName,
                     longitude: userLocation?.longitude,

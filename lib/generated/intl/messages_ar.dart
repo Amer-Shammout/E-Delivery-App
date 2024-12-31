@@ -27,6 +27,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "cart2": MessageLookupByLibrary.simpleMessage("العناصر المختارة"),
         "cart3": MessageLookupByLibrary.simpleMessage("كلفة التّوصيل"),
         "cart4": MessageLookupByLibrary.simpleMessage("السّعر الكلّي"),
+        "cart5": MessageLookupByLibrary.simpleMessage("Select All"),
         "delete_button": MessageLookupByLibrary.simpleMessage("حذف"),
         "edit_image_message":
             MessageLookupByLibrary.simpleMessage("تم تعديل صورتك بنجاح!"),
@@ -34,7 +35,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تم تعديل موقعك بنجاح!"),
         "edit_name_message":
             MessageLookupByLibrary.simpleMessage("تم تعديل اسمك بنجاح!"),
+        "field_empty_message":
+            MessageLookupByLibrary.simpleMessage("الحقل مطلوب"),
         "full_name_hint": MessageLookupByLibrary.simpleMessage("الاسم الكامل"),
+        "full_name_message": MessageLookupByLibrary.simpleMessage(
+            "يرجى إدخال اسم كامل مكون من ثلاثة كلمات على الأكثر فقط"),
+        "full_name_message2":
+            MessageLookupByLibrary.simpleMessage("أدخل اسم صالح!"),
         "home1": MessageLookupByLibrary.simpleMessage("مرحباً"),
         "hot": MessageLookupByLibrary.simpleMessage("خاص"),
         "lets_get_started_button":
@@ -48,6 +55,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "order_filter3": MessageLookupByLibrary.simpleMessage("تم التّوصيل"),
         "order_filter4": MessageLookupByLibrary.simpleMessage("قيد التّوصيل"),
         "order_filter5": MessageLookupByLibrary.simpleMessage("قيد التّحضير"),
+        "phone_number_message":
+            MessageLookupByLibrary.simpleMessage("الرجاء إدخال رقم صالح"),
         "product_details1": MessageLookupByLibrary.simpleMessage("عنصر"),
         "product_details2": MessageLookupByLibrary.simpleMessage("الوصف"),
         "profile": MessageLookupByLibrary.simpleMessage("الملف الشّخصي"),
@@ -77,11 +86,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "up_to": MessageLookupByLibrary.simpleMessage("يصل إلى"),
         "upload_photo_button":
             MessageLookupByLibrary.simpleMessage("تحميل صورة"),
-        "verification1": MessageLookupByLibrary.simpleMessage("أنتظر..."),
+        "verification1": MessageLookupByLibrary.simpleMessage("انتظر..."),
         "verification2": MessageLookupByLibrary.simpleMessage("رمز التّحقق"),
         "verification3": MessageLookupByLibrary.simpleMessage(
             "الرجاء إدخال الرمز المرسل إلى"),
         "verification_button": MessageLookupByLibrary.simpleMessage("تحقّق"),
+        "verification_message":
+            MessageLookupByLibrary.simpleMessage("تم إرسال رمز التحقق إليك!"),
         "wait_message":
             MessageLookupByLibrary.simpleMessage("الرجاء الانتظار قليلاً..."),
         "welcome1": MessageLookupByLibrary.simpleMessage("نحن سوف"),

@@ -9,7 +9,6 @@ import 'package:e_delivery_app/Core/utils/functions/show_snack_bar.dart';
 import 'package:e_delivery_app/Core/utils/functions/validation.dart';
 import 'package:e_delivery_app/Core/widgets/Setting%20Info/custom_image_picker.dart';
 import 'package:e_delivery_app/Core/widgets/Setting%20Info/custom_map.dart';
-import 'package:e_delivery_app/Core/widgets/custom_circular_progress_indicator.dart';
 import 'package:e_delivery_app/Core/widgets/custom_text_form_field.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/Registeration/Registeration%20Form/registeration_text_field_prefix.dart';
 import 'package:e_delivery_app/Features/Profile/Presentation/Views/widgets/logout_button_builder.dart';
@@ -100,11 +99,13 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
                             await BlocProvider.of<GetUserCubit>(context)
                                 .getUser();
                           } else {
-                            showFailureSnackBar("Enter a Valid Name!", context);
+                            showFailureSnackBar(
+                                S.of(context).full_name_message2, context);
                           }
                         },
                         initialValue: user.fullName,
-                        validator: Validation.validateFieldIfEmpty,
+                        validator: (fullName) =>
+                            Validation.validateFullName(fullName, context),
                         contentPadding: 16,
                         maxLines: 1,
                         suffixIcon:
@@ -127,50 +128,69 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
                     const SizedBox(
                       height: kSpacing * 4,
                     ),
-                    CustomTextFormField(
-                      suffixIcon: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: SvgPicture.asset(
-                          Assets.iconsEdit,
-                          width: 16,
-                          height: 16,
-                          colorFilter: ColorFilter.mode(
-                            Theme.of(context).colorScheme.error,
-                            BlendMode.srcATop,
+                    Directionality(
+                      textDirection: TextDirection.ltr,
+                      child: CustomTextFormField(
+                        suffixIcon: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: SvgPicture.asset(
+                            Assets.iconsEdit,
+                            width: 16,
+                            height: 16,
+                            colorFilter: ColorFilter.mode(
+                              Theme.of(context).colorScheme.error,
+                              BlendMode.srcATop,
+                            ),
                           ),
                         ),
+                        maxLength: 9,
+                        initialValue:
+                            user.phoneNumber!.replaceFirst('+963', ''),
+                        textInputType: TextInputType.number,
+                        prefix: const RegisterationTextFieldPrefix(),
+                        validator: (phoneNumber) =>
+                            Validation.validatePhoneNumber(
+                                phoneNumber, context),
+                        contentPadding: 16,
                       ),
-                      maxLength: 9,
-                      initialValue: user.phoneNumber,
-                      textInputType: TextInputType.number,
-                      prefix: const RegisterationTextFieldPrefix(),
-                      validator: Validation.validatePhoneNumber,
-                      contentPadding: 16,
                     ),
                     const SizedBox(
                       height: kSpacing * 4,
                     ),
                     Stack(
                       children: [
-                        CustomMap(
-                          latitide: double.parse(user.latitude),
-                          longitude: double.parse(user.longitude),
-                          getUserLocation: () async {
-                            showWaitSnackBar(context);
-                            LocationData? userLocation =
-                                await SettingInfoFunctions.getUserLocation();
-                            if (userLocation != null) {
-                              await BlocProvider.of<UpdateLocationCubit>(
-                                      context)
-                                  .updateLocation(userLocation);
-                              await BlocProvider.of<GetUserCubit>(context)
-                                  .getUser();
-                            } else {
-                              showFailureSnackBar(
-                                  AppStrings.strInternalServerError, context);
+                        BlocListener<UpdateLocationCubit, UpdateLocationState>(
+                          listener: (context, state) {
+                            if (state is UpdateLocationSuccess) {
+                              showSuccessSnackBar(
+                                  S.of(context).edit_location_message, context);
                             }
-                            return userLocation;
+                            if (state is UpdateLocationFailure) {
+                              showFailureSnackBar(state.errMessage, context);
+                            }
                           },
+                          child: CustomMap(
+                            latitide:
+                                double.parse(user.latitude ?? '0'),
+                            longitude:
+                                double.parse(user.longitude ?? '0'),
+                            getUserLocation: () async {
+                              showWaitSnackBar(context);
+                              LocationData? userLocation =
+                                  await SettingInfoFunctions.getUserLocation();
+                              if (userLocation != null) {
+                                await BlocProvider.of<UpdateLocationCubit>(
+                                        context)
+                                    .updateLocation(userLocation);
+                                await BlocProvider.of<GetUserCubit>(context)
+                                    .getUser();
+                              } else {
+                                showFailureSnackBar(
+                                    AppStrings.strInternalServerError, context);
+                              }
+                              return userLocation;
+                            },
+                          ),
                         ),
                       ],
                     ),

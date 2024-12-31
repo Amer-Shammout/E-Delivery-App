@@ -45,6 +45,7 @@
     "cart2":"Selected Items",
     "cart3":"Delivery Charge",
     "cart4":"Subtotal",
+    "cart5":"Select All",
     "delete_button":"Delete",
     "profile":"Profile",
     "logout_button":"LOGOUT",
@@ -52,6 +53,10 @@
     "wait_message":"Please wait a little...",
     "edit_location_message":"Your location was updates successfully!",
     "edit_name_message":"Your name was changed successfully!",
-    "edit_image_message":"Your image was changed successfully!"
-
+    "edit_image_message":"Your image was changed successfully!",
+    "phone_number_message":"please enter a valid phone number",
+    "field_empty_message":"field is required",
+    "full_name_message":"Please enter a full name consisting of no more than three words",
+    "full_name_message2":"Enter a valid name!",
+    "verification_message":"Verification code was sent to you!"
 }

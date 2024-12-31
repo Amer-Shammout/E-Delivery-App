@@ -27,6 +27,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "cart2": MessageLookupByLibrary.simpleMessage("Selected Items"),
         "cart3": MessageLookupByLibrary.simpleMessage("Delivery Charge"),
         "cart4": MessageLookupByLibrary.simpleMessage("Subtotal"),
+        "cart5": MessageLookupByLibrary.simpleMessage("Select All"),
         "delete_button": MessageLookupByLibrary.simpleMessage("Delete"),
         "edit_image_message": MessageLookupByLibrary.simpleMessage(
             "Your image was changed successfully!"),
@@ -34,7 +35,13 @@ class MessageLookup extends MessageLookupByLibrary {
             "Your location was updates successfully!"),
         "edit_name_message": MessageLookupByLibrary.simpleMessage(
             "Your name was changed successfully!"),
+        "field_empty_message":
+            MessageLookupByLibrary.simpleMessage("field is required"),
         "full_name_hint": MessageLookupByLibrary.simpleMessage("Full Name"),
+        "full_name_message": MessageLookupByLibrary.simpleMessage(
+            "Please enter a full name consisting of no more than three words"),
+        "full_name_message2":
+            MessageLookupByLibrary.simpleMessage("Enter a valid name!"),
         "home1": MessageLookupByLibrary.simpleMessage("Welcome"),
         "hot": MessageLookupByLibrary.simpleMessage("HOT"),
         "lets_get_started_button":
@@ -48,6 +55,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "order_filter3": MessageLookupByLibrary.simpleMessage("Delivered"),
         "order_filter4": MessageLookupByLibrary.simpleMessage("On the way"),
         "order_filter5": MessageLookupByLibrary.simpleMessage("Preparing"),
+        "phone_number_message": MessageLookupByLibrary.simpleMessage(
+            "please enter a valid phone number"),
         "product_details1": MessageLookupByLibrary.simpleMessage("Items"),
         "product_details2": MessageLookupByLibrary.simpleMessage("Description"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
@@ -84,6 +93,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "verification3":
             MessageLookupByLibrary.simpleMessage("Please enter code sent to"),
         "verification_button": MessageLookupByLibrary.simpleMessage("VERIFY"),
+        "verification_message": MessageLookupByLibrary.simpleMessage(
+            "Verification code was sent to you!"),
         "wait_message":
             MessageLookupByLibrary.simpleMessage("Please wait a little..."),
         "welcome1": MessageLookupByLibrary.simpleMessage("We Will"),

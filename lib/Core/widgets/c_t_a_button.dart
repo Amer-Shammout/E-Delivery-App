@@ -1,4 +1,5 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
+import 'package:e_delivery_app/Core/utils/functions/localizations_funs.dart';
 import 'package:e_delivery_app/Core/utils/functions/set_theme_colors.dart';
 import 'package:e_delivery_app/Core/utils/styles/shadows.dart';
 import 'package:e_delivery_app/constants.dart';
@@ -71,16 +72,19 @@ class CTAButton extends StatelessWidget {
             SizedBox(
               width: spacing,
             ),
-            SvgPicture.asset(
-              icon,
-              height: iconSize,
-              width: iconSize,
-              colorFilter: ColorFilter.mode(
-                  contentColor ??
-                      (SetThemeColors.isDarkMode(context)
-                          ? kBlackColor
-                          : kWhiteColor),
-                  BlendMode.srcATop),
+            RotatedBox(
+              quarterTurns: LocalizationsFuns.isArabic(context) ? 2 : 0,
+              child: SvgPicture.asset(
+                icon,
+                height: iconSize,
+                width: iconSize,
+                colorFilter: ColorFilter.mode(
+                    contentColor ??
+                        (SetThemeColors.isDarkMode(context)
+                            ? kBlackColor
+                            : kWhiteColor),
+                    BlendMode.srcATop),
+              ),
             )
           ],
         ),

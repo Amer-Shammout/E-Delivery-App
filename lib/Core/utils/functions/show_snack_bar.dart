@@ -21,7 +21,7 @@ void showSuccessSnackBar(String message, context) {
           const FittedBox(
             fit: BoxFit.scaleDown,
             child: Icon(
-              Icons.check_circle,
+              Icons.check_circle_outline_rounded,
               color: Colors.green,
               size: 24,
             ),
@@ -69,7 +69,7 @@ void showFailureSnackBar(String message, context) {
           const FittedBox(
             fit: BoxFit.scaleDown,
             child: Icon(
-              Icons.remove_circle,
+              Icons.cancel_outlined,
               color: Colors.red,
               size: 24,
             ),

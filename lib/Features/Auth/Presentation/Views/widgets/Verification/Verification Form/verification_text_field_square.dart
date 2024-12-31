@@ -27,7 +27,7 @@ class VerificationTextFieldSquare extends StatelessWidget {
             : Shadows.innerShadow(context),
       ),
       child: TextFormField(
-        validator: Validation.validateFieldIfEmpty,
+        validator: (code) => Validation.validateFieldIfEmpty(code,context),
         onSaved: onSaved,
         onChanged: onChanged,
         style: AppStyles.fontsMedium32(context),

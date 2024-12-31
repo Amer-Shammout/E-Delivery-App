@@ -39,7 +39,7 @@ class RegisterationViewBody extends StatelessWidget {
       builder: (context, state) {
         return ModalProgressHUD(
           inAsyncCall: (state is RegisterLoading),
-          progressIndicator: Lottie.asset(
+          progressIndicator: LottieBuilder.asset(
             Assets.lottieLoading,
             repeat: true,
           ),

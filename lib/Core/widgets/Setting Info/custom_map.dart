@@ -1,16 +1,9 @@
-import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/functions/set_theme_colors.dart';
-import 'package:e_delivery_app/Core/utils/functions/show_snack_bar.dart';
-import 'package:e_delivery_app/Core/utils/styles/shadows.dart';
-import 'package:e_delivery_app/Core/widgets/custom_circular_progress_indicator.dart';
 import 'package:e_delivery_app/Core/widgets/custom_container.dart';
 import 'package:e_delivery_app/Core/widgets/custom_icon.dart';
-import 'package:e_delivery_app/Features/Profile/Presentation/manager/update_location_cubit/update_location_cubit.dart';
 import 'package:e_delivery_app/constants.dart';
-import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:latlong2/latlong.dart';
@@ -47,8 +40,13 @@ class _CustomMapState extends State<CustomMap> {
               child: FlutterMap(
                 mapController: _mapController,
                 options: MapOptions(
-                  initialCenter: LatLng(widget.latitide ?? 33.510414,
-                      widget.longitude ?? 36.278336),
+                  initialCenter: LatLng(
+                      (widget.latitide == null || widget.latitide == 0)
+                          ? 33.510414
+                          : widget.latitide!,
+                      (widget.longitude == null || widget.longitude == 0)
+                          ? 36.278336
+                          : widget.longitude!),
                   initialZoom: 15.0,
                 ),
                 children: [
@@ -57,7 +55,7 @@ class _CustomMapState extends State<CustomMap> {
                         "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
                   ),
                   MarkerLayer(
-                    markers: widget.latitide != null
+                    markers: (widget.latitide != null && widget.latitide != 0)
                         ? [
                             buildMarker(LocationData.fromMap({
                               "latitude": widget.latitide,
@@ -83,56 +81,19 @@ class _CustomMapState extends State<CustomMap> {
           Positioned(
             right: 8,
             bottom: 8,
-            child: !AppRouter.isAuth ? CustomIcon(
-                        icon: Assets.iconsGps,
-                        onPressed: () async {
-                          await _getCurrentLocation();
-                          if (currentLocation != null) {
-                            _mapController.move(
-                              LatLng(currentLocation!.latitude!,
-                                  currentLocation!.longitude!),
-                              15.0,
-                            );
-                          }
-                        },
-                        iconSize: 24,
-                      ) :  BlocConsumer<UpdateLocationCubit, UpdateLocationState>(
-              builder: (context, state) {
-                return state is UpdateLocationLoading
-                    ? Container(
-                        height: 40,
-                        width: 40,
-                        decoration: BoxDecoration(
-                          color: SetThemeColors.setBackgroundColor(context),
-                          borderRadius: BorderRadius.circular(360),
-                          boxShadow: const [Shadows.iconDropShadow],
-                        ),
-                        child: const CustomProgressIndicator(),
-                      )
-                    : CustomIcon(
-                        icon: Assets.iconsGps,
-                        onPressed: () async {
-                          await _getCurrentLocation();
-                          if (currentLocation != null) {
-                            _mapController.move(
-                              LatLng(currentLocation!.latitude!,
-                                  currentLocation!.longitude!),
-                              15.0,
-                            );
-                          }
-                        },
-                        iconSize: 24,
-                      );
-              },
-              listener: (context, state) {
-                if (state is UpdateLocationSuccess) {
-                  showSuccessSnackBar(
-                      S.of(context).edit_location_message, context);
-                }
-                if (state is UpdateLocationFailure) {
-                  showFailureSnackBar(state.errMessage, context);
+            child: CustomIcon(
+              icon: Assets.iconsGps,
+              onPressed: () async {
+                await _getCurrentLocation();
+                if (currentLocation != null) {
+                  _mapController.move(
+                    LatLng(currentLocation!.latitude!,
+                        currentLocation!.longitude!),
+                    15.0,
+                  );
                 }
               },
+              iconSize: 24,
             ),
           ),
         ],

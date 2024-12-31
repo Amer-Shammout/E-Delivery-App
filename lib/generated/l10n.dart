@@ -510,6 +510,16 @@ class S {
     );
   }
 
+  /// `Select All`
+  String get cart5 {
+    return Intl.message(
+      'Select All',
+      name: 'cart5',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Delete`
   String get delete_button {
     return Intl.message(
@@ -585,6 +595,56 @@ class S {
     return Intl.message(
       'Your image was changed successfully!',
       name: 'edit_image_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `please enter a valid phone number`
+  String get phone_number_message {
+    return Intl.message(
+      'please enter a valid phone number',
+      name: 'phone_number_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `field is required`
+  String get field_empty_message {
+    return Intl.message(
+      'field is required',
+      name: 'field_empty_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a full name consisting of no more than three words`
+  String get full_name_message {
+    return Intl.message(
+      'Please enter a full name consisting of no more than three words',
+      name: 'full_name_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter a valid name!`
+  String get full_name_message2 {
+    return Intl.message(
+      'Enter a valid name!',
+      name: 'full_name_message2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verification code was sent to you!`
+  String get verification_message {
+    return Intl.message(
+      'Verification code was sent to you!',
+      name: 'verification_message',
       desc: '',
       args: [],
     );

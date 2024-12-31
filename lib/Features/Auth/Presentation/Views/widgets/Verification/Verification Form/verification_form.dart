@@ -4,6 +4,7 @@ import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/functions/show_snack_bar.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/c_t_a_button.dart';
+import 'package:e_delivery_app/Core/widgets/custom_circular_progress_indicator.dart';
 import 'package:e_delivery_app/Core/widgets/custom_text_button.dart';
 import 'package:e_delivery_app/Features/Auth/Data/Models/resend_code_model.dart';
 import 'package:e_delivery_app/Features/Auth/Data/Models/verification_model.dart';
@@ -125,7 +126,7 @@ class _VerificationFormState extends State<VerificationForm> {
             listener: (context, state) {
               if (state is ResendCodeSuccess) {
                 showSuccessSnackBar(
-                    'Verification code will send you!', context);
+                    S.of(context).verification_message, context);
                 setState(() {
                   isEnd = false;
                 });
@@ -138,11 +139,7 @@ class _VerificationFormState extends State<VerificationForm> {
               return AbsorbPointer(
                 absorbing: isEnd ? false : true,
                 child: state is ResendCodeLoading
-                    ? Center(
-                        child: CircularProgressIndicator(
-                          color: Theme.of(context).colorScheme.primary,
-                        ),
-                      )
+                    ? const CustomProgressIndicator()
                     : Opacity(
                         opacity: isEnd ? 1 : .3,
                         child: CustomTextButton(
@@ -161,12 +158,15 @@ class _VerificationFormState extends State<VerificationForm> {
           ),
           isEnd
               ? const SizedBox()
-              : CustomTimer(
-                  onEnd: () {
-                    setState(() {
-                      isEnd = true;
-                    });
-                  },
+              : Directionality(
+                  textDirection: TextDirection.ltr,
+                  child: CustomTimer(
+                    onEnd: () {
+                      setState(() {
+                        isEnd = true;
+                      });
+                    },
+                  ),
                 ),
         ],
       ),

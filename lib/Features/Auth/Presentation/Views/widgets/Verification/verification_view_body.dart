@@ -42,8 +42,9 @@ class VerificationViewBody extends StatelessWidget {
       builder: (context, state) {
         return ModalProgressHUD(
           inAsyncCall: (state is VerificationLoading),
-          progressIndicator: Lottie.asset(
+          progressIndicator: LottieBuilder.asset(
             Assets.lottieLoading,
+            repeat: true,
           ),
           child: CustomBackgroundContainer(
             color: Theme.of(context).colorScheme.surface,

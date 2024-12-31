@@ -1,13 +1,9 @@
-import 'dart:developer';
-
-import 'package:e_delivery_app/Core/services/shared_preferences_singleton.dart';
 import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/Custom%20Product/product_content.dart';
 import 'package:e_delivery_app/Core/widgets/Custom%20Product/product_price.dart';
 import 'package:e_delivery_app/Core/widgets/custom_container.dart';
-import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -19,7 +15,6 @@ class CustomProduct extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        log("${Prefs.getString(kToken)}");
         GoRouter.of(context).pushNamed(AppRouter.kProductDetailsName);
       },
       child: CustomContainer(
@@ -29,6 +24,7 @@ class CustomProduct extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
             image: DecorationImage(
+              matchTextDirection: true,
               colorFilter: ColorFilter.mode(
                   Theme.of(context).colorScheme.secondary, BlendMode.srcATop),
               fit: BoxFit.fill,

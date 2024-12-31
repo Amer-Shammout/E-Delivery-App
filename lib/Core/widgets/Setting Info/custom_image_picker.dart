@@ -7,7 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 class CustomImagePicker extends StatefulWidget {
-  const CustomImagePicker({super.key, required this.pickImage, this.networkImage});
+  const CustomImagePicker(
+      {super.key, required this.pickImage, this.networkImage});
 
   final Future<XFile?> Function() pickImage;
   final String? networkImage;
@@ -42,7 +43,7 @@ class _CustomImagePickerState extends State<CustomImagePicker> {
                 ? Assets.imagesUser
                 : null,
             fileImage: _image?.path,
-            networkImage:widget.networkImage,
+            networkImage: widget.networkImage,
           ),
           const SizedBox(
             height: 4,

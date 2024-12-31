@@ -1,4 +1,5 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
+import 'package:e_delivery_app/Core/utils/functions/localizations_funs.dart';
 import 'package:e_delivery_app/Features/Settings/Data/models/settings_model.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Manager/localization_cubit/localization_cubit.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Manager/theme_cubit/theme_cubit.dart';
@@ -108,13 +109,16 @@ class _SettingsItemsListViewState extends State<SettingsItemsListView> {
           tile: CustomSettingTile(
             onTap: () {},
             settingItem: settingItems[3],
-            trailing: SvgPicture.asset(
-              Assets.iconsButtonsArrow,
-              width: 12,
-              height: 12,
-              colorFilter: ColorFilter.mode(
-                Theme.of(context).colorScheme.error,
-                BlendMode.srcATop,
+            trailing: RotatedBox(
+              quarterTurns: LocalizationsFuns.isArabic(context) ? 2 : 0,
+              child: SvgPicture.asset(
+                Assets.iconsButtonsArrow,
+                width: 12,
+                height: 12,
+                colorFilter: ColorFilter.mode(
+                  Theme.of(context).colorScheme.error,
+                  BlendMode.srcATop,
+                ),
               ),
             ),
           ),
@@ -129,13 +133,16 @@ class _SettingsItemsListViewState extends State<SettingsItemsListView> {
               );
             },
             settingItem: settingItems[4],
-            trailing: SvgPicture.asset(
-              Assets.iconsButtonsArrow,
-              width: 12,
-              height: 12,
-              colorFilter: ColorFilter.mode(
-                Theme.of(context).colorScheme.error,
-                BlendMode.srcATop,
+            trailing: RotatedBox(
+              quarterTurns: LocalizationsFuns.isArabic(context) ? 2 : 0,
+              child: SvgPicture.asset(
+                Assets.iconsButtonsArrow,
+                width: 12,
+                height: 12,
+                colorFilter: ColorFilter.mode(
+                  Theme.of(context).colorScheme.error,
+                  BlendMode.srcATop,
+                ),
               ),
             ),
           ),

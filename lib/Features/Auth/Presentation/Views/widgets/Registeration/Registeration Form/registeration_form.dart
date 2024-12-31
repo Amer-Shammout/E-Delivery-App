@@ -51,15 +51,18 @@ class _RegisterationFormState extends State<RegisterationForm> {
           const SizedBox(
             height: kSpacing * 8,
           ),
-          CustomTextFormField(
-            maxLength: 9,
-            hint: '9xx xxx xxx',
-            textInputType: TextInputType.number,
-            prefix: const RegisterationTextFieldPrefix(),
-            onSaved: (inputPhoneNumber) {
-              phoneNumber = "+963$inputPhoneNumber";
-            },
-            validator: Validation.validatePhoneNumber,
+          Directionality(
+            textDirection: TextDirection.ltr,
+            child: CustomTextFormField(
+              maxLength: 9,
+              hint: '9xx xxx xxx',
+              textInputType: TextInputType.number,
+              prefix: const RegisterationTextFieldPrefix(),
+              onSaved: (inputPhoneNumber) {
+                phoneNumber = "+963$inputPhoneNumber";
+              },
+              validator: (phoneNumber) =>  Validation.validatePhoneNumber(phoneNumber,context),
+            ),
           ),
           const SizedBox(
             height: kSpacing * 6,

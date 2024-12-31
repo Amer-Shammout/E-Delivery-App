@@ -1,5 +1,6 @@
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/Widgets/Cart%20View%20Widgets/custom_cart_check_box.dart';
+import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class SelectAll extends StatelessWidget {
@@ -14,7 +15,7 @@ class SelectAll extends StatelessWidget {
           width: 2,
         ),
         Text(
-          'Select All',
+          S.of(context).cart5,
           style: AppStyles.fontsMedium14(context)
               .copyWith(color: Theme.of(context).colorScheme.primary),
         )

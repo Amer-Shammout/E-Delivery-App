@@ -1,4 +1,5 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
+import 'package:e_delivery_app/Core/utils/functions/localizations_funs.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_icon.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
@@ -26,13 +27,16 @@ class ProfileAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       centerTitle: true,
       leading: Center(
-        child: CustomIcon(
-          icon: Assets.iconsBackArrow,
-          iconSize: 12,
-          onPressed: () {
-            GoRouter.of(context).pop();
-          },
-          radius: 32,
+        child: RotatedBox(
+          quarterTurns: LocalizationsFuns.isArabic(context) ? 2 : 0,
+          child: CustomIcon(
+            icon: Assets.iconsBackArrow,
+            iconSize: 12,
+            onPressed: () {
+              GoRouter.of(context).pop();
+            },
+            radius: 32,
+          ),
         ),
       ),
     );
