@@ -10,7 +10,7 @@ import 'package:e_delivery_app/Features/Auth/Data/Models/registeration_model.dar
 import 'package:e_delivery_app/Features/Auth/Data/Models/resend_code_model.dart';
 import 'package:e_delivery_app/Features/Auth/Data/Models/setting_info_model.dart';
 import 'package:e_delivery_app/Features/Auth/Data/Models/verification_model.dart';
-import 'package:e_delivery_app/Features/Auth/Data/Models/verification_response_model/user.dart';
+import 'package:e_delivery_app/Core/Data/Models/user.dart';
 import 'package:e_delivery_app/Features/Auth/Data/Models/verification_response_model/verification_response_model.dart';
 import 'package:e_delivery_app/Features/Auth/Data/repos/auth_repo.dart';
 import 'package:e_delivery_app/constants.dart';
@@ -75,36 +75,21 @@ class AuthRepoImpl extends AuthRepo {
   }
 
   @override
-  Future<Either<Failure, User>> settingInfo(SettingInfoModel? model) async {
+  Future<Either<Failure, User>> settingInfo(SettingInfoModel model) async {
     try {
       String id = Prefs.getString(kId);
       String token = Prefs.getString(kToken);
-      if (model != null) {
-        Response response = await getIt.get<DioClient>().post(
-              '$kUpdateUserUrl/$id',
-              data: FormData.fromMap(model.toJson()),
-              options: Options(
-                headers: {
-                  "Authorization": "Bearer $token",
-                  "Content-Type": "multipart/form-data"
-                },
-              ),
-            );
-        dynamic jsonData = response.data;
-        User user = User.fromJson(jsonData['user']);
-        return right(user);
-      }
-      Response response = await getIt.get<DioClient>().put(
+      Response response = await getIt.get<DioClient>().post(
             '$kUpdateUserUrl/$id',
-            data: {},
+            data: FormData.fromMap(model.toJson()),
             options: Options(
               headers: {
                 "Authorization": "Bearer $token",
+                "Content-Type": "multipart/form-data"
               },
             ),
           );
       dynamic jsonData = response.data;
-
       User user = User.fromJson(jsonData['user']);
       return right(user);
     } on DioException catch (e) {

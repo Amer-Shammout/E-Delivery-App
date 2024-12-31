@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-import 'user.dart';
+import '../../../../../Core/Data/Models/user.dart';
 
 class VerificationResponseModel extends Equatable {
   final String? message;

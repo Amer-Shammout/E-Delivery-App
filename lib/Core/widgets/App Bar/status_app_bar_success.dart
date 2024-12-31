@@ -1,3 +1,5 @@
+import 'package:e_delivery_app/Core/Data/Manager/get_user_cubit/get_user_cubit.dart';
+import 'package:e_delivery_app/Core/Data/Models/user.dart';
 import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
@@ -6,13 +8,17 @@ import 'package:e_delivery_app/Core/widgets/profile_avatar.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-class StatusAppBar extends StatelessWidget {
-  const StatusAppBar({super.key});
+class StatusAppBarSuccess extends StatelessWidget {
+  const StatusAppBarSuccess({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
+    User user = BlocProvider.of<GetUserCubit>(context).user!;
     return Padding(
       padding: const EdgeInsets.only(
           left: kHorizontalPadding,
@@ -26,7 +32,8 @@ class StatusAppBar extends StatelessWidget {
                 AppRouter.kProfileName,
               );
             },
-            child: const ProfileAvatar(
+            child: ProfileAvatar(
+              userImage: user.image,
               padding: kSpacing * 4,
             ),
           ),
@@ -46,7 +53,7 @@ class StatusAppBar extends StatelessWidget {
                 height: 0.5 * kSpacing,
               ),
               Text(
-                'Ahmad Mohsen',
+                user.fullName,
                 style: AppStyles.fontsSemiBold14(context).copyWith(
                   color: Theme.of(context).colorScheme.error,
                 ),

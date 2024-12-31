@@ -1,5 +1,5 @@
 import 'package:e_delivery_app/Core/widgets/App%20Bar/custom_search_bar.dart';
-import 'package:e_delivery_app/Core/widgets/App%20Bar/status_app_bar.dart';
+import 'package:e_delivery_app/Core/widgets/App%20Bar/status_app_bar_builder.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +16,7 @@ class CustomAppBar extends StatelessWidget {
           bottom: kSpacing * 4),
       child: Column(
         children: [
-          StatusAppBar(),
+          StatusAppBarBuilder(),
           SizedBox(
             height: kSpacing * 4,
           ),

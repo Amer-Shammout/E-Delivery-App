@@ -1,5 +1,5 @@
 import 'package:e_delivery_app/Features/Auth/Data/Models/setting_info_model.dart';
-import 'package:e_delivery_app/Features/Auth/Data/Models/verification_response_model/user.dart';
+import 'package:e_delivery_app/Core/Data/Models/user.dart';
 import 'package:e_delivery_app/Features/Auth/Data/repos/auth_repo.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -10,8 +10,7 @@ class SettingInfoCubit extends Cubit<SettingInfoState> {
   SettingInfoCubit(this._authRepo) : super(SettingInfoInitial());
   final AuthRepo _authRepo;
 
-  Future<void> settingInfo(
-      SettingInfoModel model) async {
+  Future<void> settingInfo(SettingInfoModel model) async {
     emit(SettingInfoLoading());
     var result = await _authRepo.settingInfo(model);
     result.fold(

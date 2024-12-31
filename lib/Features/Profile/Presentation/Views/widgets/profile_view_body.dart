@@ -1,5 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
 
+import 'package:e_delivery_app/Core/Data/Manager/get_user_cubit/get_user_cubit.dart';
+import 'package:e_delivery_app/Core/Data/Models/user.dart';
 import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/app_strings.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
@@ -37,6 +39,7 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
 
   @override
   Widget build(BuildContext context) {
+    User user = BlocProvider.of<GetUserCubit>(context).user!;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: kHorizontalPadding),
       child: Column(
@@ -75,8 +78,7 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
                           listener: (context, state) {
                             if (state is UpdateNameSuccess) {
                               showSuccessSnackBar(
-                                  S.of(context).edit_name_message,
-                                  context);
+                                  S.of(context).edit_name_message, context);
                             }
                             if (state is UpdateNameFailure) {
                               showSuccessSnackBar(state.errMessage, context);
@@ -161,8 +163,7 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
                           listener: (context, state) {
                             if (state is UpdateLocationSuccess) {
                               showSuccessSnackBar(
-                                  S.of(context).edit_location_message,
-                                  context);
+                                  S.of(context).edit_location_message, context);
                             }
                             if (state is UpdateLocationFailure) {
                               showSuccessSnackBar(state.errMessage, context);

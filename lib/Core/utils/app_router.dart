@@ -1,10 +1,12 @@
 import 'dart:developer';
 
+import 'package:e_delivery_app/Core/Data/Manager/get_user_cubit/get_user_cubit.dart';
+import 'package:e_delivery_app/Core/Data/Repos/app_repo_impl.dart';
 import 'package:e_delivery_app/Core/errors/failures.dart';
 import 'package:e_delivery_app/Core/services/service_locator.dart';
 import 'package:e_delivery_app/Core/services/shared_preferences_singleton.dart';
 import 'package:e_delivery_app/Core/widgets/app_with_nav_bar.dart';
-import 'package:e_delivery_app/Features/Auth/Data/Models/verification_response_model/user.dart';
+import 'package:e_delivery_app/Core/Data/Models/user.dart';
 import 'package:e_delivery_app/Features/Auth/Data/repos/auth_repo_impl.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/lets_get_started_view.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/registeration_view.dart';
@@ -12,7 +14,6 @@ import 'package:e_delivery_app/Features/Auth/Presentation/Views/setting_info_vie
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/verification_view.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/manager/register_cubit/register_cubit.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/manager/resend_code/resend_code_cubit.dart';
-import 'package:e_delivery_app/Features/Auth/Presentation/manager/setting_info_cubit/setting_info_cubit.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/manager/verification_cubit/verification_cubit.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/cart_view.dart';
 import 'package:e_delivery_app/Features/Product/Presentation/Views/product_view.dart';
@@ -105,9 +106,18 @@ abstract class AppRouter {
         name: kAppRootName,
         pageBuilder: (context, state) {
           return MaterialPage(
+            child: MultiBlocProvider(
+              providers: [
+                BlocProvider(
+                  create: (context) =>
+                      GetUserCubit(getIt.get<AppRepoImpl>())..getUser(),
+                )
+              ],
               child: AppWithNavBar(
-            user: state.extra as User,
-          ));
+                user: state.extra as User,
+              ),
+            ),
+          );
         },
       ),
       GoRoute(
