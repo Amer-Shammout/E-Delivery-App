@@ -28,6 +28,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "cart3": MessageLookupByLibrary.simpleMessage("كلفة التّوصيل"),
         "cart4": MessageLookupByLibrary.simpleMessage("السّعر الكلّي"),
         "cart5": MessageLookupByLibrary.simpleMessage("Select All"),
+        "default_user_message":
+            MessageLookupByLibrary.simpleMessage("أيها المستخدم"),
         "delete_button": MessageLookupByLibrary.simpleMessage("حذف"),
         "edit_image_message":
             MessageLookupByLibrary.simpleMessage("تم تعديل صورتك بنجاح!"),

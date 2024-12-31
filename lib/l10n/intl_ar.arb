@@ -58,6 +58,7 @@
     "field_empty_message":"الحقل مطلوب",
     "full_name_message":"يرجى إدخال اسم كامل مكون من ثلاثة كلمات على الأكثر فقط",
     "full_name_message2":"أدخل اسم صالح!",
-    "verification_message":"تم إرسال رمز التحقق إليك!"
+    "verification_message":"تم إرسال رمز التحقق إليك!",
+    "default_user_message":"أيها المستخدم"
 
 }

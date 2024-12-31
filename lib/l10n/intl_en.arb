@@ -58,5 +58,7 @@
     "field_empty_message":"field is required",
     "full_name_message":"Please enter a full name consisting of no more than three words",
     "full_name_message2":"Enter a valid name!",
-    "verification_message":"Verification code was sent to you!"
+    "verification_message":"Verification code was sent to you!",
+    "default_user_message":"User"
+
 }

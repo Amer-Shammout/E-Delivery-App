@@ -649,6 +649,16 @@ class S {
       args: [],
     );
   }
+
+  /// `User`
+  String get default_user_message {
+    return Intl.message(
+      'User',
+      name: 'default_user_message',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
