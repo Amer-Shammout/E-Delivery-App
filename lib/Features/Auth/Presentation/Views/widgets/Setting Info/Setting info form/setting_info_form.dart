@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:dio/dio.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/functions/setting_info_functions.dart';
@@ -44,7 +43,7 @@ class _SettingInfoFormState extends State<SettingInfoForm> {
           CustomImagePicker(
             pickImage: () async {
               profileImage = await SettingInfoFunctions.pickImage();
-              return profileImage;
+              return profileImage!;
             },
           ),
           const SizedBox(
@@ -65,7 +64,7 @@ class _SettingInfoFormState extends State<SettingInfoForm> {
           CustomMap(
             getUserLocation: () async {
               userLocation = await SettingInfoFunctions.getUserLocation();
-              return userLocation;
+              return userLocation!;
             },
           ),
           const SizedBox(
@@ -77,16 +76,17 @@ class _SettingInfoFormState extends State<SettingInfoForm> {
             onPressed: () async {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
-                MultipartFile? profileImageMultiPartFile = await convertXFileToMultipartFile(profileImage);
 
-                SettingInfoModel settingInfoModel = SettingInfoModel(
-                  fullName: fullName,
-                  longitude: userLocation?.longitude,
-                  latitude: userLocation?.latitude,
-                  image: profileImageMultiPartFile,
+                log(profileImage!.path);
+                MultipartFile profileImageMultiPartFile =
+                    await MultipartFile.fromFile(
+                  profileImage!.path,
                 );
-                log("$settingInfoModel");
-                // ignore: use_build_context_synchronously
+                SettingInfoModel settingInfoModel = SettingInfoModel(
+                    fullName: fullName,
+                    longitude: userLocation?.longitude,
+                    latitude: userLocation?.latitude,
+                    image: profileImageMultiPartFile);
                 BlocProvider.of<SettingInfoCubit>(context)
                     .settingInfo(settingInfoModel);
               } else {
@@ -100,17 +100,5 @@ class _SettingInfoFormState extends State<SettingInfoForm> {
         ],
       ),
     );
-  }
-
-  Future<MultipartFile?> convertXFileToMultipartFile(XFile? file) async {
-    if (file != null) {
-      String fileName = file.path.split('/').last;
-      MultipartFile multiPartFile = await MultipartFile.fromFile(
-        profileImage!.path,
-        filename: fileName,
-      );
-      return multiPartFile;
-    }
-    return null;
   }
 }
