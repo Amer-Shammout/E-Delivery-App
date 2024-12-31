@@ -14,7 +14,7 @@ class AppRepoImpl extends AppRepo {
   @override
   Future<Either<Failure, User>> getUser() async {
     try {
-      int userId = Prefs.getString(kId);
+      String userId = Prefs.getString(kId);
       String token = Prefs.getString(kToken);
       Response response = await getIt.get<DioClient>().put(
             '$kUpdateUserUrl/$userId',

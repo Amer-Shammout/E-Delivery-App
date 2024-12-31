@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/functions/set_theme_colors.dart';
 import 'package:e_delivery_app/Core/utils/styles/shadows.dart';
@@ -9,13 +10,17 @@ class ProfileAvatar extends StatelessWidget {
   const ProfileAvatar(
       {super.key,
       this.radius = 32,
-      this.userImage = Assets.imagesUser,
+      this.userImage,
       this.borderWidth = 2,
-      this.padding = 24});
+      this.padding = 24,
+      this.networkImage,
+      this.fileImage});
   final double padding;
   final double radius;
   final double borderWidth;
-  final String userImage;
+  final String? userImage;
+  final String? networkImage;
+  final String? fileImage;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -27,13 +32,15 @@ class ProfileAvatar extends StatelessWidget {
       ),
       child: CircleAvatar(
         backgroundColor: SetThemeColors.setBackgroundColor(context),
-        backgroundImage: userImage == Assets.imagesUser
-            ? null
-            : FileImage(
-                File(
-                  userImage,
-                ),
-              ),
+        backgroundImage: userImage == null
+            ? networkImage != null
+                ? CachedNetworkImageProvider(networkImage!)
+                : FileImage(
+                    File(
+                      fileImage!,
+                    ),
+                  )
+            : null,
         radius: radius,
         child: userImage == Assets.imagesUser
             ? Padding(
@@ -42,7 +49,7 @@ class ProfileAvatar extends StatelessWidget {
                 child: ClipOval(
                   child: Image.asset(
                     color: Theme.of(context).colorScheme.primary,
-                    userImage,
+                    userImage ?? '',
                   ),
                 ),
               )

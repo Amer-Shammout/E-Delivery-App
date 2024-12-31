@@ -1,12 +1,6 @@
-import 'dart:developer';
-
-import 'package:e_delivery_app/Core/Data/Manager/get_user_cubit/get_user_cubit.dart';
-import 'package:e_delivery_app/Core/Data/Repos/app_repo_impl.dart';
-import 'package:e_delivery_app/Core/errors/failures.dart';
 import 'package:e_delivery_app/Core/services/service_locator.dart';
 import 'package:e_delivery_app/Core/services/shared_preferences_singleton.dart';
 import 'package:e_delivery_app/Core/widgets/app_with_nav_bar.dart';
-import 'package:e_delivery_app/Core/Data/Models/user.dart';
 import 'package:e_delivery_app/Features/Auth/Data/repos/auth_repo_impl.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/lets_get_started_view.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/registeration_view.dart';
@@ -57,7 +51,7 @@ abstract class AppRouter {
   static bool isAuth = Prefs.getString(kToken) != '';
 
   static final router = GoRouter(
-    // initialLocation: isAuth ? kAppRoot : kLetsGetStartedView,
+    initialLocation: isAuth ? kAppRoot : kLetsGetStartedView,
     routes: [
       GoRoute(
         name: kLetsGetStartedName,
@@ -105,17 +99,8 @@ abstract class AppRouter {
         path: kAppRoot,
         name: kAppRootName,
         pageBuilder: (context, state) {
-          return MaterialPage(
-            child: MultiBlocProvider(
-              providers: [
-                BlocProvider(
-                  create: (context) =>
-                      GetUserCubit(getIt.get<AppRepoImpl>())..getUser(),
-                )
-              ],
-              child: AppWithNavBar(
-                user: state.extra as User,
-              ),
+          return const MaterialPage(
+            child: AppWithNavBar(
             ),
           );
         },
@@ -169,15 +154,5 @@ abstract class AppRouter {
         pageBuilder: (context, state) => const MaterialPage(child: CartView()),
       ),
     ],
-    redirect: (context, state) {
-      // bool isAuth = Prefs.getString(kToken) != '';
-      // log(Prefs.getString(kToken));
-      // if (isAuth && state.namedLocation(kLetsGetStartedName) == '/') {
-      //   log(state.namedLocation(kLetsGetStartedName));
-      //   return kAppRoot;
-      // } else {
-      //   return null;
-      // }
-    },
   );
 }

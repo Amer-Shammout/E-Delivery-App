@@ -35,7 +35,7 @@ class CustomTextButton extends StatelessWidget {
 class CustomTextButtonWithIcon extends StatelessWidget {
   const CustomTextButtonWithIcon({
     super.key,
-    required this.onPressed,
+    this.onPressed,
     required this.title,
     this.icon = Assets.iconsUpload,
     required this.style,
@@ -43,7 +43,7 @@ class CustomTextButtonWithIcon extends StatelessWidget {
     this.color = kPrimaryColor,
   });
 
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
   final String title;
   final String icon;
   final TextStyle style;

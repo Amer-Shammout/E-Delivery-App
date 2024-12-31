@@ -10,9 +10,9 @@ class UpdateImageCubit extends Cubit<UpdateImageState> {
 
   final ProfileRepo _profileRepo;
 
-  updateName(String newName) async {
+  updateImage(String newName) async {
     emit(UpdateImageLoading());
-    var result = await _profileRepo.updateName(newName);
+    var result = await _profileRepo.updateProfileImage(newName);
     result.fold((failure) {
       emit(
         UpdateImageFailure(errMessage: failure.errMessage),

@@ -33,8 +33,9 @@ class StatusAppBarSuccess extends StatelessWidget {
               );
             },
             child: ProfileAvatar(
-              userImage: user.image,
+              userImage: user.image == null ? Assets.imagesUser : null,
               padding: kSpacing * 4,
+              networkImage: user.image,
             ),
           ),
           const SizedBox(
@@ -64,7 +65,7 @@ class StatusAppBarSuccess extends StatelessWidget {
           CustomIcon(
             icon: Assets.iconsCart,
             onPressed: () {
-              GoRouter.of(context).push(AppRouter.kCartName);
+              GoRouter.of(context).pushNamed(AppRouter.kCartName);
             },
           ),
           const SizedBox(

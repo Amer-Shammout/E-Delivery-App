@@ -579,6 +579,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Your image was changed successfully!`
+  String get edit_image_message {
+    return Intl.message(
+      'Your image was changed successfully!',
+      name: 'edit_image_message',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

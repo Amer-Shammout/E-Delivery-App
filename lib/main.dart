@@ -1,3 +1,5 @@
+import 'package:e_delivery_app/Core/Data/Manager/get_user_cubit/get_user_cubit.dart';
+import 'package:e_delivery_app/Core/Data/Repos/app_repo_impl.dart';
 import 'package:e_delivery_app/Core/services/custom_bloc_observer.dart';
 import 'package:e_delivery_app/Core/services/firebase_notification.dart';
 import 'package:e_delivery_app/Core/services/service_locator.dart';
@@ -64,7 +66,11 @@ class EDelivery extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => SettingInfoCubit(getIt.get<AuthRepoImpl>()),
-          )
+        ),
+        BlocProvider(
+          create: (context) =>
+              GetUserCubit(getIt.get<AppRepoImpl>())..getUser(),
+        )
       ],
       child: BlocBuilder<LocalizationCubit, String>(
         builder: (context, lang) {

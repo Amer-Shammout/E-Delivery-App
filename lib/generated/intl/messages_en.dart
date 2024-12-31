@@ -28,6 +28,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "cart3": MessageLookupByLibrary.simpleMessage("Delivery Charge"),
         "cart4": MessageLookupByLibrary.simpleMessage("Subtotal"),
         "delete_button": MessageLookupByLibrary.simpleMessage("Delete"),
+        "edit_image_message": MessageLookupByLibrary.simpleMessage(
+            "Your image was changed successfully!"),
         "edit_location_message": MessageLookupByLibrary.simpleMessage(
             "Your location was updates successfully!"),
         "edit_name_message": MessageLookupByLibrary.simpleMessage(

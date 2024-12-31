@@ -2,7 +2,6 @@ import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/functions/set_theme_colors.dart';
 import 'package:e_delivery_app/Core/widgets/custom_widget_with_dash.dart';
 import 'package:e_delivery_app/Core/widgets/system_status_app_bar.dart';
-import 'package:e_delivery_app/Core/Data/Models/user.dart';
 import 'package:e_delivery_app/Features/Favorite/Presentation/Views/favorite_view_body.dart';
 import 'package:e_delivery_app/Features/Home/Presentation/Views/home_view_body.dart';
 import 'package:e_delivery_app/Features/Orders/Presentation/Views/orders_view_body.dart';
@@ -14,9 +13,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 class AppWithNavBar extends StatefulWidget {
   const AppWithNavBar({
     super.key,
-    required this.user,
   });
-  final User user;
   @override
   State<AppWithNavBar> createState() => _NavigationBarPages();
 }
@@ -40,7 +37,7 @@ class _NavigationBarPages extends State<AppWithNavBar> {
   void initState() {
     _pageController = PageController();
     pages = [
-      HomeViewBody(user: widget.user),
+      const HomeViewBody(),
       const StoresViewBody(),
       const OrdersViewBody(),
       const FavoriteViewBody(),
