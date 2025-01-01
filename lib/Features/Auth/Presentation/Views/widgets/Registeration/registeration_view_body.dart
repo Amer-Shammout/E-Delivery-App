@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
+import 'package:e_delivery_app/Core/utils/functions/set_theme_colors.dart';
 import 'package:e_delivery_app/Core/utils/functions/show_snack_bar.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_background_container.dart';
@@ -39,9 +40,13 @@ class RegisterationViewBody extends StatelessWidget {
       builder: (context, state) {
         return ModalProgressHUD(
           inAsyncCall: (state is RegisterLoading),
-          progressIndicator: LottieBuilder.asset(
-            Assets.lottieLoading,
-            repeat: true,
+          progressIndicator: Lottie.asset(
+            SetThemeColors.isDarkMode(context)
+                ?
+                 Assets.lottieLoadingDark
+                : Assets.lottieLoadingLight,
+            height: 100,
+            width: 100,
           ),
           child: CustomBackgroundContainer(
             color: Theme.of(context).colorScheme.surface,

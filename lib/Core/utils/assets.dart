@@ -1,11 +1,10 @@
 // ignore_for_file: prefer_single_quotes
 class Assets {
   Assets._();
-
+  
   /// Assets for fontsMontserratBlack
   /// assets/fonts/Montserrat-Black.ttf
-  static const String fontsMontserratBlack =
-      "assets/fonts/Montserrat-Black.ttf";
+  static const String fontsMontserratBlack = "assets/fonts/Montserrat-Black.ttf";
 
   /// Assets for fontsMontserratBold
   /// assets/fonts/Montserrat-Bold.ttf
@@ -13,18 +12,15 @@ class Assets {
 
   /// Assets for fontsMontserratMedium
   /// assets/fonts/Montserrat-Medium.ttf
-  static const String fontsMontserratMedium =
-      "assets/fonts/Montserrat-Medium.ttf";
+  static const String fontsMontserratMedium = "assets/fonts/Montserrat-Medium.ttf";
 
   /// Assets for fontsMontserratRegular
   /// assets/fonts/Montserrat-Regular.ttf
-  static const String fontsMontserratRegular =
-      "assets/fonts/Montserrat-Regular.ttf";
+  static const String fontsMontserratRegular = "assets/fonts/Montserrat-Regular.ttf";
 
   /// Assets for fontsMontserratSemiBold
   /// assets/fonts/Montserrat-SemiBold.ttf
-  static const String fontsMontserratSemiBold =
-      "assets/fonts/Montserrat-SemiBold.ttf";
+  static const String fontsMontserratSemiBold = "assets/fonts/Montserrat-SemiBold.ttf";
 
   /// Assets for iconsAbout
   /// assets/icons/about.svg
@@ -80,8 +76,7 @@ class Assets {
 
   /// Assets for iconsGetStartedArrow
   /// assets/icons/get_started_arrow.svg
-  static const String iconsGetStartedArrow =
-      "assets/icons/get_started_arrow.svg";
+  static const String iconsGetStartedArrow = "assets/icons/get_started_arrow.svg";
 
   /// Assets for iconsGps
   /// assets/icons/gps.svg
@@ -125,28 +120,23 @@ class Assets {
 
   /// Assets for iconsOutlineHeartOutline
   /// assets/icons/outline/heart_outline.svg
-  static const String iconsOutlineHeartOutline =
-      "assets/icons/outline/heart_outline.svg";
+  static const String iconsOutlineHeartOutline = "assets/icons/outline/heart_outline.svg";
 
   /// Assets for iconsOutlineHomeOutline
   /// assets/icons/outline/home_outline.svg
-  static const String iconsOutlineHomeOutline =
-      "assets/icons/outline/home_outline.svg";
+  static const String iconsOutlineHomeOutline = "assets/icons/outline/home_outline.svg";
 
   /// Assets for iconsOutlineOrdersOutline
   /// assets/icons/outline/orders_outline.svg
-  static const String iconsOutlineOrdersOutline =
-      "assets/icons/outline/orders_outline.svg";
+  static const String iconsOutlineOrdersOutline = "assets/icons/outline/orders_outline.svg";
 
   /// Assets for iconsOutlineSettingOutline
   /// assets/icons/outline/setting_outline.svg
-  static const String iconsOutlineSettingOutline =
-      "assets/icons/outline/setting_outline.svg";
+  static const String iconsOutlineSettingOutline = "assets/icons/outline/setting_outline.svg";
 
   /// Assets for iconsOutlineShopsOutline
   /// assets/icons/outline/shops_outline.svg
-  static const String iconsOutlineShopsOutline =
-      "assets/icons/outline/shops_outline.svg";
+  static const String iconsOutlineShopsOutline = "assets/icons/outline/shops_outline.svg";
 
   /// Assets for iconsPlus
   /// assets/icons/plus.svg
@@ -174,13 +164,11 @@ class Assets {
 
   /// Assets for iconsSolidOrdersBold
   /// assets/icons/solid/orders_bold.svg
-  static const String iconsSolidOrdersBold =
-      "assets/icons/solid/orders_bold.svg";
+  static const String iconsSolidOrdersBold = "assets/icons/solid/orders_bold.svg";
 
   /// Assets for iconsSolidSettingsBold
   /// assets/icons/solid/settings_bold.svg
-  static const String iconsSolidSettingsBold =
-      "assets/icons/solid/settings_bold.svg";
+  static const String iconsSolidSettingsBold = "assets/icons/solid/settings_bold.svg";
 
   /// Assets for iconsSolidShops
   /// assets/icons/solid/shops.svg
@@ -188,8 +176,7 @@ class Assets {
 
   /// Assets for iconsSolidStoresDark
   /// assets/icons/solid/stores_dark.svg
-  static const String iconsSolidStoresDark =
-      "assets/icons/solid/stores_dark.svg";
+  static const String iconsSolidStoresDark = "assets/icons/solid/stores_dark.svg";
 
   /// Assets for iconsTheme
   /// assets/icons/theme.svg
@@ -219,15 +206,21 @@ class Assets {
   /// assets/images/boxes.png
   static const String imagesBoxes = "assets/images/boxes.png";
 
+  /// Assets for imagesBrandDark
+  /// assets/images/brand_dark.png
+  static const String imagesBrandDark = "assets/images/brand_dark.png";
+
+  /// Assets for imagesBrandLight
+  /// assets/images/brand_light.png
+  static const String imagesBrandLight = "assets/images/brand_light.png";
+
   /// Assets for imagesCardBackground
   /// assets/images/card_background.png
-  static const String imagesCardBackground =
-      "assets/images/card_background.png";
+  static const String imagesCardBackground = "assets/images/card_background.png";
 
   /// Assets for imagesCarouselProductTest
   /// assets/images/carousel_product_test.png
-  static const String imagesCarouselProductTest =
-      "assets/images/carousel_product_test.png";
+  static const String imagesCarouselProductTest = "assets/images/carousel_product_test.png";
 
   /// Assets for imagesCartCard
   /// assets/images/cart_card.png
@@ -255,8 +248,11 @@ class Assets {
 
   /// Assets for imagesLetsGetStartedTruck
   /// assets/images/lets_get_started_truck.jpg
-  static const String imagesLetsGetStartedTruck =
-      "assets/images/lets_get_started_truck.jpg";
+  static const String imagesLetsGetStartedTruck = "assets/images/lets_get_started_truck.jpg";
+
+  /// Assets for imagesLogoDark
+  /// assets/images/logo_dark.png
+  static const String imagesLogoDark = "assets/images/logo_dark.png";
 
   /// Assets for imagesLogoLight
   /// assets/images/logo_light.png
@@ -280,8 +276,7 @@ class Assets {
 
   /// Assets for imagesSmatelLogoTest
   /// assets/images/smatel_logo_test.png
-  static const String imagesSmatelLogoTest =
-      "assets/images/smatel_logo_test.png";
+  static const String imagesSmatelLogoTest = "assets/images/smatel_logo_test.png";
 
   /// Assets for imagesTruck
   /// assets/images/truck.png
@@ -291,7 +286,12 @@ class Assets {
   /// assets/images/user.png
   static const String imagesUser = "assets/images/user.png";
 
-  /// Assets for lottieLoading
-  /// assets/Lottie/loading.json
-  static const String lottieLoading = "assets/Lottie/loading.json";
+  /// Assets for lottieLoadingDark
+  /// assets/Lottie/loading_dark.json
+  static const String lottieLoadingDark = "assets/Lottie/loading_dark.json";
+
+  /// Assets for lottieLoadingLight
+  /// assets/Lottie/loading_light.json
+  static const String lottieLoadingLight = "assets/Lottie/loading_light.json";
 }
+
