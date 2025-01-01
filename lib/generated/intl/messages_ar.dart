@@ -22,7 +22,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "active": MessageLookupByLibrary.simpleMessage("مفعّلة"),
         "add_button": MessageLookupByLibrary.simpleMessage("إضافة"),
+        "cancel_dialog": MessageLookupByLibrary.simpleMessage("إلغاء"),
         "cart1": MessageLookupByLibrary.simpleMessage("السّلة"),
         "cart2": MessageLookupByLibrary.simpleMessage("العناصر المختارة"),
         "cart3": MessageLookupByLibrary.simpleMessage("كلفة التّوصيل"),
@@ -46,6 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("أدخل اسم صالح!"),
         "home1": MessageLookupByLibrary.simpleMessage("مرحباً"),
         "hot": MessageLookupByLibrary.simpleMessage("خاص"),
+        "inactive": MessageLookupByLibrary.simpleMessage("غير مفعّلة"),
         "lets_get_started_button":
             MessageLookupByLibrary.simpleMessage("لنبدأ"),
         "logout_button": MessageLookupByLibrary.simpleMessage("تسجيل خروج"),
@@ -57,6 +60,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "order_filter3": MessageLookupByLibrary.simpleMessage("تم التّوصيل"),
         "order_filter4": MessageLookupByLibrary.simpleMessage("قيد التّوصيل"),
         "order_filter5": MessageLookupByLibrary.simpleMessage("قيد التّحضير"),
+        "permission_denied":
+            MessageLookupByLibrary.simpleMessage("الإذن مطلوب!"),
+        "permission_message":
+            MessageLookupByLibrary.simpleMessage("يجب عليك تفعيل الاشعارات"),
         "phone_number_message":
             MessageLookupByLibrary.simpleMessage("الرجاء إدخال رقم صالح"),
         "product_details1": MessageLookupByLibrary.simpleMessage("عنصر"),
@@ -81,6 +88,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "setting4": MessageLookupByLibrary.simpleMessage("حول"),
         "setting5": MessageLookupByLibrary.simpleMessage("الملاحظات"),
         "setting_info1": MessageLookupByLibrary.simpleMessage("مرحبا عزيزي!"),
+        "settings_dialog": MessageLookupByLibrary.simpleMessage("الاعدادات"),
         "shop_now_button": MessageLookupByLibrary.simpleMessage("تسوّق الآن"),
         "sp": MessageLookupByLibrary.simpleMessage("ل.س"),
         "special_offer": MessageLookupByLibrary.simpleMessage("عرض خاص"),

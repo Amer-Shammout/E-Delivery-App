@@ -9,11 +9,11 @@ class CustomSettingTile extends StatelessWidget {
       {super.key,
       required this.settingItem,
       required this.trailing,
-      required this.onTap});
+       this.onTap});
 
   final SettingsModel settingItem;
   final Widget trailing;
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {

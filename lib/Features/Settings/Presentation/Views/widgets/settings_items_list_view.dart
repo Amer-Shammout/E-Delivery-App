@@ -1,12 +1,13 @@
+import 'package:e_delivery_app/Core/services/firebase_notification.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/functions/localizations_funs.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Features/Settings/Data/models/settings_model.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Manager/localization_cubit/localization_cubit.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Manager/theme_cubit/theme_cubit.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Views/functions/settings_function.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Views/widgets/custom_settings_expansion_tile.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Views/widgets/custom_settings_tile.dart';
-import 'package:e_delivery_app/Features/Settings/Presentation/Views/widgets/custom_switch.dart';
 import 'package:e_delivery_app/Core/widgets/tile_template.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
@@ -79,17 +80,12 @@ class _SettingsItemsListViewState extends State<SettingsItemsListView> {
         ),
         TileTemplate(
           tile: CustomSettingTile(
-            onTap: () {},
-            settingItem: settingItems[1],
-            trailing: CustomSwitch(
-              isSwitched: isSwitched,
-              onChanged: (value) {
-                setState(() {
-                  isSwitched = value;
-                });
-              },
-            ),
-          ),
+              settingItem: settingItems[1],
+              trailing: Text(
+                setNotificationState(context),
+                style: AppStyles.fontsRegular16(context).copyWith(
+                    color: Theme.of(context).colorScheme.error.withOpacity(.5)),
+              )),
         ),
         BlocBuilder<LocalizationCubit, String>(
           builder: (context, lang) {
@@ -152,5 +148,11 @@ class _SettingsItemsListViewState extends State<SettingsItemsListView> {
         ),
       ],
     );
+  }
+
+  String setNotificationState(BuildContext context) {
+    return FirebaseNotification.isActive ?? false
+        ? S.of(context).active
+        : S.of(context).inactive;
   }
 }

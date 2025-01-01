@@ -26,6 +26,8 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await Prefs.init();
+
   await FirebaseNotification.getFCMToken();
   Bloc.observer = CustomBlocObserver();
 
@@ -34,7 +36,6 @@ Future<void> main() async {
         ? HydratedStorage.webStorageDirectory
         : await getApplicationDocumentsDirectory(),
   );
-  await Prefs.init();
 
   setupGetit();
   runApp(

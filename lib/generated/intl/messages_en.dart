@@ -22,7 +22,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "active": MessageLookupByLibrary.simpleMessage("Activated"),
         "add_button": MessageLookupByLibrary.simpleMessage("Add"),
+        "cancel_dialog": MessageLookupByLibrary.simpleMessage("Cancel"),
         "cart1": MessageLookupByLibrary.simpleMessage("Cart"),
         "cart2": MessageLookupByLibrary.simpleMessage("Selected Items"),
         "cart3": MessageLookupByLibrary.simpleMessage("Delivery Charge"),
@@ -45,6 +47,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Enter a valid name!"),
         "home1": MessageLookupByLibrary.simpleMessage("Welcome"),
         "hot": MessageLookupByLibrary.simpleMessage("HOT"),
+        "inactive": MessageLookupByLibrary.simpleMessage("Inactivated"),
         "lets_get_started_button":
             MessageLookupByLibrary.simpleMessage("Let\'s Get Started"),
         "logout_button": MessageLookupByLibrary.simpleMessage("LOGOUT"),
@@ -56,6 +59,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "order_filter3": MessageLookupByLibrary.simpleMessage("Delivered"),
         "order_filter4": MessageLookupByLibrary.simpleMessage("On the way"),
         "order_filter5": MessageLookupByLibrary.simpleMessage("Preparing"),
+        "permission_denied":
+            MessageLookupByLibrary.simpleMessage("Permission Denied!"),
+        "permission_message": MessageLookupByLibrary.simpleMessage(
+            "You have to activate notifications"),
         "phone_number_message": MessageLookupByLibrary.simpleMessage(
             "please enter a valid phone number"),
         "product_details1": MessageLookupByLibrary.simpleMessage("Items"),
@@ -81,6 +88,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "setting4": MessageLookupByLibrary.simpleMessage("About"),
         "setting5": MessageLookupByLibrary.simpleMessage("Feedback"),
         "setting_info1": MessageLookupByLibrary.simpleMessage("HI DEAR!"),
+        "settings_dialog": MessageLookupByLibrary.simpleMessage("Settings"),
         "shop_now_button": MessageLookupByLibrary.simpleMessage("Shop Now"),
         "sp": MessageLookupByLibrary.simpleMessage("S.P"),
         "special_offer": MessageLookupByLibrary.simpleMessage("Special Offer"),

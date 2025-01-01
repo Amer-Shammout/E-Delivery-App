@@ -59,6 +59,11 @@
     "full_name_message":"يرجى إدخال اسم كامل مكون من ثلاثة كلمات على الأكثر فقط",
     "full_name_message2":"أدخل اسم صالح!",
     "verification_message":"تم إرسال رمز التحقق إليك!",
-    "default_user_message":"أيها المستخدم"
-
+    "default_user_message":"أيها المستخدم",
+    "settings_dialog":"الاعدادات",
+    "cancel_dialog":"إلغاء",
+    "permission_denied":"الإذن مطلوب!",
+    "permission_message":"يجب عليك تفعيل الاشعارات",
+    "active":"مفعّلة",
+    "inactive":"غير مفعّلة"
 }

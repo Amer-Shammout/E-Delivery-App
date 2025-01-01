@@ -659,6 +659,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Settings`
+  String get settings_dialog {
+    return Intl.message(
+      'Settings',
+      name: 'settings_dialog',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel_dialog {
+    return Intl.message(
+      'Cancel',
+      name: 'cancel_dialog',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Permission Denied!`
+  String get permission_denied {
+    return Intl.message(
+      'Permission Denied!',
+      name: 'permission_denied',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You have to activate notifications`
+  String get permission_message {
+    return Intl.message(
+      'You have to activate notifications',
+      name: 'permission_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Activated`
+  String get active {
+    return Intl.message(
+      'Activated',
+      name: 'active',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Inactivated`
+  String get inactive {
+    return Intl.message(
+      'Inactivated',
+      name: 'inactive',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

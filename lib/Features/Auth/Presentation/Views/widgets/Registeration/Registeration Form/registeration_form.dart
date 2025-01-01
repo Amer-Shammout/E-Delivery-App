@@ -12,8 +12,11 @@ import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/Register
 import 'package:e_delivery_app/Features/Auth/Presentation/manager/register_cubit/register_cubit.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class RegisterationForm extends StatefulWidget {
   const RegisterationForm({super.key});
@@ -61,7 +64,8 @@ class _RegisterationFormState extends State<RegisterationForm> {
               onSaved: (inputPhoneNumber) {
                 phoneNumber = "+963$inputPhoneNumber";
               },
-              validator: (phoneNumber) =>  Validation.validatePhoneNumber(phoneNumber,context),
+              validator: (phoneNumber) =>
+                  Validation.validatePhoneNumber(phoneNumber, context),
             ),
           ),
           const SizedBox(
@@ -71,18 +75,23 @@ class _RegisterationFormState extends State<RegisterationForm> {
             fillColor: Theme.of(context).colorScheme.primary,
             style: AppStyles.fontsSemiBold20(context),
             onPressed: () async {
-              if (_formKey.currentState!.validate()) {
-                _formKey.currentState!.save();
-                log(Prefs.getString('id'));
-                RegisterationModel registerationModel = RegisterationModel(
-                  phoneNumber: phoneNumber!,
-                  fcmToken: FirebaseNotification.fcmToken!,
-                );
-                BlocProvider.of<RegisterCubit>(context)
-                    .register(registerationModel);
+              if (FirebaseNotification.isActive ?? false) {
+                if (_formKey.currentState!.validate()) {
+                  _formKey.currentState!.save();
+                  log(Prefs.getString('id'));
+                  RegisterationModel registerationModel = RegisterationModel(
+                    phoneNumber: phoneNumber!,
+                    fcmToken: FirebaseNotification.fcmToken!,
+                  );
+                  BlocProvider.of<RegisterCubit>(context)
+                      .register(registerationModel);
+                } else {
+                  _isAutoValidate = AutovalidateMode.always;
+                  setState(() {});
+                }
               } else {
-                _isAutoValidate = AutovalidateMode.always;
-                setState(() {});
+                await showAlertDialog();
+                await FirebaseNotification.getFCMToken();
               }
             },
             title: S.of(context).register_button,
@@ -92,4 +101,31 @@ class _RegisterationFormState extends State<RegisterationForm> {
       ),
     );
   }
+
+  showAlertDialog() => showCupertinoDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (context) => CupertinoAlertDialog(
+          title: Text(S.of(context).permission_denied),
+          content: Text(S.of(context).permission_message),
+          actions: [
+            CupertinoDialogAction(
+              textStyle: AppStyles.fontsRegular20(context),
+              child: Text(S.of(context).cancel_dialog),
+              onPressed: () {
+                GoRouter.of(context).pop();
+              },
+            ),
+            CupertinoDialogAction(
+              textStyle: AppStyles.fontsBold20(context)
+                  .copyWith(color: Theme.of(context).colorScheme.primary),
+              onPressed: () {
+                openAppSettings();
+              },
+              isDefaultAction: true,
+              child: Text(S.of(context).settings_dialog),
+            ),
+          ],
+        ),
+      );
 }
