@@ -13,12 +13,12 @@ import 'package:e_delivery_app/constants.dart';
 
 class StoreDetailsRepoImpl extends StoreDetailsRepo {
   @override
-  Future<Either<Failure, List<String>>> getStoreCategories(int storeId) async {
+  Future<Either<Failure, List<dynamic>>> getStoreCategories(int storeId) async {
     try {
       Response response = await getIt.get<DioClient>().get(
             '$kStores/$storeId/$kCategories',
           );
-      List<String> productCategories = response.data;
+      List<dynamic> productCategories = response.data;
       return right(productCategories);
     } on DioException catch (e) {
       return left(ServerFailure.fromDioError(e));

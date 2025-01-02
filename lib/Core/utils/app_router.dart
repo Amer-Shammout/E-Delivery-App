@@ -19,6 +19,9 @@ import 'package:e_delivery_app/Features/Profile/Presentation/manager/update_name
 import 'package:e_delivery_app/Features/Profile/data/repos/profile_repo_impl.dart';
 import 'package:e_delivery_app/Features/Search/Presentation/Views/search_view.dart';
 import 'package:e_delivery_app/Features/Store%20Details/Presentation/Views/store_details_view.dart';
+import 'package:e_delivery_app/Features/Store%20Details/Presentation/manager/get_store_categories_cubit/get_store_categories_cubit.dart';
+import 'package:e_delivery_app/Features/Store%20Details/Presentation/manager/get_store_products_cubit/get_store_products_cubit.dart';
+import 'package:e_delivery_app/Features/Store%20Details/data/repos/store_details_repo_impl.dart';
 import 'package:e_delivery_app/Features/Stores/data/models/store_model.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
@@ -109,8 +112,22 @@ abstract class AppRouter {
         path: kStoreDetailsView,
         name: kStoreDetailsName,
         pageBuilder: (context, state) => MaterialPage(
-            child: StoreDetailsView(
-          storeModel: state.extra as StoreModel,
+            child: MultiBlocProvider(
+          providers: [
+            BlocProvider(
+              create: (context) => GetStoreCategoriesCubit(
+                getIt.get<StoreDetailsRepoImpl>(),
+              ),
+            ),
+            BlocProvider(
+              create: (context) => GetStoreProductsCubit(
+                getIt.get<StoreDetailsRepoImpl>(),
+              ),
+            ),
+          ],
+          child: StoreDetailsView(
+            storeModel: state.extra as StoreModel,
+          ),
         )),
       ),
       GoRoute(

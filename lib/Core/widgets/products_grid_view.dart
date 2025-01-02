@@ -1,8 +1,11 @@
+import 'package:e_delivery_app/Core/Data/Models/product_model/product_model.dart';
 import 'package:e_delivery_app/Core/widgets/Custom%20Product/custom_product.dart';
 import 'package:flutter/material.dart';
 
 class ProductsGridView extends StatelessWidget {
-  const ProductsGridView({super.key});
+  const ProductsGridView({super.key, @required this.products});
+
+  final List<ProductModel>? products;
 
   @override
   Widget build(BuildContext context) {

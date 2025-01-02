@@ -1,10 +1,8 @@
-import 'package:e_delivery_app/Core/utils/assets.dart';
-import 'package:e_delivery_app/Core/utils/functions/set_theme_colors.dart';
+import 'package:e_delivery_app/Core/widgets/my_app_loading_indicator.dart';
 import 'package:e_delivery_app/Features/Stores/Presentation/Views/widgets/stores_list_view.dart';
 import 'package:e_delivery_app/Features/Stores/Presentation/manager/get_stores_cubit/get_stores_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:lottie/lottie.dart';
 
 class StoresListViewBuilder extends StatelessWidget {
   const StoresListViewBuilder({super.key});
@@ -22,17 +20,13 @@ class StoresListViewBuilder extends StatelessWidget {
         } else {
           return SliverFillRemaining(
             child: Center(
-              child: Lottie.asset(
-                SetThemeColors.isDarkMode(context)
-                    ? Assets.lottieLoadingDark
-                    : Assets.lottieLoadingLight,
-                height: 100,
-                width: 100,
-              ),
+              child: myAppLottieIndicator(context),
             ),
           );
         }
       },
     );
   }
+
+ 
 }

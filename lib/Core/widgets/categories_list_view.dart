@@ -3,7 +3,9 @@ import 'package:e_delivery_app/Core/widgets/custom_widget_with_dash.dart';
 import 'package:flutter/material.dart';
 
 class CategoriesListView extends StatefulWidget {
-  const CategoriesListView({super.key});
+  const CategoriesListView({super.key, @required this.categories});
+
+  final List<dynamic>? categories;
 
   @override
   State<CategoriesListView> createState() => _CategoriesListViewState();

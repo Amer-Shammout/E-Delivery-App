@@ -18,7 +18,7 @@ final class GetStoreCategoriesFailure extends GetStoreCategoriesState {
 }
 
 final class GetStoreCategoriesSuccess extends GetStoreCategoriesState {
-  final List<String> storeCategories;
+  final List<dynamic> storeCategories;
 
   const GetStoreCategoriesSuccess({required this.storeCategories});
 }
