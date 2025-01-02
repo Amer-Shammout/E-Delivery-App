@@ -207,7 +207,7 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
               }
               if (state is LogoutSuccess) {
                 GoRouter.of(context)
-                    .pushReplacementNamed(AppRouter.kRegisterationName);
+                    .pushReplacementNamed(AppRouter.kRegistrationName);
               }
             },
             builder: (context, state) {

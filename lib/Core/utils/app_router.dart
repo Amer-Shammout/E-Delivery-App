@@ -26,27 +26,27 @@ import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
   static const kLetsGetStartedView = '/';
-  static const kLetsGetStartedName = '/letsGetStartedView';
-  static const kRegisterationView = '/registerationView';
-  static const kRegisterationName = '/registerationView';
+  static const kLetsGetStartedName = 'letsGetStartedView';
+  static const kRegistrationView = '/registrationView';
+  static const kRegistrationName = 'registrationView';
   static const kVerificationView = '/verificationView/:phoneNumber';
-  static const kVerificationName = '/verificationView/:phoneNumber';
+  static const kVerificationName = 'verificationView';
   static const kSettingInfoView = '/settingInfoView';
-  static const kSettingInfoName = '/settingInfoView';
+  static const kSettingInfoName = 'settingInfoView';
   static const kHomeView = '/homeView';
-  static const kHomeName = '/homeView';
+  static const kHomeName = 'homeView';
   static const kAppRoot = '/appRoot';
-  static const kAppRootName = '/appRoot';
+  static const kAppRootName = 'appRoot';
   static const kStoreDetailsView = '/storeDetails';
-  static const kStoreDetailsName = '/storeDetails';
+  static const kStoreDetailsName = 'storeDetails';
   static const kProfileView = '/profileView';
-  static const kProfileName = '/profileView';
+  static const kProfileName = 'profileView';
   static const kSearchView = '/searchView';
-  static const kSearchName = '/searchView';
+  static const kSearchName = 'searchView';
   static const kProductDetailsView = '/productDetailsView';
-  static const kProductDetailsName = '/productDetailsView';
+  static const kProductDetailsName = 'productDetailsView';
   static const kCartView = '/CartView';
-  static const kCartName = '/CartView';
+  static const kCartName = 'CartView';
 
   static bool isAuth = Prefs.getString(kToken) != '';
 
@@ -60,8 +60,8 @@ abstract class AppRouter {
             const MaterialPage(child: LetsGetStartedView()),
       ),
       GoRoute(
-        path: kRegisterationView,
-        name: kRegisterationName,
+        path: kRegistrationView,
+        name: kRegistrationName,
         pageBuilder: (context, state) => MaterialPage(
           child: BlocProvider(
             create: (context) => RegisterCubit(getIt.get<AuthRepoImpl>()),
@@ -114,26 +114,27 @@ abstract class AppRouter {
         path: kProfileView,
         name: kProfileName,
         pageBuilder: (context, state) => MaterialPage(
-            child: MultiBlocProvider(
-          providers: [
-            BlocProvider(
-              create: (context) => LogoutCubit(getIt.get<ProfileRepoImpl>()),
-            ),
-            BlocProvider(
-              create: (context) =>
-                  UpdateNameCubit(getIt.get<ProfileRepoImpl>()),
-            ),
-            BlocProvider(
-              create: (context) =>
-                  UpdateLocationCubit(getIt.get<ProfileRepoImpl>()),
-            ),
-            BlocProvider(
-              create: (context) =>
-                  UpdateImageCubit(getIt.get<ProfileRepoImpl>()),
-            ),
-          ],
-          child: const ProfileView(),
-        )),
+          child: MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (context) => LogoutCubit(getIt.get<ProfileRepoImpl>()),
+              ),
+              BlocProvider(
+                create: (context) =>
+                    UpdateNameCubit(getIt.get<ProfileRepoImpl>()),
+              ),
+              BlocProvider(
+                create: (context) =>
+                    UpdateLocationCubit(getIt.get<ProfileRepoImpl>()),
+              ),
+              BlocProvider(
+                create: (context) =>
+                    UpdateImageCubit(getIt.get<ProfileRepoImpl>()),
+              ),
+            ],
+            child: const ProfileView(),
+          ),
+        ),
       ),
       GoRoute(
         path: kSearchView,

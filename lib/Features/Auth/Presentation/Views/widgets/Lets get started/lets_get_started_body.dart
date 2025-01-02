@@ -40,7 +40,7 @@ class LetsGetStartedBody extends StatelessWidget {
           GlassButton(
             onPressed: () {
               GoRouter.of(context).pushReplacementNamed(
-                AppRouter.kRegisterationName,
+                AppRouter.kRegistrationName,
               );
               log("${Prefs.getString(kToken)}");
               log("${Prefs.getString(kId)}");
