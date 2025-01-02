@@ -10,7 +10,7 @@ class RegisterCubit extends Cubit<RegisterState> {
 
   final AuthRepo _authRepo;
 
-  Future<void> register(RegisterationModel registerModel) async {
+  Future<void> register(RegistrationModel registerModel) async {
     emit(RegisterLoading());
     var result = await _authRepo.register(registerModel);
 

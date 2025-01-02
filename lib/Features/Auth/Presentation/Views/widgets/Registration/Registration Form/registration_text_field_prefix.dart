@@ -3,8 +3,8 @@ import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 
-class RegisterationTextFieldPrefix extends StatelessWidget {
-  const RegisterationTextFieldPrefix({
+class RegistrationTextFieldPrefix extends StatelessWidget {
+  const RegistrationTextFieldPrefix({
     super.key,
   });
 

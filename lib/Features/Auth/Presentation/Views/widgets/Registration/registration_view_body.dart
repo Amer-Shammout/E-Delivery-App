@@ -3,27 +3,24 @@ import 'package:e_delivery_app/Core/utils/functions/set_theme_colors.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_background_container.dart';
 import 'package:e_delivery_app/Core/widgets/custom_widget_with_dash.dart';
-import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/Verification/Verification%20Form/verification_form.dart';
-import 'package:e_delivery_app/Features/Auth/Presentation/manager/verification_cubit/verification_cubit.dart';
+import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/Registration/Registration%20Form/registration_form.dart';
+import 'package:e_delivery_app/Features/Auth/Presentation/manager/register_cubit/register_cubit.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
-class VerificationViewBody extends StatelessWidget {
-  const VerificationViewBody({
+class RegistrationViewBody extends StatelessWidget {
+  const RegistrationViewBody({
     super.key,
-    required this.phoneNumber,
     required this.state,
   });
-
-  final String phoneNumber;
-  final VerificationState state;
+  final RegisterState state;
   @override
   Widget build(BuildContext context) {
     return ModalProgressHUD(
-      inAsyncCall: (state is VerificationLoading),
+      inAsyncCall: (state is RegisterLoading),
       progressIndicator: Lottie.asset(
         SetThemeColors.isDarkMode(context)
             ? Assets.lottieLoadingDark
@@ -51,7 +48,7 @@ class VerificationViewBody extends StatelessWidget {
                         child: CustomWidgetWithDash(
                           dashColor: Theme.of(context).colorScheme.primary,
                           widget: Text(
-                            S.of(context).verification1,
+                            S.of(context).register1,
                             style: AppStyles.fontsBlack48(context).copyWith(
                                 color: Theme.of(context).colorScheme.primary),
                           ),
@@ -60,9 +57,7 @@ class VerificationViewBody extends StatelessWidget {
                       SizedBox(
                         height: MediaQuery.sizeOf(context).height * .12,
                       ),
-                      VerificationForm(
-                        phoneNumber: phoneNumber,
-                      ),
+                      const RegistrationForm(),
                       SizedBox(
                         height: MediaQuery.sizeOf(context).height * .36,
                       ),
@@ -70,8 +65,8 @@ class VerificationViewBody extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  right: -60,
-                  bottom: 20,
+                  left: -60,
+                  bottom: -50,
                   child: Container(
                     decoration: BoxDecoration(
                       boxShadow: [
@@ -83,9 +78,9 @@ class VerificationViewBody extends StatelessWidget {
                       ],
                     ),
                     child: Image.asset(
-                      width: MediaQuery.sizeOf(context).width - 50,
+                      width: MediaQuery.sizeOf(context).width,
                       fit: BoxFit.scaleDown,
-                      Assets.imagesTruck,
+                      Assets.imagesBoxes,
                     ),
                   ),
                 ),

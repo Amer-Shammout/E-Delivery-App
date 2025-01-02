@@ -8,7 +8,7 @@ import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/c_t_a_button.dart';
 import 'package:e_delivery_app/Core/widgets/custom_text_form_field.dart';
 import 'package:e_delivery_app/Features/Auth/Data/Models/registeration_model.dart';
-import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/Registeration/Registeration%20Form/registeration_text_field_prefix.dart';
+import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/Registration/Registration%20Form/registration_text_field_prefix.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/manager/register_cubit/register_cubit.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
@@ -18,14 +18,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-class RegisterationForm extends StatefulWidget {
-  const RegisterationForm({super.key});
+class RegistrationForm extends StatefulWidget {
+  const RegistrationForm({super.key});
 
   @override
-  State<RegisterationForm> createState() => _RegisterationFormState();
+  State<RegistrationForm> createState() => _RegistrationFormState();
 }
 
-class _RegisterationFormState extends State<RegisterationForm> {
+class _RegistrationFormState extends State<RegistrationForm> {
   final GlobalKey<FormState> _formKey = GlobalKey();
   AutovalidateMode _isAutoValidate = AutovalidateMode.disabled;
   String? phoneNumber;
@@ -60,7 +60,7 @@ class _RegisterationFormState extends State<RegisterationForm> {
               maxLength: 9,
               hint: '9xx xxx xxx',
               textInputType: TextInputType.number,
-              prefix: const RegisterationTextFieldPrefix(),
+              prefix: const RegistrationTextFieldPrefix(),
               onSaved: (inputPhoneNumber) {
                 phoneNumber = "+963$inputPhoneNumber";
               },
@@ -79,7 +79,7 @@ class _RegisterationFormState extends State<RegisterationForm> {
                 if (_formKey.currentState!.validate()) {
                   _formKey.currentState!.save();
                   log(Prefs.getString('id'));
-                  RegisterationModel registerationModel = RegisterationModel(
+                  RegistrationModel registerationModel = RegistrationModel(
                     phoneNumber: phoneNumber!,
                     fcmToken: FirebaseNotification.fcmToken!,
                   );

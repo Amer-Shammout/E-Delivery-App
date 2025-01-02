@@ -10,7 +10,7 @@ import 'package:e_delivery_app/Core/utils/functions/validation.dart';
 import 'package:e_delivery_app/Core/widgets/Setting%20Info/custom_image_picker.dart';
 import 'package:e_delivery_app/Core/widgets/Setting%20Info/custom_map.dart';
 import 'package:e_delivery_app/Core/widgets/custom_text_form_field.dart';
-import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/Registeration/Registeration%20Form/registeration_text_field_prefix.dart';
+import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/Registration/Registration%20Form/registration_text_field_prefix.dart';
 import 'package:e_delivery_app/Features/Profile/Presentation/Views/widgets/logout_button_builder.dart';
 import 'package:e_delivery_app/Features/Profile/Presentation/Views/widgets/name_text_field_suffix_icon_builder.dart';
 import 'package:e_delivery_app/Features/Profile/Presentation/manager/logout_cubit/logout_cubit.dart';
@@ -147,7 +147,7 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
                         initialValue:
                             user.phoneNumber!.replaceFirst('+963', ''),
                         textInputType: TextInputType.number,
-                        prefix: const RegisterationTextFieldPrefix(),
+                        prefix: const RegistrationTextFieldPrefix(),
                         validator: (phoneNumber) =>
                             Validation.validatePhoneNumber(
                                 phoneNumber, context),
@@ -207,7 +207,7 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
               }
               if (state is LogoutSuccess) {
                 GoRouter.of(context)
-                    .pushReplacementNamed(AppRouter.kRegisterationName);
+                    .pushReplacementNamed(AppRouter.kRegistrationName);
               }
             },
             builder: (context, state) {
