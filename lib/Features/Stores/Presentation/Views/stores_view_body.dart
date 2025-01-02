@@ -21,7 +21,7 @@ class StoresViewBody extends StatelessWidget {
           child: CustomSearchBar(
             isEnabled: false,
             onTap: () {
-              GoRouter.of(context).push(
+              GoRouter.of(context).pushNamed(
                 AppRouter.kSearchName,
               );
             },

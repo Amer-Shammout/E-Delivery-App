@@ -26,7 +26,7 @@ class OrdersViewBody extends StatelessWidget {
                 CustomSearchBar(
                   isEnabled: false,
                   onTap: () {
-                    GoRouter.of(context).push(
+                    GoRouter.of(context).pushNamed(
                       AppRouter.kSearchName,
                     );
                   },

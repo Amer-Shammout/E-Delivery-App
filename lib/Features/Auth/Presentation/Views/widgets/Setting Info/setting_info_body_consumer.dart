@@ -15,7 +15,7 @@ class SettingInfoBodyConsumer extends StatelessWidget {
       listener: (context, state) {
         if (state is SettingInfoSuccess) {
           GoRouter.of(context)
-              .pushReplacement(AppRouter.kAppRootName, extra: state.user);
+              .pushReplacementNamed(AppRouter.kAppRootName, extra: state.user);
         }
         if (state is SettingInfoFailure) {
           showFailureSnackBar(state.errMessage, context);
