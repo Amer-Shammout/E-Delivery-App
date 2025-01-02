@@ -9,7 +9,7 @@ class CustomSettingTile extends StatelessWidget {
       {super.key,
       required this.settingItem,
       required this.trailing,
-       this.onTap});
+      this.onTap});
 
   final SettingsModel settingItem;
   final Widget trailing;

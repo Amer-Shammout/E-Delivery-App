@@ -1,7 +1,7 @@
 import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/widgets/App%20Bar/custom_search_bar.dart';
 import 'package:e_delivery_app/Core/widgets/App%20Bar/status_app_bar_builder.dart';
-import 'package:e_delivery_app/Features/Stores/Presentation/Views/widgets/stores_list_view.dart';
+import 'package:e_delivery_app/Features/Stores/Presentation/Views/widgets/stores_list_view_builder.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -36,7 +36,7 @@ class StoresViewBody extends StatelessWidget {
           padding: EdgeInsets.symmetric(
             horizontal: kHorizontalPadding,
           ),
-          sliver: StoresListView(),
+          sliver: StoresListViewBuilder(),
         ),
       ],
     );

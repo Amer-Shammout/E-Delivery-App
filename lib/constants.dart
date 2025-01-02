@@ -16,5 +16,6 @@ const kVerificationUrl = "auth/verify";
 const kResendOTPUrl = "auth/resend-otp";
 const kUpdateUserUrl = "users";
 const kLogoutUrl = "auth/logout";
+const kStores = "stores";
 const String kToken = 'token';
 const kId = 'id';

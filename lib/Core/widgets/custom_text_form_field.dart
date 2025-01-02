@@ -18,7 +18,8 @@ class CustomTextFormField extends StatelessWidget {
       this.initialValue,
       this.isEnabled = true,
       this.onSaved,
-      this.onTap, this.onFieldSubmitted});
+      this.onTap,
+      this.onFieldSubmitted});
 
   final String? hint;
   final int? maxLength;

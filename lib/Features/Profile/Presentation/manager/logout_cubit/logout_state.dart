@@ -21,5 +21,4 @@ final class LogoutSuccess extends LogoutState {
   final Response response;
 
   const LogoutSuccess({required this.response});
-
 }

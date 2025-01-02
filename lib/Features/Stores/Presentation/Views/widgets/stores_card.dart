@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/widgets/custom_card_pattern.dart';
 import 'package:e_delivery_app/Core/widgets/custom_container.dart';
@@ -27,8 +28,8 @@ class StoresCard extends StatelessWidget {
             height: 70,
             child: AspectRatio(
               aspectRatio: 200 / 65,
-              child: Image.asset(
-                storeLogo,
+              child: CachedNetworkImage(
+                imageUrl: storeLogo,
               ),
             ),
           ),

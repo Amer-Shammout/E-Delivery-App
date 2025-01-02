@@ -100,8 +100,7 @@ abstract class AppRouter {
         name: kAppRootName,
         pageBuilder: (context, state) {
           return const MaterialPage(
-            child: AppWithNavBar(
-            ),
+            child: AppWithNavBar(),
           );
         },
       ),

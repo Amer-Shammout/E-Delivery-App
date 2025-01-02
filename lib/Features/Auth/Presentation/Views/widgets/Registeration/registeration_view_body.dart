@@ -42,8 +42,7 @@ class RegisterationViewBody extends StatelessWidget {
           inAsyncCall: (state is RegisterLoading),
           progressIndicator: Lottie.asset(
             SetThemeColors.isDarkMode(context)
-                ?
-                 Assets.lottieLoadingDark
+                ? Assets.lottieLoadingDark
                 : Assets.lottieLoadingLight,
             height: 100,
             width: 100,

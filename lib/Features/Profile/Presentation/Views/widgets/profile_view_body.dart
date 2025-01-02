@@ -170,10 +170,8 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
                             }
                           },
                           child: CustomMap(
-                            latitide:
-                                double.parse(user.latitude ?? '0'),
-                            longitude:
-                                double.parse(user.longitude ?? '0'),
+                            latitide: double.parse(user.latitude ?? '0'),
+                            longitude: double.parse(user.longitude ?? '0'),
                             getUserLocation: () async {
                               showWaitSnackBar(context);
                               LocationData? userLocation =
