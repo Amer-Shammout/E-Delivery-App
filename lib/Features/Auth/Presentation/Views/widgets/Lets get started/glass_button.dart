@@ -1,7 +1,9 @@
 import 'dart:ui';
 
 import 'package:e_delivery_app/Core/utils/assets.dart';
+import 'package:e_delivery_app/Core/utils/functions/localizations_funs.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
+import 'package:e_delivery_app/Core/utils/styles/shadows.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -44,7 +46,7 @@ class GlassButton extends StatelessWidget {
             ),
             borderRadius: BorderRadius.circular(24),
             boxShadow: const [
-              // Shadows.glassDropShadow,
+              Shadows.glassDropShadow,
             ],
           ),
           child: ElevatedButton(
@@ -64,12 +66,15 @@ class GlassButton extends StatelessWidget {
                 const SizedBox(
                   width: 2 * kSpacing,
                 ),
-                SvgPicture.asset(
-                  Assets.iconsGetStartedArrow,
-                  width: 16,
-                  height: 16,
-                  colorFilter:
-                      const ColorFilter.mode(kWhiteColor, BlendMode.srcATop),
+                RotatedBox(
+                  quarterTurns: LocalizationsFuns.isArabic(context) ? 2 : 0,
+                  child: SvgPicture.asset(
+                    Assets.iconsGetStartedArrow,
+                    width: 16,
+                    height: 16,
+                    colorFilter:
+                        const ColorFilter.mode(kWhiteColor, BlendMode.srcATop),
+                  ),
                 )
               ],
             ),

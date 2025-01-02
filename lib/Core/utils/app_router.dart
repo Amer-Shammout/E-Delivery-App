@@ -3,7 +3,7 @@ import 'package:e_delivery_app/Core/services/shared_preferences_singleton.dart';
 import 'package:e_delivery_app/Core/widgets/app_with_nav_bar.dart';
 import 'package:e_delivery_app/Features/Auth/Data/repos/auth_repo_impl.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/lets_get_started_view.dart';
-import 'package:e_delivery_app/Features/Auth/Presentation/Views/registeration_view.dart';
+import 'package:e_delivery_app/Features/Auth/Presentation/Views/registration_view.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/setting_info_view.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/verification_view.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/manager/register_cubit/register_cubit.dart';
@@ -65,7 +65,7 @@ abstract class AppRouter {
         pageBuilder: (context, state) => MaterialPage(
           child: BlocProvider(
             create: (context) => RegisterCubit(getIt.get<AuthRepoImpl>()),
-            child: const RegisterationView(),
+            child: const RegistrationView(),
           ),
         ),
       ),
@@ -100,8 +100,7 @@ abstract class AppRouter {
         name: kAppRootName,
         pageBuilder: (context, state) {
           return const MaterialPage(
-            child: AppWithNavBar(
-            ),
+            child: AppWithNavBar(),
           );
         },
       ),

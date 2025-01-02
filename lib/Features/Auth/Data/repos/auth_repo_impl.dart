@@ -18,7 +18,7 @@ import 'package:e_delivery_app/constants.dart';
 class AuthRepoImpl extends AuthRepo {
   @override
   Future<Either<Failure, bool>> register(
-      RegisterationModel registerModel) async {
+      RegistrationModel registerModel) async {
     try {
       await getIt
           .get<DioClient>()

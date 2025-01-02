@@ -1,9 +1,9 @@
-class RegisterationModel {
+class RegistrationModel {
   final String phoneNumber, fcmToken;
 
-  RegisterationModel({required this.phoneNumber, required this.fcmToken});
+  RegistrationModel({required this.phoneNumber, required this.fcmToken});
 
-   Map<String, dynamic> toJson() {
+  Map<String, dynamic> toJson() {
     return {
       'fcm_token': fcmToken,
       'phone_number': phoneNumber,
