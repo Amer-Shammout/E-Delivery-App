@@ -1,7 +1,7 @@
-import 'package:bloc/bloc.dart';
 import 'package:e_delivery_app/Core/Data/Models/user.dart';
 import 'package:e_delivery_app/Core/Data/Repos/app_repo.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'get_user_state.dart';
 

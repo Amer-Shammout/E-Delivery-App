@@ -119,7 +119,6 @@ class ProfileRepoImpl extends ProfileRepo {
 
   @override
   Future<Either<Failure, Response>> updatePhoneNumber(String newPhoneNumber) {
-    // TODO: implement updatePhoneNumber
     throw UnimplementedError();
   }
 }
