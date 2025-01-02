@@ -1,6 +1,7 @@
-import 'package:e_delivery_app/Core/utils/assets.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_background_container.dart';
+import 'package:e_delivery_app/Features/Stores/data/models/store_model.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +9,10 @@ import 'package:flutter/material.dart';
 class StoreDetailsAppBarFlexibleSpace extends StatelessWidget {
   const StoreDetailsAppBarFlexibleSpace({
     super.key,
+    required this.storeModel,
   });
+
+  final StoreModel storeModel;
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +25,8 @@ class StoreDetailsAppBarFlexibleSpace extends StatelessWidget {
           ),
           child: Column(
             children: [
-              Image.asset(
-                Assets.imagesSmatelLogoTest,
+              CachedNetworkImage(
+                imageUrl: storeModel.image!,
                 width: 250,
                 height: 80,
               ),
@@ -30,13 +34,13 @@ class StoreDetailsAppBarFlexibleSpace extends StatelessWidget {
                 height: kSpacing * 2,
               ),
               Text(
-                'Samatel Store',
+                storeModel.name!,
                 style: AppStyles.fontsBold18(context)
                     .copyWith(color: Theme.of(context).colorScheme.error),
                 textAlign: TextAlign.center,
               ),
               Text(
-                '100${S.of(context).product_details1}',
+                '100 ${S.of(context).product_details1}',
                 style: AppStyles.fontsRegular12(context).copyWith(
                     color: Theme.of(context).colorScheme.error.withOpacity(.6)),
                 textAlign: TextAlign.center,

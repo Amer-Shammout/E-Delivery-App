@@ -19,6 +19,7 @@ import 'package:e_delivery_app/Features/Profile/Presentation/manager/update_name
 import 'package:e_delivery_app/Features/Profile/data/repos/profile_repo_impl.dart';
 import 'package:e_delivery_app/Features/Search/Presentation/Views/search_view.dart';
 import 'package:e_delivery_app/Features/Store%20Details/Presentation/Views/store_details_view.dart';
+import 'package:e_delivery_app/Features/Stores/data/models/store_model.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -107,8 +108,10 @@ abstract class AppRouter {
       GoRoute(
         path: kStoreDetailsView,
         name: kStoreDetailsName,
-        pageBuilder: (context, state) =>
-            const MaterialPage(child: StoreDetailsView()),
+        pageBuilder: (context, state) => MaterialPage(
+            child: StoreDetailsView(
+          storeModel: state.extra as StoreModel,
+        )),
       ),
       GoRoute(
         path: kProfileView,
@@ -151,7 +154,9 @@ abstract class AppRouter {
       GoRoute(
         path: kCartView,
         name: kCartName,
-        pageBuilder: (context, state) => const MaterialPage(child: CartView()),
+        pageBuilder: (context, state) => const MaterialPage(
+          child: CartView(),
+        ),
       ),
     ],
   );

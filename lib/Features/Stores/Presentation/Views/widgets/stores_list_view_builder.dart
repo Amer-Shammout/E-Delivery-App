@@ -20,12 +20,14 @@ class StoresListViewBuilder extends StatelessWidget {
         } else if (state is GetStoresFailure) {
           return SliverToBoxAdapter(child: Text(state.errMessage));
         } else {
-          return SliverToBoxAdapter(
+          return SliverFillRemaining(
             child: Center(
               child: Lottie.asset(
                 SetThemeColors.isDarkMode(context)
                     ? Assets.lottieLoadingDark
                     : Assets.lottieLoadingLight,
+                height: 100,
+                width: 100,
               ),
             ),
           );
