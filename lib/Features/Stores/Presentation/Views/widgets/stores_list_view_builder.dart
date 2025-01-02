@@ -1,7 +1,7 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/functions/set_theme_colors.dart';
 import 'package:e_delivery_app/Features/Stores/Presentation/Views/widgets/stores_list_view.dart';
-import 'package:e_delivery_app/Features/Stores/Presentation/manager/cubit/get_stores_cubit.dart';
+import 'package:e_delivery_app/Features/Stores/Presentation/manager/get_stores_cubit/get_stores_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';

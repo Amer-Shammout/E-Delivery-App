@@ -10,7 +10,7 @@ import 'package:e_delivery_app/Features/Auth/Data/repos/auth_repo_impl.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/manager/setting_info_cubit/setting_info_cubit.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Manager/localization_cubit/localization_cubit.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Manager/theme_cubit/theme_cubit.dart';
-import 'package:e_delivery_app/Features/Stores/Presentation/manager/cubit/get_stores_cubit.dart';
+import 'package:e_delivery_app/Features/Stores/Presentation/manager/get_stores_cubit/get_stores_cubit.dart';
 import 'package:e_delivery_app/Features/Stores/data/repos/stores_repo_impl.dart';
 import 'package:e_delivery_app/firebase_options.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
