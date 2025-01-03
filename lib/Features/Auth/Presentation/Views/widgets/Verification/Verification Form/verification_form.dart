@@ -4,7 +4,7 @@ import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/functions/show_snack_bar.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/c_t_a_button.dart';
-import 'package:e_delivery_app/Core/widgets/custom_circular_progress_indicator.dart';
+import 'package:e_delivery_app/Core/widgets/loading/custom_circular_progress_indicator.dart';
 import 'package:e_delivery_app/Core/widgets/custom_text_button.dart';
 import 'package:e_delivery_app/Features/Auth/Data/Models/resend_code_model.dart';
 import 'package:e_delivery_app/Features/Auth/Data/Models/verification_model.dart';

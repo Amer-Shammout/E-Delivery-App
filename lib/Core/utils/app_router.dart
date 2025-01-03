@@ -56,7 +56,7 @@ abstract class AppRouter {
   static bool isAuth = Prefs.getString(kToken) != '';
 
   static final router = GoRouter(
-    // initialLocation: isAuth ? kAppRoot : kLetsGetStartedView,
+    initialLocation: isAuth ? kAppRoot : kLetsGetStartedView,
     routes: [
       GoRoute(
         name: kLetsGetStartedName,

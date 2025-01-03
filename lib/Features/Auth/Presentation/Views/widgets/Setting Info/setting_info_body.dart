@@ -1,7 +1,7 @@
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_background_container.dart';
 import 'package:e_delivery_app/Core/widgets/custom_widget_with_dash.dart';
-import 'package:e_delivery_app/Core/widgets/my_app_loading_indicator.dart';
+import 'package:e_delivery_app/Core/widgets/loading/my_app_loading_indicator.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/Setting%20Info/Setting%20info%20form/setting_info_form.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/manager/setting_info_cubit/setting_info_cubit.dart';
 import 'package:e_delivery_app/constants.dart';

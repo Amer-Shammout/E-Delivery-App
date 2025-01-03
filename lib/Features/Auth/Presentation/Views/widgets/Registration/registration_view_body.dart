@@ -2,7 +2,7 @@ import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_background_container.dart';
 import 'package:e_delivery_app/Core/widgets/custom_widget_with_dash.dart';
-import 'package:e_delivery_app/Core/widgets/my_app_loading_indicator.dart';
+import 'package:e_delivery_app/Core/widgets/loading/my_app_loading_indicator.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/Registration/Registration%20Form/registration_form.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/manager/register_cubit/register_cubit.dart';
 import 'package:e_delivery_app/constants.dart';
