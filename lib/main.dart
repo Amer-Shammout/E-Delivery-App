@@ -8,6 +8,8 @@ import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_theme.dart';
 import 'package:e_delivery_app/Features/Auth/Data/repos/auth_repo_impl.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/manager/setting_info_cubit/setting_info_cubit.dart';
+import 'package:e_delivery_app/Features/Home/Data/Repos/home_repo_impl.dart';
+import 'package:e_delivery_app/Features/Home/Presentation/Manager/Cubits/get_products_by_category_cubit/get_products_by_category_cubit.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Manager/localization_cubit/localization_cubit.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Manager/theme_cubit/theme_cubit.dart';
 import 'package:e_delivery_app/Features/Stores/Presentation/manager/get_stores_cubit/get_stores_cubit.dart';
@@ -78,6 +80,11 @@ class EDelivery extends StatelessWidget {
           create: (context) =>
               GetStoresCubit(getIt.get<StoresRepoImpl>())..getStores(),
         ),
+        BlocProvider(
+          create: (context) => GetProductsByCategoryCubit(
+            getIt.get<HomeRepoImpl>()..getProductByCategory("All"),
+          ),
+        )
       ],
       child: BlocBuilder<LocalizationCubit, String>(
         builder: (context, lang) {

@@ -12,10 +12,6 @@ import 'package:e_delivery_app/Features/Home/Data/Repos/home_repo.dart';
 import 'package:e_delivery_app/constants.dart';
 
 class HomeRepoImpl extends HomeRepo {
-  String token;
-
-  HomeRepoImpl({required this.token});
-
   @override
   Future<Either<Failure, List<ProductModel>>> getOffers() {
     // TODO: implement getOffers
@@ -26,7 +22,7 @@ class HomeRepoImpl extends HomeRepo {
   Future<Either<Failure, List<ProductModel>>> getProductByCategory(
       String category) async {
     try {
-      token = Prefs.getString(kToken);
+      String token = Prefs.getString(kToken);
       Response response = await getIt.get<DioClient>().get(
             kGetProductsByCategories + category,
             options: Options(headers: {"Authorization": "Bearer $token"}),

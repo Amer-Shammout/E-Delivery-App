@@ -3,6 +3,7 @@ import 'package:e_delivery_app/Core/widgets/App%20Bar/custom_search_bar.dart';
 import 'package:e_delivery_app/Core/widgets/App%20Bar/status_app_bar_builder.dart';
 import 'package:e_delivery_app/Core/widgets/categories_list_view.dart';
 import 'package:e_delivery_app/Core/widgets/products_grid_view.dart';
+import 'package:e_delivery_app/Features/Home/Presentation/Views/widgets/products_grid_view_builder.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/Features/Home/Presentation/Views/widgets/offers_page_view/offers_page_view.dart';
 import 'package:flutter/material.dart';
@@ -36,7 +37,7 @@ class HomeViewBody extends StatelessWidget {
         const PinnedHeaderSliver(
           child: CategoriesListView(),
         ),
-        const ProductsGridView(),
+        const ProductsGridViewBuilder(),
         const SliverToBoxAdapter(
           child: SizedBox(
             height: kSpacing * 4,
