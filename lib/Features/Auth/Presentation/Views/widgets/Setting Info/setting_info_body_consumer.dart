@@ -14,8 +14,7 @@ class SettingInfoBodyConsumer extends StatelessWidget {
     return BlocConsumer<SettingInfoCubit, SettingInfoState>(
       listener: (context, state) {
         if (state is SettingInfoSuccess) {
-          GoRouter.of(context)
-              .pushReplacementNamed(AppRouter.kAppRootName, extra: state.user);
+          GoRouter.of(context).pushReplacementNamed(AppRouter.kAppRootName);
         }
         if (state is SettingInfoFailure) {
           showFailureSnackBar(state.errMessage, context);
