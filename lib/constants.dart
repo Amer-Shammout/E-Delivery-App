@@ -21,3 +21,4 @@ const kProducts = "stores";
 const kCategories = "categories";
 const String kToken = 'token';
 const kId = 'id';
+const kGetProductsByCategories = "products/category/";
