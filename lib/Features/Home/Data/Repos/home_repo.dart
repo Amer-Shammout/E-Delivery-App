@@ -6,5 +6,5 @@ abstract class HomeRepo {
   Future<Either<Failure, List<ProductModel>>> getProductByCategory(
       String category);
   Future<Either<Failure, List<ProductModel>>> getOffers();
-  Future<Either<Failure, List<String>>> getCategories();
+  Future<Either<Failure, List<dynamic>>> getCategories();
 }

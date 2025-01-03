@@ -58,7 +58,7 @@ class HomeRepoImpl extends HomeRepo {
   }
 
   @override
-  Future<Either<Failure, List<String>>> getCategories() async {
+  Future<Either<Failure, List<dynamic>>> getCategories() async {
     try {
       String token = Prefs.getString(kToken);
       Response response = await getIt.get<DioClient>().get(
