@@ -13,11 +13,11 @@ class ProductsGridViewBuilder extends StatelessWidget {
       builder: (context, state) {
         if (state is GetProductsByCategorySuccess) {
           return ProductsGridView(products: state.products);
+        } else if (state is GetProductsByCategoryFailure) {
+          return SliverToBoxAdapter(child: Text(state.errMessage));
+        } else {
+          return const ProductsGridViewLoading();
         }
-        if (state is GetProductsByCategoryFailure) {
-          return Text(state.errMessage);
-        }
-        return const ProductsGridViewLoading();
       },
     );
   }

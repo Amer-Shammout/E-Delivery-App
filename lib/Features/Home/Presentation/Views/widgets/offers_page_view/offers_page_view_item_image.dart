@@ -1,4 +1,4 @@
-import 'package:e_delivery_app/Core/utils/assets.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -18,8 +18,8 @@ class OffersPageViewItemImage extends StatelessWidget {
         bottom: kSpacing * 3,
         top: kSpacing * 3,
       ),
-      child: Image.network(
-        Assets.imagesIphoneTest,
+      child: CachedNetworkImage(
+        imageUrl:  offerImage,
       ),
     );
   }

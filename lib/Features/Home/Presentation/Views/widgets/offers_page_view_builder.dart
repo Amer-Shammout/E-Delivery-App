@@ -14,11 +14,11 @@ class OffersPageViewBuilder extends StatelessWidget {
           return OffersPageView(
             offers: state.offers,
           );
-        }
-        if (state is GetOffersFailure) {
+        } else if (state is GetOffersFailure) {
           return Text(state.errMessage);
+        } else {
+          return const CircularProgressIndicator();
         }
-        return const CircularProgressIndicator();
       },
     );
   }

@@ -65,7 +65,7 @@ class HomeRepoImpl extends HomeRepo {
             kGetCategoriesUrl,
             options: Options(headers: {"Authorization": "Bearer $token"}),
           );
-      List<String> categories = response.data;
+      List<dynamic> categories = response.data;
 
       return right(categories);
     } on DioException catch (e) {

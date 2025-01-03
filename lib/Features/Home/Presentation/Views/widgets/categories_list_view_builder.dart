@@ -13,12 +13,11 @@ class CategoriesListViewBuilder extends StatelessWidget {
       builder: (context, state) {
         if (state is GetCategoriesSuccess) {
           return CategoriesListView(categories: state.categories);
-        }
-        if (state is GetCategoriesFailure) {
+        } else if (state is GetCategoriesFailure) {
           return Text(state.errMessage);
+        } else {
+          return const CategoriesListViewLoading();
         }
-
-        return const CategoriesListViewLoading();
       },
     );
   }

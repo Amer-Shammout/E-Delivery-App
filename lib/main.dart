@@ -83,19 +83,19 @@ class EDelivery extends StatelessWidget {
               GetStoresCubit(getIt.get<StoresRepoImpl>())..getStores(),
         ),
         BlocProvider(
-          create: (context) => GetProductsByCategoryCubit(
-            getIt.get<HomeRepoImpl>()..getProductByCategory("All"),
-          ),
+          create: (context) =>
+              GetProductsByCategoryCubit(getIt.get<HomeRepoImpl>())
+                ..getProductsByCategory('All'),
         ),
         BlocProvider(
           create: (context) => GetCategoriesCubit(
-            getIt.get<HomeRepoImpl>()..getCategories(),
-          ),
+            getIt.get<HomeRepoImpl>()
+          )..getCategories(),
         ),
         BlocProvider(
           create: (context) => GetOffersCubit(
-            getIt.get<HomeRepoImpl>()..getOffers(),
-          ),
+            getIt.get<HomeRepoImpl>()
+          )..getOffers(),
         )
       ],
       child: BlocBuilder<LocalizationCubit, String>(

@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CategoriesListView extends StatefulWidget {
-  const CategoriesListView({super.key, @required this.categories});
+  const CategoriesListView({super.key, required this.categories});
 
-  final List<dynamic>? categories;
+  final List<dynamic> categories;
 
   @override
   State<CategoriesListView> createState() => _CategoriesListViewState();
@@ -24,7 +24,7 @@ class _CategoriesListViewState extends State<CategoriesListView> {
       child: ListView.builder(
         physics: const BouncingScrollPhysics(),
         padding: EdgeInsets.zero,
-        itemCount: 10,
+        itemCount: widget.categories.length,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) => Padding(
           padding: formatPadding(index),
@@ -32,7 +32,7 @@ class _CategoriesListViewState extends State<CategoriesListView> {
             onTap: () {
               currentIndex = index;
               BlocProvider.of<GetProductsByCategoryCubit>(context)
-                  .getProductsByCategory(widget.categories![index]);
+                  .getProductsByCategory(widget.categories[index]);
               setState(() {});
             },
             child: CustomWidgetWithDash(
@@ -40,7 +40,7 @@ class _CategoriesListViewState extends State<CategoriesListView> {
               height: 4,
               width: 40,
               widget:
-                  Text('Mobiles', style: formatTextStyle(index, currentIndex)),
+                  Text(widget.categories[index], style: formatTextStyle(index, currentIndex)),
             ),
           ),
         ),
