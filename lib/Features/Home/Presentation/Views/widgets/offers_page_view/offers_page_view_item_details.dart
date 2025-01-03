@@ -1,3 +1,4 @@
+import 'package:e_delivery_app/Core/Data/Models/product_model/product_model.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
@@ -6,10 +7,9 @@ import 'package:flutter/material.dart';
 class OffersPageViewItemDetails extends StatelessWidget {
   const OffersPageViewItemDetails({
     super.key,
-    required this.offerDiscount,
+    required this.offer,
   });
-
-  final double offerDiscount;
+  final ProductModel offer;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class OffersPageViewItemDetails extends StatelessWidget {
             color: Theme.of(context).colorScheme.tertiary,
           ),
           child: Text(
-            '$offerDiscount%',
+            '${offer.discountValue}%',
             style: AppStyles.fontsBlack20(context)
                 .copyWith(color: Theme.of(context).colorScheme.surface),
           ),

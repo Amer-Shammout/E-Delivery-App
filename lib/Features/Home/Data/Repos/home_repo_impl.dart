@@ -21,11 +21,11 @@ class HomeRepoImpl extends HomeRepo {
             options: Options(headers: {"Authorization": "Bearer $token"}),
           );
       dynamic jsonData = response.data;
-      List<ProductModel> products = [];
+      List<ProductModel> offers = [];
       for (var product in jsonData["data"]) {
-        products.add(ProductModel.fromJson(product));
+        offers.add(ProductModel.fromJson(product));
       }
-      return right(products);
+      return right(offers);
     } on DioException catch (e) {
       return left(ServerFailure.fromDioError(e));
     } on Exception catch (e) {

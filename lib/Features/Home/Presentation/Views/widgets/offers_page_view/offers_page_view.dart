@@ -1,14 +1,17 @@
 import 'dart:async';
 
+import 'package:e_delivery_app/Core/Data/Models/product_model/product_model.dart';
+import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/widgets/custom_container.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/Features/Home/Presentation/Views/widgets/offers_page_view/custom_dots_indicator.dart';
 import 'package:e_delivery_app/Features/Home/Presentation/Views/widgets/offers_page_view/offers_page_view_item.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class OffersPageView extends StatefulWidget {
-  const OffersPageView({super.key});
-
+  const OffersPageView({super.key, required this.offers});
+  final List<ProductModel> offers;
   @override
   State<OffersPageView> createState() => _OffersPageViewState();
 }
@@ -44,20 +47,18 @@ class _OffersPageViewState extends State<OffersPageView> {
               padding: EdgeInsets.zero,
               child: SizedBox(
                 height: 203,
-                child: PageView(
+                child: PageView.builder(
                   controller: _pageController,
                   onPageChanged: swipeToNextPage,
-                  children: [
-                    OffersPageViewItem(
-                      cardColor: const Color(0xff295BA7).withOpacity(.2),
-                    ),
-                    OffersPageViewItem(
-                      cardColor: const Color(0xff295BA7).withOpacity(.2),
-                    ),
-                    OffersPageViewItem(
-                      cardColor: const Color(0xff295BA7).withOpacity(.2),
-                    ),
-                  ],
+                  itemBuilder: (BuildContext context, int index) =>
+                      GestureDetector(
+                    onTap: () {
+                      GoRouter.of(context).pushNamed(
+                          AppRouter.kProductDetailsName,
+                          extra: widget.offers[index]);
+                    },
+                    child: OffersPageViewItem(offer: widget.offers[index]),
+                  ),
                 ),
               ),
             ),

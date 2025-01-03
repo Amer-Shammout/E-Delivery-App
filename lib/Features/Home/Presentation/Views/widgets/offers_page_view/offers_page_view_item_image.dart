@@ -18,7 +18,7 @@ class OffersPageViewItemImage extends StatelessWidget {
         bottom: kSpacing * 3,
         top: kSpacing * 3,
       ),
-      child: Image.asset(
+      child: Image.network(
         Assets.imagesIphoneTest,
       ),
     );

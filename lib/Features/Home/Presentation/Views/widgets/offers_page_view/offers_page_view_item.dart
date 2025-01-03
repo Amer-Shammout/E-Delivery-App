@@ -1,3 +1,4 @@
+import 'package:e_delivery_app/Core/Data/Models/product_model/product_model.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/functions/set_theme_colors.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
@@ -10,16 +11,17 @@ import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class OffersPageViewItem extends StatelessWidget {
-  const OffersPageViewItem({super.key, required this.cardColor});
+  const OffersPageViewItem({super.key, required this.offer});
 
-  final Color cardColor;
+  final ProductModel offer;
 
   @override
   Widget build(BuildContext context) {
     return CustomCardPattern(
       opacity: SetThemeColors.isDarkMode(context) ? .25 : 1,
       margin: kSpacing,
-      cardColor: const Color(0xff295BA7),
+      cardColor:
+          Color(int.parse(offer.storeId!.logoColor.replaceFirst('#', '0xff'))),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -30,9 +32,9 @@ class OffersPageViewItem extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Image.asset(
+                Image.network(
                   fit: BoxFit.fill,
-                  Assets.imagesSmatelLogoTest,
+                  offer.storeId!.image!,
                   width: 80,
                   height: 20,
                 ),
@@ -46,8 +48,8 @@ class OffersPageViewItem extends StatelessWidget {
                 const SizedBox(
                   height: kSpacing * 2,
                 ),
-                const OffersPageViewItemDetails(
-                  offerDiscount: 25,
+                OffersPageViewItemDetails(
+                  offer: offer,
                 ),
                 const Spacer(),
                 CTAButton(
@@ -68,9 +70,9 @@ class OffersPageViewItem extends StatelessWidget {
               ],
             ),
           ),
-          const Expanded(
+          Expanded(
             child: OffersPageViewItemImage(
-              offerImage: Assets.imagesCarouselProductTest,
+              offerImage: offer.imageUrl!,
             ),
           )
         ],
