@@ -1,18 +1,21 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:flutter/material.dart';
 
 class ProductImageMask extends StatelessWidget {
-  const ProductImageMask({super.key});
+  const ProductImageMask({super.key,@required this.image});
+
+  final String? image;
 
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
       aspectRatio: 1.3,
       child: Container(
-        decoration: const BoxDecoration(
+        decoration:  BoxDecoration(
           image: DecorationImage(
             alignment: Alignment.topCenter,
-            image: AssetImage(Assets.imagesIphoneTest),
+            image: image==null ? const AssetImage(Assets.imagesIphoneTest):CachedNetworkImageProvider(image!),
             fit: BoxFit.cover,
           ),
         ),

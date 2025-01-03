@@ -1,3 +1,4 @@
+import 'package:e_delivery_app/Core/Data/Models/product_model/product_model.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/constants.dart';
@@ -6,7 +7,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class CustomProductPrice extends StatelessWidget {
-  const CustomProductPrice({super.key});
+  const CustomProductPrice({super.key,@required this.productModel});
+
+  final ProductModel? productModel;
 
   @override
   Widget build(BuildContext context) {
@@ -19,19 +22,19 @@ class CustomProductPrice extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  '57,55',
+                productModel?.discountValue ?? null != null ? Text(
+                   '57,55',
                   style: AppStyles.fontsRegular16(context).copyWith(
                       height: 0,
                       decoration: TextDecoration.lineThrough,
                       decorationColor: Theme.of(context).colorScheme.tertiary,
                       decorationThickness: 2,
                       color: Theme.of(context).colorScheme.tertiary),
-                ),
+                ) : const SizedBox.shrink(),
                 Row(
                   children: [
                     Text(
-                      '57,55',
+                       productModel!=null ? productModel!.price! :  '57,55',
                       style: AppStyles.fontsBlack40(context).copyWith(
                         height: 0,
                         color: Theme.of(context).colorScheme.tertiary,

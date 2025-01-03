@@ -1,15 +1,18 @@
+import 'package:e_delivery_app/Core/Data/Models/product_model/product_model.dart';
 import 'package:e_delivery_app/Features/Product/Presentation/Views/Widgets/product_view_content.dart';
 import 'package:flutter/material.dart';
 
 class ProductViewContentWithScrollEffect extends StatelessWidget {
-  const ProductViewContentWithScrollEffect({super.key});
+  const ProductViewContentWithScrollEffect({super.key, @required this.productModel});
+
+  final ProductModel? productModel;
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        const Expanded(
-          child: ProductViewContent(),
+        Expanded(
+          child: ProductViewContent(productModel: productModel),
         ),
         Align(
           alignment: Alignment.topCenter,

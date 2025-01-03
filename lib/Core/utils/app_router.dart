@@ -1,3 +1,4 @@
+import 'package:e_delivery_app/Core/Data/Models/product_model/product_model.dart';
 import 'package:e_delivery_app/Core/services/service_locator.dart';
 import 'package:e_delivery_app/Core/services/shared_preferences_singleton.dart';
 import 'package:e_delivery_app/Core/widgets/app_with_nav_bar.dart';
@@ -166,7 +167,7 @@ abstract class AppRouter {
         path: kProductDetailsView,
         name: kProductDetailsName,
         pageBuilder: (context, state) =>
-            const MaterialPage(child: ProductView()),
+             MaterialPage(child: ProductView(productModel: state.extra as ProductModel?,)),
       ),
       GoRoute(
         path: kCartView,
