@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class CustomProductPrice extends StatelessWidget {
-  const CustomProductPrice({super.key,@required this.productModel});
+  const CustomProductPrice({super.key, @required this.productModel});
 
   final ProductModel? productModel;
 
@@ -22,31 +22,34 @@ class CustomProductPrice extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                productModel?.discountValue ?? null != null ? Text(
-                   '57,55',
-                  style: AppStyles.fontsRegular16(context).copyWith(
-                      height: 0,
-                      decoration: TextDecoration.lineThrough,
-                      decorationColor: Theme.of(context).colorScheme.tertiary,
-                      decorationThickness: 2,
-                      color: Theme.of(context).colorScheme.tertiary),
-                ) : const SizedBox.shrink(),
+                productModel?.discountValue != null
+                    ? Text(
+                        '${double.parse(productModel!.price!)}',
+                        style: AppStyles.fontsRegular16(context).copyWith(
+                            height: 0,
+                            decoration: TextDecoration.lineThrough,
+                            decorationColor:
+                                Theme.of(context).colorScheme.tertiary,
+                            decorationThickness: 2,
+                            color: Theme.of(context).colorScheme.tertiary),
+                      )
+                    : const SizedBox.shrink(),
                 Row(
                   children: [
                     Text(
-                       productModel!=null ? productModel!.price! :  '57,55',
+                      productModel!.discountValue != null
+                          ? '${double.parse(productModel!.discountValue) / 100 * double.parse(productModel!.price!)}'
+                          : '${productModel!.price}',
                       style: AppStyles.fontsBlack40(context).copyWith(
-                        height: 0,
-                        color: Theme.of(context).colorScheme.tertiary,
-                      ),
+                          height: 0, color: checkDiscountColor(context)),
                     ),
                     const SizedBox(
                       width: kSpacing * 2,
                     ),
                     Text(
                       S.of(context).sp,
-                      style: AppStyles.fontsRegular20(context).copyWith(
-                          color: Theme.of(context).colorScheme.tertiary),
+                      style: AppStyles.fontsRegular20(context)
+                          .copyWith(color: checkDiscountColor(context)),
                     ),
                   ],
                 ),
@@ -58,15 +61,16 @@ class CustomProductPrice extends StatelessWidget {
           children: [
             Text(
               S.of(context).add_button,
-              style: AppStyles.fontsMedium28(context)
-                  .copyWith(color: Theme.of(context).colorScheme.tertiary),
+              style: AppStyles.fontsMedium28(context).copyWith(
+                color: checkDiscountColor(context),
+              ),
             ),
             SvgPicture.asset(
               width: 32,
               height: 32,
               Assets.iconsPlus,
               colorFilter: ColorFilter.mode(
-                  Theme.of(context).colorScheme.tertiary, BlendMode.srcATop),
+                  checkDiscountColor(context), BlendMode.srcATop),
             ),
             const SizedBox(
               width: kSpacing * 3,
@@ -75,5 +79,11 @@ class CustomProductPrice extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  Color checkDiscountColor(BuildContext context) {
+    return productModel!.discountValue != null
+        ? Theme.of(context).colorScheme.tertiary
+        : Theme.of(context).colorScheme.primary;
   }
 }

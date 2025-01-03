@@ -1,5 +1,4 @@
 import 'package:e_delivery_app/Core/widgets/loading/categories_list_view_loading.dart';
-import 'package:e_delivery_app/Core/widgets/loading/my_app_loading_indicator.dart';
 import 'package:e_delivery_app/Features/Store%20Details/Presentation/Views/widgets/store_categories_list_view.dart';
 import 'package:e_delivery_app/Features/Store%20Details/Presentation/manager/get_store_categories_cubit/get_store_categories_cubit.dart';
 import 'package:e_delivery_app/Features/Stores/data/models/store_model.dart';
@@ -40,7 +39,7 @@ class _StoreCategoriesListViewBuilderState
         } else if (state is GetStoreCategoriesFailure) {
           return Text(state.errMessage);
         } else {
-          return CategoriesListViewLoading();
+          return const CategoriesListViewLoading();
         }
       },
     );

@@ -54,7 +54,7 @@ class ProductViewContent extends StatelessWidget {
                         color: Theme.of(context).colorScheme.tertiary,
                       ),
                       child: Text(
-                        '25%',
+                        '${productModel!.discountValue}%',
                         style: AppStyles.fontsBlack20(context).copyWith(
                             color: Theme.of(context).colorScheme.surface),
                       ),
@@ -86,8 +86,10 @@ class ProductViewContent extends StatelessWidget {
                       ? '${productModel!.stockQuantity!} ${S.of(context).product_details1}'
                       : '10 ${S.of(context).product_details1}',
                   icon: Assets.iconsQuantity),
-               CustomProductIconContent(
-                text:  productModel!=null ? '${productModel!.deliveryPeriod!} Days' :  '3 Days',
+              CustomProductIconContent(
+                text: productModel != null
+                    ? '${productModel!.deliveryPeriod!} Days'
+                    : '3 Days',
                 icon: Assets.iconsTime,
               ),
             ],
@@ -101,7 +103,9 @@ class ProductViewContent extends StatelessWidget {
                 .copyWith(color: Theme.of(context).colorScheme.error),
           ),
           Text(
-             productModel!=null ? productModel!.description! :  'iPhone 16 Pro features a Grade 5 titanium 5 titanium 5 titanium 5 titanium 5 titanium 5 titanium design with a new, refined microblasted texture  iPhone 16 Pro features a Grade 5 titanium design with a new, refined microblasted texture iPhone 16 Pro features a Grade 5 titanium design with a new, refined microblasted texture iPhone 16 Pro features a Grade 5 titanium design with a new, refined microblasted texture Load More...',
+            productModel != null
+                ? productModel!.description!
+                : 'iPhone 16 Pro features a Grade 5 titanium 5 titanium 5 titanium 5 titanium 5 titanium 5 titanium design with a new, refined microblasted texture  iPhone 16 Pro features a Grade 5 titanium design with a new, refined microblasted texture iPhone 16 Pro features a Grade 5 titanium design with a new, refined microblasted texture iPhone 16 Pro features a Grade 5 titanium design with a new, refined microblasted texture Load More...',
             style: AppStyles.fontsRegular16(context).copyWith(
               fontWeight: FontWeight.w100,
               color: Theme.of(context).colorScheme.error.withOpacity(0.7),

@@ -22,7 +22,7 @@ class ProductPrice extends StatelessWidget {
             Text(
               productModel == null ? '57,55' : productModel!.price!,
               style: AppStyles.fontsBlack20(context)
-                  .copyWith(color: Theme.of(context).colorScheme.tertiary),
+                  .copyWith(color: checkDiscountColor(context)),
             ),
             const SizedBox(
               width: kSpacing,
@@ -30,7 +30,7 @@ class ProductPrice extends StatelessWidget {
             Text(
               S.of(context).sp,
               style: AppStyles.fontsRegular10(context)
-                  .copyWith(color: Theme.of(context).colorScheme.tertiary),
+                  .copyWith(color: checkDiscountColor(context)),
             ),
           ],
         ),
@@ -39,16 +39,22 @@ class ProductPrice extends StatelessWidget {
             Text(
               S.of(context).add_button,
               style: AppStyles.fontsMedium12(context)
-                  .copyWith(color: Theme.of(context).colorScheme.tertiary),
+                  .copyWith(color: checkDiscountColor(context)),
             ),
             SvgPicture.asset(
               Assets.iconsPlus,
               colorFilter: ColorFilter.mode(
-                  Theme.of(context).colorScheme.tertiary, BlendMode.srcATop),
+                  checkDiscountColor(context), BlendMode.srcATop),
             ),
           ],
         ),
       ],
     );
+  }
+
+  Color checkDiscountColor(BuildContext context) {
+    return productModel!.discountValue != null
+        ? Theme.of(context).colorScheme.tertiary
+        : Theme.of(context).colorScheme.primary;
   }
 }
