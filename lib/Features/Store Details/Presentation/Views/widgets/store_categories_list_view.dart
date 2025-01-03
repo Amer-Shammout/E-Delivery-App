@@ -34,23 +34,19 @@ class _StoreCategoriesListViewState extends State<StoreCategoriesListView> {
           padding: formatPadding(index),
           child: GestureDetector(
             onTap: () {
-              currentIndex = index;
-              setState(() {});
+              setState(() {
+                currentIndex = index;
+              });
+              BlocProvider.of<GetStoreProductsCubit>(context).getStoreProducts(
+                  storeId: widget.storeModel.id!,
+                  category: widget.storeCategories[index]);
             },
-            child: GestureDetector(
-              onTap: () {
-                BlocProvider.of<GetStoreProductsCubit>(context)
-                    .getStoreProducts(
-                        storeId: widget.storeModel.id!,
-                        category: widget.storeCategories[index]);
-              },
-              child: CustomWidgetWithDash(
-                dashColor: formatColor(index, currentIndex),
-                height: 4,
-                width: 40,
-                widget: Text(widget.storeCategories[index],
-                    style: formatTextStyle(index, currentIndex)),
-              ),
+            child: CustomWidgetWithDash(
+              dashColor: formatColor(index, currentIndex),
+              height: 4,
+              width: 40,
+              widget: Text(widget.storeCategories[index],
+                  style: formatTextStyle(index, currentIndex)),
             ),
           ),
         ),

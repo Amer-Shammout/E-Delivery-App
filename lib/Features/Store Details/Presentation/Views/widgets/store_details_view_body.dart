@@ -35,7 +35,7 @@ class StoreDetailsViewBody extends StatelessWidget {
             ),
           ),
         ),
-        const StoreProductsGridViewBuilder()
+         StoreProductsGridViewBuilder(storeModel: storeModel)
       ],
     );
   }
