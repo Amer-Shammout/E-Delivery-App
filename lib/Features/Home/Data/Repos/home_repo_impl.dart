@@ -24,7 +24,7 @@ class HomeRepoImpl extends HomeRepo {
     try {
       String token = Prefs.getString(kToken);
       Response response = await getIt.get<DioClient>().get(
-            kGetProductsByCategories + category,
+            kGetProductsByCategoriesUrl + category,
             options: Options(headers: {"Authorization": "Bearer $token"}),
           );
       dynamic jsonData = response.data;
@@ -42,8 +42,21 @@ class HomeRepoImpl extends HomeRepo {
   }
 
   @override
-  Future<Either<Failure, List<String>>> getCategories() {
-    // TODO: implement getCategories
-    throw UnimplementedError();
+  Future<Either<Failure, List<String>>> getCategories() async {
+    try {
+      String token = Prefs.getString(kToken);
+      Response response = await getIt.get<DioClient>().get(
+            kGetCategoriesUrl,
+            options: Options(headers: {"Authorization": "Bearer $token"}),
+          );
+      List<String> categories = response.data;
+
+      return right(categories);
+    } on DioException catch (e) {
+      return left(ServerFailure.fromDioError(e));
+    } on Exception catch (e) {
+      log(e.toString());
+      return left(ServerFailure(errMessage: AppStrings.strInternalServerError));
+    }
   }
 }
