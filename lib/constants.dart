@@ -23,3 +23,4 @@ const String kToken = 'token';
 const kId = 'id';
 const kGetProductsByCategoriesUrl = "products/category/";
 const kGetCategoriesUrl = "categories";
+const kGetOffersUrl = "products.offer";

@@ -13,9 +13,25 @@ import 'package:e_delivery_app/constants.dart';
 
 class HomeRepoImpl extends HomeRepo {
   @override
-  Future<Either<Failure, List<ProductModel>>> getOffers() {
-    // TODO: implement getOffers
-    throw UnimplementedError();
+  Future<Either<Failure, List<ProductModel>>> getOffers() async {
+    try {
+      String token = Prefs.getString(kToken);
+      Response response = await getIt.get<DioClient>().get(
+            kGetOffersUrl,
+            options: Options(headers: {"Authorization": "Bearer $token"}),
+          );
+      dynamic jsonData = response.data;
+      List<ProductModel> products = [];
+      for (var product in jsonData["data"]) {
+        products.add(ProductModel.fromJson(product));
+      }
+      return right(products);
+    } on DioException catch (e) {
+      return left(ServerFailure.fromDioError(e));
+    } on Exception catch (e) {
+      log(e.toString());
+      return left(ServerFailure(errMessage: AppStrings.strInternalServerError));
+    }
   }
 
   @override
