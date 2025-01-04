@@ -3,7 +3,7 @@ import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:flutter/material.dart';
 
 class ProductImageMask extends StatelessWidget {
-  const ProductImageMask({super.key,@required this.image});
+  const ProductImageMask({super.key, @required this.image});
 
   final String? image;
 
@@ -12,10 +12,14 @@ class ProductImageMask extends StatelessWidget {
     return AspectRatio(
       aspectRatio: 1.3,
       child: Container(
-        decoration:  BoxDecoration(
+        decoration: BoxDecoration(
           image: DecorationImage(
             alignment: Alignment.topCenter,
-            image: image==null ? const AssetImage(Assets.imagesIphoneTest):CachedNetworkImageProvider(image!),
+            image: image == null
+                ? const AssetImage(Assets.imagesIphoneTest)
+                : CachedNetworkImageProvider(
+                    image!,
+                  ),
             fit: BoxFit.cover,
           ),
         ),

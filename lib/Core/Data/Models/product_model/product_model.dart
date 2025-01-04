@@ -36,9 +36,9 @@ class ProductModel extends Equatable {
   });
 
   factory ProductModel.fromJson(Map<String, dynamic> json) => ProductModel(
-        storeId: json['store_id'] == null
+        storeId: json['store'] == null
             ? null
-            : StoreId.fromJson(json['store_id'] as Map<String, dynamic>),
+            : StoreId.fromJson(json['store'] as Map<String, dynamic>),
         isFavorite: json['is_favorite'] as bool?,
         isCart: json['is_cart'] as bool?,
         category: json['category'] as String?,

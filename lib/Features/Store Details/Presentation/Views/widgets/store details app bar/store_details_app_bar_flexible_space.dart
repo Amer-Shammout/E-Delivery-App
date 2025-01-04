@@ -29,6 +29,11 @@ class StoreDetailsAppBarFlexibleSpace extends StatelessWidget {
                 imageUrl: storeModel.image!,
                 width: 250,
                 height: 80,
+                errorWidget: (context, url, error) => const Icon(
+                  Icons.error,
+                  color: Colors.red,
+                  size: 24,
+                ),
               ),
               const SizedBox(
                 height: kSpacing * 2,
@@ -40,7 +45,7 @@ class StoreDetailsAppBarFlexibleSpace extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               Text(
-                '100 ${S.of(context).product_details1}',
+                '${storeModel.productsCount} ${S.of(context).product_details1}',
                 style: AppStyles.fontsRegular12(context).copyWith(
                     color: Theme.of(context).colorScheme.error.withOpacity(.6)),
                 textAlign: TextAlign.center,

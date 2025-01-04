@@ -19,7 +19,12 @@ class OffersPageViewItemImage extends StatelessWidget {
         top: kSpacing * 3,
       ),
       child: CachedNetworkImage(
-        imageUrl:  offerImage,
+        imageUrl: offerImage,
+        errorWidget: (context, url, error) => const Icon(
+          Icons.error,
+          color: Colors.red,
+          size: 24,
+        ),
       ),
     );
   }

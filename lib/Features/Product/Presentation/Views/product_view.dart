@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:e_delivery_app/Core/Data/Models/product_model/product_model.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Features/Product/Presentation/Views/Widgets/product_view_body.dart';
@@ -46,15 +45,15 @@ class _ProductViewState extends State<ProductView> with WidgetsBindingObserver {
           colorFilter: ColorFilter.mode(
               Theme.of(context).colorScheme.secondary, BlendMode.srcATop),
           fit: BoxFit.cover,
-          image: widget.productModel == null ? const AssetImage(
+          image: const AssetImage(
             Assets.imagesProductCard,
-          ) : CachedNetworkImageProvider(widget.productModel!.imageUrl!),
+          ),
         ),
       ),
-      child:  SafeArea(
+      child: SafeArea(
         child: Scaffold(
           backgroundColor: Colors.transparent,
-          body: ProductViewBody(productModel:widget.productModel),
+          body: ProductViewBody(productModel: widget.productModel),
         ),
       ),
     );

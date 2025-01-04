@@ -22,6 +22,11 @@ class StoresCard extends StatelessWidget {
             aspectRatio: 200 / 65,
             child: CachedNetworkImage(
               imageUrl: storeLogo,
+              errorWidget: (context, url, error) => const Icon(
+                Icons.error,
+                color: Colors.red,
+                size: 24,
+              ),
             ),
           ),
         ),

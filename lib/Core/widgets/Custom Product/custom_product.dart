@@ -56,7 +56,10 @@ class CustomProduct extends StatelessWidget {
                         Assets.imagesIphoneTest,
                         fit: BoxFit.scaleDown,
                       )
-                    : CachedNetworkImage(imageUrl: productModel!.imageUrl!),
+                    : CachedNetworkImage(
+                        imageUrl: productModel!.imageUrl!,
+                        errorWidget: (context, url, error) => const Icon(Icons.error,color: Colors.red,size: 24,),
+                      ),
               ),
             ),
             const Spacer(),

@@ -1,4 +1,4 @@
-import 'package:e_delivery_app/Core/widgets/loading/my_app_loading_indicator.dart';
+import 'package:e_delivery_app/Core/widgets/loading/stores_list_view_loading.dart';
 import 'package:e_delivery_app/Features/Stores/Presentation/Views/widgets/stores_list_view.dart';
 import 'package:e_delivery_app/Features/Stores/Presentation/manager/get_stores_cubit/get_stores_cubit.dart';
 import 'package:flutter/material.dart';
@@ -18,15 +18,9 @@ class StoresListViewBuilder extends StatelessWidget {
         } else if (state is GetStoresFailure) {
           return SliverToBoxAdapter(child: Text(state.errMessage));
         } else {
-          return SliverFillRemaining(
-            child: Center(
-              child: myAppLottieIndicator(context),
-            ),
-          );
+          return const StoresListViewLoading();
         }
       },
     );
   }
-
- 
 }

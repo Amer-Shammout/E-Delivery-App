@@ -29,7 +29,7 @@ class StoresListView extends StatelessWidget {
           },
           child: StoresCard(
             cardColor: Color(
-                int.parse(stores[index].logoColor!.replaceFirst('#', '0xff'))),
+                stores[index].logoColor!=null ? int.parse(stores[index].logoColor!.replaceFirst('#', '0xff') ) : Theme.of(context).colorScheme.primary.value),
             storeLogo: stores[index].image!,
           ),
         ),

@@ -23,7 +23,7 @@ class StoresRepoImpl extends StoresRepo {
               headers: {"Authorization": "Bearer $token"},
             ),
           );
-      List<dynamic> jsonDataStores = response.data;
+      List<dynamic> jsonDataStores = response.data['data'];
       List<StoreModel> stores = [];
       for (var store in jsonDataStores) {
         stores.add(StoreModel.fromJson(store));

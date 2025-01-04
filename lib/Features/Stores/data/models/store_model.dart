@@ -3,6 +3,7 @@ import 'package:equatable/equatable.dart';
 class StoreModel extends Equatable {
   final int? id;
   final int? userId;
+  final int? productsCount;
   final String? name;
   final String? latitude;
   final String? longitude;
@@ -21,11 +22,13 @@ class StoreModel extends Equatable {
     this.logoColor,
     this.createdAt,
     this.updatedAt,
+    this.productsCount,
   });
 
   factory StoreModel.fromJson(Map<String, dynamic> json) => StoreModel(
         id: json['id'] as int?,
         userId: json['user_id'] as int?,
+        productsCount: json['products count'] as int?,
         name: json['name'] as String?,
         latitude: json['latitude'] as String?,
         longitude: json['longitude'] as String?,
