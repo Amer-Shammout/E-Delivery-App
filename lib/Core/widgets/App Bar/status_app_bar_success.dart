@@ -1,5 +1,8 @@
+import 'dart:developer';
+
 import 'package:e_delivery_app/Core/Data/Manager/get_user_cubit/get_user_cubit.dart';
 import 'package:e_delivery_app/Core/Data/Models/user.dart';
+import 'package:e_delivery_app/Core/services/shared_preferences_singleton.dart';
 import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
@@ -71,7 +74,12 @@ class StatusAppBarSuccess extends StatelessWidget {
           const SizedBox(
             width: 4 * kSpacing,
           ),
-          const CustomIcon(icon: Assets.iconsNotification),
+          CustomIcon(
+            icon: Assets.iconsNotification,
+            onPressed: () {
+              log("${Prefs.getString(kToken)}");
+            },
+          ),
         ],
       ),
     );

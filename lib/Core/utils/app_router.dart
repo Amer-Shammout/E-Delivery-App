@@ -19,6 +19,8 @@ import 'package:e_delivery_app/Features/Profile/Presentation/manager/update_loca
 import 'package:e_delivery_app/Features/Profile/Presentation/manager/update_name_cubit/update_name_cubit.dart';
 import 'package:e_delivery_app/Features/Profile/data/repos/profile_repo_impl.dart';
 import 'package:e_delivery_app/Features/Search/Presentation/Views/search_view.dart';
+import 'package:e_delivery_app/Features/Search/Presentation/manager/search_cubit/search_cubit.dart';
+import 'package:e_delivery_app/Features/Search/data/repos/search_repo_impl.dart';
 import 'package:e_delivery_app/Features/Store%20Details/Presentation/Views/store_details_view.dart';
 import 'package:e_delivery_app/Features/Store%20Details/Presentation/manager/get_store_categories_cubit/get_store_categories_cubit.dart';
 import 'package:e_delivery_app/Features/Store%20Details/Presentation/manager/get_store_products_cubit/get_store_products_cubit.dart';
@@ -160,14 +162,20 @@ abstract class AppRouter {
       GoRoute(
         path: kSearchView,
         name: kSearchName,
-        pageBuilder: (context, state) =>
-            const MaterialPage(child: SearchView()),
+        pageBuilder: (context, state) => MaterialPage(
+          child: BlocProvider(
+            create: (context) => SearchCubit(getIt.get<SearchRepoImpl>()),
+            child: const SearchView(),
+          ),
+        ),
       ),
       GoRoute(
         path: kProductDetailsView,
         name: kProductDetailsName,
-        pageBuilder: (context, state) =>
-             MaterialPage(child: ProductView(productModel: state.extra as ProductModel?,)),
+        pageBuilder: (context, state) => MaterialPage(
+            child: ProductView(
+          productModel: state.extra as ProductModel?,
+        )),
       ),
       GoRoute(
         path: kCartView,

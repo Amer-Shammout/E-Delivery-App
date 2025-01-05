@@ -24,3 +24,4 @@ const kId = 'id';
 const kGetProductsByCategoriesUrl = "products/category/";
 const kGetCategoriesUrl = "categories";
 const kGetOffersUrl = "products.offer";
+const kSearchUrl = "search/";
