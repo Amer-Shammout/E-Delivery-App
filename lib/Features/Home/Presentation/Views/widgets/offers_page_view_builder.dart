@@ -1,3 +1,4 @@
+import 'package:e_delivery_app/Core/widgets/loading/offer_loading.dart';
 import 'package:e_delivery_app/Features/Home/Presentation/Manager/Cubits/get_offers_cubit/get_offers_cubit.dart';
 import 'package:e_delivery_app/Features/Home/Presentation/Views/widgets/offers_page_view/offers_page_view.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,7 @@ class OffersPageViewBuilder extends StatelessWidget {
         } else if (state is GetOffersFailure) {
           return Text(state.errMessage);
         } else {
-          return const CircularProgressIndicator();
+          return const OfferLoading();
         }
       },
     );

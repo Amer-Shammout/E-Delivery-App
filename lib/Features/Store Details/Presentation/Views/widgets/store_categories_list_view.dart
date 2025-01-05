@@ -41,13 +41,24 @@ class _StoreCategoriesListViewState extends State<StoreCategoriesListView> {
                   storeId: widget.storeModel.id!,
                   category: widget.storeCategories[index]);
             },
-            child: CustomWidgetWithDash(
-              dashColor: formatColor(index, currentIndex),
-              height: 4,
-              width: 40,
-              widget: Text(widget.storeCategories[index],
-                  style: formatTextStyle(index, currentIndex)),
-            ),
+            child: currentIndex == index
+                ? CustomWidgetWithDash(
+                    dashColor: Theme.of(context).colorScheme.primary,
+                    height: 4,
+                    width: 40,
+                    widget: Text(widget.storeCategories[index],
+                        style: AppStyles.fontsBold16(context).copyWith(
+                            color: Theme.of(context).colorScheme.primary)),
+                  )
+                : Text(
+                    widget.storeCategories[index],
+                    style: AppStyles.fontsMedium16(context).copyWith(
+                      color: Theme.of(context)
+                          .colorScheme
+                          .primary
+                          .withOpacity(0.5),
+                    ),
+                  ),
           ),
         ),
       ),
@@ -60,22 +71,5 @@ class _StoreCategoriesListViewState extends State<StoreCategoriesListView> {
         : index == 9
             ? const EdgeInsetsDirectional.only(end: 16, start: 8)
             : const EdgeInsets.symmetric(horizontal: 8);
-  }
-
-  Color formatColor(int index, int currentIndex) {
-    if (currentIndex != index) {
-      return Colors.transparent;
-    }
-    return Theme.of(context).colorScheme.primary;
-  }
-
-  TextStyle formatTextStyle(int index, int currentIndex) {
-    if (currentIndex != index) {
-      return AppStyles.fontsMedium16(context).copyWith(
-        color: Theme.of(context).colorScheme.primary.withOpacity(0.5),
-      );
-    }
-    return AppStyles.fontsBold16(context)
-        .copyWith(color: Theme.of(context).colorScheme.primary);
   }
 }

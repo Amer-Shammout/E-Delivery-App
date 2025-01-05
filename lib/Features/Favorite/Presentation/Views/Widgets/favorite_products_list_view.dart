@@ -11,7 +11,7 @@ class FavoriteProductsListView extends StatelessWidget {
       itemCount: 10,
       itemBuilder: (context, index) => const Padding(
         padding: EdgeInsets.only(
-            bottom: kSpacing * 6,
+            bottom: kSpacing * 4,
             left: kHorizontalPadding,
             right: kHorizontalPadding),
         child: FavoriteProduct(),

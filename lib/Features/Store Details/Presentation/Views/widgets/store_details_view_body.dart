@@ -16,6 +16,7 @@ class StoreDetailsViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
+      physics: const BouncingScrollPhysics(),
       slivers: [
         StoreDetailsAppBar(
           storeModel: storeModel,
@@ -35,7 +36,12 @@ class StoreDetailsViewBody extends StatelessWidget {
             ),
           ),
         ),
-         StoreProductsGridViewBuilder(storeModel: storeModel)
+        StoreProductsGridViewBuilder(storeModel: storeModel),
+        const SliverToBoxAdapter(
+          child: SizedBox(
+            height: kSpacing * 4,
+          ),
+        ),
       ],
     );
   }

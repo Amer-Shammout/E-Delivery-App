@@ -47,6 +47,7 @@ class StoreDetailsRepoImpl extends StoreDetailsRepo {
       for (var product in productsJsonData) {
         products.add(ProductModel.fromJson(product));
       }
+      products.shuffle();
       return right(products);
     } on DioException catch (e) {
       return left(ServerFailure.fromDioError(e));

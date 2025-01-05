@@ -10,17 +10,17 @@ class ProductSlidable extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SlidableAutoCloseBehavior(
+    return  SlidableAutoCloseBehavior(
       closeWhenTapped: false,
       closeWhenOpened: true,
       child: Slidable(
         dragStartBehavior: DragStartBehavior.start,
         endActionPane: ActionPane(
-          extentRatio: 0.238375,
-          motion: ScrollMotion(),
-          children: [CustomDeleteButton()],
+          extentRatio: 88/MediaQuery.sizeOf(context).width,
+          motion:const ScrollMotion(),
+          children: const [CustomDeleteButton()],
         ),
-        child: Row(
+        child: const Row(
           children: [
             SizedBox(
               width: 16,
