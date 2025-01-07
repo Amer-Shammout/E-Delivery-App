@@ -1,3 +1,4 @@
+import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/widgets/products_grid_view.dart';
 import 'package:e_delivery_app/Features/Search/Presentation/Views/widgets/search_operation_details.dart';
 import 'package:e_delivery_app/Features/Search/Presentation/Views/widgets/stores_horizontal_list_view.dart';
@@ -5,6 +6,7 @@ import 'package:e_delivery_app/Features/Search/data/models/search_model.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class AllResultsBody extends StatelessWidget {
   const AllResultsBody({super.key, required this.searchModel});
@@ -18,7 +20,12 @@ class AllResultsBody extends StatelessWidget {
             slivers: [
               SliverToBoxAdapter(
                 child: SearchOperationDetails(
-                  onPressed: () {},
+                  onPressed: () {
+                    GoRouter.of(context).pushNamed(
+                      AppRouter.kAllStoresName,
+                      extra: searchModel.stores,
+                    );
+                  },
                   title: S.of(context).stores,
                 ),
               ),
@@ -32,7 +39,10 @@ class AllResultsBody extends StatelessWidget {
               ),
               SliverToBoxAdapter(
                 child: SearchOperationDetails(
-                  onPressed: () {},
+                  onPressed: () {
+                    GoRouter.of(context).pushNamed(AppRouter.kAllProductsName,
+                        extra: searchModel.products);
+                  },
                   title: S.of(context).products,
                 ),
               ),

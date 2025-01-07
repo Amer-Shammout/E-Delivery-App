@@ -1,6 +1,7 @@
 import 'package:e_delivery_app/Core/widgets/custom_background_container.dart';
 import 'package:e_delivery_app/Features/Profile/Presentation/Views/widgets/profile_app_bar.dart';
 import 'package:e_delivery_app/Features/Profile/Presentation/Views/widgets/profile_view_body.dart';
+import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class ProfileView extends StatelessWidget {
@@ -10,10 +11,12 @@ class ProfileView extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomBackgroundContainer(
       color: Theme.of(context).colorScheme.surface,
-      child: const Scaffold(
+      child: Scaffold(
         backgroundColor: Colors.transparent,
-        appBar: ProfileAppBar(),
-        body: ProfileViewBody(),
+        appBar: CustomAppBar2(
+          title: S.of(context).profile,
+        ),
+        body: const ProfileViewBody(),
       ),
     );
   }

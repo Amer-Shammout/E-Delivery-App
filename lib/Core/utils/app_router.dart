@@ -18,6 +18,8 @@ import 'package:e_delivery_app/Features/Profile/Presentation/manager/update_imag
 import 'package:e_delivery_app/Features/Profile/Presentation/manager/update_location_cubit/update_location_cubit.dart';
 import 'package:e_delivery_app/Features/Profile/Presentation/manager/update_name_cubit/update_name_cubit.dart';
 import 'package:e_delivery_app/Features/Profile/data/repos/profile_repo_impl.dart';
+import 'package:e_delivery_app/Features/Search/Presentation/Views/all_products_view.dart';
+import 'package:e_delivery_app/Features/Search/Presentation/Views/all_stores_view.dart';
 import 'package:e_delivery_app/Features/Search/Presentation/Views/search_view.dart';
 import 'package:e_delivery_app/Features/Search/Presentation/manager/search_cubit/search_cubit.dart';
 import 'package:e_delivery_app/Features/Search/data/repos/search_repo_impl.dart';
@@ -54,6 +56,10 @@ abstract class AppRouter {
   static const kProductDetailsName = 'productDetailsView';
   static const kCartView = '/CartView';
   static const kCartName = 'CartView';
+  static const kAllStoresView = '/allStoresView';
+  static const kAllStoresName = 'allStoresView';
+  static const kAllProductsView = '/allProductsView';
+  static const kAllProductsName = 'allProductsView';
 
   static bool isAuth = Prefs.getString(kToken) != '';
 
@@ -182,6 +188,24 @@ abstract class AppRouter {
         name: kCartName,
         pageBuilder: (context, state) => const MaterialPage(
           child: CartView(),
+        ),
+      ),
+      GoRoute(
+        path: kAllProductsView,
+        name: kAllProductsName,
+        pageBuilder: (context, state) => MaterialPage(
+          child: AllProductsView(
+            products: state.extra as List<ProductModel>,
+          ),
+        ),
+      ),
+      GoRoute(
+        path: kAllStoresView,
+        name: kAllStoresName,
+        pageBuilder: (context, state) => MaterialPage(
+          child: AllStoresView(
+            stores: state.extra as List<StoreModel>,
+          ),
         ),
       ),
     ],

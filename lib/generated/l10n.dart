@@ -759,6 +759,26 @@ class S {
       args: [],
     );
   }
+
+  /// `All Products`
+  String get all_products {
+    return Intl.message(
+      'All Products',
+      name: 'all_products',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All Stores`
+  String get all_stores {
+    return Intl.message(
+      'All Stores',
+      name: 'all_stores',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

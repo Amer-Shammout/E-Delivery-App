@@ -7,12 +7,13 @@ import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+String searchType = kAll;
+
 class SearchViewBody extends StatelessWidget {
   const SearchViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    String searchType = kAll;
     return Column(
       children: [
         SearchViewAppBar(
@@ -27,7 +28,11 @@ class SearchViewBody extends StatelessWidget {
         const SizedBox(
           height: kSpacing * 4,
         ),
-        SearchViewBodyBuilder(searchType: searchType),
+        BlocBuilder<SearchCubit, SearchState>(
+          builder: (context, state) {
+            return SearchViewBodyBuilder(searchType: searchType);
+          },
+        ),
         const SizedBox(
           height: kSpacing * 4,
         )

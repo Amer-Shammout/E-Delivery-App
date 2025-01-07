@@ -25,6 +25,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "active": MessageLookupByLibrary.simpleMessage("Activated"),
         "add_button": MessageLookupByLibrary.simpleMessage("Add"),
         "all": MessageLookupByLibrary.simpleMessage("All"),
+        "all_products": MessageLookupByLibrary.simpleMessage("All Products"),
+        "all_stores": MessageLookupByLibrary.simpleMessage("All Stores"),
         "cancel_dialog": MessageLookupByLibrary.simpleMessage("Cancel"),
         "cart1": MessageLookupByLibrary.simpleMessage("Cart"),
         "cart2": MessageLookupByLibrary.simpleMessage("Selected Items"),

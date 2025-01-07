@@ -29,8 +29,10 @@ class SearchViewBodyBuilder extends StatelessWidget {
         } else if (state is SearchFailure) {
           return Text(state.errMessage);
         } else {
-          return CustomSearchLoading(
-            searchType: searchType,
+          return Expanded(
+            child: CustomSearchLoading(
+              searchType: searchType,
+            ),
           );
         }
       },

@@ -5,29 +5,32 @@ import 'package:flutter/material.dart';
 
 class StoresCard extends StatelessWidget {
   const StoresCard(
-      {super.key, required this.cardColor, required this.storeLogo});
+      {super.key, required this.cardColor, @required this.storeLogo, this.opacity});
 
   final Color cardColor;
-  final String storeLogo;
+  final String? storeLogo;
+  final double? opacity;
 
   @override
   Widget build(BuildContext context) {
     return CustomContainer(
       child: CustomCardPattern(
-        opacity: 1,
+        opacity: opacity ?? 1,
         cardColor: cardColor,
         child: SizedBox(
           height: 70,
           child: AspectRatio(
             aspectRatio: 200 / 65,
-            child: CachedNetworkImage(
-              imageUrl: storeLogo,
-              errorWidget: (context, url, error) => const Icon(
-                Icons.error,
-                color: Colors.red,
-                size: 24,
-              ),
-            ),
+            child: storeLogo != null
+                ? CachedNetworkImage(
+                    imageUrl: storeLogo!,
+                    errorWidget: (context, url, error) => const Icon(
+                      Icons.error,
+                      color: Colors.red,
+                      size: 24,
+                    ),
+                  )
+                : null,
           ),
         ),
       ),

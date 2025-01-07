@@ -69,6 +69,8 @@
     "all":"All",
     "products":"Products",
     "stores":"Stores",
-    "see_all":"See all"
+    "see_all":"See all",
+     "all_products":"All Products",
+    "all_stores":"All Stores"
 
 }
