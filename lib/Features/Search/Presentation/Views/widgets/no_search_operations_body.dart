@@ -10,8 +10,7 @@ class NoSearchOperationsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+    return ListView(
       children: [
         SizedBox(
           height: MediaQuery.sizeOf(context).height * .15,
@@ -22,6 +21,7 @@ class NoSearchOperationsBody extends StatelessWidget {
           Assets.imagesMagnifier,
         ),
         Text(
+          textAlign: TextAlign.center,
           S.of(context).search_phrase,
           style: AppStyles.fontsBold20(context).copyWith(
             color: Theme.of(context).colorScheme.error,

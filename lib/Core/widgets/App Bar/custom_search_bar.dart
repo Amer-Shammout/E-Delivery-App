@@ -7,10 +7,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomSearchBar extends StatelessWidget {
-  const CustomSearchBar({super.key, this.onTap, this.isEnabled});
+  const CustomSearchBar(
+      {super.key, this.onTap, this.isEnabled, this.onSelected, this.onChanged});
 
   final VoidCallback? onTap;
   final bool? isEnabled;
+  final void Function(String)? onSelected;
+  final dynamic Function(String)? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +27,7 @@ class CustomSearchBar extends StatelessWidget {
             Expanded(
               // ignore: missing_required_param
               child: CustomTextFormField(
+                onChanged: onChanged,
                 isEnabled: isEnabled ?? true,
                 contentPadding: 16,
                 hint: S.of(context).search_hint,
@@ -42,7 +46,9 @@ class CustomSearchBar extends StatelessWidget {
             const SizedBox(
               width: 2 * kSpacing,
             ),
-            const FilterButton(),
+            FilterButton(
+              onSelected: onSelected,
+            ),
           ],
         ),
       ),

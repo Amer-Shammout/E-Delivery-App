@@ -19,7 +19,7 @@ class CustomCardPattern extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      width: double.infinity,
+      width: MediaQuery.sizeOf(context).width,
       height: 200,
       margin: EdgeInsets.all(margin),
       decoration: BoxDecoration(

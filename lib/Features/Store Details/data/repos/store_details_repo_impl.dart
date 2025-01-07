@@ -16,7 +16,7 @@ class StoreDetailsRepoImpl extends StoreDetailsRepo {
   Future<Either<Failure, List<dynamic>>> getStoreCategories(int storeId) async {
     try {
       Response response = await getIt.get<DioClient>().get(
-            '$kStores/$storeId/$kCategories',
+            '$kStoresUrl/$storeId/$kCategories',
           );
       List<dynamic> productCategories = response.data;
       return right(productCategories);
@@ -34,7 +34,7 @@ class StoreDetailsRepoImpl extends StoreDetailsRepo {
     try {
       String token = Prefs.getString(kToken);
       Response response = await getIt.get<DioClient>().get(
-            '$kStores/$storeId/$kCategories/$category',
+            '$kStoresUrl/$storeId/$kCategories/$category',
             options: Options(
               headers: {
                 "Authorization": "Bearer $token",

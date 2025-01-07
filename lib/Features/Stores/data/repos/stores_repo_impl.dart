@@ -18,7 +18,7 @@ class StoresRepoImpl extends StoresRepo {
       String token = Prefs.getString(kToken);
 
       Response response = await getIt.get<DioClient>().get(
-            kStores,
+            kStoresUrl,
             options: Options(
               headers: {"Authorization": "Bearer $token"},
             ),

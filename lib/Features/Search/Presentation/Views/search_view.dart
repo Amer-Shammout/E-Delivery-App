@@ -7,8 +7,8 @@ class SearchView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      appBar: SystemStatusAppBar(),
+    return Scaffold(
+      appBar: const SystemStatusAppBar(),
       body: SearchViewBody(),
     );
   }

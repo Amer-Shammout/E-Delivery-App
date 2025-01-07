@@ -55,6 +55,7 @@ class CustomTextFormField extends StatelessWidget {
           ),
         ),
         TextFormField(
+          onChanged: onChanged,
           onFieldSubmitted: onFieldSubmitted,
           onTap: onTap,
           onSaved: onSaved,

@@ -9,7 +9,12 @@ import 'package:go_router/go_router.dart';
 class SearchViewAppBar extends StatelessWidget {
   const SearchViewAppBar({
     super.key,
+    this.onSelected,
+    this.onChanged,
   });
+
+  final void Function(String)? onSelected;
+  final dynamic Function(String)? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -33,8 +38,11 @@ class SearchViewAppBar extends StatelessWidget {
               ),
             ),
           ),
-          const Expanded(
-            child: CustomSearchBar(),
+          Expanded(
+            child: CustomSearchBar(
+              onChanged: onChanged,
+              onSelected: onSelected,
+            ),
           ),
         ],
       ),

@@ -29,7 +29,7 @@ class SearchRepoImpl extends SearchRepo {
         products.add(ProductModel.fromJson(product));
       }
       for (var store in jsonData["stores"]) {
-        products.add(ProductModel.fromJson(store));
+        stores.add(StoreModel.fromJson(store));
       }
       return right(
         SearchModel(

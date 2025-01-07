@@ -53,7 +53,7 @@ class ProductPrice extends StatelessWidget {
   }
 
   Color checkDiscountColor(BuildContext context) {
-    return productModel!.discountValue != null
+    return productModel?.discountValue != null
         ? Theme.of(context).colorScheme.tertiary
         : Theme.of(context).colorScheme.primary;
   }
