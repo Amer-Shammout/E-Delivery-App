@@ -719,6 +719,46 @@ class S {
       args: [],
     );
   }
+
+  /// `All`
+  String get all {
+    return Intl.message(
+      'All',
+      name: 'all',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Products`
+  String get products {
+    return Intl.message(
+      'Products',
+      name: 'products',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Stores`
+  String get stores {
+    return Intl.message(
+      'Stores',
+      name: 'stores',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `See all`
+  String get see_all {
+    return Intl.message(
+      'See all',
+      name: 'see_all',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

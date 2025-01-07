@@ -24,6 +24,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "active": MessageLookupByLibrary.simpleMessage("مفعّلة"),
         "add_button": MessageLookupByLibrary.simpleMessage("إضافة"),
+        "all": MessageLookupByLibrary.simpleMessage("الكل"),
         "cancel_dialog": MessageLookupByLibrary.simpleMessage("إلغاء"),
         "cart1": MessageLookupByLibrary.simpleMessage("السّلة"),
         "cart2": MessageLookupByLibrary.simpleMessage("العناصر المختارة"),
@@ -68,6 +69,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("الرجاء إدخال رقم صالح"),
         "product_details1": MessageLookupByLibrary.simpleMessage("عنصر"),
         "product_details2": MessageLookupByLibrary.simpleMessage("الوصف"),
+        "products": MessageLookupByLibrary.simpleMessage("المنتجات"),
         "profile": MessageLookupByLibrary.simpleMessage("الملف الشّخصي"),
         "register1": MessageLookupByLibrary.simpleMessage("مرحباً"),
         "register2": MessageLookupByLibrary.simpleMessage("أدخل رقم هاتفك"),
@@ -79,6 +81,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "search_hint": MessageLookupByLibrary.simpleMessage("ابحث..."),
         "search_phrase":
             MessageLookupByLibrary.simpleMessage("ما الّذي تبحث عنه؟"),
+        "see_all": MessageLookupByLibrary.simpleMessage("مشاهدة الكل"),
         "setting1": MessageLookupByLibrary.simpleMessage("المظهر"),
         "setting1_details1": MessageLookupByLibrary.simpleMessage("النّظام"),
         "setting1_details2": MessageLookupByLibrary.simpleMessage("فاتح"),
@@ -92,6 +95,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "shop_now_button": MessageLookupByLibrary.simpleMessage("تسوّق الآن"),
         "sp": MessageLookupByLibrary.simpleMessage("ل.س"),
         "special_offer": MessageLookupByLibrary.simpleMessage("عرض خاص"),
+        "stores": MessageLookupByLibrary.simpleMessage("المتاجر"),
         "submit_button": MessageLookupByLibrary.simpleMessage("تأكيد"),
         "up_to": MessageLookupByLibrary.simpleMessage("يصل إلى"),
         "upload_photo_button":

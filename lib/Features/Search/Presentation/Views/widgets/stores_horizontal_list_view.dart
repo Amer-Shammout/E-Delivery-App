@@ -1,6 +1,8 @@
+import 'dart:developer';
+
 import 'package:e_delivery_app/Core/utils/app_router.dart';
-import 'package:e_delivery_app/Features/Search/data/models/search_model.dart';
 import 'package:e_delivery_app/Features/Stores/Presentation/Views/widgets/stores_card.dart';
+import 'package:e_delivery_app/Features/Stores/data/models/store_model.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -8,10 +10,10 @@ import 'package:go_router/go_router.dart';
 class StoresHorizontalListView extends StatelessWidget {
   const StoresHorizontalListView({
     super.key,
-    required this.searchModel,
+    required this.stores,
   });
 
-  final SearchModel? searchModel;
+  final List<StoreModel> stores;
 
   @override
   Widget build(BuildContext context) {
@@ -19,20 +21,20 @@ class StoresHorizontalListView extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: List.generate(
-          searchModel?.stores?.length ?? 4,
+          setLength(stores.length),
           (index) => Padding(
             padding: formatPadding(index),
             child: GestureDetector(
               onTap: () {
                 GoRouter.of(context).pushNamed(AppRouter.kStoreDetailsName,
-                    extra: searchModel!.stores![index]);
+                    extra: stores[index]);
               },
               child: StoresCard(
-                cardColor: Color(searchModel?.stores?[index].logoColor != null
-                    ? int.parse(searchModel!.stores![index].logoColor!
-                        .replaceFirst('#', '0xff'))
+                cardColor: Color(stores[index].logoColor != null
+                    ? int.parse(
+                        stores[index].logoColor!.replaceFirst('#', '0xff'))
                     : Theme.of(context).colorScheme.primary.value),
-                storeLogo: searchModel!.stores![index].image!,
+                storeLogo: stores[index].image!,
               ),
             ),
           ),
@@ -44,8 +46,22 @@ class StoresHorizontalListView extends StatelessWidget {
   EdgeInsetsDirectional formatPadding(int index) {
     return EdgeInsetsDirectional.only(
         start: index == 0 ? kHorizontalPadding : 0,
-        end: index == (searchModel?.stores?.length ?? 3) - 1
-            ? kHorizontalPadding
-            : 8);
+        end: index == (stores.length) - 1 ? kHorizontalPadding : 8);
+  }
+
+  int setLength(int length) {
+    if (length != 0) {
+      if (length >= 3) {
+        return 3;
+      }
+      if (length == 2) {
+        log("$length");
+        return 2;
+      }
+      if (length == 1) {
+        return 1;
+      }
+    }
+    return 0;
   }
 }

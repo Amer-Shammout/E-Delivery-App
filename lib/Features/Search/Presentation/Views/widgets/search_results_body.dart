@@ -20,11 +20,11 @@ class SearchResultsBody extends StatelessWidget {
       );
     } else if (searchType == kProducts) {
       return ProductsResultsBody(
-        products: searchModel.products!,
+        products: searchModel.products,
       );
     } else {
       return StoresResultsBody(
-        stores: searchModel.stores!,
+        stores: searchModel.stores,
       );
     }
   }

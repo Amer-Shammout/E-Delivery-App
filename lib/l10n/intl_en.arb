@@ -65,5 +65,10 @@
     "permission_denied":"Permission Denied!",
     "permission_message":"You have to activate notifications",
     "active":"Activated",
-    "inactive":"Inactivated"
+    "inactive":"Inactivated",
+    "all":"All",
+    "products":"Products",
+    "stores":"Stores",
+    "see_all":"See all"
+
 }

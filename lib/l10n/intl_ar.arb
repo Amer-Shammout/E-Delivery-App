@@ -65,5 +65,9 @@
     "permission_denied":"الإذن مطلوب!",
     "permission_message":"يجب عليك تفعيل الاشعارات",
     "active":"مفعّلة",
-    "inactive":"غير مفعّلة"
+    "inactive":"غير مفعّلة",
+    "all":"الكل",
+    "products":"المنتجات",
+    "stores":"المتاجر",
+    "see_all":"مشاهدة الكل"
 }

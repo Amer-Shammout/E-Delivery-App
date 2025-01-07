@@ -5,14 +5,15 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class ProductsGridView extends StatelessWidget {
-  const ProductsGridView({super.key, @required this.products});
+  const ProductsGridView({super.key, required this.products, this.length});
 
-  final List<ProductModel>? products;
+  final List<ProductModel> products;
+  final int? length;
 
   @override
   Widget build(BuildContext context) {
     return SliverGrid.builder(
-      itemCount: products?.length ?? 20,
+      itemCount: length ?? products.length,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           mainAxisSpacing: 24,
@@ -23,10 +24,10 @@ class ProductsGridView extends StatelessWidget {
         child: GestureDetector(
           onTap: () {
             GoRouter.of(context).pushNamed(AppRouter.kProductDetailsName,
-                extra: products?[index]);
+                extra: products[index]);
           },
           child: CustomProduct(
-            productModel: products?[index],
+            productModel: products[index],
           ),
         ),
       ),

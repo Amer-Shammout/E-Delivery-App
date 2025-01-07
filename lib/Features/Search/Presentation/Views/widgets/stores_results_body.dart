@@ -11,7 +11,9 @@ class StoresResultsBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return stores.isNotEmpty
         ? CustomScrollView(
-            slivers: [StoresListView(stores: stores)],
+            slivers: [
+              StoresListView(stores: stores),
+            ],
           )
         : const Text("No Search Results");
   }

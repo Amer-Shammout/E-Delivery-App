@@ -9,11 +9,16 @@ class ProductsResultsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return products.isNotEmpty ?
-     CustomScrollView(
-      slivers: [
-        ProductsGridView(products: products,),
-      ],
-    ) : Text("No Search Results");
+    return products.isNotEmpty
+        ? CustomScrollView(
+            slivers: [
+              ProductsGridView(
+                products: products,
+              ),
+            ],
+          )
+        : const Text("No Search Results");
   }
+
+ 
 }

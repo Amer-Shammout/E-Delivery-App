@@ -2,6 +2,7 @@ import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/utils/styles/shadows.dart';
 import 'package:e_delivery_app/constants.dart';
+import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -19,7 +20,7 @@ class FilterButton extends StatelessWidget {
       PopupMenuItem(
         value: kAll,
         child: Text(
-          'All',
+          S.of(context).all,
           style: AppStyles.fontsRegular16(context).copyWith(
             color: Theme.of(context).colorScheme.error,
           ),
@@ -28,7 +29,7 @@ class FilterButton extends StatelessWidget {
       PopupMenuItem(
         value: kProducts,
         child: Text(
-          'Products',
+          S.of(context).products,
           style: AppStyles.fontsRegular16(context).copyWith(
             color: Theme.of(context).colorScheme.error,
           ),
@@ -37,7 +38,7 @@ class FilterButton extends StatelessWidget {
       PopupMenuItem(
         value: kStores,
         child: Text(
-          'Stores',
+          S.of(context).stores,
           style: AppStyles.fontsRegular16(context).copyWith(
             color: Theme.of(context).colorScheme.error,
           ),

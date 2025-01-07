@@ -24,6 +24,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "active": MessageLookupByLibrary.simpleMessage("Activated"),
         "add_button": MessageLookupByLibrary.simpleMessage("Add"),
+        "all": MessageLookupByLibrary.simpleMessage("All"),
         "cancel_dialog": MessageLookupByLibrary.simpleMessage("Cancel"),
         "cart1": MessageLookupByLibrary.simpleMessage("Cart"),
         "cart2": MessageLookupByLibrary.simpleMessage("Selected Items"),
@@ -67,6 +68,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "please enter a valid phone number"),
         "product_details1": MessageLookupByLibrary.simpleMessage("Items"),
         "product_details2": MessageLookupByLibrary.simpleMessage("Description"),
+        "products": MessageLookupByLibrary.simpleMessage("Products"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "register1": MessageLookupByLibrary.simpleMessage("WELCOME"),
         "register2":
@@ -79,6 +81,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "search_hint": MessageLookupByLibrary.simpleMessage("Search..."),
         "search_phrase":
             MessageLookupByLibrary.simpleMessage("What are you looking for?"),
+        "see_all": MessageLookupByLibrary.simpleMessage("See all"),
         "setting1": MessageLookupByLibrary.simpleMessage("Appearance"),
         "setting1_details1": MessageLookupByLibrary.simpleMessage("System"),
         "setting1_details2": MessageLookupByLibrary.simpleMessage("Light"),
@@ -92,6 +95,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "shop_now_button": MessageLookupByLibrary.simpleMessage("Shop Now"),
         "sp": MessageLookupByLibrary.simpleMessage("S.P"),
         "special_offer": MessageLookupByLibrary.simpleMessage("Special Offer"),
+        "stores": MessageLookupByLibrary.simpleMessage("Stores"),
         "submit_button": MessageLookupByLibrary.simpleMessage("SUBMIT"),
         "up_to": MessageLookupByLibrary.simpleMessage("Up to"),
         "upload_photo_button":
