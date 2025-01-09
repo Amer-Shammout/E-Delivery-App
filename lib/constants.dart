@@ -23,6 +23,7 @@ const kId = 'id';
 const kGetProductsByCategoriesUrl = "products/category/";
 const kGetCategoriesUrl = "categories";
 const kGetOffersUrl = "products.offer";
+const kAddOrRemoveFavoritesUrl = "users/favorites";
 const kSearchUrl = "search/";
 const kAll = "All";
 const kStores = "Stores";

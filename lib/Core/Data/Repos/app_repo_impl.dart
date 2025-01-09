@@ -35,4 +35,26 @@ class AppRepoImpl extends AppRepo {
       return left(ServerFailure(errMessage: AppStrings.strInternalServerError));
     }
   }
+
+  @override
+  Future<Either<Failure, Response>> addOrRemoveFavorites(int productId) async {
+    try {
+      String token = Prefs.getString(kToken);
+      Response response =
+          await getIt.get<DioClient>().post(kAddOrRemoveFavoritesUrl,
+              options: Options(
+                headers: {
+                  "Authorization": "Bearer $token",
+                },
+              ),
+              data: {"product_id": productId});
+
+      return right(response);
+    } on DioException catch (e) {
+      return left(ServerFailure.fromDioError(e));
+    } on Exception catch (e) {
+      log(e.toString());
+      return left(ServerFailure(errMessage: AppStrings.strInternalServerError));
+    }
+  }
 }
