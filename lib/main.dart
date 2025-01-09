@@ -9,6 +9,8 @@ import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_theme.dart';
 import 'package:e_delivery_app/Features/Auth/Data/repos/auth_repo_impl.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/manager/setting_info_cubit/setting_info_cubit.dart';
+import 'package:e_delivery_app/Features/Favorite/Data/Repos/get_favorite_products_repo_impl.dart';
+import 'package:e_delivery_app/Features/Favorite/Presentation/Views/Manager/cubits/get_favorite_products_cubit/get_favorite_products_cubit.dart';
 import 'package:e_delivery_app/Features/Home/Data/Repos/home_repo_impl.dart';
 import 'package:e_delivery_app/Features/Home/Presentation/Manager/Cubits/get_categories_cubit/get_categories_cubit.dart';
 import 'package:e_delivery_app/Features/Home/Presentation/Manager/Cubits/get_offers_cubit/get_offers_cubit.dart';
@@ -101,6 +103,11 @@ class EDelivery extends StatelessWidget {
             getIt.get<AppRepoImpl>(),
           ),
         ),
+        BlocProvider(
+          create: (context) =>
+              GetFavoriteProductsCubit(getIt.get<GetFavoriteProductsRepoImpl>())
+                ..getFavoriteProducts(),
+        )
       ],
       child: BlocBuilder<LocalizationCubit, String>(
         builder: (context, lang) {

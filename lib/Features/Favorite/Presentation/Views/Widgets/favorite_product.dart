@@ -1,4 +1,5 @@
 import 'package:e_delivery_app/Core/Data/Manager/add_or_remove_favorites/add_or_remove_favorites_cubit.dart';
+import 'package:e_delivery_app/Core/Data/Models/product_model/product_model.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_container.dart';
@@ -10,8 +11,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class FavoriteProduct extends StatelessWidget {
-  const FavoriteProduct({super.key});
-
+  const FavoriteProduct({super.key, required this.product});
+  final ProductModel product;
   @override
   Widget build(BuildContext context) {
     return CustomContainer(
@@ -38,13 +39,15 @@ class FavoriteProduct extends StatelessWidget {
               height: 100,
               child: AspectRatio(
                 aspectRatio: 0.8,
-                child: Image.asset(Assets.imagesIphoneTest),
+                child: Image.network(product.imageUrl!),
               ),
             ),
             const SizedBox(
               width: kSpacing * 4,
             ),
-            const FavoriteProductContent(),
+            FavoriteProductContent(
+              product: product,
+            ),
             const Spacer(),
             Column(
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -58,7 +61,7 @@ class FavoriteProduct extends StatelessWidget {
                 GestureDetector(
                   onTap: () async {
                     await BlocProvider.of<AddOrRemoveFavoritesCubit>(context)
-                        .addOrRemoveFavorites(productId);
+                        .addOrRemoveFavorites(product.id!);
                   },
                   child: SvgPicture.asset(
                     width: 20,

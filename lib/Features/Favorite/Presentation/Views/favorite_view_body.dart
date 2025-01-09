@@ -1,7 +1,7 @@
 import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/widgets/App%20Bar/custom_search_bar.dart';
 import 'package:e_delivery_app/Core/widgets/App%20Bar/status_app_bar_builder.dart';
-import 'package:e_delivery_app/Features/Favorite/Presentation/Views/Widgets/favorite_products_list_view.dart';
+import 'package:e_delivery_app/Features/Favorite/Presentation/Views/Widgets/favorite_products_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -26,7 +26,7 @@ class FavoriteViewBody extends StatelessWidget {
             },
           ),
         ),
-        const FavoriteProductsListView(),
+        const FavoriteProductsBuilder(),
       ],
     );
   }
