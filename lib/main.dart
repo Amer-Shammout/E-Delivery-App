@@ -1,3 +1,4 @@
+import 'package:e_delivery_app/Core/Data/Manager/add_or_remove_favorites/add_or_remove_favorites_cubit.dart';
 import 'package:e_delivery_app/Core/Data/Manager/get_user_cubit/get_user_cubit.dart';
 import 'package:e_delivery_app/Core/Data/Repos/app_repo_impl.dart';
 import 'package:e_delivery_app/Core/services/custom_bloc_observer.dart';
@@ -88,15 +89,18 @@ class EDelivery extends StatelessWidget {
                 ..getProductsByCategory('All'),
         ),
         BlocProvider(
-          create: (context) => GetCategoriesCubit(
-            getIt.get<HomeRepoImpl>()
-          )..getCategories(),
+          create: (context) =>
+              GetCategoriesCubit(getIt.get<HomeRepoImpl>())..getCategories(),
         ),
         BlocProvider(
-          create: (context) => GetOffersCubit(
-            getIt.get<HomeRepoImpl>()
-          )..getOffers(),
-        )
+          create: (context) =>
+              GetOffersCubit(getIt.get<HomeRepoImpl>())..getOffers(),
+        ),
+        BlocProvider(
+          create: (context) => AddOrRemoveFavoritesCubit(
+            getIt.get<AppRepoImpl>(),
+          ),
+        ),
       ],
       child: BlocBuilder<LocalizationCubit, String>(
         builder: (context, lang) {

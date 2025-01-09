@@ -1,3 +1,4 @@
+import 'package:e_delivery_app/Core/Data/Manager/add_or_remove_favorites/add_or_remove_favorites_cubit.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_container.dart';
@@ -5,6 +6,7 @@ import 'package:e_delivery_app/Features/Favorite/Presentation/Views/Widgets/favo
 import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class FavoriteProduct extends StatelessWidget {
@@ -53,13 +55,19 @@ class FavoriteProduct extends StatelessWidget {
                   style: AppStyles.fontsBold12(context)
                       .copyWith(color: Theme.of(context).colorScheme.tertiary),
                 ),
-                SvgPicture.asset(
-                  width: 20,
-                  height: 20,
-                  Assets.iconsTrash,
-                  colorFilter: ColorFilter.mode(
-                    Theme.of(context).colorScheme.tertiary,
-                    BlendMode.srcATop,
+                GestureDetector(
+                  onTap: () async {
+                    await BlocProvider.of<AddOrRemoveFavoritesCubit>(context)
+                        .addOrRemoveFavorites(productId);
+                  },
+                  child: SvgPicture.asset(
+                    width: 20,
+                    height: 20,
+                    Assets.iconsTrash,
+                    colorFilter: ColorFilter.mode(
+                      Theme.of(context).colorScheme.tertiary,
+                      BlendMode.srcATop,
+                    ),
                   ),
                 ),
               ],
