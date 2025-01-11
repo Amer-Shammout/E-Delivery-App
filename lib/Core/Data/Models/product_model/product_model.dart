@@ -11,7 +11,7 @@ class ProductModel extends Equatable {
   final String? name;
   final String? description;
   final String? price;
-  final int? stockQuantity;
+  final dynamic stockQuantity;
   final String? imageUrl;
   final String? deliveryPeriod;
   final dynamic discountValue;
@@ -46,7 +46,7 @@ class ProductModel extends Equatable {
         name: json['name'] as String?,
         description: json['description'] as String?,
         price: json['price'] as String?,
-        stockQuantity: json['stock_quantity'] as int?,
+        stockQuantity: json['stock_quantity'] as dynamic,
         imageUrl: json['image_url'] as String?,
         deliveryPeriod: json['delivery_period'] as String?,
         discountValue: json['discount_value'] as dynamic,

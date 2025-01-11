@@ -10,9 +10,9 @@ class GetUserCubit extends Cubit<GetUserState> {
   final AppRepo _appRepo;
   User? user;
 
-  Future<void> getUser() async {
+  Future<void> getUser({data}) async {
     emit(GetUserLoading());
-    var result = await _appRepo.getUser();
+    var result = await _appRepo.getUser(data: data);
     result.fold(
       (failure) {
         emit(GetUserFailure(errMessage: failure.errMessage));

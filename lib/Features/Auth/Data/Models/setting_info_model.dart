@@ -4,12 +4,14 @@ class SettingInfoModel {
   final String? fullName;
   final double? longitude, latitude;
   final MultipartFile? image;
+  final String? lang;
 
-  SettingInfoModel({
+  SettingInfoModel( {
     this.fullName,
     this.longitude,
     this.latitude,
     this.image,
+    this.lang,
   });
 
   Map<String, dynamic> toJson() {
@@ -18,7 +20,8 @@ class SettingInfoModel {
       'full_name': fullName,
       'latitude': latitude,
       'longitude': longitude,
-      'image': image
+      'image': image,
+      'lang': lang,
     };
   }
 }

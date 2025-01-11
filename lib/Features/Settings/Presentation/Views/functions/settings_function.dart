@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:e_delivery_app/Core/Data/Manager/get_user_cubit/get_user_cubit.dart';
 import 'package:e_delivery_app/Core/utils/functions/localizations_funs.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Manager/localization_cubit/localization_cubit.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Manager/theme_cubit/theme_cubit.dart';
@@ -44,12 +45,17 @@ abstract class SettingsFunction {
     switch (value) {
       case 'العربيّة':
         BlocProvider.of<LocalizationCubit>(context).updateLanguage('العربيّة');
+        BlocProvider.of<GetUserCubit>(context).getUser(data: {'lang': 'ar'});
         break;
       case 'English':
         BlocProvider.of<LocalizationCubit>(context).updateLanguage('English');
+        BlocProvider.of<GetUserCubit>(context).getUser(data: {'lang': 'en'});
         break;
       case "System" || "النّظام":
         BlocProvider.of<LocalizationCubit>(context).updateLanguage('System');
+        BlocProvider.of<GetUserCubit>(context).getUser(
+            data: {'lang': Localizations.localeOf(context).languageCode});
+
         break;
     }
   }

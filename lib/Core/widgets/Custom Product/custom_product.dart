@@ -36,7 +36,7 @@ class CustomProduct extends StatelessWidget {
             Row(
               children: [
                 const Spacer(),
-                productModel?.discountValue ?? null != null
+                productModel?.discountValue != null
                     ? Text(
                         S.of(context).hot,
                         style: AppStyles.fontsBold10(context).copyWith(
