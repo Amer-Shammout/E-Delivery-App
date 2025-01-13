@@ -38,7 +38,8 @@ class CustomProductPrice extends StatelessWidget {
                   children: [
                     Text(
                       productModel!.discountValue != null
-                          ? '${double.parse(productModel!.discountValue) / 100 * double.parse(productModel!.price!)}'
+                          ? calculatePriceAfterDiscount(productModel!.price!,
+                              productModel!.discountValue!)
                           : '${productModel!.price}',
                       style: AppStyles.fontsBlack40(context).copyWith(
                           height: 0, color: checkDiscountColor(context)),
@@ -79,6 +80,12 @@ class CustomProductPrice extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  String calculatePriceAfterDiscount(price, discount) {
+    return (double.parse(price) -
+            ((double.parse(discount) / 100) * double.parse(price)))
+        .toStringAsFixed(2);
   }
 
   Color checkDiscountColor(BuildContext context) {

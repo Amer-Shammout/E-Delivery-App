@@ -12,13 +12,13 @@ import 'package:e_delivery_app/constants.dart';
 
 class AppRepoImpl extends AppRepo {
   @override
-  Future<Either<Failure, User>> getUser() async {
+  Future<Either<Failure, User>> getUser({data}) async {
     try {
       String userId = Prefs.getString(kId);
       String token = Prefs.getString(kToken);
       Response response = await getIt.get<DioClient>().put(
             '$kUpdateUserUrl/$userId',
-            data: {},
+            data: data ?? {},
             options: Options(
               headers: {
                 "Authorization": "Bearer $token",

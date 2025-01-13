@@ -11,8 +11,10 @@ import 'package:e_delivery_app/Core/widgets/Setting%20Info/custom_image_picker.d
 import 'package:e_delivery_app/Core/widgets/Setting%20Info/custom_map.dart';
 import 'package:e_delivery_app/Features/Auth/Data/Models/setting_info_model.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/manager/setting_info_cubit/setting_info_cubit.dart';
+import 'package:e_delivery_app/Features/Settings/Presentation/Manager/localization_cubit/localization_cubit.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
+import 'package:e_delivery_app/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
@@ -87,10 +89,14 @@ class _SettingInfoFormState extends State<SettingInfoForm> {
                 }
 
                 SettingInfoModel settingInfoModel = SettingInfoModel(
-                    fullName: fullName,
-                    longitude: userLocation?.longitude,
-                    latitude: userLocation?.latitude,
-                    image: profileImageMultiPartFile);
+                  fullName: fullName,
+                  longitude: userLocation?.longitude,
+                  latitude: userLocation?.latitude,
+                  image: profileImageMultiPartFile,
+                  lang: setLocale(
+                      BlocProvider.of<LocalizationCubit>(context).state,
+                      context),
+                );
                 BlocProvider.of<SettingInfoCubit>(context)
                     .settingInfo(settingInfoModel);
               } else {

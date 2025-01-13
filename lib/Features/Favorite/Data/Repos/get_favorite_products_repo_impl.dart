@@ -4,6 +4,7 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:e_delivery_app/Core/Data/Models/product_model/product_model.dart';
 import 'package:e_delivery_app/Core/errors/failures.dart';
+import 'package:e_delivery_app/Core/network/dio_client.dart';
 import 'package:e_delivery_app/Core/services/service_locator.dart';
 import 'package:e_delivery_app/Core/services/shared_preferences_singleton.dart';
 import 'package:e_delivery_app/Core/utils/app_strings.dart';
@@ -15,7 +16,7 @@ class GetFavoriteProductsRepoImpl extends GetFavoriteProductsRepo {
   Future<Either<Failure, List<ProductModel>>> getFavoriteProducts() async {
     try {
       String token = Prefs.getString(kToken);
-      Response response = await getIt.get<Dio>().get(kGetFavoriteProductsUrl,
+      Response response = await getIt.get<DioClient>().get(kGetFavoriteProductsUrl,
           options: Options(
             headers: {
               "Authorization": "Bearer $token",
