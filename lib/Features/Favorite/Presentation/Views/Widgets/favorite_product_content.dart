@@ -55,7 +55,8 @@ class FavoriteProductContent extends StatelessWidget {
           children: [
             Text(
               product.discountValue != null
-                  ? '${double.parse(product.discountValue) / 100 * double.parse(product.price!)}'
+                  ? calculatePriceAfterDiscount(
+                      product.price, product.discountValue)
                   : '${product.price}',
               style: AppStyles.fontsBlack20(context)
                   .copyWith(color: checkDiscountColor(context), height: 0),
@@ -79,5 +80,11 @@ class FavoriteProductContent extends StatelessWidget {
     return product.discountValue != null
         ? Theme.of(context).colorScheme.tertiary
         : Theme.of(context).colorScheme.primary;
+  }
+
+  String calculatePriceAfterDiscount(price, discount) {
+    return (double.parse(price) -
+            ((double.parse(discount) / 100) * double.parse(price)))
+        .toStringAsFixed(2);
   }
 }

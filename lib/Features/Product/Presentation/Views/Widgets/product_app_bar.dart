@@ -8,6 +8,7 @@ import 'package:e_delivery_app/Core/utils/functions/show_snack_bar.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_icon.dart';
 import 'package:e_delivery_app/Core/widgets/loading/custom_circular_progress_indicator.dart';
+import 'package:e_delivery_app/Features/Favorite/Presentation/Views/Manager/cubits/get_favorite_products_cubit/get_favorite_products_cubit.dart';
 import 'package:e_delivery_app/Features/Home/Presentation/Manager/Cubits/get_products_by_category_cubit/get_products_by_category_cubit.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -21,6 +22,7 @@ class ProductAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isFavorite = productModel!.isFavorite!;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -46,6 +48,9 @@ class ProductAppBar extends StatelessWidget {
             if (state is AddOrRemoveFavoritesFailure) {
               showFailureSnackBar(state.errMessage, context);
             }
+            if (state is AddOrRemoveFavoritesSuccess) {
+              isFavorite = !isFavorite;
+            }
           },
           builder: (context, state) {
             return state is AddOrRemoveFavoritesLoading
@@ -57,11 +62,13 @@ class ProductAppBar extends StatelessWidget {
                     onPressed: () async {
                       await BlocProvider.of<AddOrRemoveFavoritesCubit>(context)
                           .addOrRemoveFavorites(productModel!.id!);
+                      await BlocProvider.of<GetFavoriteProductsCubit>(context)
+                          .getFavoriteProducts();
 
                       await BlocProvider.of<GetProductsByCategoryCubit>(context)
-                          .getProductsByCategory("All");
+                          .getProductsByCategory("الكل");
                     },
-                    icon: productModel!.isFavorite!
+                    icon: isFavorite
                         ? Assets.iconsSolidHeartBold
                         : Assets.iconsOutlineHeartOutline,
                     backgroundColor: Theme.of(context).colorScheme.surface,
