@@ -1,4 +1,4 @@
-import 'package:e_delivery_app/Core/widgets/loading/custom_circular_progress_indicator.dart';
+import 'package:e_delivery_app/Core/widgets/loading/favorite_products_list_view_loading.dart';
 import 'package:e_delivery_app/Features/Favorite/Presentation/Views/Manager/cubits/get_favorite_products_cubit/get_favorite_products_cubit.dart';
 import 'package:e_delivery_app/Features/Favorite/Presentation/Views/Widgets/favorite_products_list_view.dart';
 import 'package:flutter/material.dart';
@@ -20,9 +20,7 @@ class FavoriteProductsBuilder extends StatelessWidget {
             child: Text(state.errMessage),
           );
         } else {
-          return const SliverToBoxAdapter(
-            child: Center(child: CustomProgressIndicator()),
-          );
+          return const FavoriteProductsListViewLoading();
         }
       },
     );
