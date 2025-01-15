@@ -57,4 +57,47 @@ class AppRepoImpl extends AppRepo {
       return left(ServerFailure(errMessage: AppStrings.strInternalServerError));
     }
   }
+  
+  @override
+  Future<Either<Failure, Response>> addToCart(int productId) async {
+     try {
+      String token = Prefs.getString(kToken);
+      Response response =
+          await getIt.get<DioClient>().post(kAddToCartUrl,
+              options: Options(
+                headers: {
+                  "Authorization": "Bearer $token",
+                },
+              ),
+              data: {"product_id": productId});
+
+      return right(response);
+    } on DioException catch (e) {
+      return left(ServerFailure.fromDioError(e));
+    } on Exception catch (e) {
+      log(e.toString());
+      return left(ServerFailure(errMessage: AppStrings.strInternalServerError));
+    }
+  }
+  @override
+  Future<Either<Failure, Response>> removeFromCart(int productId) async {
+     try {
+      String token = Prefs.getString(kToken);
+      Response response =
+          await getIt.get<DioClient>().post(kRemoveFromCartUrl,
+              options: Options(
+                headers: {
+                  "Authorization": "Bearer $token",
+                },
+              ),
+              data: {"product_id": productId});
+
+      return right(response);
+    } on DioException catch (e) {
+      return left(ServerFailure.fromDioError(e));
+    } on Exception catch (e) {
+      log(e.toString());
+      return left(ServerFailure(errMessage: AppStrings.strInternalServerError));
+    }
+  }
 }
