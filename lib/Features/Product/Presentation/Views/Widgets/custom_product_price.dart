@@ -1,9 +1,11 @@
+import 'package:e_delivery_app/Core/Data/Manager/add_to_cart_cubit/add_to_cart_cubit.dart';
 import 'package:e_delivery_app/Core/Data/Models/product_model/product_model.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 
 class CustomProductPrice extends StatelessWidget {
@@ -58,25 +60,31 @@ class CustomProductPrice extends StatelessWidget {
             ),
           ],
         ),
-        Row(
-          children: [
-            Text(
-              S.of(context).add_button,
-              style: AppStyles.fontsMedium28(context).copyWith(
-                color: checkDiscountColor(context),
+        GestureDetector(
+          onTap: () {
+            BlocProvider.of<AddToCartCubit>(context)
+                .addToCart(productModel!.id!);
+          },
+          child: Row(
+            children: [
+              Text(
+                S.of(context).add_button,
+                style: AppStyles.fontsMedium28(context).copyWith(
+                  color: checkDiscountColor(context),
+                ),
               ),
-            ),
-            SvgPicture.asset(
-              width: 32,
-              height: 32,
-              Assets.iconsPlus,
-              colorFilter: ColorFilter.mode(
-                  checkDiscountColor(context), BlendMode.srcATop),
-            ),
-            const SizedBox(
-              width: kSpacing * 3,
-            ),
-          ],
+              SvgPicture.asset(
+                width: 32,
+                height: 32,
+                Assets.iconsPlus,
+                colorFilter: ColorFilter.mode(
+                    checkDiscountColor(context), BlendMode.srcATop),
+              ),
+              const SizedBox(
+                width: kSpacing * 3,
+              ),
+            ],
+          ),
         ),
       ],
     );

@@ -24,6 +24,7 @@ class SearchViewBodyBuilder extends StatelessWidget {
             child: SearchResultsBody(
               searchType: searchType,
               searchModel: state.searchModel,
+              searchSuccess: state
             ),
           );
         } else if (state is SearchFailure) {

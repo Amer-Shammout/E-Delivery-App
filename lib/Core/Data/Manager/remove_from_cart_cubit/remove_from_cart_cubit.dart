@@ -1,4 +1,3 @@
-import 'package:dio/dio.dart';
 import 'package:e_delivery_app/Core/Data/Repos/app_repo.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -12,7 +11,7 @@ class RemoveFromCartCubit extends Cubit<RemoveFromCartState> {
 
   Future<void> removeFromCart(int productId) async {
     emit(RemoveFromCartLoading());
-    var result = await _appRepo.addOrRemoveFavorites(productId);
+    var result = await _appRepo.removeFromCart(productId);
     result.fold(
       (failure) {
         emit(

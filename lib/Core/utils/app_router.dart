@@ -195,7 +195,7 @@ abstract class AppRouter {
         name: kAllProductsName,
         pageBuilder: (context, state) => MaterialPage(
           child: AllProductsView(
-            products: state.extra as List<ProductModel>,
+            searchSuccess: state.extra as SearchSuccess,
           ),
         ),
       ),

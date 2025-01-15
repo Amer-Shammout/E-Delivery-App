@@ -57,19 +57,18 @@ class AppRepoImpl extends AppRepo {
       return left(ServerFailure(errMessage: AppStrings.strInternalServerError));
     }
   }
-  
+
   @override
   Future<Either<Failure, Response>> addToCart(int productId) async {
-     try {
+    try {
       String token = Prefs.getString(kToken);
-      Response response =
-          await getIt.get<DioClient>().post(kAddToCartUrl,
-              options: Options(
-                headers: {
-                  "Authorization": "Bearer $token",
-                },
-              ),
-              data: {"product_id": productId});
+      Response response = await getIt.get<DioClient>().post(kAddToCartUrl,
+          options: Options(
+            headers: {
+              "Authorization": "Bearer $token",
+            },
+          ),
+          data: {"product_id": productId});
 
       return right(response);
     } on DioException catch (e) {
@@ -79,12 +78,13 @@ class AppRepoImpl extends AppRepo {
       return left(ServerFailure(errMessage: AppStrings.strInternalServerError));
     }
   }
+
   @override
-  Future<Either<Failure, Response>> removeFromCart(int productId) async {
-     try {
+  Future<Either<Failure, Map<String,dynamic>>> removeFromCart(int productId) async {
+    try {
       String token = Prefs.getString(kToken);
-      Response response =
-          await getIt.get<DioClient>().post(kRemoveFromCartUrl,
+      Map<String,dynamic> response =
+          await getIt.get<DioClient>().delete(kRemoveFromCartUrl,
               options: Options(
                 headers: {
                   "Authorization": "Bearer $token",

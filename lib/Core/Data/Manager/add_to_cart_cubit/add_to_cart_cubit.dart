@@ -12,7 +12,7 @@ class AddToCartCubit extends Cubit<AddToCartState> {
 
   Future<void> addToCart(int productId) async {
     emit(AddToCartLoading());
-    var result = await _appRepo.addOrRemoveFavorites(productId);
+    var result = await _appRepo.addToCart(productId);
     result.fold(
       (failure) {
         emit(

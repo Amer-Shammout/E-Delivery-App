@@ -1,14 +1,11 @@
 import 'package:e_delivery_app/Core/Data/Manager/add_or_remove_favorites/add_or_remove_favorites_cubit.dart';
-import 'package:e_delivery_app/Core/Data/Manager/add_to_cart_cubit/add_to_cart_cubit.dart';
 import 'package:e_delivery_app/Core/Data/Manager/get_user_cubit/get_user_cubit.dart';
-import 'package:e_delivery_app/Core/Data/Manager/remove_from_cart_cubit/remove_from_cart_cubit.dart';
 import 'package:e_delivery_app/Core/Data/Repos/app_repo_impl.dart';
 import 'package:e_delivery_app/Core/services/custom_bloc_observer.dart';
 import 'package:e_delivery_app/Core/services/firebase_notification.dart';
 import 'package:e_delivery_app/Core/services/service_locator.dart';
 import 'package:e_delivery_app/Core/services/shared_preferences_singleton.dart';
 import 'package:e_delivery_app/Core/utils/app_router.dart';
-import 'package:e_delivery_app/Core/utils/functions/localizations_funs.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_theme.dart';
 import 'package:e_delivery_app/Features/Auth/Data/repos/auth_repo_impl.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/manager/setting_info_cubit/setting_info_cubit.dart';
@@ -102,8 +99,9 @@ class EDelivery extends StatelessWidget {
         BlocProvider(
           create: (context) =>
               GetProductsByCategoryCubit(getIt.get<HomeRepoImpl>())
-                ..getProductsByCategory(
-                    LocalizationsFuns.isArabic(context) ? 'الكل' : 'All'),
+                ..getProductsByCategory("All"
+                    // LocalizationsFuns.isArabic(context) ? 'الكل' : 'All',
+                    ),
         ),
         BlocProvider(
           create: (context) =>
@@ -122,16 +120,6 @@ class EDelivery extends StatelessWidget {
           create: (context) =>
               GetFavoriteProductsCubit(getIt.get<GetFavoriteProductsRepoImpl>())
                 ..getFavoriteProducts(),
-        ),
-        BlocProvider(
-          create: (context) => AddToCartCubit(
-            getIt.get<AppRepoImpl>(),
-          ),
-        ),
-        BlocProvider(
-          create: (context) => RemoveFromCartCubit(
-            getIt.get<AppRepoImpl>(),
-          ),
         ),
       ],
       child: BlocBuilder<LocalizationCubit, String>(
