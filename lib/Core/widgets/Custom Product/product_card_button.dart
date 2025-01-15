@@ -1,6 +1,7 @@
 import 'package:e_delivery_app/Core/Data/Manager/add_to_cart_cubit/add_to_cart_cubit.dart';
 import 'package:e_delivery_app/Core/Data/Manager/remove_from_cart_cubit/remove_from_cart_cubit.dart';
 import 'package:e_delivery_app/Core/Data/Models/product_model/product_model.dart';
+import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/Custom%20Product/add_to_cart_button.dart';
 import 'package:e_delivery_app/Core/widgets/Custom%20Product/remove_from_cart_button.dart';
 import 'package:e_delivery_app/Features/Home/Presentation/Manager/Cubits/get_products_by_category_cubit/get_products_by_category_cubit.dart';
@@ -38,13 +39,32 @@ class ProductCardButton extends StatelessWidget {
                 searchState?.searchModel.products[index].isCart ??
                 isCart) {
               return RemoveFromCartButton(
-                  productModel: productModel, index: index,getProductsSuccess: homeState,getSearchProductsSuccess: searchState,getStoreProductsSuccess: storeState,);
+                productModel: productModel,
+                index: index,
+                getProductsSuccess: homeState,
+                getSearchProductsSuccess: searchState,
+                getStoreProductsSuccess: storeState,
+              );
             } else {
-              return AddToCartButton(productModel: productModel, index: index,getProductsSuccess: homeState,getSearchProductsSuccess: searchState,getStoreProductsSuccess: storeState,);
+              return AddToCartButton(
+                productModel: productModel,
+                index: index,
+                getProductsSuccess: homeState,
+                getSearchProductsSuccess: searchState,
+                getStoreProductsSuccess: storeState,
+                textStyle: AppStyles.fontsMedium12(context)
+                    .copyWith(color: checkDiscountColor(context)),
+              );
             }
           },
         );
       },
     );
+  }
+
+  Color checkDiscountColor(BuildContext context) {
+    return productModel.discountValue != null
+        ? Theme.of(context).colorScheme.tertiary
+        : Theme.of(context).colorScheme.primary;
   }
 }

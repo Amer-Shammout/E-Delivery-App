@@ -6,18 +6,24 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 part 'get_store_products_state.dart';
 
 class GetStoreProductsCubit extends Cubit<GetStoreProductsState> {
-  GetStoreProductsCubit(this._storeDetailsRepo) : super(GetStoreProductsInitial());
+  GetStoreProductsCubit(this._storeDetailsRepo)
+      : super(GetStoreProductsInitial());
 
-    final StoreDetailsRepo _storeDetailsRepo;
+  final StoreDetailsRepo _storeDetailsRepo;
 
-     void getStoreProducts({required int storeId,required String category}) async {
-    emit(GetStoreProductsLoading());
-    var result = await _storeDetailsRepo.getStoreProducts(storeId:  storeId,category: category);
+  Future<void> getStoreProducts(
+      {required int storeId, required String category}) async {
+    if (!isClosed) {
+      emit(GetStoreProductsLoading());
+    }
+    var result = await _storeDetailsRepo.getStoreProducts(
+        storeId: storeId, category: category);
     result.fold((failure) {
       emit(GetStoreProductsFailure(errMessage: failure.errMessage));
     }, (products) {
-      emit(GetStoreProductsSuccess(products: products));
+      if (!isClosed) {
+        emit(GetStoreProductsSuccess(products: products));
+      }
     });
   }
-
 }

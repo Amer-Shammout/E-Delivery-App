@@ -31,8 +31,6 @@ class RemoveFromCartButton extends StatelessWidget {
           showFailureSnackBar(state.errMessage, context);
         }
         if (state is RemoveFromCartSuccess) {
-          // GetProductsByCategoryState state =
-          //     BlocProvider.of<GetProductsByCategoryCubit>(context).state;
           if (getProductsSuccess != null) {
             getProductsSuccess!.products[index].isCart = false;
           }
@@ -46,6 +44,12 @@ class RemoveFromCartButton extends StatelessWidget {
             getStoreProductsSuccess!.products[index].isCart = false;
             BlocProvider.of<GetProductsByCategoryCubit>(context)
                 .getProductsByCategory('All');
+          }
+          if (index == -1) {
+            BlocProvider.of<GetProductsByCategoryCubit>(context)
+                .getProductsByCategory('All');
+            BlocProvider.of<GetStoreProductsCubit>(context).getStoreProducts(
+                category: 'All', storeId: productModel.storeId!.id!);
           }
           showSuccessSnackBar(
               "The product has been removed from the cart successfully!",

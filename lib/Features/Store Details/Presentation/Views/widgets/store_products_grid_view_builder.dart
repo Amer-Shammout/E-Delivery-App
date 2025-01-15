@@ -1,4 +1,3 @@
-import 'package:e_delivery_app/Core/utils/functions/localizations_funs.dart';
 import 'package:e_delivery_app/Core/widgets/loading/products_grid_view_loading.dart';
 import 'package:e_delivery_app/Core/widgets/products_grid_view.dart';
 import 'package:e_delivery_app/Features/Store%20Details/Presentation/manager/get_store_products_cubit/get_store_products_cubit.dart';
@@ -22,7 +21,6 @@ class _StoreProductsGridViewBuilderState
   void initState() {
     BlocProvider.of<GetStoreProductsCubit>(context)
         .getStoreProducts(storeId: widget.storeModel.id!, category: 'All'
-            // category: LocalizationsFuns.isArabic(context) ? 'الكل' : 'All'
             );
     super.initState();
   }

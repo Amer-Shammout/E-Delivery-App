@@ -1,12 +1,13 @@
 import 'package:e_delivery_app/Core/Data/Manager/add_to_cart_cubit/add_to_cart_cubit.dart';
+import 'package:e_delivery_app/Core/Data/Manager/remove_from_cart_cubit/remove_from_cart_cubit.dart';
 import 'package:e_delivery_app/Core/Data/Models/product_model/product_model.dart';
-import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
+import 'package:e_delivery_app/Core/widgets/Custom%20Product/add_to_cart_button.dart';
+import 'package:e_delivery_app/Core/widgets/Custom%20Product/remove_from_cart_button.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
 
 class CustomProductPrice extends StatelessWidget {
   const CustomProductPrice({super.key, @required this.productModel});
@@ -15,6 +16,8 @@ class CustomProductPrice extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isCart = productModel!.isCart!;
+
     return Row(
       crossAxisAlignment: CrossAxisAlignment.end,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -60,32 +63,36 @@ class CustomProductPrice extends StatelessWidget {
             ),
           ],
         ),
-        GestureDetector(
-          onTap: () {
-            BlocProvider.of<AddToCartCubit>(context)
-                .addToCart(productModel!.id!);
+        BlocConsumer<RemoveFromCartCubit, RemoveFromCartState>(
+          listener: (context, state1) {
+            if (state1 is RemoveFromCartSuccess) {
+              isCart = false;
+            }
           },
-          child: Row(
-            children: [
-              Text(
-                S.of(context).add_button,
-                style: AppStyles.fontsMedium28(context).copyWith(
-                  color: checkDiscountColor(context),
-                ),
-              ),
-              SvgPicture.asset(
-                width: 32,
-                height: 32,
-                Assets.iconsPlus,
-                colorFilter: ColorFilter.mode(
-                    checkDiscountColor(context), BlendMode.srcATop),
-              ),
-              const SizedBox(
-                width: kSpacing * 3,
-              ),
-            ],
-          ),
-        ),
+          builder: (context, state1) {
+            return BlocConsumer<AddToCartCubit, AddToCartState>(
+              builder: (context, state2) {
+                return isCart
+                    ? RemoveFromCartButton(
+                        productModel: productModel!, index: -1)
+                    : AddToCartButton(
+                        productModel: productModel!,
+                        index: -1,
+                        height: 32,
+                        width: 32,
+                        textStyle: AppStyles.fontsMedium28(context).copyWith(
+                          color: checkDiscountColor(context),
+                        ),
+                      );
+              },
+              listener: (context, state2) {
+                if (state2 is AddToCartSuccess) {
+                  isCart = true;
+                }
+              },
+            );
+          },
+        )
       ],
     );
   }

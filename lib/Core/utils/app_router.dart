@@ -128,10 +128,9 @@ abstract class AppRouter {
                 getIt.get<StoreDetailsRepoImpl>(),
               ),
             ),
-            BlocProvider(
-              create: (context) => GetStoreProductsCubit(
-                getIt.get<StoreDetailsRepoImpl>(),
-              ),
+            BlocProvider<GetStoreProductsCubit>.value(
+              value: getIt.get<GetStoreProductsCubit>(),
+              // create: (context) => getIt.get<GetStoreProductsCubit>(),
             ),
           ],
           child: StoreDetailsView(

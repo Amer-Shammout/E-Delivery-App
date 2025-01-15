@@ -5,6 +5,7 @@ import 'package:e_delivery_app/Features/Favorite/Data/Repos/get_favorite_product
 import 'package:e_delivery_app/Features/Home/Data/Repos/home_repo_impl.dart';
 import 'package:e_delivery_app/Features/Profile/data/repos/profile_repo_impl.dart';
 import 'package:e_delivery_app/Features/Search/data/repos/search_repo_impl.dart';
+import 'package:e_delivery_app/Features/Store%20Details/Presentation/manager/get_store_products_cubit/get_store_products_cubit.dart';
 import 'package:e_delivery_app/Features/Store%20Details/data/repos/store_details_repo_impl.dart';
 import 'package:e_delivery_app/Features/Stores/data/repos/stores_repo_impl.dart';
 import 'package:get_it/get_it.dart';
@@ -22,4 +23,7 @@ void setupGetit() {
   getIt.registerSingleton<SearchRepoImpl>(SearchRepoImpl());
   getIt.registerSingleton<GetFavoriteProductsRepoImpl>(
       GetFavoriteProductsRepoImpl());
+  getIt.registerSingleton<GetStoreProductsCubit>(
+      GetStoreProductsCubit(getIt.get<StoreDetailsRepoImpl>()));
+    
 }

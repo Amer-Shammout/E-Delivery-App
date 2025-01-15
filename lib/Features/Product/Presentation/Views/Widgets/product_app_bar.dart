@@ -10,19 +10,25 @@ import 'package:e_delivery_app/Core/widgets/custom_icon.dart';
 import 'package:e_delivery_app/Core/widgets/loading/custom_circular_progress_indicator.dart';
 import 'package:e_delivery_app/Features/Favorite/Presentation/Views/Manager/cubits/get_favorite_products_cubit/get_favorite_products_cubit.dart';
 import 'package:e_delivery_app/Features/Home/Presentation/Manager/Cubits/get_products_by_category_cubit/get_products_by_category_cubit.dart';
+import 'package:e_delivery_app/Features/Store%20Details/Presentation/manager/get_store_products_cubit/get_store_products_cubit.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-class ProductAppBar extends StatelessWidget {
+class ProductAppBar extends StatefulWidget {
   const ProductAppBar({super.key, @required this.productModel});
 
   final ProductModel? productModel;
 
   @override
+  State<ProductAppBar> createState() => _ProductAppBarState();
+}
+
+class _ProductAppBarState extends State<ProductAppBar> {
+  @override
   Widget build(BuildContext context) {
-    bool isFavorite = productModel!.isFavorite!;
+    bool isFavorite = widget.productModel!.isFavorite!;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -36,7 +42,7 @@ class ProductAppBar extends StatelessWidget {
             backgroundColor: Theme.of(context).colorScheme.surface,
           ),
         ),
-        productModel?.discountValue != null
+        widget.productModel?.discountValue != null
             ? Text(
                 S.of(context).hot,
                 style: AppStyles.fontsBold20(context)
@@ -59,14 +65,19 @@ class ProductAppBar extends StatelessWidget {
                     child: CustomProgressIndicator(),
                   )
                 : CustomIcon(
-                    onPressed: () async {
-                      await BlocProvider.of<AddOrRemoveFavoritesCubit>(context)
-                          .addOrRemoveFavorites(productModel!.id!);
-                      await BlocProvider.of<GetFavoriteProductsCubit>(context)
+                    onPressed: () {
+                      BlocProvider.of<AddOrRemoveFavoritesCubit>(context)
+                          .addOrRemoveFavorites(widget.productModel!.id!);
+                      BlocProvider.of<GetFavoriteProductsCubit>(context)
                           .getFavoriteProducts();
-
-                      await BlocProvider.of<GetProductsByCategoryCubit>(context)
-                          .getProductsByCategory("الكل");
+                      if (mounted) {
+                        BlocProvider.of<GetProductsByCategoryCubit>(context)
+                            .getProductsByCategory("All");
+                        BlocProvider.of<GetStoreProductsCubit>(context)
+                            .getStoreProducts(
+                                category: "All",
+                                storeId: widget.productModel!.storeId!.id!);
+                      }
                     },
                     icon: isFavorite
                         ? Assets.iconsSolidHeartBold

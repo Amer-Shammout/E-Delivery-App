@@ -48,7 +48,7 @@ class HomeRepoImpl extends HomeRepo {
       for (var product in jsonData["data"]) {
         products.add(ProductModel.fromJson(product));
       }
-      products.shuffle();
+      // products.shuffle();
       return right(products);
     } on DioException catch (e) {
       return left(ServerFailure.fromDioError(e));

@@ -5,6 +5,7 @@ import 'package:e_delivery_app/Core/Data/Repos/app_repo_impl.dart';
 import 'package:e_delivery_app/Core/services/service_locator.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Features/Product/Presentation/Views/Widgets/product_view_body.dart';
+import 'package:e_delivery_app/Features/Store%20Details/Presentation/manager/get_store_products_cubit/get_store_products_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -49,7 +50,11 @@ class _ProductViewState extends State<ProductView> with WidgetsBindingObserver {
         ),
         BlocProvider(
           create: (context) => RemoveFromCartCubit(getIt.get<AppRepoImpl>()),
-        )
+        ),
+        BlocProvider<GetStoreProductsCubit>.value(
+          value: getIt.get<GetStoreProductsCubit>(),
+          // create: (context) => getIt.get<GetStoreProductsCubit>(),
+        ),
       ],
       child: Container(
         decoration: BoxDecoration(

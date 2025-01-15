@@ -2,7 +2,6 @@ import 'package:e_delivery_app/Core/Data/Manager/add_to_cart_cubit/add_to_cart_c
 import 'package:e_delivery_app/Core/Data/Models/product_model/product_model.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/functions/show_snack_bar.dart';
-import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/loading/custom_circular_progress_indicator.dart';
 import 'package:e_delivery_app/Features/Home/Presentation/Manager/Cubits/get_products_by_category_cubit/get_products_by_category_cubit.dart';
 import 'package:e_delivery_app/Features/Search/Presentation/manager/search_cubit/search_cubit.dart';
@@ -20,6 +19,8 @@ class AddToCartButton extends StatelessWidget {
     this.getProductsSuccess,
     this.getStoreProductsSuccess,
     this.getSearchProductsSuccess,
+    this.width = 16,
+    this.height = 16, required this.textStyle,
   });
 
   final ProductModel productModel;
@@ -27,6 +28,8 @@ class AddToCartButton extends StatelessWidget {
   final GetProductsByCategorySuccess? getProductsSuccess;
   final GetStoreProductsSuccess? getStoreProductsSuccess;
   final SearchSuccess? getSearchProductsSuccess;
+  final double width, height;
+  final TextStyle textStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -46,8 +49,14 @@ class AddToCartButton extends StatelessWidget {
           }
           if (getStoreProductsSuccess != null) {
             getStoreProductsSuccess!.products[index].isCart = true;
+            BlocProvider.of<GetProductsByCategoryCubit>(context)
+                .getProductsByCategory('All');
+          }
+          if (index == -1) {
              BlocProvider.of<GetProductsByCategoryCubit>(context)
                 .getProductsByCategory('All');
+                BlocProvider.of<GetStoreProductsCubit>(context)
+                .getStoreProducts(category: 'All',storeId: productModel.storeId!.id!);
           }
           showSuccessSnackBar(
               "The product has been added to the cart successfully!", context);
@@ -65,10 +74,11 @@ class AddToCartButton extends StatelessWidget {
                   children: [
                     Text(
                       S.of(context).add_button,
-                      style: AppStyles.fontsMedium12(context)
-                          .copyWith(color: checkDiscountColor(context)),
+                      style: textStyle,
                     ),
                     SvgPicture.asset(
+                      height: height,
+                      width: width,
                       Assets.iconsPlus,
                       colorFilter: ColorFilter.mode(
                           checkDiscountColor(context), BlendMode.srcATop),
