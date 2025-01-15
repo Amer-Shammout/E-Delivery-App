@@ -20,9 +20,10 @@ class _StoreProductsGridViewBuilderState
     extends State<StoreProductsGridViewBuilder> {
   @override
   void initState() {
-    BlocProvider.of<GetStoreProductsCubit>(context).getStoreProducts(
-        storeId: widget.storeModel.id!,
-        category: LocalizationsFuns.isArabic(context) ? 'الكل' : 'All');
+    BlocProvider.of<GetStoreProductsCubit>(context)
+        .getStoreProducts(storeId: widget.storeModel.id!, category: 'All'
+            // category: LocalizationsFuns.isArabic(context) ? 'الكل' : 'All'
+            );
     super.initState();
   }
 
@@ -31,8 +32,10 @@ class _StoreProductsGridViewBuilderState
     return BlocBuilder<GetStoreProductsCubit, GetStoreProductsState>(
       builder: (context, state) {
         if (state is GetStoreProductsSuccess) {
+          // ignore: missing_required_param
           return ProductsGridView(
             products: state.products,
+            getStoreProductsSuccess: state,
           );
         } else if (state is GetStoreProductsFailure) {
           return SliverToBoxAdapter(child: Text(state.errMessage));

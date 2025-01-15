@@ -12,7 +12,8 @@ class ProductsGridViewBuilder extends StatelessWidget {
     return BlocBuilder<GetProductsByCategoryCubit, GetProductsByCategoryState>(
       builder: (context, state) {
         if (state is GetProductsByCategorySuccess) {
-          return ProductsGridView(products: state.products);
+          // ignore: missing_required_param
+          return ProductsGridView(products: state.products,getProductsSuccess: state,);
         } else if (state is GetProductsByCategoryFailure) {
           return SliverToBoxAdapter(child: Text(state.errMessage));
         } else {

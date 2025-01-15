@@ -2,10 +2,11 @@ import 'package:equatable/equatable.dart';
 
 import 'store_id.dart';
 
+// ignore: must_be_immutable
 class ProductModel extends Equatable {
   final StoreId? storeId;
   final bool? isFavorite;
-  final bool? isCart;
+   bool? isCart;
   final String? category;
   final int? id;
   final String? name;
@@ -18,7 +19,7 @@ class ProductModel extends Equatable {
   final String? discountStart;
   final String? discountEnd;
 
-  const ProductModel({
+   ProductModel({
     this.storeId,
     this.isFavorite,
     this.isCart,
@@ -34,6 +35,8 @@ class ProductModel extends Equatable {
     this.discountStart,
     this.discountEnd,
   });
+
+  
 
   factory ProductModel.fromJson(Map<String, dynamic> json) => ProductModel(
         storeId: json['store'] == null
