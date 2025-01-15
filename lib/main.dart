@@ -6,7 +6,6 @@ import 'package:e_delivery_app/Core/services/firebase_notification.dart';
 import 'package:e_delivery_app/Core/services/service_locator.dart';
 import 'package:e_delivery_app/Core/services/shared_preferences_singleton.dart';
 import 'package:e_delivery_app/Core/utils/app_router.dart';
-import 'package:e_delivery_app/Core/utils/functions/localizations_funs.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_theme.dart';
 import 'package:e_delivery_app/Features/Auth/Data/repos/auth_repo_impl.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/manager/setting_info_cubit/setting_info_cubit.dart';
@@ -31,16 +30,16 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
 
- String setLocale(String lang, context) {
-    switch (lang) {
-      case "English":
-        return 'en';
-      case "العربيّة":
-        return 'ar';
-      default:
-        return Localizations.localeOf(context).languageCode;
-    }
+String setLocale(String lang, context) {
+  switch (lang) {
+    case "English":
+      return 'en';
+    case "العربيّة":
+      return 'ar';
+    default:
+      return Localizations.localeOf(context).languageCode;
   }
+}
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -100,7 +99,8 @@ class EDelivery extends StatelessWidget {
         BlocProvider(
           create: (context) =>
               GetProductsByCategoryCubit(getIt.get<HomeRepoImpl>())
-                ..getProductsByCategory(LocalizationsFuns.isArabic(context) ? 'الكل' : 'All'),
+                ..getProductsByCategory('All'),
+          // LocalizationsFuns.isArabic(context) ? 'الكل' : 'All'),
         ),
         BlocProvider(
           create: (context) =>
@@ -146,6 +146,4 @@ class EDelivery extends StatelessWidget {
       ),
     );
   }
-
- 
 }

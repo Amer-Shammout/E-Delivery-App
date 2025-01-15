@@ -40,7 +40,7 @@ class CustomProductPrice extends StatelessWidget {
                       productModel!.discountValue != null
                           ? calculatePriceAfterDiscount(productModel!.price!,
                               productModel!.discountValue!)
-                          : '${productModel!.price}',
+                          : '${double.parse(productModel!.price!)}',
                       style: AppStyles.fontsBlack40(context).copyWith(
                           height: 0, color: checkDiscountColor(context)),
                     ),

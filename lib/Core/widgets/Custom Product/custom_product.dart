@@ -36,7 +36,7 @@ class CustomProduct extends StatelessWidget {
             Row(
               children: [
                 const Spacer(),
-                productModel?.discountValue != null
+                productModel!.discountValue != null
                     ? Text(
                         S.of(context).hot,
                         style: AppStyles.fontsBold10(context).copyWith(
@@ -58,7 +58,11 @@ class CustomProduct extends StatelessWidget {
                       )
                     : CachedNetworkImage(
                         imageUrl: productModel!.imageUrl!,
-                        errorWidget: (context, url, error) => const Icon(Icons.error,color: Colors.red,size: 24,),
+                        errorWidget: (context, url, error) => const Icon(
+                          Icons.error,
+                          color: Colors.red,
+                          size: 24,
+                        ),
                       ),
               ),
             ),
