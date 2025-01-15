@@ -1,10 +1,9 @@
 import 'package:e_delivery_app/Core/Data/Models/product_model/product_model.dart';
-import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
+import 'package:e_delivery_app/Core/widgets/Custom%20Product/add_to_cart_button.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class ProductPrice extends StatelessWidget {
   const ProductPrice({super.key, @required this.productModel});
@@ -34,20 +33,7 @@ class ProductPrice extends StatelessWidget {
             ),
           ],
         ),
-        Row(
-          children: [
-            Text(
-              S.of(context).add_button,
-              style: AppStyles.fontsMedium12(context)
-                  .copyWith(color: checkDiscountColor(context)),
-            ),
-            SvgPicture.asset(
-              Assets.iconsPlus,
-              colorFilter: ColorFilter.mode(
-                  checkDiscountColor(context), BlendMode.srcATop),
-            ),
-          ],
-        ),
+         AddToCartButton(productModel: productModel!,),
       ],
     );
   }
@@ -58,3 +44,4 @@ class ProductPrice extends StatelessWidget {
         : Theme.of(context).colorScheme.primary;
   }
 }
+
