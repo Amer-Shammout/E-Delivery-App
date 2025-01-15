@@ -8,7 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 class ShowAlertDialog {
-static    showAlertDialog(BuildContext context,int productId) {
+  static showAlertDialog(BuildContext context, int productId) {
     // set up the buttons
     Widget cancelButton = TextButton(
       child: Text(
@@ -29,13 +29,13 @@ static    showAlertDialog(BuildContext context,int productId) {
         ),
       ),
       onPressed: () async {
-        GoRouter.of(context).pop();
-        await BlocProvider.of<AddOrRemoveFavoritesCubit>(context)
+        BlocProvider.of<AddOrRemoveFavoritesCubit>(context)
             .addOrRemoveFavorites(productId);
-        await BlocProvider.of<GetFavoriteProductsCubit>(context)
+        BlocProvider.of<GetFavoriteProductsCubit>(context)
             .getFavoriteProducts();
-        await BlocProvider.of<GetProductsByCategoryCubit>(context)
+        BlocProvider.of<GetProductsByCategoryCubit>(context)
             .getProductsByCategory('All');
+        GoRouter.of(context).pop();
       },
     );
 
