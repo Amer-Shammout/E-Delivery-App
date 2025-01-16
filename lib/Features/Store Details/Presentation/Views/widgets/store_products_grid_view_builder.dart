@@ -20,8 +20,7 @@ class _StoreProductsGridViewBuilderState
   @override
   void initState() {
     BlocProvider.of<GetStoreProductsCubit>(context)
-        .getStoreProducts(storeId: widget.storeModel.id!, category: 'All'
-            );
+        .getStoreProducts(storeId: widget.storeModel.id!, category: 'All');
     super.initState();
   }
 

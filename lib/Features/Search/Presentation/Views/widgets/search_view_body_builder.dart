@@ -22,10 +22,9 @@ class SearchViewBodyBuilder extends StatelessWidget {
         } else if (state is SearchSuccess) {
           return Expanded(
             child: SearchResultsBody(
-              searchType: searchType,
-              searchModel: state.searchModel,
-              searchSuccess: state
-            ),
+                searchType: searchType,
+                searchModel: state.searchModel,
+                searchSuccess: state),
           );
         } else if (state is SearchFailure) {
           return Text(state.errMessage);

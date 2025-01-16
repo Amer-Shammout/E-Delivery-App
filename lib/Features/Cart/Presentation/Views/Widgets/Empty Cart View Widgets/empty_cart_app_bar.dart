@@ -1,9 +1,9 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_icon.dart';
-import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class EmptyCartAppBar extends StatelessWidget implements PreferredSizeWidget {
   const EmptyCartAppBar({super.key});
@@ -13,14 +13,19 @@ class EmptyCartAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       toolbarHeight: 80,
       leadingWidth: 80,
-      leading: const Padding(
-        padding: EdgeInsets.all(16),
-        child: CustomIcon(icon: Assets.iconsBackArrow),
+      leading: Padding(
+        padding: const EdgeInsets.all(16),
+        child: CustomIcon(
+          icon: Assets.iconsBackArrow,
+          onPressed: () {
+            GoRouter.of(context).pop();
+          },
+        ),
       ),
       title: Text(
         S.of(context).cart1,
         style: AppStyles.fontsBold28(context).copyWith(
-          color: kPrimaryColor,
+          color: Theme.of(context).colorScheme.primary,
         ),
       ),
       centerTitle: true,

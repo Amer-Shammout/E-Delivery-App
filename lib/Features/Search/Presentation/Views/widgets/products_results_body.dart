@@ -4,11 +4,11 @@ import 'package:e_delivery_app/Features/Search/Presentation/manager/search_cubit
 import 'package:flutter/material.dart';
 
 class ProductsResultsBody extends StatelessWidget {
-  const ProductsResultsBody({super.key, required this.products, this.searchSuccess});
+  const ProductsResultsBody(
+      {super.key, required this.products, this.searchSuccess});
 
   final List<ProductModel> products;
-    final SearchSuccess? searchSuccess;
-
+  final SearchSuccess? searchSuccess;
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +24,4 @@ class ProductsResultsBody extends StatelessWidget {
           )
         : const Text("No Search Results");
   }
-
- 
 }

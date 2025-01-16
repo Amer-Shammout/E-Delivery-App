@@ -80,10 +80,11 @@ class AppRepoImpl extends AppRepo {
   }
 
   @override
-  Future<Either<Failure, Map<String,dynamic>>> removeFromCart(int productId) async {
+  Future<Either<Failure, Map<String, dynamic>>> removeFromCart(
+      int productId) async {
     try {
       String token = Prefs.getString(kToken);
-      Map<String,dynamic> response =
+      Map<String, dynamic> response =
           await getIt.get<DioClient>().delete(kRemoveFromCartUrl,
               options: Options(
                 headers: {

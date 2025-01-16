@@ -7,7 +7,8 @@ import 'package:flutter/material.dart';
 class SearchOperationDetails extends StatelessWidget {
   const SearchOperationDetails({
     super.key,
-    required this.onPressed, required this.title,
+    required this.onPressed,
+    required this.title,
   });
 
   final VoidCallback onPressed;

@@ -18,7 +18,7 @@ final class RemoveFromCartFailure extends RemoveFromCartState {
 }
 
 final class RemoveFromCartSuccess extends RemoveFromCartState {
-  final Map<String,dynamic> response;
+  final Map<String, dynamic> response;
 
   const RemoveFromCartSuccess({required this.response});
 }

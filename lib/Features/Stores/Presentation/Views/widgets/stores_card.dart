@@ -5,7 +5,10 @@ import 'package:flutter/material.dart';
 
 class StoresCard extends StatelessWidget {
   const StoresCard(
-      {super.key, required this.cardColor, @required this.storeLogo, this.opacity});
+      {super.key,
+      required this.cardColor,
+      @required this.storeLogo,
+      this.opacity});
 
   final Color cardColor;
   final String? storeLogo;

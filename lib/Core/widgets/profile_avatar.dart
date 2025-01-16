@@ -34,7 +34,9 @@ class ProfileAvatar extends StatelessWidget {
         backgroundColor: SetThemeColors.setBackgroundColor(context),
         backgroundImage: userImage == null
             ? networkImage != null
-                ? CachedNetworkImageProvider(networkImage!,)
+                ? CachedNetworkImageProvider(
+                    networkImage!,
+                  )
                 : FileImage(
                     File(
                       fileImage!,

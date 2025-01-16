@@ -14,12 +14,12 @@ class StoresListViewLoading extends StatelessWidget {
           bottom: kSpacing * 4,
         ),
         child: CustomContainer(
-      child: CustomCardPattern(
-        opacity: 0,
-        cardColor: Theme.of(context).colorScheme.secondary,
-        child: const SizedBox.shrink(),
-      ),
-    ),
+          child: CustomCardPattern(
+            opacity: 0,
+            cardColor: Theme.of(context).colorScheme.secondary,
+            child: const SizedBox.shrink(),
+          ),
+        ),
       ),
       itemCount: 20,
     );

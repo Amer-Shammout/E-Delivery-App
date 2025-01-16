@@ -33,7 +33,7 @@ class ProductContent extends StatelessWidget {
         CustomWidgetWithDash(
           dashColor: Theme.of(context).colorScheme.primary,
           widget: Text(
-            productModel==null ? 'Mobiles' : productModel!.category!,
+            productModel == null ? 'Mobiles' : productModel!.category!,
             style: AppStyles.fontsBold10(context)
                 .copyWith(color: Theme.of(context).colorScheme.primary),
           ),

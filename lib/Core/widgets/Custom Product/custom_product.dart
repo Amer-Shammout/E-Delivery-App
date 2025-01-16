@@ -96,7 +96,13 @@ class CustomProduct extends StatelessWidget {
               const Spacer(
                 flex: 2,
               ),
-              ProductPrice(productModel: productModel, index: index,getProductsSuccess: getProductsSuccess,getSearchProductsSuccess: getSearchProductsSuccess,getStoreProductsSuccess: getStoreProductsSuccess,),
+              ProductPrice(
+                productModel: productModel,
+                index: index,
+                getProductsSuccess: getProductsSuccess,
+                getSearchProductsSuccess: getSearchProductsSuccess,
+                getStoreProductsSuccess: getStoreProductsSuccess,
+              ),
             ],
           ),
         ),

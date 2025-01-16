@@ -24,17 +24,22 @@ class ProductViewBody extends StatelessWidget {
           ProductAppBar(
             productModel: productModel,
           ),
-           Expanded(
-            child: ProductImageMask(image: productModel?.imageUrl,),
+          Expanded(
+            child: ProductImageMask(
+              image: productModel?.imageUrl,
+            ),
           ),
-           Expanded(
+          Expanded(
             flex: 2,
-            child: ProductViewContentWithScrollEffect(productModel:productModel),
+            child:
+                ProductViewContentWithScrollEffect(productModel: productModel),
           ),
           const SizedBox(
             height: 4,
           ),
-           CustomProductPrice(productModel: productModel,),
+          CustomProductPrice(
+            productModel: productModel,
+          ),
         ],
       ),
     );

@@ -1,11 +1,15 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/widgets/custom_container.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/Widgets/Cart%20View%20Widgets/product_cart_content.dart';
+import 'package:e_delivery_app/Features/Cart/data/models/cart_model/order_item.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 
 class ProductCardCart extends StatelessWidget {
-  const ProductCardCart({super.key});
+  const ProductCardCart({super.key, required this.orderItem});
+
+  final OrderItem orderItem;
 
   @override
   Widget build(BuildContext context) {
@@ -35,13 +39,14 @@ class ProductCardCart extends StatelessWidget {
               height: 100,
               child: AspectRatio(
                 aspectRatio: 0.8,
-                child: Image.asset(Assets.imagesIphoneTest),
+                child: CachedNetworkImage(
+                    imageUrl: orderItem.productDetails!.imageUrl!),
               ),
             ),
             const SizedBox(
               width: kSpacing * 2,
             ),
-            const ProductCartContent(),
+            ProductCartContent(orderItem: orderItem),
           ],
         ),
       ),

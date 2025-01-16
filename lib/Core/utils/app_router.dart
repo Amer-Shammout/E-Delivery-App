@@ -10,7 +10,9 @@ import 'package:e_delivery_app/Features/Auth/Presentation/Views/verification_vie
 import 'package:e_delivery_app/Features/Auth/Presentation/manager/register_cubit/register_cubit.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/manager/resend_code/resend_code_cubit.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/manager/verification_cubit/verification_cubit.dart';
-import 'package:e_delivery_app/Features/Cart/Presentation/Views/cart_view.dart';
+import 'package:e_delivery_app/Features/Cart/Presentation/Views/cart_view_builder.dart';
+import 'package:e_delivery_app/Features/Cart/Presentation/manager/get_cart_cubit/get_cart_cubit.dart';
+import 'package:e_delivery_app/Features/Cart/data/repos/cart_repo_impl.dart';
 import 'package:e_delivery_app/Features/Product/Presentation/Views/product_view.dart';
 import 'package:e_delivery_app/Features/Profile/Presentation/Views/profile_view.dart';
 import 'package:e_delivery_app/Features/Profile/Presentation/manager/logout_cubit/logout_cubit.dart';
@@ -185,8 +187,11 @@ abstract class AppRouter {
       GoRoute(
         path: kCartView,
         name: kCartName,
-        pageBuilder: (context, state) => const MaterialPage(
-          child: CartView(),
+        pageBuilder: (context, state) => MaterialPage(
+          child: BlocProvider(
+            create: (context) => GetCartCubit(getIt.get<CartRepoImpl>()),
+            child: const CartViewBuilder(),
+          ),
         ),
       ),
       GoRoute(

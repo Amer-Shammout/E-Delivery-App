@@ -16,12 +16,13 @@ class GetFavoriteProductsRepoImpl extends GetFavoriteProductsRepo {
   Future<Either<Failure, List<ProductModel>>> getFavoriteProducts() async {
     try {
       String token = Prefs.getString(kToken);
-      Response response = await getIt.get<DioClient>().get(kGetFavoriteProductsUrl,
-          options: Options(
-            headers: {
-              "Authorization": "Bearer $token",
-            },
-          ));
+      Response response =
+          await getIt.get<DioClient>().get(kGetFavoriteProductsUrl,
+              options: Options(
+                headers: {
+                  "Authorization": "Bearer $token",
+                },
+              ));
       dynamic jsonData = response.data;
       List<ProductModel> favoriteProducts = [];
       for (var product in jsonData["favorites"]) {

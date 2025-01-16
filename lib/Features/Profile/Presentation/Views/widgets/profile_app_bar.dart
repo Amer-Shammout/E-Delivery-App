@@ -7,7 +7,8 @@ import 'package:go_router/go_router.dart';
 
 class CustomAppBar2 extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar2({
-    super.key, required this.title,
+    super.key,
+    required this.title,
   });
 
   final String title;

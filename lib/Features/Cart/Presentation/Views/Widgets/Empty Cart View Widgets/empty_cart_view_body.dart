@@ -19,7 +19,8 @@ class EmptyCartViewBody extends StatelessWidget {
           height: 160,
           width: 160,
           Assets.iconsCart,
-          colorFilter: const ColorFilter.mode(kPrimaryColor, BlendMode.srcATop),
+          colorFilter: ColorFilter.mode(
+              Theme.of(context).colorScheme.primary, BlendMode.srcATop),
         ),
         const SizedBox(
           height: kSpacing,
@@ -27,7 +28,7 @@ class EmptyCartViewBody extends StatelessWidget {
         Text(
           'Your Cart is Empty!',
           style: AppStyles.fontsRegular16(context).copyWith(
-            color: kPrimaryColor.withOpacity(0.6),
+            color: Theme.of(context).colorScheme.primary.withOpacity(0.6),
           ),
         ),
         const SizedBox(
@@ -36,6 +37,7 @@ class EmptyCartViewBody extends StatelessWidget {
         SizedBox(
           width: 200,
           child: CTAButton(
+            fillColor: Theme.of(context).colorScheme.primary,
             onPressed: () {},
             title: 'Go Shopping',
             style: AppStyles.fontsSemiBold20(context),

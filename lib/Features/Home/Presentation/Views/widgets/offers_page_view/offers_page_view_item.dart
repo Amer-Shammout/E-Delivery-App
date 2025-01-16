@@ -20,8 +20,9 @@ class OffersPageViewItem extends StatelessWidget {
     return CustomCardPattern(
       opacity: SetThemeColors.isDarkMode(context) ? .25 : 1,
       margin: kSpacing,
-      cardColor:
-          Color(offer.storeId?.logoColor != null ? int.parse(offer.storeId?.logoColor.replaceFirst('#', '0xff')) : 0xFF526077),
+      cardColor: Color(offer.storeId?.logoColor != null
+          ? int.parse(offer.storeId?.logoColor.replaceFirst('#', '0xff'))
+          : 0xFF526077),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

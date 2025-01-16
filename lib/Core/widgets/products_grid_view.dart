@@ -8,7 +8,13 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class ProductsGridView extends StatelessWidget {
-  const ProductsGridView({super.key, required this.products, this.length,@required this.getProductsSuccess,@required this.getStoreProductsSuccess,@required this.getSearchProductsSuccess});
+  const ProductsGridView(
+      {super.key,
+      required this.products,
+      this.length,
+      @required this.getProductsSuccess,
+      @required this.getStoreProductsSuccess,
+      @required this.getSearchProductsSuccess});
 
   final List<ProductModel> products;
   final int? length;
@@ -32,7 +38,13 @@ class ProductsGridView extends StatelessWidget {
             GoRouter.of(context).pushNamed(AppRouter.kProductDetailsName,
                 extra: products[index]);
           },
-          child: CustomProduct(productModel: products[index], index: index,getProductsSuccess: getProductsSuccess,getSearchProductsSuccess: getSearchProductsSuccess,getStoreProductsSuccess: getStoreProductsSuccess,),
+          child: CustomProduct(
+            productModel: products[index],
+            index: index,
+            getProductsSuccess: getProductsSuccess,
+            getSearchProductsSuccess: getSearchProductsSuccess,
+            getStoreProductsSuccess: getStoreProductsSuccess,
+          ),
         ),
       ),
     );

@@ -31,8 +31,7 @@ void showSuccessSnackBar(String message, context) {
               width: 8,
             ),
           ),
-          FittedBox(
-            fit: BoxFit.scaleDown,
+          Expanded(
             child: Text(
               textAlign: TextAlign.center,
               message,

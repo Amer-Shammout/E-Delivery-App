@@ -3,7 +3,8 @@ import 'package:e_delivery_app/Features/Product/Presentation/Views/Widgets/produ
 import 'package:flutter/material.dart';
 
 class ProductViewContentWithScrollEffect extends StatelessWidget {
-  const ProductViewContentWithScrollEffect({super.key, @required this.productModel});
+  const ProductViewContentWithScrollEffect(
+      {super.key, @required this.productModel});
 
   final ProductModel? productModel;
 

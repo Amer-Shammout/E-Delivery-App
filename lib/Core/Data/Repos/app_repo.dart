@@ -7,5 +7,5 @@ abstract class AppRepo {
   Future<Either<Failure, User>> getUser({data});
   Future<Either<Failure, Response>> addOrRemoveFavorites(int productId);
   Future<Either<Failure, Response>> addToCart(int productId);
-  Future<Either<Failure, Map<String,dynamic>>> removeFromCart(int productId);
+  Future<Either<Failure, Map<String, dynamic>>> removeFromCart(int productId);
 }

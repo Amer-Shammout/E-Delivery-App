@@ -6,7 +6,7 @@ class SettingInfoModel {
   final MultipartFile? image;
   final String? lang;
 
-  SettingInfoModel( {
+  SettingInfoModel({
     this.fullName,
     this.longitude,
     this.latitude,

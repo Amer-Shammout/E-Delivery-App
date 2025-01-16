@@ -4,8 +4,6 @@ import 'package:e_delivery_app/Features/Home/Presentation/Manager/Cubits/get_pro
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-
-
 class CategoriesListView extends StatefulWidget {
   const CategoriesListView({super.key, required this.categories});
 

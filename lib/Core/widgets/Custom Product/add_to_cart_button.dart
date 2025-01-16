@@ -20,7 +20,8 @@ class AddToCartButton extends StatelessWidget {
     this.getStoreProductsSuccess,
     this.getSearchProductsSuccess,
     this.width = 16,
-    this.height = 16, required this.textStyle,
+    this.height = 16,
+    required this.textStyle,
   });
 
   final ProductModel productModel;
@@ -53,13 +54,13 @@ class AddToCartButton extends StatelessWidget {
                 .getProductsByCategory('All');
           }
           if (index == -1) {
-             BlocProvider.of<GetProductsByCategoryCubit>(context)
+            BlocProvider.of<GetProductsByCategoryCubit>(context)
                 .getProductsByCategory('All');
-                BlocProvider.of<GetStoreProductsCubit>(context)
-                .getStoreProducts(category: 'All',storeId: productModel.storeId!.id!);
+            BlocProvider.of<GetStoreProductsCubit>(context).getStoreProducts(
+                category: 'All', storeId: productModel.storeId!.id!);
           }
           showSuccessSnackBar(
-              "The product has been added to the cart successfully!", context);
+              "The product has been added to\n the cart successfully!", context);
         }
       },
       builder: (context, state) {

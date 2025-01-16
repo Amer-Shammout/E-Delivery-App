@@ -28,6 +28,7 @@ const kGetFavoriteProductsUrl = "users/favorites";
 const kSearchUrl = "search/";
 const kAddToCartUrl = "cart/add";
 const kRemoveFromCartUrl = "cart/remove";
+const kCartUrl = "cart";
 const kAll = "All";
 const kStores = "Stores";
 const kProducts = "Products";
