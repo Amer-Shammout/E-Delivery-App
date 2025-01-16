@@ -17,6 +17,7 @@ class _CartViewBuilderState extends State<CartViewBuilder> {
   @override
   void initState() {
     BlocProvider.of<GetCartCubit>(context).getCart();
+
     super.initState();
   }
 
@@ -31,7 +32,9 @@ class _CartViewBuilderState extends State<CartViewBuilder> {
             errMessage: state.errMessage,
           );
         } else if (state is GetCartSuccess) {
-          return CartView(cartModel: state.cartModel!,);
+          return CartView(
+            cartModel: state.cartModel!,
+          );
         } else {
           return const CartLoadingView();
         }
@@ -39,4 +42,3 @@ class _CartViewBuilderState extends State<CartViewBuilder> {
     );
   }
 }
-

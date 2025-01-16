@@ -7,7 +7,7 @@ class DioClient {
   // final String _baseUrl = "http://127.0.0.1:8000/api/";
   // final String _baseUrl = 'http://192.168.43.241:8000/api/';
   // final String _baseUrl = 'http://192.168.108.141:8000/api/';
-  final String _baseUrl = 'http://192.168.81.141:8000/api/';
+  final String _baseUrl = 'http://192.168.189.241:8000/api/';
   DioClient()
       : _dio = Dio(
           BaseOptions(
@@ -65,6 +65,28 @@ class DioClient {
     ProgressCallback? onReceiveProgress,
   }) async {
     final Response response = await _dio.put(
+      "$_baseUrl$url",
+      data: data,
+      queryParameters: queryParameters,
+      options: options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+    return response;
+  }
+
+  // PATCH METHOD
+  Future<Response> patch(
+    String url, {
+    dynamic data,
+    Map<String, dynamic>? queryParameters,
+    Options? options,
+    CancelToken? cancelToken,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final Response response = await _dio.patch(
       "$_baseUrl$url",
       data: data,
       queryParameters: queryParameters,

@@ -7,16 +7,13 @@ class CustomIconButton extends StatelessWidget {
   final Color color;
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {},
-      child: SvgPicture.asset(
-        width: 20,
-        height: 20,
-        icon,
-        colorFilter: ColorFilter.mode(
-          color,
-          BlendMode.srcATop,
-        ),
+    return SvgPicture.asset(
+      width: 20,
+      height: 20,
+      icon,
+      colorFilter: ColorFilter.mode(
+        color,
+        BlendMode.srcATop,
       ),
     );
   }
