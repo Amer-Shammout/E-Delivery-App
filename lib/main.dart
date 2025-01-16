@@ -50,7 +50,7 @@ Future<void> main() async {
 
   await FirebaseNotification.getFCMToken();
   Bloc.observer = CustomBlocObserver();
-
+  
   HydratedBloc.storage = await HydratedStorage.build(
     storageDirectory: kIsWeb
         ? HydratedStorage.webStorageDirectory

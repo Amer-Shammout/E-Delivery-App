@@ -4,12 +4,16 @@ import 'package:e_delivery_app/Core/Data/Manager/get_user_cubit/get_user_cubit.d
 import 'package:e_delivery_app/Core/utils/functions/localizations_funs.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Manager/localization_cubit/localization_cubit.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Manager/theme_cubit/theme_cubit.dart';
+import 'package:e_delivery_app/main.dart';
 import 'package:feedback/feedback.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_email_sender/flutter_email_sender.dart';
+import 'package:go_router/go_router.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:restart_app/restart_app.dart';
 
 abstract class SettingsFunction {
   static changeThemeMode(value, context) {
@@ -46,15 +50,19 @@ abstract class SettingsFunction {
       case 'العربيّة':
         BlocProvider.of<LocalizationCubit>(context).updateLanguage('العربيّة');
         BlocProvider.of<GetUserCubit>(context).getUser(data: {'lang': 'ar'});
+        Restart.restartApp();
         break;
       case 'English':
         BlocProvider.of<LocalizationCubit>(context).updateLanguage('English');
         BlocProvider.of<GetUserCubit>(context).getUser(data: {'lang': 'en'});
+        Restart.restartApp();
+
         break;
       case "System" || "النّظام":
         BlocProvider.of<LocalizationCubit>(context).updateLanguage('System');
         BlocProvider.of<GetUserCubit>(context).getUser(
             data: {'lang': Localizations.localeOf(context).languageCode});
+        Restart.restartApp();
 
         break;
     }

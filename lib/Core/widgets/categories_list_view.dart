@@ -1,6 +1,8 @@
+import 'package:e_delivery_app/Core/services/shared_preferences_singleton.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_widget_with_dash.dart';
 import 'package:e_delivery_app/Features/Home/Presentation/Manager/Cubits/get_products_by_category_cubit/get_products_by_category_cubit.dart';
+import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -31,6 +33,7 @@ class _CategoriesListViewState extends State<CategoriesListView> {
           child: GestureDetector(
             onTap: () {
               currentIndex = index;
+              debugPrint("${Prefs.getString(kToken)}");
               BlocProvider.of<GetProductsByCategoryCubit>(context)
                   .getProductsByCategory(widget.categories[index]);
               setState(() {});
