@@ -1,12 +1,13 @@
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/c_t_a_button.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/Widgets/Cart%20View%20Widgets/custom_item_bottom_sheet.dart';
+import 'package:e_delivery_app/Features/Cart/data/models/cart_model/cart_model.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class CartBottomSheet extends StatelessWidget {
-  const CartBottomSheet({super.key});
-
+  const CartBottomSheet({super.key, required this.cartModel});
+  final CartModel cartModel;
   @override
   Widget build(BuildContext context) {
     return Wrap(

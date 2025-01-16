@@ -7,10 +7,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
 class ProductSlidable extends StatelessWidget {
-  const ProductSlidable({super.key, required this.orderItem});
+  const ProductSlidable(
+      {super.key, required this.orderItem, required this.index});
 
   final OrderItem orderItem;
-
+  final int index;
   @override
   Widget build(BuildContext context) {
     return SlidableAutoCloseBehavior(
@@ -23,17 +24,13 @@ class ProductSlidable extends StatelessWidget {
           motion: const ScrollMotion(),
           children: const [CustomDeleteButton()],
         ),
-        child:  Row(
+        child: Row(
           children: [
             const SizedBox(
               width: 16,
             ),
-            const CustomCartCheckBox(),
-            const SizedBox(
-              width: 8,
-            ),
             Expanded(
-              child: ProductCardCart(orderItem : orderItem),
+              child: ProductCardCart(orderItem: orderItem, index: index),
             ),
             const SizedBox(
               width: 16,

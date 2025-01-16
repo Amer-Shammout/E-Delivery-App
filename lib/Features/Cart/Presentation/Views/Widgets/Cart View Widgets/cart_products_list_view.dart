@@ -14,9 +14,12 @@ class CartProductsListView extends StatelessWidget {
       padding: const EdgeInsets.only(top: kSpacing * 6),
       itemCount: cartModel.orderItems!.length,
       physics: const BouncingScrollPhysics(),
-      itemBuilder: (context, index) =>  Padding(
-        padding: const EdgeInsets.only(bottom: kSpacing * 6),
-        child: ProductSlidable(orderItem: cartModel.orderItems![index]),
+      itemBuilder: (context, index) => Padding(
+        padding: index != cartModel.orderItems!.length - 1
+            ? const EdgeInsets.only(bottom: kSpacing * 6)
+            : const EdgeInsets.only(bottom: 300),
+        child: ProductSlidable(
+            orderItem: cartModel.orderItems![index], index: index),
       ),
     );
   }

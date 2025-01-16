@@ -24,8 +24,7 @@ void setupGetit() {
   getIt.registerSingleton<SearchRepoImpl>(SearchRepoImpl());
   getIt.registerSingleton<GetFavoriteProductsRepoImpl>(
       GetFavoriteProductsRepoImpl());
-  getIt.registerSingleton<CartRepoImpl>(
-      CartRepoImpl());
+  getIt.registerSingleton<CartRepoImpl>(CartRepoImpl());
   getIt.registerSingleton<GetStoreProductsCubit>(
       GetStoreProductsCubit(getIt.get<StoreDetailsRepoImpl>()));
 }

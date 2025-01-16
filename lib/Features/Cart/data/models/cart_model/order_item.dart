@@ -4,9 +4,9 @@ import 'product_details.dart';
 
 class OrderItem extends Equatable {
   final ProductDetails? productDetails;
-  final int? quantity;
+  int? quantity;
 
-  const OrderItem({this.productDetails, this.quantity});
+  OrderItem({this.productDetails, this.quantity});
 
   factory OrderItem.fromJson(Map<String, dynamic> json) => OrderItem(
         productDetails: json['product_details'] == null

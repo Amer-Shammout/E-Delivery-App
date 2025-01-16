@@ -7,10 +7,11 @@ import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 
 class ProductCardCart extends StatelessWidget {
-  const ProductCardCart({super.key, required this.orderItem});
+  const ProductCardCart(
+      {super.key, required this.orderItem, required this.index});
 
   final OrderItem orderItem;
-
+  final int index;
   @override
   Widget build(BuildContext context) {
     return CustomContainer(
@@ -46,7 +47,7 @@ class ProductCardCart extends StatelessWidget {
             const SizedBox(
               width: kSpacing * 2,
             ),
-            ProductCartContent(orderItem: orderItem),
+            ProductCartContent(orderItem: orderItem, index: index),
           ],
         ),
       ),

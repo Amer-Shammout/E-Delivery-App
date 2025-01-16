@@ -37,7 +37,7 @@ class _CustomCartCheckBoxState extends State<CustomCartCheckBox> {
       backgroundColor: Theme.of(context).colorScheme.surface,
       context: context,
       builder: (context) {
-        return const CartBottomSheet();
+        return SizedBox();
       },
     );
   }

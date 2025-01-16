@@ -11,7 +11,9 @@ import 'package:e_delivery_app/Features/Auth/Presentation/manager/register_cubit
 import 'package:e_delivery_app/Features/Auth/Presentation/manager/resend_code/resend_code_cubit.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/manager/verification_cubit/verification_cubit.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/cart_view_builder.dart';
+import 'package:e_delivery_app/Features/Cart/Presentation/manager/edit_quantity_cubit/edit_quantity_cubit.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/manager/get_cart_cubit/get_cart_cubit.dart';
+import 'package:e_delivery_app/Features/Cart/data/models/cart_model/cart_item_quantity/cart_item_quantity.dart';
 import 'package:e_delivery_app/Features/Cart/data/repos/cart_repo_impl.dart';
 import 'package:e_delivery_app/Features/Product/Presentation/Views/product_view.dart';
 import 'package:e_delivery_app/Features/Profile/Presentation/Views/profile_view.dart';
@@ -188,8 +190,16 @@ abstract class AppRouter {
         path: kCartView,
         name: kCartName,
         pageBuilder: (context, state) => MaterialPage(
-          child: BlocProvider(
-            create: (context) => GetCartCubit(getIt.get<CartRepoImpl>()),
+          child: MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (context) => GetCartCubit(getIt.get<CartRepoImpl>()),
+              ),
+              BlocProvider(
+                create: (context) =>
+                    EditQuantityCubit(const CartItemQuantity(orderItems: [])),
+              ),
+            ],
             child: const CartViewBuilder(),
           ),
         ),

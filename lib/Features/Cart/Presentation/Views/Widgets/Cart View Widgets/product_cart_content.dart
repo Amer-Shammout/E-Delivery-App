@@ -8,10 +8,11 @@ import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class ProductCartContent extends StatelessWidget {
-  const ProductCartContent({super.key, required this.orderItem});
+  const ProductCartContent(
+      {super.key, required this.orderItem, required this.index});
 
   final OrderItem orderItem;
-
+  final int index;
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -68,7 +69,7 @@ class ProductCartContent extends StatelessWidget {
             children: [
               ProductCartPrice(orderItem: orderItem),
               const Spacer(),
-              ProductQuntity(orderItem: orderItem),
+              ProductQuantity(orderItem: orderItem, index: index),
             ],
           )
         ],
