@@ -12,26 +12,29 @@ class EmptyFavoriteBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        SvgPicture.asset(
-          height: 160,
-          width: 160,
-          Assets.iconsSolidHeartBold,
-          colorFilter: ColorFilter.mode(
-              Theme.of(context).colorScheme.primary, BlendMode.srcATop),
-        ),
-        const SizedBox(
-          height: kSpacing,
-        ),
-        Text(
-          S.of(context).empty_favorite,
-          style: AppStyles.fontsRegular16(context).copyWith(
-            color: Theme.of(context).colorScheme.primary.withOpacity(0.6),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: kHorizontalPadding),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SvgPicture.asset(
+            height: 160,
+            width: 160,
+            Assets.iconsSolidHeartBold,
+            colorFilter: ColorFilter.mode(
+                Theme.of(context).colorScheme.primary, BlendMode.srcATop),
           ),
-        ),
-      ],
+          const SizedBox(
+            height: kSpacing,
+          ),
+          Text(
+            S.of(context).empty_favorite,
+            style: AppStyles.fontsMedium16(context).copyWith(
+              color: Theme.of(context).colorScheme.primary.withOpacity(0.8),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

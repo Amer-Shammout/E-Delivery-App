@@ -21,7 +21,7 @@ class FavoriteProductsBuilder extends StatelessWidget {
             child: Text(state.errMessage),
           );
         } else if (state is GetFavoriteProductsEmpty) {
-          return const SliverToBoxAdapter(
+          return const SliverFillRemaining(
             child: EmptyFavoriteBody(),
           );
         } else {

@@ -6,6 +6,7 @@ import 'package:e_delivery_app/Features/Favorite/Presentation/Views/Manager/cubi
 import 'package:e_delivery_app/Features/Favorite/Presentation/Views/Widgets/favorite_product.dart';
 import 'package:e_delivery_app/Features/Favorite/Presentation/Views/Widgets/favorite_products_list_view.dart';
 import 'package:e_delivery_app/Features/Home/Presentation/Manager/Cubits/get_products_by_category_cubit/get_products_by_category_cubit.dart';
+import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -37,10 +38,17 @@ class ShowAlertDialog {
         int index = products.indexOf(product);
         products.remove(product);
         animatedKey.currentState!.removeItem(index, (context, animation) {
-          return ScaleTransition(
-            scale: animation,
-            child: FavoriteProduct(
-              product: product,
+          return Padding(
+            padding: const EdgeInsets.only(
+              bottom: kSpacing * 4,
+              left: kHorizontalPadding,
+              right: kHorizontalPadding,
+            ),
+            child: FadeTransition(
+              opacity: animation,
+              child: FavoriteProduct(
+                product: product,
+              ),
             ),
           );
         });
