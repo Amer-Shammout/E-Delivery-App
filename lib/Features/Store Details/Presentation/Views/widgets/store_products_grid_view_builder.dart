@@ -1,4 +1,3 @@
-import 'package:e_delivery_app/Core/Data/Manager/get_user_cubit/get_user_cubit.dart';
 import 'package:e_delivery_app/Core/services/shared_preferences_singleton.dart';
 import 'package:e_delivery_app/Core/widgets/loading/products_grid_view_loading.dart';
 import 'package:e_delivery_app/Core/widgets/products_grid_view.dart';

@@ -59,9 +59,7 @@ class AddToCartButton extends StatelessWidget {
             BlocProvider.of<GetStoreProductsCubit>(context).getStoreProducts(
                 category: 'All', storeId: productModel.storeId!.id!);
           }
-          showSuccessSnackBar(
-              "The product has been added to\n the cart successfully!",
-              context);
+          showSuccessSnackBar(S.of(context).add_to_cart_message, context);
         }
       },
       builder: (context, state) {

@@ -68,6 +68,7 @@ class CartRepoImpl extends CartRepo {
 
       Map<String, dynamic> jsonData = response.data;
       OrderModel orderModel = OrderModel.fromJson(jsonData);
+      log("${orderModel}");
       return right(orderModel);
     } on DioException catch (e) {
       return left(ServerFailure.fromDioError(e));
