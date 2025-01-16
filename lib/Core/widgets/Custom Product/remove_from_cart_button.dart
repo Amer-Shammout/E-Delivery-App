@@ -52,7 +52,7 @@ class RemoveFromCartButton extends StatelessWidget {
                 category: 'All', storeId: productModel.storeId!.id!);
           }
           showSuccessSnackBar(
-              "The product has been removed from\n the cart successfully!",
+              "The product has been removed from the cart successfully!",
               context);
         }
       },
