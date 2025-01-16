@@ -71,7 +71,7 @@ class FavoriteProduct extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
-                    ShowAlertDialog.showAlertDialog(context, product.id!);
+                    ShowAlertDialog.showAlertDialog(context,product);
                   },
                   child: SvgPicture.asset(
                     width: 20,
