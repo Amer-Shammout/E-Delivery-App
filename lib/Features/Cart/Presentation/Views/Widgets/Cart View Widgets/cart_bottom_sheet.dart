@@ -1,9 +1,13 @@
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/c_t_a_button.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/Widgets/Cart%20View%20Widgets/custom_item_bottom_sheet.dart';
+import 'package:e_delivery_app/Features/Cart/Presentation/manager/submit_the_order_cubit/submit_the_order_cubit.dart';
 import 'package:e_delivery_app/Features/Cart/data/models/cart_model/cart_model.dart';
+import 'package:e_delivery_app/Features/Home/Presentation/Manager/Cubits/get_products_by_category_cubit/get_products_by_category_cubit.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class CartBottomSheet extends StatelessWidget {
   const CartBottomSheet({super.key, required this.cartModel});
@@ -32,7 +36,13 @@ class CartBottomSheet extends StatelessWidget {
                 height: 32,
               ),
               CTAButton(
-                onPressed: () {},
+                onPressed: () async {
+                  await BlocProvider.of<SubmitTheOrderCubit>(context)
+                      .submitTheOrder();
+                  await BlocProvider.of<GetProductsByCategoryCubit>(context)
+                      .getProductsByCategory('All');
+                  GoRouter.of(context).pop();
+                },
                 title: S.of(context).submit_button,
                 style: AppStyles.fontsSemiBold20(context).copyWith(
                   color: Theme.of(context).colorScheme.error,
