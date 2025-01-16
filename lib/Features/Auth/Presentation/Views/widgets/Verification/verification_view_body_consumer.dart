@@ -1,8 +1,10 @@
 import 'dart:developer';
+import 'package:e_delivery_app/Core/services/shared_preferences_singleton.dart';
 import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/functions/show_snack_bar.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/Views/widgets/Verification/verification_view_body.dart';
 import 'package:e_delivery_app/Features/Auth/Presentation/manager/verification_cubit/verification_cubit.dart';
+import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -21,6 +23,7 @@ class VerificationViewBodyConsumer extends StatelessWidget {
             GoRouter.of(context)
                 .pushReplacementNamed(AppRouter.kSettingInfoName);
           } else {
+            Prefs.setString(kLang, state.verificationResponseModel.user!.lang!);
             GoRouter.of(context).pushReplacementNamed(AppRouter.kAppRootName,
                 extra: state.verificationResponseModel.user);
           }

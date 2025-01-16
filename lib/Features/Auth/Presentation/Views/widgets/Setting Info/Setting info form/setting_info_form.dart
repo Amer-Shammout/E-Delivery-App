@@ -1,6 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:dio/dio.dart';
+import 'package:e_delivery_app/Core/services/shared_preferences_singleton.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/functions/setting_info_functions.dart';
 import 'package:e_delivery_app/Core/utils/functions/validation.dart';
@@ -97,6 +98,10 @@ class _SettingInfoFormState extends State<SettingInfoForm> {
                       BlocProvider.of<LocalizationCubit>(context).state,
                       context),
                 );
+                Prefs.setString(
+                    kLang,
+                    setLocale(BlocProvider.of<LocalizationCubit>(context).state,
+                        context));
                 BlocProvider.of<SettingInfoCubit>(context)
                     .settingInfo(settingInfoModel);
               } else {
