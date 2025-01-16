@@ -55,6 +55,8 @@ void showSuccessSnackBar(String message, context) {
 void showFailureSnackBar(String message, context) {
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
+      showCloseIcon: true,
+      closeIconColor: Theme.of(context).colorScheme.primary,
       backgroundColor: Theme.of(context).colorScheme.secondary,
       padding: EdgeInsets.zero,
       content: IntrinsicHeight(
@@ -104,6 +106,8 @@ void showFailureSnackBar(String message, context) {
 void showWaitSnackBar(context) {
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
+      showCloseIcon: true,
+      closeIconColor: Theme.of(context).colorScheme.primary,
       backgroundColor: Theme.of(context).colorScheme.secondary,
       padding: EdgeInsets.zero,
       content: IntrinsicHeight(
