@@ -20,8 +20,12 @@ class GetFavoriteProductsCubit extends Cubit<GetFavoriteProductsState> {
         emit(GetFavoriteProductsFailure(errMessage: failure.errMessage));
       },
       (favoriteProducts) {
-        products = favoriteProducts;
-        emit(GetFavoriteProductsSuccess(favoriteProducts: favoriteProducts));
+        if (favoriteProducts.isEmpty) {
+          emit(GetFavoriteProductsEmpty());
+        } else {
+          products = favoriteProducts;
+          emit(GetFavoriteProductsSuccess(favoriteProducts: favoriteProducts));
+        }
       },
     );
   }

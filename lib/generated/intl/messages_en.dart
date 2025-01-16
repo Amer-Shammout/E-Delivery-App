@@ -24,6 +24,8 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "active": MessageLookupByLibrary.simpleMessage("Activated"),
         "add_button": MessageLookupByLibrary.simpleMessage("Add"),
+        "add_to_cart_message": MessageLookupByLibrary.simpleMessage(
+            "The product has been added to the cart successfully!"),
         "all": MessageLookupByLibrary.simpleMessage("All"),
         "all_products": MessageLookupByLibrary.simpleMessage("All Products"),
         "all_stores": MessageLookupByLibrary.simpleMessage("All Stores"),
@@ -41,6 +43,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "Your location was updates successfully!"),
         "edit_name_message": MessageLookupByLibrary.simpleMessage(
             "Your name was changed successfully!"),
+        "empty_cart":
+            MessageLookupByLibrary.simpleMessage("Your Cart is Empty!"),
+        "empty_favorite": MessageLookupByLibrary.simpleMessage(
+            "There are no products in your favorites yet!"),
         "field_empty_message":
             MessageLookupByLibrary.simpleMessage("field is required"),
         "full_name_hint": MessageLookupByLibrary.simpleMessage("Full Name"),
@@ -48,6 +54,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Please enter a full name consisting of no more than three words"),
         "full_name_message2":
             MessageLookupByLibrary.simpleMessage("Enter a valid name!"),
+        "go_shopping": MessageLookupByLibrary.simpleMessage("Go Shopping"),
         "home1": MessageLookupByLibrary.simpleMessage("Welcome"),
         "hot": MessageLookupByLibrary.simpleMessage("HOT"),
         "inactive": MessageLookupByLibrary.simpleMessage("Inactivated"),
@@ -78,6 +85,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "register3": MessageLookupByLibrary.simpleMessage(
             "we will send you the 4 digit verification code"),
         "register_button": MessageLookupByLibrary.simpleMessage("REGISTER"),
+        "remove_from_cart_message": MessageLookupByLibrary.simpleMessage(
+            "The product has been deleted from the cart successfully!"),
         "resend_code_button":
             MessageLookupByLibrary.simpleMessage("Resend code"),
         "search_hint": MessageLookupByLibrary.simpleMessage("Search..."),

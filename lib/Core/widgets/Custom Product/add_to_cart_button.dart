@@ -60,7 +60,7 @@ class AddToCartButton extends StatelessWidget {
                 category: 'All', storeId: productModel.storeId!.id!);
           }
           showSuccessSnackBar(
-              "The product has been added to the cart successfully!", context);
+              S.of(context).add_to_cart_message, context);
         }
       },
       builder: (context, state) {
