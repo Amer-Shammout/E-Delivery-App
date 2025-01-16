@@ -71,5 +71,11 @@
     "stores":"المتاجر",
     "see_all":"مشاهدة الكل",
     "all_products":"كل المنتجات",
-    "all_stores":"كل المتاجر"
+    "all_stores":"كل المتاجر",
+    "go_shopping":"اذهب للتسوق",
+    "empty_cart":"سلتك فارغة!",
+    "empty_favorite":"لا يوجد منتجات في المفضلة بعد!",
+    "add_to_cart_message":"تمت إضافة العنصر إلى السلة بنجاح!",
+    "remove_from_cart_message":"تم حذف العنصر من السلة بنجاح!"
+
 }

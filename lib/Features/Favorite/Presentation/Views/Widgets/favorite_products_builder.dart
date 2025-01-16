@@ -1,5 +1,6 @@
 import 'package:e_delivery_app/Core/widgets/loading/favorite_products_list_view_loading.dart';
 import 'package:e_delivery_app/Features/Favorite/Presentation/Views/Manager/cubits/get_favorite_products_cubit/get_favorite_products_cubit.dart';
+import 'package:e_delivery_app/Features/Favorite/Presentation/Views/Widgets/empty_favorite_body.dart';
 import 'package:e_delivery_app/Features/Favorite/Presentation/Views/Widgets/favorite_products_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -18,6 +19,10 @@ class FavoriteProductsBuilder extends StatelessWidget {
         } else if (state is GetFavoriteProductsFailure) {
           return SliverToBoxAdapter(
             child: Text(state.errMessage),
+          );
+        } else if (state is GetFavoriteProductsEmpty) {
+          return const SliverFillRemaining(
+            child: EmptyFavoriteBody(),
           );
         } else {
           return const FavoriteProductsListViewLoading();

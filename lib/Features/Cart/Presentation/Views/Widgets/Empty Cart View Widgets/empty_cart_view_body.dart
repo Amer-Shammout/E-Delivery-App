@@ -2,6 +2,7 @@ import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/c_t_a_button.dart';
 import 'package:e_delivery_app/constants.dart';
+import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -26,7 +27,7 @@ class EmptyCartViewBody extends StatelessWidget {
           height: kSpacing,
         ),
         Text(
-          'Your Cart is Empty!',
+          S.of(context).empty_cart,
           style: AppStyles.fontsRegular16(context).copyWith(
             color: Theme.of(context).colorScheme.primary.withOpacity(0.6),
           ),
@@ -39,7 +40,7 @@ class EmptyCartViewBody extends StatelessWidget {
           child: CTAButton(
             fillColor: Theme.of(context).colorScheme.primary,
             onPressed: () {},
-            title: 'Go Shopping',
+            title: S.of(context).go_shopping,
             style: AppStyles.fontsSemiBold20(context),
           ),
         ),

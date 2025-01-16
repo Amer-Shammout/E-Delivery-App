@@ -9,6 +9,9 @@ class GetFavoriteProductsCubit extends Cubit<GetFavoriteProductsState> {
   GetFavoriteProductsCubit(this._getFavoriteProductsRepo)
       : super(GetFavoriteProductsInitial());
   final GetFavoriteProductsRepo _getFavoriteProductsRepo;
+
+  List<ProductModel> products = [];
+
   Future<void> getFavoriteProducts() async {
     emit(GetFavoriteProductsLoading());
     var result = await _getFavoriteProductsRepo.getFavoriteProducts();
@@ -17,8 +20,18 @@ class GetFavoriteProductsCubit extends Cubit<GetFavoriteProductsState> {
         emit(GetFavoriteProductsFailure(errMessage: failure.errMessage));
       },
       (favoriteProducts) {
-        emit(GetFavoriteProductsSuccess(favoriteProducts: favoriteProducts));
+        if (favoriteProducts.isEmpty) {
+          emit(GetFavoriteProductsEmpty());
+        } else {
+          products = favoriteProducts;
+          emit(GetFavoriteProductsSuccess(favoriteProducts: favoriteProducts));
+        }
       },
     );
   }
+
+  emitEmptyFavorite() {
+    emit(GetFavoriteProductsEmpty());
+  }
+  
 }

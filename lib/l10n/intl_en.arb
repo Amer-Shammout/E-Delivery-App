@@ -71,6 +71,11 @@
     "stores":"Stores",
     "see_all":"See all",
      "all_products":"All Products",
-    "all_stores":"All Stores"
+    "all_stores":"All Stores",
+    "go_shopping":"Go Shopping",
+    "empty_cart":"Your Cart is Empty!",
+    "empty_favorite":"There are no products in your favorites yet!",
+    "add_to_cart_message":"The product has been added to the cart successfully!",
+    "remove_from_cart_message":"The product has been deleted from the cart successfully!"
 
 }

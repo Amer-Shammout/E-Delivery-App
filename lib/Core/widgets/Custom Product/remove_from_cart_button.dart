@@ -5,6 +5,7 @@ import 'package:e_delivery_app/Core/widgets/loading/custom_circular_progress_ind
 import 'package:e_delivery_app/Features/Home/Presentation/Manager/Cubits/get_products_by_category_cubit/get_products_by_category_cubit.dart';
 import 'package:e_delivery_app/Features/Search/Presentation/manager/search_cubit/search_cubit.dart';
 import 'package:e_delivery_app/Features/Store%20Details/Presentation/manager/get_store_products_cubit/get_store_products_cubit.dart';
+import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -52,7 +53,7 @@ class RemoveFromCartButton extends StatelessWidget {
                 category: 'All', storeId: productModel.storeId!.id!);
           }
           showSuccessSnackBar(
-              "The product has been removed from\n the cart successfully!",
+              S.of(context).remove_from_cart_message,
               context);
         }
       },

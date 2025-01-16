@@ -9,6 +9,8 @@ sealed class GetFavoriteProductsState extends Equatable {
 
 final class GetFavoriteProductsInitial extends GetFavoriteProductsState {}
 
+final class GetFavoriteProductsEmpty extends GetFavoriteProductsState {}
+
 final class GetFavoriteProductsLoading extends GetFavoriteProductsState {}
 
 final class GetFavoriteProductsSuccess extends GetFavoriteProductsState {

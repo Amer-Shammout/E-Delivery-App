@@ -24,6 +24,8 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "active": MessageLookupByLibrary.simpleMessage("مفعّلة"),
         "add_button": MessageLookupByLibrary.simpleMessage("إضافة"),
+        "add_to_cart_message": MessageLookupByLibrary.simpleMessage(
+            "تمت إضافة العنصر إلى السلة بنجاح!"),
         "all": MessageLookupByLibrary.simpleMessage("الكل"),
         "all_products": MessageLookupByLibrary.simpleMessage("كل المنتجات"),
         "all_stores": MessageLookupByLibrary.simpleMessage("كل المتاجر"),
@@ -42,6 +44,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تم تعديل موقعك بنجاح!"),
         "edit_name_message":
             MessageLookupByLibrary.simpleMessage("تم تعديل اسمك بنجاح!"),
+        "empty_cart": MessageLookupByLibrary.simpleMessage("سلتك فارغة!"),
+        "empty_favorite": MessageLookupByLibrary.simpleMessage(
+            "لا يوجد منتجات في المفضلة بعد!"),
         "field_empty_message":
             MessageLookupByLibrary.simpleMessage("الحقل مطلوب"),
         "full_name_hint": MessageLookupByLibrary.simpleMessage("الاسم الكامل"),
@@ -49,6 +54,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "يرجى إدخال اسم كامل مكون من ثلاثة كلمات على الأكثر فقط"),
         "full_name_message2":
             MessageLookupByLibrary.simpleMessage("أدخل اسم صالح!"),
+        "go_shopping": MessageLookupByLibrary.simpleMessage("اذهب للتسوق"),
         "home1": MessageLookupByLibrary.simpleMessage("مرحباً"),
         "hot": MessageLookupByLibrary.simpleMessage("خاص"),
         "inactive": MessageLookupByLibrary.simpleMessage("غير مفعّلة"),
@@ -78,6 +84,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "register3": MessageLookupByLibrary.simpleMessage(
             "نحن سوف نرسل لك رمز تحقق من أربع خانات"),
         "register_button": MessageLookupByLibrary.simpleMessage("تسجيل"),
+        "remove_from_cart_message": MessageLookupByLibrary.simpleMessage(
+            "تم حذف العنصر من السلة بنجاح!"),
         "resend_code_button":
             MessageLookupByLibrary.simpleMessage("إعادة الإرسال"),
         "search_hint": MessageLookupByLibrary.simpleMessage("ابحث..."),

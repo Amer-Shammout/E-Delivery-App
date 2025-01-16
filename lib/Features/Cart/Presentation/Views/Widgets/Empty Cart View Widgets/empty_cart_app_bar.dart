@@ -1,4 +1,5 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
+import 'package:e_delivery_app/Core/utils/functions/localizations_funs.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_icon.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
@@ -15,11 +16,14 @@ class EmptyCartAppBar extends StatelessWidget implements PreferredSizeWidget {
       leadingWidth: 80,
       leading: Padding(
         padding: const EdgeInsets.all(16),
-        child: CustomIcon(
-          icon: Assets.iconsBackArrow,
-          onPressed: () {
-            GoRouter.of(context).pop();
-          },
+        child: RotatedBox(
+          quarterTurns: LocalizationsFuns.isArabic(context) ? 2 : 0,
+          child: CustomIcon(
+            icon: Assets.iconsBackArrow,
+            onPressed: () {
+              GoRouter.of(context).pop();
+            },
+          ),
         ),
       ),
       title: Text(
