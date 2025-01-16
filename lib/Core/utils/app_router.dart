@@ -13,6 +13,7 @@ import 'package:e_delivery_app/Features/Auth/Presentation/manager/verification_c
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/cart_view_builder.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/manager/edit_quantity_cubit/edit_quantity_cubit.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/manager/get_cart_cubit/get_cart_cubit.dart';
+import 'package:e_delivery_app/Features/Cart/Presentation/manager/update_cart_cubit/update_cart_cubit.dart';
 import 'package:e_delivery_app/Features/Cart/data/models/cart_model/cart_item_quantity/cart_item_quantity.dart';
 import 'package:e_delivery_app/Features/Cart/data/repos/cart_repo_impl.dart';
 import 'package:e_delivery_app/Features/Product/Presentation/Views/product_view.dart';
@@ -194,6 +195,9 @@ abstract class AppRouter {
             providers: [
               BlocProvider(
                 create: (context) => GetCartCubit(getIt.get<CartRepoImpl>()),
+              ),
+              BlocProvider(
+                create: (context) => UpdateCartCubit(getIt.get<CartRepoImpl>()),
               ),
               BlocProvider(
                 create: (context) =>
