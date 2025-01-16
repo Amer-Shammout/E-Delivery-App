@@ -20,6 +20,7 @@ const kStoresUrl = "stores";
 const kCategories = "categories";
 const String kToken = 'token';
 const kId = 'id';
+const kLang = 'lang';
 const kGetProductsByCategoriesUrl = "products/category/";
 const kGetCategoriesUrl = "categories";
 const kGetOffersUrl = "products.offer";

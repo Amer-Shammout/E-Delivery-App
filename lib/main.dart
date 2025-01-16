@@ -19,6 +19,7 @@ import 'package:e_delivery_app/Features/Settings/Presentation/Manager/localizati
 import 'package:e_delivery_app/Features/Settings/Presentation/Manager/theme_cubit/theme_cubit.dart';
 import 'package:e_delivery_app/Features/Stores/Presentation/manager/get_stores_cubit/get_stores_cubit.dart';
 import 'package:e_delivery_app/Features/Stores/data/repos/stores_repo_impl.dart';
+import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/firebase_options.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:feedback/feedback.dart';
@@ -50,7 +51,7 @@ Future<void> main() async {
 
   await FirebaseNotification.getFCMToken();
   Bloc.observer = CustomBlocObserver();
-  
+
   HydratedBloc.storage = await HydratedStorage.build(
     storageDirectory: kIsWeb
         ? HydratedStorage.webStorageDirectory
@@ -75,9 +76,14 @@ Future<void> main() async {
   );
 }
 
-class EDelivery extends StatelessWidget {
+class EDelivery extends StatefulWidget {
   const EDelivery({super.key});
 
+  @override
+  State<EDelivery> createState() => _EDeliveryState();
+}
+
+class _EDeliveryState extends State<EDelivery> {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -99,9 +105,8 @@ class EDelivery extends StatelessWidget {
         BlocProvider(
           create: (context) =>
               GetProductsByCategoryCubit(getIt.get<HomeRepoImpl>())
-                ..getProductsByCategory("All"
-                    // LocalizationsFuns.isArabic(context) ? 'الكل' : 'All',
-                    ),
+                ..getProductsByCategory(
+                    Prefs.getString(kLang) == 'en' ? "All" : 'الكل'),
         ),
         BlocProvider(
           create: (context) =>

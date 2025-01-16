@@ -1,7 +1,10 @@
+import 'package:e_delivery_app/Core/Data/Manager/get_user_cubit/get_user_cubit.dart';
+import 'package:e_delivery_app/Core/services/shared_preferences_singleton.dart';
 import 'package:e_delivery_app/Core/widgets/loading/products_grid_view_loading.dart';
 import 'package:e_delivery_app/Core/widgets/products_grid_view.dart';
 import 'package:e_delivery_app/Features/Store%20Details/Presentation/manager/get_store_products_cubit/get_store_products_cubit.dart';
 import 'package:e_delivery_app/Features/Stores/data/models/store_model.dart';
+import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -19,8 +22,9 @@ class _StoreProductsGridViewBuilderState
     extends State<StoreProductsGridViewBuilder> {
   @override
   void initState() {
-    BlocProvider.of<GetStoreProductsCubit>(context)
-        .getStoreProducts(storeId: widget.storeModel.id!, category: 'All');
+    BlocProvider.of<GetStoreProductsCubit>(context).getStoreProducts(
+        storeId: widget.storeModel.id!,
+        category: Prefs.getString(kLang) == 'en' ? "All" : 'الكل');
     super.initState();
   }
 
