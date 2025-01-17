@@ -10,7 +10,6 @@ import 'package:e_delivery_app/Core/utils/app_strings.dart';
 import 'package:e_delivery_app/Features/Cart/data/models/cart_model/cart_item_quantity/cart_item_quantity.dart';
 import 'package:e_delivery_app/Features/Cart/data/models/cart_model/cart_model.dart';
 import 'package:e_delivery_app/Features/Cart/data/repos/cart_repo.dart';
-import 'package:e_delivery_app/Features/Orders/Data/order_model/order_model.dart';
 import 'package:e_delivery_app/constants.dart';
 
 class CartRepoImpl extends CartRepo {
@@ -58,18 +57,19 @@ class CartRepoImpl extends CartRepo {
   }
 
   @override
-  Future<Either<Failure, OrderModel>> submitTheOrder() async {
+  Future<Either<Failure, Response>> submitTheOrder() async {
     try {
       String token = Prefs.getString(kToken);
       Response response = await getIt.get<DioClient>().patch(
             kSubmitTheOrderUrl,
             options: Options(headers: {"Authorization": "Bearer $token"}),
           );
+      return right(response);
 
-      Map<String, dynamic> jsonData = response.data;
-      OrderModel orderModel = OrderModel.fromJson(jsonData);
-      log("${orderModel}");
-      return right(orderModel);
+      // Map<String, dynamic> jsonData = response.data;
+      // OrderModelRes orderModel = OrderModelRes.fromJson(jsonData);
+      // log("${orderModel}");
+      // return right(orderModel);
     } on DioException catch (e) {
       return left(ServerFailure.fromDioError(e));
     } on Exception catch (e) {

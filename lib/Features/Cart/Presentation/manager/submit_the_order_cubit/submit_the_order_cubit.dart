@@ -1,7 +1,7 @@
-import 'package:bloc/bloc.dart';
+import 'package:dio/dio.dart';
 import 'package:e_delivery_app/Features/Cart/data/repos/cart_repo.dart';
-import 'package:e_delivery_app/Features/Orders/Data/order_model/order_model.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'submit_the_order_state.dart';
 
@@ -16,8 +16,8 @@ class SubmitTheOrderCubit extends Cubit<SubmitTheOrderState> {
       (failure) {
         emit(SubmitTheOrderFailure(errMessage: failure.errMessage));
       },
-      (orderModel) {
-        emit(SubmitTheOrderSuccess(orderModel: orderModel));
+      (response) {
+        emit(SubmitTheOrderSuccess(response: response));
       },
     );
   }

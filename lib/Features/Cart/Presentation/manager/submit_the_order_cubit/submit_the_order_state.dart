@@ -12,9 +12,9 @@ final class SubmitTheOrderInitial extends SubmitTheOrderState {}
 final class SubmitTheOrderLoading extends SubmitTheOrderState {}
 
 final class SubmitTheOrderSuccess extends SubmitTheOrderState {
-  final OrderModel orderModel;
+  final Response response;
 
-  const SubmitTheOrderSuccess({required this.orderModel});
+  const SubmitTheOrderSuccess({required this.response});
 }
 
 final class SubmitTheOrderFailure extends SubmitTheOrderState {
