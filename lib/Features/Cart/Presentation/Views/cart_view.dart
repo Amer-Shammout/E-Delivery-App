@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/Widgets/Cart%20View%20Widgets/cart_bottom_sheet.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/Widgets/Cart%20View%20Widgets/cart_products_list_view.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/Widgets/Cart%20View%20Widgets/custom_cart_app_bar.dart';
+import 'package:e_delivery_app/Features/Cart/Presentation/manager/cubit/edit_prices_cart_cubit.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/manager/edit_quantity_cubit/edit_quantity_cubit.dart';
 import 'package:e_delivery_app/Features/Cart/data/models/cart_model/cart_item_quantity/cart_item_quantity.dart';
 import 'package:e_delivery_app/Features/Cart/data/models/cart_model/cart_item_quantity/order_item.dart';
@@ -28,12 +29,19 @@ class _CartViewState extends State<CartView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const CustomCartAppBar(),
-      bottomSheet: CartBottomSheet(
-        cartModel: widget.cartModel,
+    return BlocProvider(
+      create: (context) => EditPricesCartCubit(
+        double.parse(widget.cartModel.itemsPrice!),
+        double.parse(widget.cartModel.deliveryCharge!),
+        double.parse(widget.cartModel.subTotal!),
       ),
-      body: CartProductsListView(cartModel: widget.cartModel),
+      child: Scaffold(
+        appBar: const CustomCartAppBar(),
+        bottomSheet: CartBottomSheet(
+          cartModel: widget.cartModel,
+        ),
+        body: CartProductsListView(cartModel: widget.cartModel),
+      ),
     );
   }
 

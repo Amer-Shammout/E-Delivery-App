@@ -4,6 +4,7 @@ import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/Widgets/Cart%20View%20Widgets/cart_products_list_view.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/Widgets/Cart%20View%20Widgets/product_slidable.dart';
+import 'package:e_delivery_app/Features/Cart/Presentation/manager/cubit/edit_prices_cart_cubit.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/manager/edit_quantity_cubit/edit_quantity_cubit.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/manager/get_cart_cubit/get_cart_cubit.dart';
 import 'package:e_delivery_app/Features/Cart/data/models/cart_model/order_item.dart';
@@ -16,9 +17,13 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomDeleteButton extends StatelessWidget {
   const CustomDeleteButton(
-      {super.key, required this.productId, required this.index});
+      {super.key,
+      required this.productId,
+      required this.index,
+      required this.orderItem});
   final int index;
   final int productId;
+  final OrderItem orderItem;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -39,6 +44,10 @@ class CustomDeleteButton extends StatelessWidget {
             OrderItem orderItem = orderItems.removeAt(index);
             await BlocProvider.of<RemoveFromCartCubit>(context)
                 .removeFromCart(productId);
+            BlocProvider.of<EditPricesCartCubit>(context)
+                .decrementDeliveryCharge(
+                    double.parse(orderItem.productDetails!.price!),
+                    orderItem.quantity!);
             if (BlocProvider.of<GetCartCubit>(context)
                 .cartModel!
                 .orderItems!
