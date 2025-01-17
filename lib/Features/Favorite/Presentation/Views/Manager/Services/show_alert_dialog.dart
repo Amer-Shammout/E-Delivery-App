@@ -37,6 +37,12 @@ class ShowAlertDialog {
             BlocProvider.of<GetFavoriteProductsCubit>(context).products;
         int index = products.indexOf(product);
         products.remove(product);
+        if (BlocProvider.of<GetFavoriteProductsCubit>(context)
+            .products
+            .isEmpty) {
+          BlocProvider.of<GetFavoriteProductsCubit>(context)
+              .emitEmptyFavorite();
+        }
         animatedKey.currentState!.removeItem(index, (context, animation) {
           return Padding(
             padding: const EdgeInsets.only(

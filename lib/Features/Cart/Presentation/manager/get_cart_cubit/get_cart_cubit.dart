@@ -10,6 +10,8 @@ class GetCartCubit extends Cubit<GetCartState> {
 
   final CartRepo _cartRepo;
 
+  CartModel? cartModel;
+
   Future<void> getCart() async {
     emit(GetCartLoading());
     var result = await _cartRepo.getCart();
@@ -19,11 +21,16 @@ class GetCartCubit extends Cubit<GetCartState> {
       },
       (cartModel) {
         if (cartModel != null) {
+          this.cartModel = cartModel;
           emit(GetCartSuccess(cartModel: cartModel));
         } else {
           emit(GetCartEmpty());
         }
       },
     );
+  }
+
+  emitEmptyCartState() {
+    emit(GetCartEmpty());
   }
 }

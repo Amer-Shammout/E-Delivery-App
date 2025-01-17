@@ -1,7 +1,6 @@
 import 'package:e_delivery_app/Core/Data/Manager/remove_from_cart_cubit/remove_from_cart_cubit.dart';
 import 'package:e_delivery_app/Core/Data/Repos/app_repo_impl.dart';
 import 'package:e_delivery_app/Core/services/service_locator.dart';
-import 'package:e_delivery_app/Features/Cart/Presentation/Views/Widgets/Cart%20View%20Widgets/custom_cart_check_box.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/Widgets/Cart%20View%20Widgets/custom_delete_button.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/Widgets/Cart%20View%20Widgets/product_card_cart.dart';
 import 'package:e_delivery_app/Features/Cart/data/models/cart_model/order_item.dart';

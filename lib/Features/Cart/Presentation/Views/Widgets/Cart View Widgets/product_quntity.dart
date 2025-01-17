@@ -1,9 +1,7 @@
-import 'dart:developer';
 
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_icon_button.dart';
-import 'package:e_delivery_app/Features/Cart/Presentation/Views/Widgets/Cart%20View%20Widgets/minus_icon.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/manager/edit_quantity_cubit/edit_quantity_cubit.dart';
 import 'package:e_delivery_app/Features/Cart/data/models/cart_model/order_item.dart';
 import 'package:e_delivery_app/constants.dart';
@@ -24,55 +22,69 @@ class ProductQuantity extends StatefulWidget {
 class _ProductQuantityState extends State<ProductQuantity> {
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<EditQuantityCubit, EditQuantityState>(
-      builder: (context, state) {
-        return Row(
-          children: [
-            GestureDetector(
-              onTap: () {
-                BlocProvider.of<EditQuantityCubit>(context).incrementQuantity(
-                    widget.orderItem.productDetails!.id!,
-                    widget.orderItem.productDetails!.stockQuantity!,
-                    widget.index);
-                setState(() {});
-              },
-              child: CustomIconButton(
-                  icon: Assets.iconsPlus, color: checkDiscountColor(context)),
-            )
-            // PlusIcon(
-            //     id: orderItem.productDetails!.id!,
-            //     totalQuantity: orderItem.productDetails!.stockQuantity!,
-            //     quantity: orderItem.quantity!,
-            //     color: checkDiscountColor(context)),
-            ,
-            const SizedBox(
-              width: kSpacing * 4,
-            ),
-            Text(
-              "${BlocProvider.of<EditQuantityCubit>(context).cartItemQuantity!.orderItems![widget.index].quantity}",
+    int q = 1;
+    if (BlocProvider.of<EditQuantityCubit>(context)
+            .cartItemQuantity!
+            .orderItems!
+            .elementAtOrNull(widget.index) ==
+        null) {
+      q = 1;
+    } else {
+      q = BlocProvider.of<EditQuantityCubit>(context)
+          .cartItemQuantity!
+          .orderItems![widget.index]
+          .quantity!;
+    }
+
+    return Row(
+      children: [
+        GestureDetector(
+          onTap: () {
+            BlocProvider.of<EditQuantityCubit>(context).incrementQuantity(
+                widget.orderItem.productDetails!.id!,
+                widget.orderItem.productDetails!.stockQuantity!,
+                widget.index);
+            setState(() {});
+          },
+          child: CustomIconButton(
+              icon: Assets.iconsPlus, color: checkDiscountColor(context)),
+        )
+        // PlusIcon(
+        //     id: orderItem.productDetails!.id!,
+        //     totalQuantity: orderItem.productDetails!.stockQuantity!,
+        //     quantity: orderItem.quantity!,
+        //     color: checkDiscountColor(context)),
+        ,
+        const SizedBox(
+          width: kSpacing * 4,
+        ),
+        BlocBuilder<EditQuantityCubit, EditQuantityState>(
+          builder: (context, state) {
+            return Text(
+              "$q",
               style: AppStyles.fontsBold16(context).copyWith(
                 color: checkDiscountColor(context),
               ),
-            ),
-            const SizedBox(
-              width: kSpacing * 4,
-            ),
-            GestureDetector(
-              onTap: () {
-                BlocProvider.of<EditQuantityCubit>(context).decrementQuantity(
-                    widget.orderItem.productDetails!.id!, widget.index);
-                setState(() {});
-              },
-              child: CustomIconButton(
-                  icon: Assets.iconsMinus, color: checkDiscountColor(context)),
-            ),
-            // MinusIcon(
-            //     id: widget.orderItem.productDetails!.id!,
-            //     quantity: widget.orderItem.quantity!,
-            //     color: checkDiscountColor(context)),
-          ],
-        );
-      },
+            );
+          },
+        ),
+        const SizedBox(
+          width: kSpacing * 4,
+        ),
+        GestureDetector(
+          onTap: () {
+            BlocProvider.of<EditQuantityCubit>(context).decrementQuantity(
+                widget.orderItem.productDetails!.id!, widget.index);
+            setState(() {});
+          },
+          child: CustomIconButton(
+              icon: Assets.iconsMinus, color: checkDiscountColor(context)),
+        ),
+        // MinusIcon(
+        //     id: widget.orderItem.productDetails!.id!,
+        //     quantity: widget.orderItem.quantity!,
+        //     color: checkDiscountColor(context)),
+      ],
     );
   }
 

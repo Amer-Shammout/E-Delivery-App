@@ -2,6 +2,7 @@ import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/functions/localizations_funs.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_icon.dart';
+import 'package:e_delivery_app/Core/widgets/loading/custom_circular_progress_indicator.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/Widgets/Cart%20View%20Widgets/select_all.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/manager/edit_quantity_cubit/edit_quantity_cubit.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/manager/update_cart_cubit/update_cart_cubit.dart';
@@ -22,13 +23,17 @@ class CustomCartAppBar extends StatelessWidget implements PreferredSizeWidget {
         padding: const EdgeInsets.all(16),
         child: RotatedBox(
           quarterTurns: LocalizationsFuns.isArabic(context) ? 2 : 0,
-          child: CustomIcon(
-            icon: Assets.iconsBackArrow,
-            onPressed: () async {
-              GoRouter.of(context).pop();
-              await BlocProvider.of<UpdateCartCubit>(context).updateCart(
-                  BlocProvider.of<EditQuantityCubit>(context)
-                      .cartItemQuantity!);
+          child: BlocBuilder<UpdateCartCubit, UpdateCartState>(
+            builder: (context, state) {
+              return state is UpdateCartLoading ? const CustomProgressIndicator() : CustomIcon(
+                icon: Assets.iconsBackArrow,
+                onPressed: () async {
+                  await BlocProvider.of<UpdateCartCubit>(context).updateCart(
+                      BlocProvider.of<EditQuantityCubit>(context)
+                          .cartItemQuantity!);
+                  GoRouter.of(context).pop();
+                },
+              );
             },
           ),
         ),
