@@ -78,6 +78,8 @@
     "empty_favorite":"لا يوجد منتجات في المفضلة بعد!",
     "add_to_cart_message":"تمت إضافة العنصر إلى السلة بنجاح!",
     "remove_from_cart_message":"تم حذف العنصر من السلة بنجاح!",
-    "empty_orders_message":"لا يوجد طلبات بعد!"
+    "empty_orders_message":"لا يوجد طلبات بعد!",
+    "cancel_order":"إلغاء الطلب",
+    "edit_order":"تعديل الطلب"
 
 }

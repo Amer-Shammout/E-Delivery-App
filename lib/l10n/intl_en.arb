@@ -78,6 +78,7 @@
     "empty_favorite":"There are no products in your favorites yet!",
     "add_to_cart_message":"The product has been added to the cart successfully!",
     "remove_from_cart_message":"The product has been deleted from the cart successfully!",
-    "empty_orders_message":"There are no orders yet!"
-
+    "empty_orders_message":"There are no orders yet!",
+"cancel_order":"Cancel Order",
+    "edit_order":"Edit Order"
 }

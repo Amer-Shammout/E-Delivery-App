@@ -18,7 +18,9 @@ class OrdersRepoImpl extends OrdersRepo {
     try {
       String token = Prefs.getString(kToken);
       Response response = await getIt.get<DioClient>().get(
-            sort != '' ? '$kOrdersUrl?sort=$sort' : '$kOrdersUrl?status=$type',
+            sort != ''
+                ? '$kUserOrdersUrl?sort=$sort'
+                : '$kUserOrdersUrl?status=$type',
             options: Options(headers: {"Authorization": "Bearer $token"}),
           );
       Map<String, dynamic> jsonData = response.data;
@@ -32,6 +34,23 @@ class OrdersRepoImpl extends OrdersRepo {
       }
       // products.shuffle();
       return right(orders);
+    } on DioException catch (e) {
+      return left(ServerFailure.fromDioError(e));
+    } on Exception catch (e) {
+      log(e.toString());
+      return left(ServerFailure(errMessage: AppStrings.strInternalServerError));
+    }
+  }
+
+  @override
+  Future<Either<Failure, Response>> cancelOrder(int id) async {
+    try {
+      String token = Prefs.getString(kToken);
+      Response response = await getIt.get<DioClient>().delete(
+            '$kOrdersUrl$id/$kCancelOrderUrl',
+            options: Options(headers: {"Authorization": "Bearer $token"}),
+          );
+      return right(response);
     } on DioException catch (e) {
       return left(ServerFailure.fromDioError(e));
     } on Exception catch (e) {

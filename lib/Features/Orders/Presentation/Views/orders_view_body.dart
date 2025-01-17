@@ -5,6 +5,7 @@ import 'package:e_delivery_app/Core/widgets/App%20Bar/status_app_bar_builder.dar
 import 'package:e_delivery_app/Features/Orders/Data/repos/orders_repo_impl.dart';
 import 'package:e_delivery_app/Features/Orders/Presentation/Views/widgets/filter_drop_down_button.dart';
 import 'package:e_delivery_app/Features/Orders/Presentation/Views/widgets/orders_list_view_builder.dart';
+import 'package:e_delivery_app/Features/Orders/Presentation/manager/cancel_order_cubit/cancel_order_cubit.dart';
 import 'package:e_delivery_app/Features/Orders/Presentation/manager/get_orders_cubit/get_orders_cubit.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
@@ -16,8 +17,15 @@ class OrdersViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => GetOrdersCubit(getIt.get<OrdersRepoImpl>()),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => GetOrdersCubit(getIt.get<OrdersRepoImpl>()),
+        ),
+        BlocProvider(
+          create: (context) => CancelOrderCubit(getIt.get<OrdersRepoImpl>()),
+        ),
+      ],
       child: CustomScrollView(
         physics: const BouncingScrollPhysics(),
         slivers: [

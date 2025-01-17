@@ -3,7 +3,7 @@ import 'package:equatable/equatable.dart';
 import 'order_item.dart';
 
 class OrderModel extends Equatable {
-  final dynamic id;
+  final int? id;
   final dynamic userId;
   final String? itemsPrice;
   final String? deliveryCharge;
@@ -22,7 +22,7 @@ class OrderModel extends Equatable {
   });
 
   factory OrderModel.fromJson(Map<String, dynamic> json) => OrderModel(
-        id: json['id'] as dynamic,
+        id: json['id'] as int,
         userId: json['user_id'] as dynamic,
         itemsPrice: json['items_price'] as String?,
         deliveryCharge: json['delivery_charge'] as String?,

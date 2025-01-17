@@ -4,6 +4,8 @@ import 'package:e_delivery_app/Features/Orders/Presentation/Views/widgets/Orders
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 
+final GlobalKey<SliverAnimatedListState>ordersAnimatedKey = GlobalKey();
+
 class OrdersListView extends StatelessWidget {
   const OrdersListView({
     super.key,
@@ -14,8 +16,9 @@ class OrdersListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverList.builder(
-      itemBuilder: (context, index) => Padding(
+    return SliverAnimatedList(
+      key: ordersAnimatedKey,
+      itemBuilder: (context, index,animation) => Padding(
         padding: const EdgeInsets.only(bottom: kSpacing * 4),
         child: OrdersCard(
           orderModel: orders[index],
@@ -23,7 +26,7 @@ class OrdersListView extends StatelessWidget {
           icon: setIcon(orders[index].orderStatus!),
         ),
       ),
-      itemCount: orders.length,
+      initialItemCount: orders.length,
     );
   }
 
@@ -55,7 +58,7 @@ class OrdersListView extends StatelessWidget {
     } else if (status == 'canceled') {
       return Assets.iconsAbout;
     } else if (status == 'pending') {
-      return Assets.iconsAbout;
+      return Assets.iconsPending;
     }
   }
 }

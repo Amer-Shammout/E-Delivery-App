@@ -30,6 +30,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "all_products": MessageLookupByLibrary.simpleMessage("كل المنتجات"),
         "all_stores": MessageLookupByLibrary.simpleMessage("كل المتاجر"),
         "cancel_dialog": MessageLookupByLibrary.simpleMessage("إلغاء"),
+        "cancel_order": MessageLookupByLibrary.simpleMessage("إلغاء الطلب"),
         "cart1": MessageLookupByLibrary.simpleMessage("السّلة"),
         "cart2": MessageLookupByLibrary.simpleMessage("العناصر المختارة"),
         "cart3": MessageLookupByLibrary.simpleMessage("كلفة التّوصيل"),
@@ -44,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تم تعديل موقعك بنجاح!"),
         "edit_name_message":
             MessageLookupByLibrary.simpleMessage("تم تعديل اسمك بنجاح!"),
+        "edit_order": MessageLookupByLibrary.simpleMessage("تعديل الطلب"),
         "empty_cart": MessageLookupByLibrary.simpleMessage("سلتك فارغة!"),
         "empty_favorite": MessageLookupByLibrary.simpleMessage(
             "لا يوجد منتجات في المفضلة بعد!"),

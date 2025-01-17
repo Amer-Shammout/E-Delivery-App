@@ -10,6 +10,8 @@ class GetOrdersCubit extends Cubit<GetOrdersState> {
 
   final OrdersRepo _ordersRepo;
 
+  List<OrderModel> orders = [];
+
   Future<void> getOrders({required String sort, required String type}) async {
     emit(GetOrdersLoading());
     var result = await _ordersRepo.getOrders(sort: sort, type: type);
@@ -19,8 +21,13 @@ class GetOrdersCubit extends Cubit<GetOrdersState> {
       if (orders.isEmpty) {
         emit(GetOrdersEmpty());
       } else {
+        this.orders = orders;
         emit(GetOrdersSuccess(orders: orders));
       }
     });
+  }
+
+  emitEmptyOrdersState() {
+    emit(GetOrdersEmpty());
   }
 }

@@ -30,6 +30,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "all_products": MessageLookupByLibrary.simpleMessage("All Products"),
         "all_stores": MessageLookupByLibrary.simpleMessage("All Stores"),
         "cancel_dialog": MessageLookupByLibrary.simpleMessage("Cancel"),
+        "cancel_order": MessageLookupByLibrary.simpleMessage("Cancel Order"),
         "cart1": MessageLookupByLibrary.simpleMessage("Cart"),
         "cart2": MessageLookupByLibrary.simpleMessage("Selected Items"),
         "cart3": MessageLookupByLibrary.simpleMessage("Delivery Charge"),
@@ -43,6 +44,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Your location was updates successfully!"),
         "edit_name_message": MessageLookupByLibrary.simpleMessage(
             "Your name was changed successfully!"),
+        "edit_order": MessageLookupByLibrary.simpleMessage("Edit Order"),
         "empty_cart":
             MessageLookupByLibrary.simpleMessage("Your Cart is Empty!"),
         "empty_favorite": MessageLookupByLibrary.simpleMessage(
