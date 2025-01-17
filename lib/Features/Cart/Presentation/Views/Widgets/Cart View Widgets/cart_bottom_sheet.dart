@@ -1,8 +1,12 @@
+import 'package:e_delivery_app/Core/services/service_locator.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/c_t_a_button.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/Widgets/Cart%20View%20Widgets/custom_item_bottom_sheet.dart';
+import 'package:e_delivery_app/Features/Cart/Presentation/manager/edit_quantity_cubit/edit_quantity_cubit.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/manager/submit_the_order_cubit/submit_the_order_cubit.dart';
+import 'package:e_delivery_app/Features/Cart/Presentation/manager/update_cart_cubit/update_cart_cubit.dart';
 import 'package:e_delivery_app/Features/Cart/data/models/cart_model/cart_model.dart';
+import 'package:e_delivery_app/Features/Cart/data/repos/cart_repo_impl.dart';
 import 'package:e_delivery_app/Features/Home/Presentation/Manager/Cubits/get_products_by_category_cubit/get_products_by_category_cubit.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -37,6 +41,9 @@ class CartBottomSheet extends StatelessWidget {
               ),
               CTAButton(
                 onPressed: () async {
+                  await BlocProvider.of<UpdateCartCubit>(context).updateCart(
+                      BlocProvider.of<EditQuantityCubit>(context)
+                          .cartItemQuantity!);
                   await BlocProvider.of<SubmitTheOrderCubit>(context)
                       .submitTheOrder();
                   await BlocProvider.of<GetProductsByCategoryCubit>(context)
