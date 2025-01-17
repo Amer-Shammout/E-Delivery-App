@@ -31,6 +31,7 @@ class ProductSlidable extends StatelessWidget {
               CustomDeleteButton(
                 productId: orderItem.productDetails!.id!,
                 index: index,
+                orderItem: orderItem,
               )
             ],
           ),

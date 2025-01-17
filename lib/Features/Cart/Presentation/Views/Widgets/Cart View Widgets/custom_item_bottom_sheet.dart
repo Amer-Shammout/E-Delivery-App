@@ -2,9 +2,10 @@ import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomItemBottomSheet extends StatelessWidget {
-  const CustomItemBottomSheet({super.key, required this.title});
+  const CustomItemBottomSheet(
+      {super.key, required this.title, required this.value});
   final String title;
-
+  final String value;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -19,7 +20,7 @@ class CustomItemBottomSheet extends StatelessWidget {
         Row(
           children: [
             Text(
-              '57,5',
+              value,
               style: AppStyles.fontsBlack24(context)
                   .copyWith(color: Theme.of(context).colorScheme.primary),
             ),

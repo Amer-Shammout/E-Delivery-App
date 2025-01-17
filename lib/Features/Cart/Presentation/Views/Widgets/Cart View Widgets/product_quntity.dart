@@ -1,6 +1,7 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_icon_button.dart';
+import 'package:e_delivery_app/Features/Cart/Presentation/manager/cubit/edit_prices_cart_cubit.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/manager/edit_quantity_cubit/edit_quantity_cubit.dart';
 import 'package:e_delivery_app/Features/Cart/data/models/cart_model/order_item.dart';
 import 'package:e_delivery_app/constants.dart';
@@ -43,6 +44,9 @@ class _ProductQuantityState extends State<ProductQuantity> {
                 widget.orderItem.productDetails!.id!,
                 widget.orderItem.productDetails!.stockQuantity!,
                 widget.index);
+            BlocProvider.of<EditPricesCartCubit>(context)
+                .incrementSelectedItems(
+                    double.parse(widget.orderItem.productDetails!.price!));
             setState(() {});
           },
           child: CustomIconButton(
@@ -74,6 +78,9 @@ class _ProductQuantityState extends State<ProductQuantity> {
           onTap: () {
             BlocProvider.of<EditQuantityCubit>(context).decrementQuantity(
                 widget.orderItem.productDetails!.id!, widget.index);
+            BlocProvider.of<EditPricesCartCubit>(context)
+                .decrementSelectedItems(
+                    double.parse(widget.orderItem.productDetails!.price!));
             setState(() {});
           },
           child: CustomIconButton(
