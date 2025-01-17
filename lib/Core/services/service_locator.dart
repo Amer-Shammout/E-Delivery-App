@@ -4,6 +4,7 @@ import 'package:e_delivery_app/Features/Auth/Data/repos/auth_repo_impl.dart';
 import 'package:e_delivery_app/Features/Cart/data/repos/cart_repo_impl.dart';
 import 'package:e_delivery_app/Features/Favorite/Data/Repos/get_favorite_products_repo_impl.dart';
 import 'package:e_delivery_app/Features/Home/Data/Repos/home_repo_impl.dart';
+import 'package:e_delivery_app/Features/Orders/Data/repos/orders_repo_impl.dart';
 import 'package:e_delivery_app/Features/Profile/data/repos/profile_repo_impl.dart';
 import 'package:e_delivery_app/Features/Search/data/repos/search_repo_impl.dart';
 import 'package:e_delivery_app/Features/Store%20Details/Presentation/manager/get_store_products_cubit/get_store_products_cubit.dart';
@@ -25,6 +26,7 @@ void setupGetit() {
   getIt.registerSingleton<GetFavoriteProductsRepoImpl>(
       GetFavoriteProductsRepoImpl());
   getIt.registerSingleton<CartRepoImpl>(CartRepoImpl());
+  getIt.registerSingleton<OrdersRepoImpl>(OrdersRepoImpl());
   getIt.registerSingleton<GetStoreProductsCubit>(
       GetStoreProductsCubit(getIt.get<StoreDetailsRepoImpl>()));
 }

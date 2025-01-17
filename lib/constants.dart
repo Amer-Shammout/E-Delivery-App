@@ -32,6 +32,7 @@ const kRemoveFromCartUrl = "cart/remove";
 const kUpdateCartUrl = "cart/update";
 const kSubmitTheOrderUrl = "cart/submit";
 const kCartUrl = "cart";
+const kOrdersUrl = "users/orders";
 const kAll = "All";
 const kStores = "Stores";
 const kProducts = "Products";

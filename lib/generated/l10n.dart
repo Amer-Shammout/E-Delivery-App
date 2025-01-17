@@ -340,6 +340,16 @@ class S {
     );
   }
 
+  /// `Pending`
+  String get order_filter6 {
+    return Intl.message(
+      'Pending',
+      name: 'order_filter6',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Product`
   String get order_details1 {
     return Intl.message(
@@ -825,6 +835,16 @@ class S {
     return Intl.message(
       'The product has been deleted from the cart successfully!',
       name: 'remove_from_cart_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `There are no orders yet!`
+  String get empty_orders_message {
+    return Intl.message(
+      'There are no orders yet!',
+      name: 'empty_orders_message',
       desc: '',
       args: [],
     );

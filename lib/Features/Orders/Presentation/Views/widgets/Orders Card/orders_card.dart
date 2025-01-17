@@ -1,6 +1,7 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/utils/styles/shadows.dart';
+import 'package:e_delivery_app/Features/Orders/Data/models/order_model/order_model.dart';
 import 'package:e_delivery_app/Features/Orders/Presentation/Views/widgets/Orders%20Card/order_details_table.dart';
 import 'package:e_delivery_app/Features/Orders/Presentation/Views/widgets/Orders%20Card/orders_card_leading.dart';
 import 'package:e_delivery_app/constants.dart';
@@ -8,10 +9,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class OrdersCard extends StatelessWidget {
-  const OrdersCard({super.key, required this.cardColor, required this.icon});
+  const OrdersCard(
+      {super.key,
+      required this.cardColor,
+      required this.icon,
+      required this.orderModel});
 
   final Color cardColor;
   final String icon;
+  final OrderModel orderModel;
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +71,7 @@ class OrdersCard extends StatelessWidget {
         collapsedBackgroundColor: cardColor,
         backgroundColor: cardColor,
         title: Text(
-          'Delivered!',
+          orderModel.orderStatus!,
           style: AppStyles.fontsBold16(context).copyWith(
             color: kBlackColor,
           ),
@@ -74,7 +80,7 @@ class OrdersCard extends StatelessWidget {
           TextSpan(
             children: [
               TextSpan(
-                text: '6M ',
+                text: orderModel.subtotal,
                 style: AppStyles.fontsRegular12(context)
                     .copyWith(color: kBlackColor),
               ),
@@ -87,13 +93,14 @@ class OrdersCard extends StatelessWidget {
           ),
         ),
         leading: OrdersCardLeading(
+          orderModel: orderModel,
           icon: icon,
         ),
-        children: const [
+        children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              OrderDetailsTable(),
+              OrderDetailsTable(orderModel: orderModel),
             ],
           ),
         ],

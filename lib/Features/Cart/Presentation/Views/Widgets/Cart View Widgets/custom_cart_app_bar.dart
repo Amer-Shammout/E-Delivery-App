@@ -25,15 +25,18 @@ class CustomCartAppBar extends StatelessWidget implements PreferredSizeWidget {
           quarterTurns: LocalizationsFuns.isArabic(context) ? 2 : 0,
           child: BlocBuilder<UpdateCartCubit, UpdateCartState>(
             builder: (context, state) {
-              return state is UpdateCartLoading ? const CustomProgressIndicator() : CustomIcon(
-                icon: Assets.iconsBackArrow,
-                onPressed: () async {
-                  await BlocProvider.of<UpdateCartCubit>(context).updateCart(
-                      BlocProvider.of<EditQuantityCubit>(context)
-                          .cartItemQuantity!);
-                  GoRouter.of(context).pop();
-                },
-              );
+              return state is UpdateCartLoading
+                  ? const CustomProgressIndicator()
+                  : CustomIcon(
+                      icon: Assets.iconsBackArrow,
+                      onPressed: () async {
+                        await BlocProvider.of<UpdateCartCubit>(context)
+                            .updateCart(
+                                BlocProvider.of<EditQuantityCubit>(context)
+                                    .cartItemQuantity!);
+                        GoRouter.of(context).pop();
+                      },
+                    );
             },
           ),
         ),

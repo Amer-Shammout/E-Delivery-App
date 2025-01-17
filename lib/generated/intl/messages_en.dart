@@ -47,6 +47,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Your Cart is Empty!"),
         "empty_favorite": MessageLookupByLibrary.simpleMessage(
             "There are no products in your favorites yet!"),
+        "empty_orders_message":
+            MessageLookupByLibrary.simpleMessage("There are no orders yet!"),
         "field_empty_message":
             MessageLookupByLibrary.simpleMessage("field is required"),
         "full_name_hint": MessageLookupByLibrary.simpleMessage("Full Name"),
@@ -69,6 +71,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "order_filter3": MessageLookupByLibrary.simpleMessage("Delivered"),
         "order_filter4": MessageLookupByLibrary.simpleMessage("On the way"),
         "order_filter5": MessageLookupByLibrary.simpleMessage("Preparing"),
+        "order_filter6": MessageLookupByLibrary.simpleMessage("Pending"),
         "permission_denied":
             MessageLookupByLibrary.simpleMessage("Permission Denied!"),
         "permission_message": MessageLookupByLibrary.simpleMessage(

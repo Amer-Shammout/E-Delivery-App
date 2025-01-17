@@ -47,6 +47,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "empty_cart": MessageLookupByLibrary.simpleMessage("سلتك فارغة!"),
         "empty_favorite": MessageLookupByLibrary.simpleMessage(
             "لا يوجد منتجات في المفضلة بعد!"),
+        "empty_orders_message":
+            MessageLookupByLibrary.simpleMessage("لا يوجد طلبات بعد!"),
         "field_empty_message":
             MessageLookupByLibrary.simpleMessage("الحقل مطلوب"),
         "full_name_hint": MessageLookupByLibrary.simpleMessage("الاسم الكامل"),
@@ -69,6 +71,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "order_filter3": MessageLookupByLibrary.simpleMessage("تم التّوصيل"),
         "order_filter4": MessageLookupByLibrary.simpleMessage("قيد التّوصيل"),
         "order_filter5": MessageLookupByLibrary.simpleMessage("قيد التّحضير"),
+        "order_filter6":
+            MessageLookupByLibrary.simpleMessage("بانتظار القبول..."),
         "permission_denied":
             MessageLookupByLibrary.simpleMessage("الإذن مطلوب!"),
         "permission_message":

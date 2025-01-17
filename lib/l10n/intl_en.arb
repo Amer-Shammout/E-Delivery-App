@@ -28,6 +28,7 @@
     "order_filter3":"Delivered",
     "order_filter4":"On the way",
     "order_filter5":"Preparing",
+    "order_filter6":"Pending",
     "order_details1":"Product",
     "order_details2":"Quantity",
     "order_details3":"Price",
@@ -76,6 +77,7 @@
     "empty_cart":"Your Cart is Empty!",
     "empty_favorite":"There are no products in your favorites yet!",
     "add_to_cart_message":"The product has been added to the cart successfully!",
-    "remove_from_cart_message":"The product has been deleted from the cart successfully!"
+    "remove_from_cart_message":"The product has been deleted from the cart successfully!",
+    "empty_orders_message":"There are no orders yet!"
 
 }

@@ -1,4 +1,6 @@
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
+import 'package:e_delivery_app/Features/Orders/Data/models/order_model/order_item.dart';
+import 'package:e_delivery_app/Features/Orders/Data/models/order_model/order_model.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -6,7 +8,10 @@ import 'package:flutter/material.dart';
 class OrderDetailsTable extends StatelessWidget {
   const OrderDetailsTable({
     super.key,
+    required this.orderModel,
   });
+
+  final OrderModel orderModel;
 
 // بدنا object هون بالمستقبل
   @override
@@ -33,12 +38,10 @@ class OrderDetailsTable extends StatelessWidget {
           orderDetailsTableDataColumn(S.of(context).order_details2, context),
           orderDetailsTableDataColumn(S.of(context).order_details3, context),
         ],
-        rows: [
-          // هون منعملن توليد بالمستقبل
-          orderDetailsTableDataRow(context),
-          orderDetailsTableDataRow(context),
-          orderDetailsTableDataRow(context),
-        ],
+        rows: List.generate(orderModel.orderItems!.length, (index) {
+          return orderDetailsTableDataRow(
+              context, orderModel.orderItems![index]);
+        }),
       ),
     );
   }
@@ -56,14 +59,14 @@ DataColumn orderDetailsTableDataColumn(String title, context) {
   );
 }
 
-DataRow orderDetailsTableDataRow(context) {
+DataRow orderDetailsTableDataRow(context, OrderItem orderItem) {
   // هون منستقبل ال object بالمستقبل
   return DataRow(
     cells: [
       DataCell(
         Text(
           textAlign: TextAlign.center,
-          'Iphone 15',
+          orderItem.productDetails!.name!,
           style: AppStyles.fontsRegular10(context).copyWith(color: kBlackColor),
         ),
       ),
@@ -71,7 +74,7 @@ DataRow orderDetailsTableDataRow(context) {
         Center(
           child: Text(
             textAlign: TextAlign.center,
-            '1x',
+            '${orderItem.quantity}x',
             style:
                 AppStyles.fontsRegular10(context).copyWith(color: kBlackColor),
           ),
@@ -81,7 +84,7 @@ DataRow orderDetailsTableDataRow(context) {
         Center(
           child: Text(
             textAlign: TextAlign.center,
-            '2M',
+            orderItem.productDetails!.price!,
             style:
                 AppStyles.fontsRegular10(context).copyWith(color: kBlackColor),
           ),

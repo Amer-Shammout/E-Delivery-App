@@ -33,5 +33,4 @@ class GetFavoriteProductsCubit extends Cubit<GetFavoriteProductsState> {
   emitEmptyFavorite() {
     emit(GetFavoriteProductsEmpty());
   }
-  
 }

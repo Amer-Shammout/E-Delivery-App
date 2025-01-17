@@ -28,6 +28,7 @@
     "order_filter3":"تم التّوصيل",
     "order_filter4":"قيد التّوصيل",
     "order_filter5":"قيد التّحضير",
+    "order_filter6":"بانتظار القبول...",
     "order_details1":"المنتج",
     "order_details2":"الكميّة",
     "order_details3":"السّعر",
@@ -76,6 +77,7 @@
     "empty_cart":"سلتك فارغة!",
     "empty_favorite":"لا يوجد منتجات في المفضلة بعد!",
     "add_to_cart_message":"تمت إضافة العنصر إلى السلة بنجاح!",
-    "remove_from_cart_message":"تم حذف العنصر من السلة بنجاح!"
+    "remove_from_cart_message":"تم حذف العنصر من السلة بنجاح!",
+    "empty_orders_message":"لا يوجد طلبات بعد!"
 
 }
