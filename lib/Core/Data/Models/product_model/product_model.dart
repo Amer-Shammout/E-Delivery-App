@@ -4,7 +4,7 @@ import 'store_id.dart';
 
 // ignore: must_be_immutable
 class ProductModel extends Equatable {
-  final StoreId? storeId;
+  final Store? store;
   final bool? isFavorite;
   bool? isCart;
   final String? category;
@@ -20,7 +20,7 @@ class ProductModel extends Equatable {
   final String? discountEnd;
 
   ProductModel({
-    this.storeId,
+    this.store,
     this.isFavorite,
     this.isCart,
     this.category,
@@ -37,9 +37,9 @@ class ProductModel extends Equatable {
   });
 
   factory ProductModel.fromJson(Map<String, dynamic> json) => ProductModel(
-        storeId: json['store'] == null
+        store: json['store'] == null
             ? null
-            : StoreId.fromJson(json['store'] as Map<String, dynamic>),
+            : Store.fromJson(json['store'] as Map<String, dynamic>),
         isFavorite: json['is_favorite'] as bool?,
         isCart: json['is_cart'] as bool?,
         category: json['category'] as String?,
@@ -56,7 +56,7 @@ class ProductModel extends Equatable {
       );
 
   Map<String, dynamic> toJson() => {
-        'store_id': storeId?.toJson(),
+        'store_id': store?.toJson(),
         'is_favorite': isFavorite,
         'is_cart': isCart,
         'category': category,
@@ -75,7 +75,7 @@ class ProductModel extends Equatable {
   @override
   List<Object?> get props {
     return [
-      storeId,
+      store,
       isFavorite,
       isCart,
       category,

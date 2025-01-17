@@ -1,7 +1,9 @@
+import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/Widgets/Cart%20View%20Widgets/product_slidable.dart';
 import 'package:e_delivery_app/Features/Cart/data/models/cart_model/cart_model.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 final GlobalKey<AnimatedListState> cartAnimatedKey = GlobalKey();
 
@@ -19,10 +21,16 @@ class CartProductsListView extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       itemBuilder: (context, index, animation) => FadeTransition(
         opacity: animation,
-        child: Padding(
-          padding: const EdgeInsets.only(bottom: kSpacing * 6),
-          child: ProductSlidable(
-              orderItem: cartModel.orderItems![index], index: index),
+        child: GestureDetector(
+          onTap: () {
+            GoRouter.of(context).pushNamed(AppRouter.kProductDetailsName,
+                extra: cartModel.orderItems![index].productDetails);
+          },
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: kSpacing * 6),
+            child: ProductSlidable(
+                orderItem: cartModel.orderItems![index], index: index),
+          ),
         ),
       ),
     );

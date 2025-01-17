@@ -50,7 +50,7 @@ class RemoveFromCartButton extends StatelessWidget {
             BlocProvider.of<GetProductsByCategoryCubit>(context)
                 .getProductsByCategory('All');
             BlocProvider.of<GetStoreProductsCubit>(context).getStoreProducts(
-                category: 'All', storeId: productModel.storeId!.id!);
+                category: 'All', storeId: productModel.store!.id!);
           }
           showSuccessSnackBar(S.of(context).remove_from_cart_message, context);
         }

@@ -76,7 +76,7 @@ class _ProductAppBarState extends State<ProductAppBar> {
                         BlocProvider.of<GetStoreProductsCubit>(context)
                             .getStoreProducts(
                                 category: "All",
-                                storeId: widget.productModel!.storeId!.id!);
+                                storeId: widget.productModel!.store!.id!);
                       }
                     },
                     icon: isFavorite

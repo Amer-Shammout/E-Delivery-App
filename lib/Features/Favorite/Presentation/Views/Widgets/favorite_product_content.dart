@@ -14,7 +14,7 @@ class FavoriteProductContent extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          product.storeId!.name!,
+          product.store!.name!,
           style: AppStyles.fontsMedium10(context).copyWith(
             fontSize: 8,
             color: Theme.of(context).colorScheme.error.withOpacity(0.35),

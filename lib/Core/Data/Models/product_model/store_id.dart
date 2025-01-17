@@ -1,19 +1,19 @@
 import 'package:equatable/equatable.dart';
 
-class StoreId extends Equatable {
+class Store extends Equatable {
   final String? name;
   final dynamic logoColor;
   final String? image;
   final int? id;
 
-  const StoreId({
+  const Store({
     this.name,
     this.logoColor,
     this.image,
     this.id,
   });
 
-  factory StoreId.fromJson(Map<String, dynamic> json) => StoreId(
+  factory Store.fromJson(Map<String, dynamic> json) => Store(
         name: json['name'] as String?,
         logoColor: json['logo_color'] as dynamic,
         image: json['image'] as String?,

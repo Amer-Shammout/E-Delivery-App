@@ -17,7 +17,7 @@ class ProductContent extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          productModel == null ? 'EMMATEL' : productModel!.storeId!.name!,
+          productModel == null ? 'EMMATEL' : productModel!.store!.name!,
           style: AppStyles.fontsMedium10(context).copyWith(
             color: Theme.of(context).colorScheme.error.withOpacity(0.35),
           ),

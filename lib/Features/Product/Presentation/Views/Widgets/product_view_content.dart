@@ -21,7 +21,7 @@ class ProductViewContent extends StatelessWidget {
             height: 12,
           ),
           Text(
-            productModel != null ? productModel!.storeId!.name! : 'EMMATEL',
+            productModel != null ? productModel!.store!.name! : 'EMMATEL',
             style: AppStyles.fontsSemiBold14(context).copyWith(
               color: Theme.of(context).colorScheme.primary.withOpacity(0.5),
             ),
