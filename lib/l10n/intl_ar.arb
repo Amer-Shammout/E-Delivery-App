@@ -81,6 +81,7 @@
     "empty_orders_message":"لا يوجد طلبات بعد!",
     "cancel_order":"إلغاء الطلب",
     "edit_order":"تعديل الطلب",
-    "edit_orders":"تعديل الطلبات"
+    "edit_orders":"تعديل الطلبات",
+    "edit_button":"تعديل"
 
 }

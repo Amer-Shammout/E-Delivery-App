@@ -879,6 +879,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Edit`
+  String get edit_button {
+    return Intl.message(
+      'Edit',
+      name: 'edit_button',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

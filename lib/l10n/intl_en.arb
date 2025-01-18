@@ -81,5 +81,6 @@
     "empty_orders_message":"There are no orders yet!",
 "cancel_order":"Cancel Order",
     "edit_order":"Edit Order",
-    "edit_orders":"Edit Orders"
+    "edit_orders":"Edit Orders",
+    "edit_button":"Edit"
 }

@@ -39,6 +39,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "default_user_message":
             MessageLookupByLibrary.simpleMessage("أيها المستخدم"),
         "delete_button": MessageLookupByLibrary.simpleMessage("حذف"),
+        "edit_button": MessageLookupByLibrary.simpleMessage("تعديل"),
         "edit_image_message":
             MessageLookupByLibrary.simpleMessage("تم تعديل صورتك بنجاح!"),
         "edit_location_message":
