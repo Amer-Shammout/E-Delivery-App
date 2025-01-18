@@ -1,5 +1,6 @@
 import 'package:e_delivery_app/Core/Data/Manager/remove_from_cart_cubit/remove_from_cart_cubit.dart';
 import 'package:e_delivery_app/Core/Data/Models/product_model/product_model.dart';
+import 'package:e_delivery_app/Core/services/shared_preferences_singleton.dart';
 import 'package:e_delivery_app/Core/utils/functions/show_snack_bar.dart';
 import 'package:e_delivery_app/Core/widgets/loading/custom_circular_progress_indicator.dart';
 import 'package:e_delivery_app/Features/Home/Presentation/Manager/Cubits/get_products_by_category_cubit/get_products_by_category_cubit.dart';
@@ -20,7 +21,9 @@ class RemoveFromCartButton extends StatelessWidget {
       this.getSearchProductsSuccess,
       this.loadingHeight = 12,
       this.loadingWidth = 12,
-      this.size = 24, this.strokeWidth});
+      this.size = 24,
+      this.strokeWidth,
+      this.padding = 3,  this.loadingPadding = 3});
 
   final ProductModel productModel;
   final int index;
@@ -29,6 +32,8 @@ class RemoveFromCartButton extends StatelessWidget {
   final SearchSuccess? getSearchProductsSuccess;
   final double size, loadingHeight, loadingWidth;
   final double? strokeWidth;
+  final double padding;
+  final double loadingPadding;
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<RemoveFromCartCubit, RemoveFromCartState>(
@@ -44,18 +49,18 @@ class RemoveFromCartButton extends StatelessWidget {
             getSearchProductsSuccess!.searchModel.products[index].isCart =
                 false;
             BlocProvider.of<GetProductsByCategoryCubit>(context)
-                .getProductsByCategory('All');
+                .getProductsByCategory(Prefs.getString(kLang) == 'en' ? "All" : 'الكل');
           }
           if (getStoreProductsSuccess != null) {
             getStoreProductsSuccess!.products[index].isCart = false;
             BlocProvider.of<GetProductsByCategoryCubit>(context)
-                .getProductsByCategory('All');
+                .getProductsByCategory(Prefs.getString(kLang) == 'en' ? "All" : 'الكل');
           }
           if (index == -1) {
             BlocProvider.of<GetProductsByCategoryCubit>(context)
-                .getProductsByCategory('All');
+                .getProductsByCategory(Prefs.getString(kLang) == 'en' ? "All" : 'الكل');
             BlocProvider.of<GetStoreProductsCubit>(context).getStoreProducts(
-                category: 'All', storeId: productModel.store!.id!);
+                category: Prefs.getString(kLang) == 'en' ? "All" : 'الكل', storeId: productModel.store!.id!);
           }
           showSuccessSnackBar(S.of(context).remove_from_cart_message, context);
         }
@@ -63,7 +68,7 @@ class RemoveFromCartButton extends StatelessWidget {
       builder: (context, state) {
         return state is RemoveFromCartLoading
             ? Padding(
-                padding: const EdgeInsetsDirectional.only(end: kSpacing * 3),
+                padding:  EdgeInsetsDirectional.only(end: kSpacing * loadingPadding),
                 child: CustomProgressIndicator(
                   strokeWidth: strokeWidth ?? 2,
                   width: loadingWidth,
@@ -77,7 +82,7 @@ class RemoveFromCartButton extends StatelessWidget {
                       .removeFromCart(productModel.id!);
                 },
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.only(end: kSpacing * 2),
+                  padding: EdgeInsetsDirectional.only(end: kSpacing * padding),
                   child: Icon(
                     Icons.remove,
                     size: size,

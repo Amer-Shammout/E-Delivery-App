@@ -28,12 +28,6 @@ class _FavoriteProductsListViewState extends State<FavoriteProductsListView> {
   }
 
   @override
-  void dispose() {
-    animatedKey.currentState!.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return SliverAnimatedList(
       key: animatedKey,

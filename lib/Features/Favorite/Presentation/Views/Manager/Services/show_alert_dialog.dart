@@ -2,6 +2,7 @@
 
 import 'package:e_delivery_app/Core/Data/Manager/add_or_remove_favorites/add_or_remove_favorites_cubit.dart';
 import 'package:e_delivery_app/Core/Data/Models/product_model/product_model.dart';
+import 'package:e_delivery_app/Core/services/shared_preferences_singleton.dart';
 import 'package:e_delivery_app/Features/Favorite/Presentation/Views/Manager/cubits/get_favorite_products_cubit/get_favorite_products_cubit.dart';
 import 'package:e_delivery_app/Features/Favorite/Presentation/Views/Widgets/favorite_product.dart';
 import 'package:e_delivery_app/Features/Favorite/Presentation/Views/Widgets/favorite_products_list_view.dart';
@@ -61,7 +62,7 @@ class ShowAlertDialog {
         BlocProvider.of<AddOrRemoveFavoritesCubit>(context)
             .addOrRemoveFavorites(product.id!);
         BlocProvider.of<GetProductsByCategoryCubit>(context)
-            .getProductsByCategory('All');
+            .getProductsByCategory(Prefs.getString(kLang) == 'en' ? "All" : 'الكل');
         GoRouter.of(context).pop();
       },
     );

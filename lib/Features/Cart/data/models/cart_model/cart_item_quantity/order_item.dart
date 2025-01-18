@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 
+// ignore: must_be_immutable
 class OrderItem extends Equatable {
   int? productId;
   int? quantity;

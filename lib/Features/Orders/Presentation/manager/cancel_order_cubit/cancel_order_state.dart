@@ -9,7 +9,11 @@ sealed class CancelOrderState extends Equatable {
 
 final class CancelOrderInitial extends CancelOrderState {}
 
-final class CancelOrderLoading extends CancelOrderState {}
+final class CancelOrderLoading extends CancelOrderState {
+  final OrderModel orderModel;
+
+  const CancelOrderLoading({required this.orderModel});
+}
 
 final class CancelOrderFailure extends CancelOrderState {
   final String errMessage;

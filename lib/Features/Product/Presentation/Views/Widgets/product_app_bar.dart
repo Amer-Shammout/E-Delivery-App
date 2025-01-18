@@ -2,6 +2,7 @@
 
 import 'package:e_delivery_app/Core/Data/Manager/add_or_remove_favorites/add_or_remove_favorites_cubit.dart';
 import 'package:e_delivery_app/Core/Data/Models/product_model/product_model.dart';
+import 'package:e_delivery_app/Core/services/shared_preferences_singleton.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/functions/localizations_funs.dart';
 import 'package:e_delivery_app/Core/utils/functions/show_snack_bar.dart';
@@ -11,6 +12,7 @@ import 'package:e_delivery_app/Core/widgets/loading/custom_circular_progress_ind
 import 'package:e_delivery_app/Features/Favorite/Presentation/Views/Manager/cubits/get_favorite_products_cubit/get_favorite_products_cubit.dart';
 import 'package:e_delivery_app/Features/Home/Presentation/Manager/Cubits/get_products_by_category_cubit/get_products_by_category_cubit.dart';
 import 'package:e_delivery_app/Features/Store%20Details/Presentation/manager/get_store_products_cubit/get_store_products_cubit.dart';
+import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -72,10 +74,15 @@ class _ProductAppBarState extends State<ProductAppBar> {
                           .getFavoriteProducts();
                       if (mounted) {
                         BlocProvider.of<GetProductsByCategoryCubit>(context)
-                            .getProductsByCategory("All");
+                            .getProductsByCategory(
+                                Prefs.getString(kLang) == 'en'
+                                    ? "All"
+                                    : 'الكل');
                         BlocProvider.of<GetStoreProductsCubit>(context)
                             .getStoreProducts(
-                                category: "All",
+                                category: Prefs.getString(kLang) == 'en'
+                                    ? "All"
+                                    : 'الكل',
                                 storeId: widget.productModel!.store!.id!);
                       }
                     },

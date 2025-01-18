@@ -1,6 +1,7 @@
 import 'package:e_delivery_app/Core/Data/Models/product_model/product_model.dart';
 import 'package:equatable/equatable.dart';
 
+// ignore: must_be_immutable
 class OrderItem extends Equatable {
   final ProductModel? productDetails;
   int? quantity;

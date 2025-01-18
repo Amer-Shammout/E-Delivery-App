@@ -24,6 +24,7 @@ class OrdersListView extends StatelessWidget {
           orderModel: orders[index],
           cardColor: setColor(orders[index].orderStatus!, context),
           icon: setIcon(orders[index].orderStatus!),
+          index:index
         ),
       ),
       initialItemCount: orders.length,

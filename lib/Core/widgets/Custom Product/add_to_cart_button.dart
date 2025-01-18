@@ -1,5 +1,6 @@
 import 'package:e_delivery_app/Core/Data/Manager/add_to_cart_cubit/add_to_cart_cubit.dart';
 import 'package:e_delivery_app/Core/Data/Models/product_model/product_model.dart';
+import 'package:e_delivery_app/Core/services/shared_preferences_singleton.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/functions/show_snack_bar.dart';
 import 'package:e_delivery_app/Core/widgets/loading/custom_circular_progress_indicator.dart';
@@ -26,6 +27,7 @@ class AddToCartButton extends StatelessWidget {
     this.loadingWidth = 12,
     this.loadingHeight = 12,
     this.strokeWidth,
+    this.loadingPadding = 3,
   });
   final double? strokeWidth;
   final ProductModel productModel;
@@ -34,7 +36,7 @@ class AddToCartButton extends StatelessWidget {
   final GetStoreProductsSuccess? getStoreProductsSuccess;
   final SearchSuccess? getSearchProductsSuccess;
   final double width, height;
-  final double loadingWidth, loadingHeight;
+  final double loadingWidth, loadingHeight, loadingPadding;
 
   final TextStyle textStyle;
 
@@ -52,16 +54,16 @@ class AddToCartButton extends StatelessWidget {
           if (getSearchProductsSuccess != null) {
             getSearchProductsSuccess!.searchModel.products[index].isCart = true;
             BlocProvider.of<GetProductsByCategoryCubit>(context)
-                .getProductsByCategory('All');
+                .getProductsByCategory(Prefs.getString(kLang) == 'en' ? "All" : 'الكل');
           }
           if (getStoreProductsSuccess != null) {
             getStoreProductsSuccess!.products[index].isCart = true;
             BlocProvider.of<GetProductsByCategoryCubit>(context)
-                .getProductsByCategory('All');
+                .getProductsByCategory(Prefs.getString(kLang) == 'en' ? "All" : 'الكل');
           }
           if (index == -1) {
             BlocProvider.of<GetProductsByCategoryCubit>(context)
-                .getProductsByCategory('All');
+                .getProductsByCategory(Prefs.getString(kLang) == 'en' ? "All" : 'الكل');
             BlocProvider.of<GetStoreProductsCubit>(context).getStoreProducts(
                 category: 'All', storeId: productModel.store!.id!);
           }
@@ -71,7 +73,8 @@ class AddToCartButton extends StatelessWidget {
       builder: (context, state) {
         return state is AddToCartLoading
             ? Padding(
-                padding: const EdgeInsetsDirectional.only(end: kSpacing * 3),
+                padding:
+                    EdgeInsetsDirectional.only(end: kSpacing * loadingPadding),
                 child: CustomProgressIndicator(
                   strokeWidth: strokeWidth ?? 2,
                   width: loadingWidth,

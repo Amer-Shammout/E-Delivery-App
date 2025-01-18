@@ -1,6 +1,5 @@
 // ignore_for_file: use_build_context_synchronously
 
-import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/functions/show_snack_bar.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
@@ -9,81 +8,29 @@ import 'package:e_delivery_app/Core/widgets/loading/custom_circular_progress_ind
 import 'package:e_delivery_app/Features/Orders/Data/models/order_model/order_model.dart';
 import 'package:e_delivery_app/Features/Orders/Presentation/Views/widgets/Orders%20Card/order_details_table.dart';
 import 'package:e_delivery_app/Features/Orders/Presentation/Views/widgets/Orders%20Card/orders_card_leading.dart';
-import 'package:e_delivery_app/Features/Orders/Presentation/Views/widgets/orders_list_view.dart';
+import 'package:e_delivery_app/Features/Orders/Presentation/Views/widgets/Orders%20Card/orders_pop_up_menu.dart';
 import 'package:e_delivery_app/Features/Orders/Presentation/manager/cancel_order_cubit/cancel_order_cubit.dart';
-import 'package:e_delivery_app/Features/Orders/Presentation/manager/get_orders_cubit/get_orders_cubit.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:go_router/go_router.dart';
 
 class OrdersCard extends StatelessWidget {
   const OrdersCard(
       {super.key,
       required this.cardColor,
       required this.icon,
-      required this.orderModel});
+      required this.orderModel,
+      required this.index});
 
   final Color cardColor;
   final String icon;
   final OrderModel orderModel;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
-    var popMenuItems = [
-      PopupMenuItem(
-        onTap: () async {
-          await BlocProvider.of<CancelOrderCubit>(context)
-              .cancelOrder(orderModel.id!);
-          if (BlocProvider.of<CancelOrderCubit>(context).state
-              is CancelOrderSuccess) {
-            List<OrderModel> orders =
-                BlocProvider.of<GetOrdersCubit>(context).orders;
-            int index = orders.indexOf(orderModel);
-            orders.remove(orderModel);
-            if (BlocProvider.of<GetOrdersCubit>(context).orders.isEmpty) {
-              BlocProvider.of<GetOrdersCubit>(context).emitEmptyOrdersState();
-            }
-            ordersAnimatedKey.currentState!.removeItem(index,
-                (context, animation) {
-              return FadeTransition(
-                opacity: animation,
-                child: Padding(
-                  padding: const EdgeInsets.only(bottom: kSpacing * 4),
-                  child: OrdersCard(
-                    orderModel: orderModel,
-                    cardColor: cardColor,
-                    icon: icon,
-                  ),
-                ),
-              );
-            });
-          }
-        },
-        value: kCancel,
-        child: Text(
-          S.of(context).cancel_order,
-          style: AppStyles.fontsRegular16(context).copyWith(
-            color: Theme.of(context).colorScheme.error,
-          ),
-        ),
-      ),
-      PopupMenuItem(
-        onTap: () {
-          GoRouter.of(context)
-              .pushNamed(AppRouter.kEditOrderName, extra: orderModel);
-        },
-        value: kEdit,
-        child: Text(
-          S.of(context).edit_order,
-          style: AppStyles.fontsRegular16(context).copyWith(
-            color: Theme.of(context).colorScheme.error,
-          ),
-        ),
-      ),
-    ];
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
@@ -106,18 +53,18 @@ class OrdersCard extends StatelessWidget {
                 },
                 builder: (context, state) {
                   if (state is CancelOrderLoading) {
-                    return const CustomProgressIndicator();
+                    return state.orderModel == orderModel
+                        ? const CustomProgressIndicator()
+                        : OrdersPopUpMenu(
+                            orderModel: orderModel,
+                            cardColor: cardColor,
+                            icon: icon,
+                          );
                   } else {
-                    return PopupMenuButton(
-                      iconColor: kBlackColor,
-                      color: Theme.of(context).colorScheme.secondary,
-                      elevation: 0,
-                      itemBuilder: (context) => List.generate(
-                        popMenuItems.length,
-                        (index) {
-                          return popMenuItems[index];
-                        },
-                      ),
+                    return OrdersPopUpMenu(
+                      orderModel: orderModel,
+                      cardColor: cardColor,
+                      icon: icon,
                     );
                   }
                 },

@@ -33,7 +33,10 @@ class ProductPrice extends StatelessWidget {
         Row(
           children: [
             Text(
-              productModel == null ? '57,55' : productModel!.price!,
+              productModel!.discountValue != null
+                  ? calculatePriceAfterDiscount(
+                      productModel!.price!, productModel!.discountValue!)
+                  : productModel!.price!,
               style: AppStyles.fontsBlack20(context)
                   .copyWith(color: checkDiscountColor(context)),
             ),
@@ -63,5 +66,11 @@ class ProductPrice extends StatelessWidget {
     return productModel?.discountValue != null
         ? Theme.of(context).colorScheme.tertiary
         : Theme.of(context).colorScheme.primary;
+  }
+
+  String calculatePriceAfterDiscount(price, discount) {
+    return (double.parse(price) -
+            ((double.parse(discount) / 100) * double.parse(price)))
+        .toStringAsFixed(2);
   }
 }
