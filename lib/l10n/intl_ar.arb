@@ -82,6 +82,8 @@
     "cancel_order":"إلغاء الطلب",
     "edit_order":"تعديل الطلب",
     "edit_orders":"تعديل الطلبات",
-    "edit_button":"تعديل"
+    "empty_notifications":"لا يوجد إشعارات بعد!",
+    "edit_button":"تعديل",
+    "notifications":"الإشعارات"
 
 }

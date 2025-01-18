@@ -35,6 +35,7 @@ const kCartUrl = "cart";
 const kUserOrdersUrl = "users/orders";
 const kOrdersUrl = "orders/";
 const kCancelOrderUrl = "cancel";
+const kNotificationsUrl = "users/notifications";
 const kAll = "All";
 const kStores = "Stores";
 const kProducts = "Products";

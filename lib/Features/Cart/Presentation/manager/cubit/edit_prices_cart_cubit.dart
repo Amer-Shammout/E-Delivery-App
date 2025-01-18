@@ -27,4 +27,3 @@ class EditPricesCartCubit extends Cubit<EditPricesCartState> {
           deliveryCharge: state.deliveryCharge - (2000 * quantity),
           subtotal: state.subtotal - (price * quantity) - (2000 * quantity)));
 }
-

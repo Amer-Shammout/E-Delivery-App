@@ -880,11 +880,31 @@ class S {
     );
   }
 
+  /// `There are no notifications yet!`
+  String get empty_notifications {
+    return Intl.message(
+      'There are no notifications yet!',
+      name: 'empty_notifications',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Edit`
   String get edit_button {
     return Intl.message(
       'Edit',
       name: 'edit_button',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notifications`
+  String get notifications {
+    return Intl.message(
+      'Notifications',
+      name: 'notifications',
       desc: '',
       args: [],
     );

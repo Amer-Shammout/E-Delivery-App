@@ -15,7 +15,8 @@ class OrdersListViewBuilder extends StatefulWidget {
 class _OrdersListViewBuilderState extends State<OrdersListViewBuilder> {
   @override
   void initState() {
-    BlocProvider.of<GetOrdersCubit>(context).getOrders(sort: 'newest',type: '');
+    BlocProvider.of<GetOrdersCubit>(context)
+        .getOrders(sort: 'newest', type: '');
     super.initState();
   }
 

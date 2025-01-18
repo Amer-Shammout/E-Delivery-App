@@ -17,6 +17,7 @@ import 'package:e_delivery_app/Features/Cart/Presentation/manager/submit_the_ord
 import 'package:e_delivery_app/Features/Cart/Presentation/manager/update_cart_cubit/update_cart_cubit.dart';
 import 'package:e_delivery_app/Features/Cart/data/models/cart_model/cart_item_quantity/cart_item_quantity.dart';
 import 'package:e_delivery_app/Features/Cart/data/repos/cart_repo_impl.dart';
+import 'package:e_delivery_app/Features/Notifications/presentation/notifications_view.dart';
 import 'package:e_delivery_app/Features/Product/Presentation/Views/product_view.dart';
 import 'package:e_delivery_app/Features/Profile/Presentation/Views/profile_view.dart';
 import 'package:e_delivery_app/Features/Profile/Presentation/manager/logout_cubit/logout_cubit.dart';
@@ -66,6 +67,8 @@ abstract class AppRouter {
   static const kAllStoresName = 'allStoresView';
   static const kAllProductsView = '/allProductsView';
   static const kAllProductsName = 'allProductsView';
+  static const kNotificationsView = '/notificationsView';
+  static const kNotificationsName = 'notificationsView';
 
   static bool isAuth = Prefs.getString(kToken) != '';
 
@@ -229,6 +232,13 @@ abstract class AppRouter {
           child: AllStoresView(
             stores: state.extra as List<StoreModel>,
           ),
+        ),
+      ),
+      GoRoute(
+        path: kNotificationsView,
+        name: kNotificationsName,
+        pageBuilder: (context, state) => const MaterialPage(
+          child: NotificationsView(),
         ),
       ),
     ],

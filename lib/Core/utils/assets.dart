@@ -170,6 +170,10 @@ class Assets {
   /// assets/icons/solid/home_bold.svg
   static const String iconsSolidHomeBold = "assets/icons/solid/home_bold.svg";
 
+  /// Assets for iconsSolidNotificationsBold
+  /// assets/icons/solid/notifications_bold.svg
+  static const String iconsSolidNotificationsBold = "assets/icons/solid/notifications_bold.svg";
+
   /// Assets for iconsSolidOrdersBold
   /// assets/icons/solid/orders_bold.svg
   static const String iconsSolidOrdersBold = "assets/icons/solid/orders_bold.svg";

@@ -4,7 +4,7 @@ import 'package:e_delivery_app/Features/Orders/Presentation/Views/widgets/Orders
 import 'package:e_delivery_app/constants.dart';
 import 'package:flutter/material.dart';
 
-final GlobalKey<SliverAnimatedListState>ordersAnimatedKey = GlobalKey();
+final GlobalKey<SliverAnimatedListState> ordersAnimatedKey = GlobalKey();
 
 class OrdersListView extends StatelessWidget {
   const OrdersListView({
@@ -18,7 +18,7 @@ class OrdersListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverAnimatedList(
       key: ordersAnimatedKey,
-      itemBuilder: (context, index,animation) => Padding(
+      itemBuilder: (context, index, animation) => Padding(
         padding: const EdgeInsets.only(bottom: kSpacing * 4),
         child: OrdersCard(
           orderModel: orders[index],
@@ -42,7 +42,7 @@ class OrdersListView extends StatelessWidget {
     } else if (status == 'canceled') {
       return Colors.redAccent;
     } else if (status == 'pending') {
-      return Colors.grey;
+      return Theme.of(context).colorScheme.surfaceTint;
     }
   }
 

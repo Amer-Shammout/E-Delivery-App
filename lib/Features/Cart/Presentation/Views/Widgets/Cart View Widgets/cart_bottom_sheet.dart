@@ -8,10 +8,13 @@ import 'package:e_delivery_app/Features/Cart/Presentation/manager/submit_the_ord
 import 'package:e_delivery_app/Features/Cart/Presentation/manager/update_cart_cubit/update_cart_cubit.dart';
 import 'package:e_delivery_app/Features/Cart/data/models/cart_model/cart_model.dart';
 import 'package:e_delivery_app/Features/Home/Presentation/Manager/Cubits/get_products_by_category_cubit/get_products_by_category_cubit.dart';
+import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+
+import '../../../../../../Core/services/shared_preferences_singleton.dart';
 
 class CartBottomSheet extends StatelessWidget {
   const CartBottomSheet({super.key, required this.cartModel});
@@ -57,8 +60,8 @@ class CartBottomSheet extends StatelessWidget {
                       await BlocProvider.of<SubmitTheOrderCubit>(context)
                           .submitTheOrder();
                       await BlocProvider.of<GetProductsByCategoryCubit>(context)
-                          .getProductsByCategory('All');
-                      GoRouter.of(context).pop();
+                          .getProductsByCategory(
+                              Prefs.getString(kLang) == 'en' ? "All" : 'الكل');
                     },
                     title: S.of(context).submit_button,
                     style: AppStyles.fontsSemiBold20(context).copyWith(
