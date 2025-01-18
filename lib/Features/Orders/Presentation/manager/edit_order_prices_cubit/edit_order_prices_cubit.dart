@@ -1,0 +1,32 @@
+import 'package:bloc/bloc.dart';
+import 'package:equatable/equatable.dart';
+
+part 'edit_order_prices_state.dart';
+
+class EditOrderPricesCubit extends Cubit<EditOrderPricesState> {
+  EditOrderPricesCubit(this.selectedItems, this.deliveryCharge, this.subtotal)
+      : super(EditOrderPricesState(
+            selectedItems: selectedItems,
+            deliveryCharge: deliveryCharge,
+            subtotal: subtotal));
+
+  final double selectedItems, deliveryCharge, subtotal;
+
+  void incrementSelectedItems(double price) => emit(EditOrderPricesState(
+      selectedItems: state.selectedItems + price,
+      deliveryCharge: state.deliveryCharge + 2000,
+      subtotal: state.subtotal + price + 2000));
+
+  void decrementSelectedItems(double price) => emit(EditOrderPricesState(
+      selectedItems: state.selectedItems - price,
+      deliveryCharge: state.deliveryCharge - 2000,
+      subtotal: state.subtotal - price - 2000));
+
+  void decrementDeliveryCharge(double price, int quantity) => emit(
+        EditOrderPricesState(
+          selectedItems: state.selectedItems - (price * quantity),
+          deliveryCharge: state.deliveryCharge - (2000 * quantity),
+          subtotal: state.subtotal - (price * quantity) - (2000 * quantity),
+        ),
+      );
+}

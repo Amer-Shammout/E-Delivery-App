@@ -7,7 +7,6 @@ import 'package:e_delivery_app/Features/Cart/Presentation/manager/edit_quantity_
 import 'package:e_delivery_app/Features/Cart/Presentation/manager/submit_the_order_cubit/submit_the_order_cubit.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/manager/update_cart_cubit/update_cart_cubit.dart';
 import 'package:e_delivery_app/Features/Cart/data/models/cart_model/cart_model.dart';
-import 'package:e_delivery_app/Features/Cart/data/repos/cart_repo_impl.dart';
 import 'package:e_delivery_app/Features/Home/Presentation/Manager/Cubits/get_products_by_category_cubit/get_products_by_category_cubit.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';

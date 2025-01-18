@@ -80,6 +80,7 @@
     "remove_from_cart_message":"تم حذف العنصر من السلة بنجاح!",
     "empty_orders_message":"لا يوجد طلبات بعد!",
     "cancel_order":"إلغاء الطلب",
-    "edit_order":"تعديل الطلب"
+    "edit_order":"تعديل الطلب",
+    "edit_orders":"تعديل الطلبات"
 
 }

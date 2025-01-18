@@ -869,6 +869,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Edit Orders`
+  String get edit_orders {
+    return Intl.message(
+      'Edit Orders',
+      name: 'edit_orders',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

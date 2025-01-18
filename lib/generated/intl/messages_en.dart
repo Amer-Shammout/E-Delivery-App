@@ -45,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "edit_name_message": MessageLookupByLibrary.simpleMessage(
             "Your name was changed successfully!"),
         "edit_order": MessageLookupByLibrary.simpleMessage("Edit Order"),
+        "edit_orders": MessageLookupByLibrary.simpleMessage("Edit Orders"),
         "empty_cart":
             MessageLookupByLibrary.simpleMessage("Your Cart is Empty!"),
         "empty_favorite": MessageLookupByLibrary.simpleMessage(
