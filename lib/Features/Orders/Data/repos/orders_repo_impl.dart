@@ -43,10 +43,10 @@ class OrdersRepoImpl extends OrdersRepo {
   }
 
   @override
-  Future<Either<Failure, Response>> cancelOrder(int id) async {
+  Future<Either<Failure, dynamic>> cancelOrder(int id) async {
     try {
       String token = Prefs.getString(kToken);
-      Response response = await getIt.get<DioClient>().delete(
+      dynamic response = await getIt.get<DioClient>().delete(
             '$kOrdersUrl$id/$kCancelOrderUrl',
             options: Options(headers: {"Authorization": "Bearer $token"}),
           );

@@ -5,5 +5,5 @@ import 'package:e_delivery_app/Features/Orders/Data/models/order_model/order_mod
 
 abstract class OrdersRepo {
   Future<Either<Failure, List<OrderModel>>> getOrders({required String sort,required String type});
-  Future<Either<Failure, Response>> cancelOrder(int id);
+  Future<Either<Failure, dynamic>> cancelOrder(int id);
 }

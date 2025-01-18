@@ -13,17 +13,18 @@ class EditPricesCartCubit extends Cubit<EditPricesCartState> {
 
   void incrementSelectedItems(double price) => emit(EditPricesCartState(
       selectedItems: state.selectedItems + price,
-      deliveryCharge: state.deliveryCharge,
-      subtotal: state.subtotal + price));
+      deliveryCharge: state.deliveryCharge + 2000,
+      subtotal: state.subtotal + price + 2000));
 
   void decrementSelectedItems(double price) => emit(EditPricesCartState(
       selectedItems: state.selectedItems - price,
-      deliveryCharge: state.deliveryCharge,
-      subtotal: state.subtotal - price));
+      deliveryCharge: state.deliveryCharge - 2000,
+      subtotal: state.subtotal - price - 2000));
 
   void decrementDeliveryCharge(double price, int quantity) =>
       emit(EditPricesCartState(
           selectedItems: state.selectedItems - (price * quantity),
-          deliveryCharge: state.deliveryCharge - 2000,
-          subtotal: state.subtotal - (price * quantity) - 2000));
+          deliveryCharge: state.deliveryCharge - (2000 * quantity),
+          subtotal: state.subtotal - (price * quantity) - (2000 * quantity)));
 }
+

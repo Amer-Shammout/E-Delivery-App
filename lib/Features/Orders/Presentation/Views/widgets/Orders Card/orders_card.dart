@@ -32,7 +32,7 @@ class OrdersCard extends StatelessWidget {
   Widget build(BuildContext context) {
     var popMenuItems = [
       PopupMenuItem(
-        onTap: () async{
+        onTap: () async {
           await BlocProvider.of<CancelOrderCubit>(context)
               .cancelOrder(orderModel.id!);
           if (BlocProvider.of<CancelOrderCubit>(context).state

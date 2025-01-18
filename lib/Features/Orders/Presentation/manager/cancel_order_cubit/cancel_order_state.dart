@@ -18,7 +18,7 @@ final class CancelOrderFailure extends CancelOrderState {
 }
 
 final class CancelOrderSuccess extends CancelOrderState {
-  final Response response;
+  final dynamic response;
 
   const CancelOrderSuccess({required this.response});
 }
