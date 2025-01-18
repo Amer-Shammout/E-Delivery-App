@@ -22,6 +22,7 @@ class EditOrdersProductsListView extends StatelessWidget {
           child: EditOrderProductSlidable(
             orderItem: orderModel.orderItems![index],
             index: index,
+            orderItems: orderModel.orderItems!,
           ),
         ),
       ),
