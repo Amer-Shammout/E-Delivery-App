@@ -1,4 +1,4 @@
-import 'package:e_delivery_app/Core/services/service_locator.dart';
+import 'package:e_delivery_app/Core/services/shared_preferences_singleton.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/c_t_a_button.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/Widgets/Cart%20View%20Widgets/custom_item_bottom_sheet.dart';
@@ -8,6 +8,7 @@ import 'package:e_delivery_app/Features/Cart/Presentation/manager/submit_the_ord
 import 'package:e_delivery_app/Features/Cart/Presentation/manager/update_cart_cubit/update_cart_cubit.dart';
 import 'package:e_delivery_app/Features/Cart/data/models/cart_model/cart_model.dart';
 import 'package:e_delivery_app/Features/Home/Presentation/Manager/Cubits/get_products_by_category_cubit/get_products_by_category_cubit.dart';
+import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -57,7 +58,8 @@ class CartBottomSheet extends StatelessWidget {
                       await BlocProvider.of<SubmitTheOrderCubit>(context)
                           .submitTheOrder();
                       await BlocProvider.of<GetProductsByCategoryCubit>(context)
-                          .getProductsByCategory('All');
+                          .getProductsByCategory(
+                              Prefs.getString(kLang) == 'en' ? "All" : 'الكل');
                       GoRouter.of(context).pop();
                     },
                     title: S.of(context).submit_button,

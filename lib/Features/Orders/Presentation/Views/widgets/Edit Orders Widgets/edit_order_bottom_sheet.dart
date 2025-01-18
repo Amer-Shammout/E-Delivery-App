@@ -1,8 +1,11 @@
+import 'package:e_delivery_app/Core/services/shared_preferences_singleton.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/c_t_a_button.dart';
+import 'package:e_delivery_app/Features/Home/Presentation/Manager/Cubits/get_products_by_category_cubit/get_products_by_category_cubit.dart';
 import 'package:e_delivery_app/Features/Orders/Data/models/order_model/order_model.dart';
 import 'package:e_delivery_app/Features/Orders/Presentation/Views/widgets/Edit%20Orders%20Widgets/item_bottom_sheet.dart';
 import 'package:e_delivery_app/Features/Orders/Presentation/manager/edit_order_prices_cubit/edit_order_prices_cubit.dart';
+import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -45,6 +48,9 @@ class EditOrderBottomSheet extends StatelessWidget {
                   ),
                   CTAButton(
                     onPressed: () async {
+                      await BlocProvider.of<GetProductsByCategoryCubit>(context)
+                          .getProductsByCategory(
+                              Prefs.getString(kLang) == 'en' ? "All" : 'الكل');
                       GoRouter.of(context).pop();
                     },
                     title: S.of(context).edit_button,
