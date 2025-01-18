@@ -142,6 +142,10 @@ class Assets {
   /// assets/icons/pending.svg
   static const String iconsPending = "assets/icons/pending.svg";
 
+  /// Assets for iconsPendingCircle
+  /// assets/icons/pending_circle.svg
+  static const String iconsPendingCircle = "assets/icons/pending_circle.svg";
+
   /// Assets for iconsPlus
   /// assets/icons/plus.svg
   static const String iconsPlus = "assets/icons/plus.svg";
