@@ -1,4 +1,4 @@
-import 'package:e_delivery_app/Core/services/service_locator.dart';
+import 'package:e_delivery_app/Core/services/shared_preferences_singleton.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/c_t_a_button.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/Widgets/Cart%20View%20Widgets/custom_item_bottom_sheet.dart';

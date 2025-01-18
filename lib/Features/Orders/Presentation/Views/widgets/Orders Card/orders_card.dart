@@ -1,5 +1,6 @@
 // ignore_for_file: use_build_context_synchronously
 
+import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/functions/show_snack_bar.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
@@ -16,6 +17,7 @@ import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 
 class OrdersCard extends StatelessWidget {
   const OrdersCard(
@@ -69,7 +71,10 @@ class OrdersCard extends StatelessWidget {
         ),
       ),
       PopupMenuItem(
-        onTap: () {},
+        onTap: () {
+          GoRouter.of(context)
+              .pushNamed(AppRouter.kEditOrderName, extra: orderModel);
+        },
         value: kEdit,
         child: Text(
           S.of(context).edit_order,

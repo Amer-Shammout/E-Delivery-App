@@ -41,3 +41,4 @@ const kStores = "Stores";
 const kProducts = "Products";
 const kCancel = "Cancel Order";
 const kEdit = "Edit Order";
+const kUpdateOrderUrl = "orders/";

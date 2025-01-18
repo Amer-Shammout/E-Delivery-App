@@ -1,5 +1,5 @@
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
-import 'package:e_delivery_app/Features/Orders/Data/models/order_model/order_item.dart';
+import 'package:e_delivery_app/Features/Cart/data/models/cart_model/order_item.dart';
 import 'package:e_delivery_app/Features/Orders/Data/models/order_model/order_model.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/generated/l10n.dart';

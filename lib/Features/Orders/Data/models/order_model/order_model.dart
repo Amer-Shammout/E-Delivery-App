@@ -1,6 +1,5 @@
+import 'package:e_delivery_app/Features/Cart/data/models/cart_model/order_item.dart';
 import 'package:equatable/equatable.dart';
-
-import 'order_item.dart';
 
 class OrderModel extends Equatable {
   final int? id;

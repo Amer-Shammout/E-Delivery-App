@@ -18,6 +18,8 @@ import 'package:e_delivery_app/Features/Cart/Presentation/manager/update_cart_cu
 import 'package:e_delivery_app/Features/Cart/data/models/cart_model/cart_item_quantity/cart_item_quantity.dart';
 import 'package:e_delivery_app/Features/Cart/data/repos/cart_repo_impl.dart';
 import 'package:e_delivery_app/Features/Notifications/presentation/notifications_view.dart';
+import 'package:e_delivery_app/Features/Orders/Data/models/order_model/order_model.dart';
+import 'package:e_delivery_app/Features/Orders/Presentation/Views/edit_order_view_body.dart';
 import 'package:e_delivery_app/Features/Product/Presentation/Views/product_view.dart';
 import 'package:e_delivery_app/Features/Profile/Presentation/Views/profile_view.dart';
 import 'package:e_delivery_app/Features/Profile/Presentation/manager/logout_cubit/logout_cubit.dart';
@@ -69,6 +71,8 @@ abstract class AppRouter {
   static const kAllProductsName = 'allProductsView';
   static const kNotificationsView = '/notificationsView';
   static const kNotificationsName = 'notificationsView';
+  static const kEditOrderView = '/editOrderView';
+  static const kEditOrderName = 'editOrderView';
 
   static bool isAuth = Prefs.getString(kToken) != '';
 
@@ -240,6 +244,21 @@ abstract class AppRouter {
         pageBuilder: (context, state) => const MaterialPage(
           child: NotificationsView(),
         ),
+      ),
+       GoRoute(
+        path: kNotificationsView,
+        name: kNotificationsName,
+        pageBuilder: (context, state) => const MaterialPage(
+          child: NotificationsView(),
+        ),
+      ),
+         GoRoute(
+        path: kEditOrderView,
+        name: kEditOrderName,
+        pageBuilder: (context, state) => MaterialPage(
+          child: EditOrderViewBody(orderModel: state.extra as OrderModel),
+        
+      )
       ),
     ],
   );
