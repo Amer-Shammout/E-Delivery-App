@@ -1,5 +1,6 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/functions/localizations_funs.dart';
+import 'package:e_delivery_app/Core/utils/functions/set_theme_colors.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_icon.dart';
 import 'package:flutter/material.dart';
@@ -32,6 +33,7 @@ class CustomAppBar2 extends StatelessWidget implements PreferredSizeWidget {
         child: RotatedBox(
           quarterTurns: LocalizationsFuns.isArabic(context) ? 2 : 0,
           child: CustomIcon(
+            backgroundColor: SetThemeColors.setBackgroundColor(context),
             icon: Assets.iconsBackArrow,
             iconSize: 12,
             onPressed: () {

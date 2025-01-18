@@ -51,6 +51,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Your Cart is Empty!"),
         "empty_favorite": MessageLookupByLibrary.simpleMessage(
             "There are no products in your favorites yet!"),
+        "empty_notifications": MessageLookupByLibrary.simpleMessage(
+            "There are no notifications yet!"),
         "empty_orders_message":
             MessageLookupByLibrary.simpleMessage("There are no orders yet!"),
         "field_empty_message":
@@ -67,6 +69,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "lets_get_started_button":
             MessageLookupByLibrary.simpleMessage("Let\'s Get Started"),
         "logout_button": MessageLookupByLibrary.simpleMessage("LOGOUT"),
+        "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
         "order_details1": MessageLookupByLibrary.simpleMessage("Product"),
         "order_details2": MessageLookupByLibrary.simpleMessage("Quantity"),
         "order_details3": MessageLookupByLibrary.simpleMessage("Price"),

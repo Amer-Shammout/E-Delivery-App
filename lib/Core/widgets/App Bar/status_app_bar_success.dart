@@ -77,6 +77,8 @@ class StatusAppBarSuccess extends StatelessWidget {
           CustomIcon(
             icon: Assets.iconsNotification,
             onPressed: () {
+              GoRouter.of(context).pushNamed(AppRouter.kNotificationsName);
+
               log("${Prefs.getString(kToken)}");
             },
           ),

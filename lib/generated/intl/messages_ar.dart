@@ -51,6 +51,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "empty_cart": MessageLookupByLibrary.simpleMessage("سلتك فارغة!"),
         "empty_favorite": MessageLookupByLibrary.simpleMessage(
             "لا يوجد منتجات في المفضلة بعد!"),
+        "empty_notifications":
+            MessageLookupByLibrary.simpleMessage("لا يوجد إشعارات بعد!"),
         "empty_orders_message":
             MessageLookupByLibrary.simpleMessage("لا يوجد طلبات بعد!"),
         "field_empty_message":
@@ -67,6 +69,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "lets_get_started_button":
             MessageLookupByLibrary.simpleMessage("لنبدأ"),
         "logout_button": MessageLookupByLibrary.simpleMessage("تسجيل خروج"),
+        "notifications": MessageLookupByLibrary.simpleMessage("الإشعارات"),
         "order_details1": MessageLookupByLibrary.simpleMessage("المنتج"),
         "order_details2": MessageLookupByLibrary.simpleMessage("الكميّة"),
         "order_details3": MessageLookupByLibrary.simpleMessage("السّعر"),

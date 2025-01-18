@@ -14,6 +14,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../../../../Core/services/shared_preferences_singleton.dart';
+
 class CartBottomSheet extends StatelessWidget {
   const CartBottomSheet({super.key, required this.cartModel});
   final CartModel cartModel;
@@ -60,7 +62,6 @@ class CartBottomSheet extends StatelessWidget {
                       await BlocProvider.of<GetProductsByCategoryCubit>(context)
                           .getProductsByCategory(
                               Prefs.getString(kLang) == 'en' ? "All" : 'الكل');
-                      GoRouter.of(context).pop();
                     },
                     title: S.of(context).submit_button,
                     style: AppStyles.fontsSemiBold20(context).copyWith(

@@ -3,16 +3,16 @@ import 'package:equatable/equatable.dart';
 
 class OrderItem extends Equatable {
   final ProductModel? productDetails;
-  int? quantity;
+  final dynamic quantity;
 
-  OrderItem({this.productDetails, this.quantity});
+  const OrderItem({this.productDetails, this.quantity});
 
   factory OrderItem.fromJson(Map<String, dynamic> json) => OrderItem(
         productDetails: json['product_details'] == null
             ? null
             : ProductModel.fromJson(
                 json['product_details'] as Map<String, dynamic>),
-        quantity: json['quantity'] as int?,
+        quantity: json['quantity'] as dynamic,
       );
 
   Map<String, dynamic> toJson() => {

@@ -5,28 +5,32 @@ import 'package:flutter/material.dart';
 
 class AppTheme {
   static final lightTheme = ThemeData(
-      colorScheme: const ColorScheme.light(
-    primary: AppColors.klightPrimaryColor,
-    secondary: AppColors.klightSecondaryColor,
-    tertiary: AppColors.klightTeranyColor,
-    surface: AppColors.klightWhiteColor,
-    error: AppColors.klightBlackColor,
-    outline: AppColors.klightDeliveredColor,
-    scrim: AppColors.klightPreparingColor,
-    shadow: AppColors.klightOnTheWayColor,
-  ));
+    colorScheme: const ColorScheme.light(
+      primary: AppColors.klightPrimaryColor,
+      secondary: AppColors.klightSecondaryColor,
+      tertiary: AppColors.klightTeranyColor,
+      surface: AppColors.klightWhiteColor,
+      error: AppColors.klightBlackColor,
+      outline: AppColors.klightDeliveredColor,
+      scrim: AppColors.klightPreparingColor,
+      shadow: AppColors.klightOnTheWayColor,
+      surfaceTint: AppColors.klightSecondaryColor,
+    ),
+  );
 
   static final darkTheme = ThemeData(
-      colorScheme: const ColorScheme.dark(
-    primary: AppColors.kdarkPrimaryColor,
-    secondary: AppColors.kdarkSecondaryColor,
-    tertiary: AppColors.kdarkTeranyColor,
-    surface: AppColors.kdarkWhiteColor,
-    error: AppColors.kdarkBlackColor,
-    outline: AppColors.kdarkDeliveredColor,
-    scrim: AppColors.kdarkPreparingColor,
-    shadow: AppColors.kdarkOnTheWayColor,
-  ));
+    colorScheme: const ColorScheme.dark(
+      primary: AppColors.kdarkPrimaryColor,
+      secondary: AppColors.kdarkSecondaryColor,
+      tertiary: AppColors.kdarkTeranyColor,
+      surface: AppColors.kdarkWhiteColor,
+      error: AppColors.kdarkBlackColor,
+      outline: AppColors.kdarkDeliveredColor,
+      scrim: AppColors.kdarkPreparingColor,
+      shadow: AppColors.kdarkOnTheWayColor,
+      surfaceTint: Colors.grey,
+    ),
+  );
 
   static FeedbackThemeData lightFeedbackThemeData() => FeedbackThemeData(
         bottomSheetTextInputStyle: const TextStyle(

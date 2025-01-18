@@ -17,6 +17,7 @@ import 'package:e_delivery_app/Features/Cart/Presentation/manager/submit_the_ord
 import 'package:e_delivery_app/Features/Cart/Presentation/manager/update_cart_cubit/update_cart_cubit.dart';
 import 'package:e_delivery_app/Features/Cart/data/models/cart_model/cart_item_quantity/cart_item_quantity.dart';
 import 'package:e_delivery_app/Features/Cart/data/repos/cart_repo_impl.dart';
+import 'package:e_delivery_app/Features/Notifications/presentation/notifications_view.dart';
 import 'package:e_delivery_app/Features/Orders/Data/models/order_model/order_model.dart';
 import 'package:e_delivery_app/Features/Orders/Presentation/Views/edit_order_view_body.dart';
 import 'package:e_delivery_app/Features/Product/Presentation/Views/product_view.dart';
@@ -68,6 +69,8 @@ abstract class AppRouter {
   static const kAllStoresName = 'allStoresView';
   static const kAllProductsView = '/allProductsView';
   static const kAllProductsName = 'allProductsView';
+  static const kNotificationsView = '/notificationsView';
+  static const kNotificationsName = 'notificationsView';
   static const kEditOrderView = '/editOrderView';
   static const kEditOrderName = 'editOrderView';
 
@@ -236,12 +239,27 @@ abstract class AppRouter {
         ),
       ),
       GoRoute(
+        path: kNotificationsView,
+        name: kNotificationsName,
+        pageBuilder: (context, state) => const MaterialPage(
+          child: NotificationsView(),
+        ),
+      ),
+       GoRoute(
+        path: kNotificationsView,
+        name: kNotificationsName,
+        pageBuilder: (context, state) => const MaterialPage(
+          child: NotificationsView(),
+        ),
+      ),
+         GoRoute(
         path: kEditOrderView,
         name: kEditOrderName,
         pageBuilder: (context, state) => MaterialPage(
           child: EditOrderViewBody(orderModel: state.extra as OrderModel),
-        ),
+        
       )
+      ),
     ],
   );
 }
