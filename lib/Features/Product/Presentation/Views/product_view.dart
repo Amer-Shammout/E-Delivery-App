@@ -63,7 +63,7 @@ class _ProductViewState extends State<ProductView> with WidgetsBindingObserver {
             matchTextDirection: true,
             colorFilter: ColorFilter.mode(
                 Theme.of(context).colorScheme.secondary, BlendMode.srcATop),
-            fit: BoxFit.cover,
+            fit: BoxFit.fill,
             image: const AssetImage(
               Assets.imagesProductCard,
             ),
