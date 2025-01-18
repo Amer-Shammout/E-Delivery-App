@@ -83,9 +83,9 @@ class CustomProduct extends StatelessWidget {
                         )
                       : CachedNetworkImage(
                           imageUrl: productModel!.imageUrl!,
-                          errorWidget: (context, url, error) => const Icon(
+                          errorWidget: (context, url, error) => Icon(
                             Icons.error,
-                            color: Colors.red,
+                            color: Theme.of(context).colorScheme.tertiary,
                             size: 24,
                           ),
                         ),

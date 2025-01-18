@@ -44,14 +44,14 @@ class ShowAlertDialog {
               .emitEmptyFavorite();
         }
         animatedKey.currentState!.removeItem(index, (context, animation) {
-          return Padding(
-            padding: const EdgeInsets.only(
-              bottom: kSpacing * 4,
-              left: kHorizontalPadding,
-              right: kHorizontalPadding,
-            ),
-            child: FadeTransition(
-              opacity: animation,
+          return FadeTransition(
+            opacity: animation,
+            child: Padding(
+              padding: const EdgeInsets.only(
+                bottom: kSpacing * 4,
+                left: kHorizontalPadding,
+                right: kHorizontalPadding,
+              ),
               child: FavoriteProduct(
                 product: product,
               ),

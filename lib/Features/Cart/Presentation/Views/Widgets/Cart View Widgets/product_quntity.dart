@@ -44,9 +44,11 @@ class _ProductQuantityState extends State<ProductQuantity> {
                 widget.orderItem.productDetails!.id!,
                 widget.orderItem.productDetails!.stockQuantity!,
                 widget.index);
-            BlocProvider.of<EditPricesCartCubit>(context)
-                .incrementSelectedItems(
-                    double.parse(widget.orderItem.productDetails!.price!));
+            if (BlocProvider.of<EditQuantityCubit>(context).state
+                is EditQuantityIncrementEnabled) {
+              BlocProvider.of<EditPricesCartCubit>(context)
+                  .incrementSelectedItems(double.parse(checkDiscountPrice()));
+            }
             setState(() {});
           },
           child: CustomIconButton(
@@ -78,9 +80,11 @@ class _ProductQuantityState extends State<ProductQuantity> {
           onTap: () {
             BlocProvider.of<EditQuantityCubit>(context).decrementQuantity(
                 widget.orderItem.productDetails!.id!, widget.index);
-            BlocProvider.of<EditPricesCartCubit>(context)
-                .decrementSelectedItems(
-                    double.parse(widget.orderItem.productDetails!.price!));
+            if (BlocProvider.of<EditQuantityCubit>(context).state
+                is EditQuantityDecrementEnabled) {
+              BlocProvider.of<EditPricesCartCubit>(context)
+                  .decrementSelectedItems(double.parse(checkDiscountPrice()));
+            }
             setState(() {});
           },
           child: CustomIconButton(
@@ -99,4 +103,16 @@ class _ProductQuantityState extends State<ProductQuantity> {
         ? Theme.of(context).colorScheme.tertiary
         : Theme.of(context).colorScheme.primary;
   }
+
+  String calculatePriceAfterDiscount(price, discount) {
+    return (double.parse(price) -
+            ((double.parse(discount) / 100) * double.parse(price)))
+        .toStringAsFixed(2);
+  }
+
+  String checkDiscountPrice() =>
+      widget.orderItem.productDetails!.discountValue != null
+          ? calculatePriceAfterDiscount(widget.orderItem.productDetails!.price!,
+              widget.orderItem.productDetails!.discountValue)
+          : widget.orderItem.productDetails!.price!;
 }

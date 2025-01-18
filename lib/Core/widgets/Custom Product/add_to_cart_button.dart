@@ -6,6 +6,7 @@ import 'package:e_delivery_app/Core/widgets/loading/custom_circular_progress_ind
 import 'package:e_delivery_app/Features/Home/Presentation/Manager/Cubits/get_products_by_category_cubit/get_products_by_category_cubit.dart';
 import 'package:e_delivery_app/Features/Search/Presentation/manager/search_cubit/search_cubit.dart';
 import 'package:e_delivery_app/Features/Store%20Details/Presentation/manager/get_store_products_cubit/get_store_products_cubit.dart';
+import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -22,14 +23,19 @@ class AddToCartButton extends StatelessWidget {
     this.width = 16,
     this.height = 16,
     required this.textStyle,
+    this.loadingWidth = 12,
+    this.loadingHeight = 12,
+    this.strokeWidth,
   });
-
+  final double? strokeWidth;
   final ProductModel productModel;
   final int index;
   final GetProductsByCategorySuccess? getProductsSuccess;
   final GetStoreProductsSuccess? getStoreProductsSuccess;
   final SearchSuccess? getSearchProductsSuccess;
   final double width, height;
+  final double loadingWidth, loadingHeight;
+
   final TextStyle textStyle;
 
   @override
@@ -64,7 +70,15 @@ class AddToCartButton extends StatelessWidget {
       },
       builder: (context, state) {
         return state is AddToCartLoading
-            ? const CustomProgressIndicator()
+            ? Padding(
+                padding: const EdgeInsetsDirectional.only(end: kSpacing * 3),
+                child: CustomProgressIndicator(
+                  strokeWidth: strokeWidth ?? 2,
+                  width: loadingWidth,
+                  height: loadingHeight,
+                  color: checkDiscountColor(context),
+                ),
+              )
             : GestureDetector(
                 onTap: () {
                   BlocProvider.of<AddToCartCubit>(context)

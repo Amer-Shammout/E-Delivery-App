@@ -3,7 +3,6 @@ import 'package:e_delivery_app/Core/Data/Manager/get_user_cubit/get_user_cubit.d
 import 'package:e_delivery_app/Core/Data/Models/user.dart';
 import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/app_strings.dart';
-import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/functions/setting_info_functions.dart';
 import 'package:e_delivery_app/Core/utils/functions/show_snack_bar.dart';
 import 'package:e_delivery_app/Core/utils/functions/validation.dart';
@@ -21,7 +20,6 @@ import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:location/location.dart';
@@ -131,18 +129,7 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
                     Directionality(
                       textDirection: TextDirection.ltr,
                       child: CustomTextFormField(
-                        suffixIcon: FittedBox(
-                          fit: BoxFit.scaleDown,
-                          child: SvgPicture.asset(
-                            Assets.iconsEdit,
-                            width: 16,
-                            height: 16,
-                            colorFilter: ColorFilter.mode(
-                              Theme.of(context).colorScheme.error,
-                              BlendMode.srcATop,
-                            ),
-                          ),
-                        ),
+                        isEnabled: false,
                         maxLength: 9,
                         initialValue:
                             user.phoneNumber!.replaceFirst('+963', ''),

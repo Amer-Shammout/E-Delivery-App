@@ -5,6 +5,7 @@ import 'package:e_delivery_app/Core/widgets/loading/custom_circular_progress_ind
 import 'package:e_delivery_app/Features/Home/Presentation/Manager/Cubits/get_products_by_category_cubit/get_products_by_category_cubit.dart';
 import 'package:e_delivery_app/Features/Search/Presentation/manager/search_cubit/search_cubit.dart';
 import 'package:e_delivery_app/Features/Store%20Details/Presentation/manager/get_store_products_cubit/get_store_products_cubit.dart';
+import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -16,14 +17,18 @@ class RemoveFromCartButton extends StatelessWidget {
       required this.index,
       this.getProductsSuccess,
       this.getStoreProductsSuccess,
-      this.getSearchProductsSuccess});
+      this.getSearchProductsSuccess,
+      this.loadingHeight = 12,
+      this.loadingWidth = 12,
+      this.size = 24, this.strokeWidth});
 
   final ProductModel productModel;
   final int index;
   final GetProductsByCategorySuccess? getProductsSuccess;
   final GetStoreProductsSuccess? getStoreProductsSuccess;
   final SearchSuccess? getSearchProductsSuccess;
-
+  final double size, loadingHeight, loadingWidth;
+  final double? strokeWidth;
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<RemoveFromCartCubit, RemoveFromCartState>(
@@ -57,20 +62,27 @@ class RemoveFromCartButton extends StatelessWidget {
       },
       builder: (context, state) {
         return state is RemoveFromCartLoading
-            ? const CustomProgressIndicator()
+            ? Padding(
+                padding: const EdgeInsetsDirectional.only(end: kSpacing * 3),
+                child: CustomProgressIndicator(
+                  strokeWidth: strokeWidth ?? 2,
+                  width: loadingWidth,
+                  height: loadingHeight,
+                  color: checkDiscountColor(context),
+                ),
+              )
             : GestureDetector(
                 onTap: () {
                   BlocProvider.of<RemoveFromCartCubit>(context)
                       .removeFromCart(productModel.id!);
                 },
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.remove,
-                      size: 24,
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
-                  ],
+                child: Padding(
+                  padding: const EdgeInsetsDirectional.only(end: kSpacing * 2),
+                  child: Icon(
+                    Icons.remove,
+                    size: size,
+                    color: checkDiscountColor(context),
+                  ),
                 ),
               );
       },

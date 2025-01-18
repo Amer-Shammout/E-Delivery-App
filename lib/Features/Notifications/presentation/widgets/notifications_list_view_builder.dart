@@ -34,10 +34,12 @@ class _NotificationsListViewBuilderState
       } else if (state is GetNotificationsSuccess) {
         return NotificationsListView(notifications: state.notifications);
       } else {
-        return const CustomProgressIndicator(
-          height: 24,
-          width: 24,
-          strokeWidth: 3,
+        return const Center(
+          child: CustomProgressIndicator(
+            height: 24,
+            width: 24,
+            strokeWidth: 3,
+          ),
         );
       }
     });

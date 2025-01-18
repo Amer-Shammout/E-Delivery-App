@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 void showSuccessSnackBar(String message, context) {
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
+      duration: const Duration(seconds: 1),
       showCloseIcon: true,
       closeIconColor: Theme.of(context).colorScheme.primary,
       backgroundColor: Theme.of(context).colorScheme.secondary,
@@ -35,7 +36,7 @@ void showSuccessSnackBar(String message, context) {
               ),
               Expanded(
                 child: Text(
-                  textAlign: TextAlign.center,
+                  textAlign: TextAlign.start,
                   message,
                   style: TextStyle(
                     color: Theme.of(context).colorScheme.error,
@@ -55,6 +56,7 @@ void showSuccessSnackBar(String message, context) {
 void showFailureSnackBar(String message, context) {
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
+      duration: const Duration(seconds: 1),
       showCloseIcon: true,
       closeIconColor: Theme.of(context).colorScheme.primary,
       backgroundColor: Theme.of(context).colorScheme.secondary,
@@ -86,7 +88,7 @@ void showFailureSnackBar(String message, context) {
               ),
               Expanded(
                 child: Text(
-                  textAlign: TextAlign.center,
+                  textAlign: TextAlign.start,
                   message,
                   style: TextStyle(
                     color: Theme.of(context).colorScheme.error,
@@ -106,6 +108,7 @@ void showFailureSnackBar(String message, context) {
 void showWaitSnackBar(context) {
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
+      duration: const Duration(seconds: 1),
       showCloseIcon: true,
       closeIconColor: Theme.of(context).colorScheme.primary,
       backgroundColor: Theme.of(context).colorScheme.secondary,
@@ -137,7 +140,7 @@ void showWaitSnackBar(context) {
               ),
               Expanded(
                 child: Text(
-                  textAlign: TextAlign.center,
+                  textAlign: TextAlign.start,
                   S.of(context).wait_message,
                   style: TextStyle(
                     color: Theme.of(context).colorScheme.error,

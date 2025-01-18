@@ -1,5 +1,4 @@
 import 'package:e_delivery_app/Core/widgets/custom_check_box.dart';
-import 'package:e_delivery_app/Features/Cart/Presentation/Views/Widgets/Cart%20View%20Widgets/cart_bottom_sheet.dart';
 import 'package:flutter/material.dart';
 
 class CustomCartCheckBox extends StatefulWidget {

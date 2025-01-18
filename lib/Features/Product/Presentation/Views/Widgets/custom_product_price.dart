@@ -74,8 +74,12 @@ class CustomProductPrice extends StatelessWidget {
               builder: (context, state2) {
                 return isCart
                     ? RemoveFromCartButton(
+                      loadingHeight: 24,
+                      loadingWidth: 24,
                         productModel: productModel!, index: -1)
                     : AddToCartButton(
+                        loadingHeight: 24,
+                        loadingWidth: 24,
                         productModel: productModel!,
                         index: -1,
                         height: 32,

@@ -1,3 +1,4 @@
+import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/functions/localizations_funs.dart';
 import 'package:e_delivery_app/Core/widgets/custom_icon.dart';
@@ -41,13 +42,16 @@ class StoreDetailsAppBar extends StatelessWidget {
           ),
         ),
       ),
-      actions: const [
+      actions: [
         Padding(
-          padding: EdgeInsetsDirectional.only(
+          padding: const EdgeInsetsDirectional.only(
             end: kHorizontalPadding,
             top: 16,
           ),
           child: CustomIcon(
+            onPressed: () {
+              GoRouter.of(context).pushNamed(AppRouter.kCartName);
+            },
             icon: Assets.iconsCart,
           ),
         ),

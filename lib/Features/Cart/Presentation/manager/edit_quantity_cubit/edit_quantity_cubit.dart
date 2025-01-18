@@ -1,6 +1,6 @@
-import 'package:bloc/bloc.dart';
 import 'package:e_delivery_app/Features/Cart/data/models/cart_model/cart_item_quantity/cart_item_quantity.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'edit_quantity_state.dart';
 
@@ -14,7 +14,7 @@ class EditQuantityCubit extends Cubit<EditQuantityState> {
       cartItemQuantity!.orderItems![index].quantity =
           cartItemQuantity!.orderItems![index].quantity! + 1;
     } else {
-      emit(EditQuantityIncrementEnabled());
+      emit(EditQuantityIncrementDisabled());
     }
 
     // for (int index = 0; index < cartItemQuantity!.orderItems!.length; index++) {

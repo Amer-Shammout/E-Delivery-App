@@ -64,7 +64,7 @@ class VerificationViewBody extends StatelessWidget {
                 ),
                 Positioned(
                   right: -60,
-                  bottom: 20,
+                  bottom: 35,
                   child: Container(
                     decoration: BoxDecoration(
                       boxShadow: [

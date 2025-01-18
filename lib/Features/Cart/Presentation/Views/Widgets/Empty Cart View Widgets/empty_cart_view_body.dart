@@ -1,3 +1,4 @@
+import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/assets.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/c_t_a_button.dart';
@@ -5,6 +6,7 @@ import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 
 class EmptyCartViewBody extends StatelessWidget {
   const EmptyCartViewBody({
@@ -39,7 +41,9 @@ class EmptyCartViewBody extends StatelessWidget {
           width: 200,
           child: CTAButton(
             fillColor: Theme.of(context).colorScheme.primary,
-            onPressed: () {},
+            onPressed: () {
+              GoRouter.of(context).pushReplacementNamed(AppRouter.kAppRootName);
+            },
             title: S.of(context).go_shopping,
             style: AppStyles.fontsSemiBold20(context),
           ),

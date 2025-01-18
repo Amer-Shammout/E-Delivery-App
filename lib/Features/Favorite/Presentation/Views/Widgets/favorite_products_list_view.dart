@@ -40,19 +40,17 @@ class _FavoriteProductsListViewState extends State<FavoriteProductsListView> {
       initialItemCount: widget.favoriteProducts.length,
       itemBuilder: (context, index, animation) => Padding(
         padding: const EdgeInsets.only(
-            bottom: kSpacing * 4,
-            left: kHorizontalPadding,
-            right: kHorizontalPadding),
+          bottom: kSpacing * 4,
+          left: kHorizontalPadding,
+          right: kHorizontalPadding,
+        ),
         child: GestureDetector(
           onTap: () {
             GoRouter.of(context).pushNamed(AppRouter.kProductDetailsName,
                 extra: widget.favoriteProducts[index]);
           },
-          child: SizeTransition(
-            sizeFactor: animation,
-            child: FavoriteProduct(
-              product: widget.favoriteProducts[index],
-            ),
+          child: FavoriteProduct(
+            product: widget.favoriteProducts[index],
           ),
         ),
       ),
