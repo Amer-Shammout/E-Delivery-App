@@ -1,8 +1,8 @@
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_widget_with_dash.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/Widgets/Cart%20View%20Widgets/product_cart_price.dart';
-import 'package:e_delivery_app/Features/Cart/Presentation/Views/Widgets/Cart%20View%20Widgets/product_quntity.dart';
 import 'package:e_delivery_app/Features/Cart/data/models/cart_model/order_item.dart';
+import 'package:e_delivery_app/Features/Orders/Presentation/Views/widgets/Edit%20Orders%20Widgets/edit_order_product_quantity.dart';
 import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -68,7 +68,7 @@ class EditOrderProductContent extends StatelessWidget {
             children: [
               ProductCartPrice(orderItem: orderItem),
               const Spacer(),
-              ProductQuantity(orderItem: orderItem, index: index),
+              EditOrderProductQuantity(orderItem: orderItem, index: index),
             ],
           )
         ],
