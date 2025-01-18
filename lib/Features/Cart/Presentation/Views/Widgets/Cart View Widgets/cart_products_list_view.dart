@@ -21,16 +21,10 @@ class CartProductsListView extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       itemBuilder: (context, index, animation) => FadeTransition(
         opacity: animation,
-        child: GestureDetector(
-          onTap: () {
-            GoRouter.of(context).pushNamed(AppRouter.kProductDetailsName,
-                extra: cartModel.orderItems![index].productDetails);
-          },
-          child: Padding(
-            padding: const EdgeInsets.only(bottom: kSpacing * 6),
-            child: ProductSlidable(
-                orderItem: cartModel.orderItems![index], index: index),
-          ),
+        child: Padding(
+          padding: const EdgeInsets.only(bottom: kSpacing * 6),
+          child: ProductSlidable(
+              orderItem: cartModel.orderItems![index], index: index),
         ),
       ),
     );

@@ -245,20 +245,12 @@ abstract class AppRouter {
           child: NotificationsView(),
         ),
       ),
-       GoRoute(
-        path: kNotificationsView,
-        name: kNotificationsName,
-        pageBuilder: (context, state) => const MaterialPage(
-          child: NotificationsView(),
-        ),
-      ),
-         GoRoute(
+      GoRoute(
         path: kEditOrderView,
         name: kEditOrderName,
         pageBuilder: (context, state) => MaterialPage(
           child: EditOrderViewBody(orderModel: state.extra as OrderModel),
-        
-      )
+        ),
       ),
     ],
   );

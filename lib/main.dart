@@ -15,6 +15,8 @@ import 'package:e_delivery_app/Features/Home/Data/Repos/home_repo_impl.dart';
 import 'package:e_delivery_app/Features/Home/Presentation/Manager/Cubits/get_categories_cubit/get_categories_cubit.dart';
 import 'package:e_delivery_app/Features/Home/Presentation/Manager/Cubits/get_offers_cubit/get_offers_cubit.dart';
 import 'package:e_delivery_app/Features/Home/Presentation/Manager/Cubits/get_products_by_category_cubit/get_products_by_category_cubit.dart';
+import 'package:e_delivery_app/Features/Orders/Data/repos/orders_repo_impl.dart';
+import 'package:e_delivery_app/Features/Orders/Presentation/manager/get_orders_cubit/get_orders_cubit.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Manager/localization_cubit/localization_cubit.dart';
 import 'package:e_delivery_app/Features/Settings/Presentation/Manager/theme_cubit/theme_cubit.dart';
 import 'package:e_delivery_app/Features/Stores/Presentation/manager/get_stores_cubit/get_stores_cubit.dart';
@@ -120,6 +122,9 @@ class _EDeliveryState extends State<EDelivery> {
           create: (context) => AddOrRemoveFavoritesCubit(
             getIt.get<AppRepoImpl>(),
           ),
+        ),
+        BlocProvider(
+          create: (context) => GetOrdersCubit(getIt.get<OrdersRepoImpl>()),
         ),
         BlocProvider(
           create: (context) =>

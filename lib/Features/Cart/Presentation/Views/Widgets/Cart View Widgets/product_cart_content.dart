@@ -1,3 +1,4 @@
+import 'package:e_delivery_app/Core/utils/app_router.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/widgets/custom_widget_with_dash.dart';
 import 'package:e_delivery_app/Features/Cart/Presentation/Views/Widgets/Cart%20View%20Widgets/product_cart_price.dart';
@@ -6,6 +7,7 @@ import 'package:e_delivery_app/Features/Cart/data/models/cart_model/order_item.d
 import 'package:e_delivery_app/constants.dart';
 import 'package:e_delivery_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class ProductCartContent extends StatelessWidget {
   const ProductCartContent(
@@ -19,31 +21,38 @@ class ProductCartContent extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                orderItem.productDetails!.store!.name!,
-                style: AppStyles.fontsMedium10(context).copyWith(
-                  fontSize: 8,
-                  color: Theme.of(context).colorScheme.error.withOpacity(0.35),
+          GestureDetector(
+            onTap: () {
+              GoRouter.of(context).pushNamed(AppRouter.kProductDetailsName,
+                  extra: orderItem.productDetails!);
+            },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  orderItem.productDetails!.store!.name!,
+                  style: AppStyles.fontsMedium10(context).copyWith(
+                    fontSize: 8,
+                    color:
+                        Theme.of(context).colorScheme.error.withOpacity(0.35),
+                  ),
                 ),
-              ),
-              orderItem.productDetails!.discountValue != null
-                  ? Row(
-                      children: [
-                        Text(
-                          S.of(context).hot,
-                          style: AppStyles.fontsBold12(context).copyWith(
-                              color: Theme.of(context).colorScheme.tertiary),
-                        ),
-                        const SizedBox(
-                          width: kSpacing,
-                        ),
-                      ],
-                    )
-                  : const SizedBox.shrink(),
-            ],
+                orderItem.productDetails!.discountValue != null
+                    ? Row(
+                        children: [
+                          Text(
+                            S.of(context).hot,
+                            style: AppStyles.fontsBold12(context).copyWith(
+                                color: Theme.of(context).colorScheme.tertiary),
+                          ),
+                          const SizedBox(
+                            width: kSpacing,
+                          ),
+                        ],
+                      )
+                    : const SizedBox.shrink(),
+              ],
+            ),
           ),
           Text(
             orderItem.productDetails!.name!,

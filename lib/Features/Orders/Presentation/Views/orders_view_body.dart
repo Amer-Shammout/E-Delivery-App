@@ -17,15 +17,8 @@ class OrdersViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          create: (context) => GetOrdersCubit(getIt.get<OrdersRepoImpl>()),
-        ),
-        BlocProvider(
-          create: (context) => CancelOrderCubit(getIt.get<OrdersRepoImpl>()),
-        ),
-      ],
+    return BlocProvider(
+      create: (context) => CancelOrderCubit(getIt.get<OrdersRepoImpl>()),
       child: CustomScrollView(
         physics: const BouncingScrollPhysics(),
         slivers: [

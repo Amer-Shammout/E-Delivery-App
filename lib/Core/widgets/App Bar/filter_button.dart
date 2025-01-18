@@ -1,4 +1,5 @@
 import 'package:e_delivery_app/Core/utils/assets.dart';
+import 'package:e_delivery_app/Core/utils/functions/set_theme_colors.dart';
 import 'package:e_delivery_app/Core/utils/styles/app_styles.dart';
 import 'package:e_delivery_app/Core/utils/styles/shadows.dart';
 import 'package:e_delivery_app/Features/Search/Presentation/Views/widgets/search_view_body.dart';
@@ -96,7 +97,12 @@ class _FilterButtonState extends State<FilterButton> {
     return Container(
       padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
-        boxShadow: Shadows.innerShadow(context),
+        color: SetThemeColors.isDarkMode(context)
+            ? Theme.of(context).colorScheme.secondary
+            : null,
+        boxShadow: SetThemeColors.isDarkMode(context)
+            ? null
+            : Shadows.innerShadow(context),
         borderRadius: BorderRadius.circular(16),
       ),
       child: PopupMenuButton(

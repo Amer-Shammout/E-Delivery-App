@@ -18,7 +18,7 @@ class EmptyOrdersBody extends StatelessWidget {
           SvgPicture.asset(
             height: 160,
             width: 160,
-            Assets.iconsOutlineOrdersOutline,
+            Assets.iconsSolidOrdersBold,
             colorFilter: ColorFilter.mode(
                 Theme.of(context).colorScheme.primary, BlendMode.srcATop),
           ),

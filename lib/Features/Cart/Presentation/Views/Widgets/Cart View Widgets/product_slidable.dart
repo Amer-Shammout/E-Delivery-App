@@ -22,7 +22,7 @@ class ProductSlidable extends StatelessWidget {
       child: Slidable(
         dragStartBehavior: DragStartBehavior.start,
         endActionPane: ActionPane(
-          extentRatio: 70 / MediaQuery.sizeOf(context).width,
+          extentRatio: 100 / MediaQuery.sizeOf(context).width,
           motion: const ScrollMotion(),
           children: [
             CustomDeleteButton(
