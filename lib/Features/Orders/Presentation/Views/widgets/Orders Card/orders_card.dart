@@ -104,6 +104,7 @@ class OrdersCard extends StatelessWidget {
                     return const CustomProgressIndicator();
                   } else {
                     return PopupMenuButton(
+                      iconColor: kBlackColor,
                       color: Theme.of(context).colorScheme.secondary,
                       elevation: 0,
                       itemBuilder: (context) => List.generate(
@@ -153,7 +154,7 @@ class OrdersCard extends StatelessWidget {
         collapsedBackgroundColor: cardColor,
         backgroundColor: cardColor,
         title: Text(
-          orderModel.orderStatus!,
+          setStatus(orderModel.orderStatus!, context),
           style: AppStyles.fontsBold16(context).copyWith(
             color: kBlackColor,
           ),
@@ -188,5 +189,21 @@ class OrdersCard extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  setStatus(String status, context) {
+    if (status == 'delivered') {
+      return S.of(context).order_filter3;
+    } else if (status == 'preparing') {
+      return S.of(context).order_filter5;
+    } else if (status == 'cart') {
+      return Assets.iconsCart;
+    } else if (status == 'on the way') {
+      return S.of(context).order_filter4;
+    } else if (status == 'canceled') {
+      return Assets.iconsAbout;
+    } else if (status == 'pending') {
+      return S.of(context).order_filter6;
+    }
   }
 }

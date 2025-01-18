@@ -58,7 +58,7 @@ class OrdersListView extends StatelessWidget {
     } else if (status == 'canceled') {
       return Assets.iconsAbout;
     } else if (status == 'pending') {
-      return Assets.iconsPending;
+      return Assets.iconsPendingCircle;
     }
   }
 }
