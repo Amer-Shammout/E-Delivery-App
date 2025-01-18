@@ -19,35 +19,31 @@ class ProductSlidable extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => RemoveFromCartCubit(getIt.get<AppRepoImpl>()),
-      child: SlidableAutoCloseBehavior(
-        closeWhenTapped: false,
-        closeWhenOpened: true,
-        child: Slidable(
-          dragStartBehavior: DragStartBehavior.start,
-          endActionPane: ActionPane(
-            extentRatio: 88 / MediaQuery.sizeOf(context).width,
-            motion: const ScrollMotion(),
-            children: [
-              CustomDeleteButton(
-                productId: orderItem.productDetails!.id!,
-                index: index,
-                orderItem: orderItem,
-              )
-            ],
-          ),
-          child: Row(
-            children: [
-              const SizedBox(
-                width: 16,
-              ),
-              Expanded(
-                child: ProductCardCart(orderItem: orderItem, index: index),
-              ),
-              const SizedBox(
-                width: 16,
-              ),
-            ],
-          ),
+      child: Slidable(
+        dragStartBehavior: DragStartBehavior.start,
+        endActionPane: ActionPane(
+          extentRatio: 70 / MediaQuery.sizeOf(context).width,
+          motion: const ScrollMotion(),
+          children: [
+            CustomDeleteButton(
+              productId: orderItem.productDetails!.id!,
+              index: index,
+              orderItem: orderItem,
+            )
+          ],
+        ),
+        child: Row(
+          children: [
+            const SizedBox(
+              width: 16,
+            ),
+            Expanded(
+              child: ProductCardCart(orderItem: orderItem, index: index),
+            ),
+            const SizedBox(
+              width: 16,
+            ),
+          ],
         ),
       ),
     );
